@@ -176,7 +176,7 @@ export function IdoCmsDetail() {
                 </RichText>
                 <div className="space-y-4 mb-6">
                   {t.idoCms.background.challenges.map((challenge: { title: string; content: string }, index: number) => (
-                    <div key={index} className="pl-4 border-l-2 border-accent/30">
+                    <div key={index} className="pl-8">
                       <RichText as="h4" className="text-sm md:text-base font-semibold text-foreground mb-1">
                         {`${index + 1}. ${challenge.title}`}
                       </RichText>
@@ -226,6 +226,54 @@ export function IdoCmsDetail() {
 
                 {/* Design Subsections */}
                 <div className="space-y-12 md:space-y-16">
+                  {/* IA Evolution - First subsection */}
+                  <div>
+                    <h3 className="text-lg md:text-xl font-semibold text-foreground mb-3 md:mb-4">
+                      {t.idoCms.design.iaTitle}
+                    </h3>
+                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-4">
+                      {t.idoCms.design.iaContent}
+                    </p>
+                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-4">
+                      {t.idoCms.design.iaContent2}
+                    </p>
+                    <ul className="space-y-2 mb-8">
+                      {t.idoCms.design.iaPoints?.map((point: string, index: number) => (
+                        <li key={index} className="text-sm md:text-base text-muted-foreground leading-relaxed pl-8">
+                          <RichText>{point}</RichText>
+                        </li>
+                      ))}
+                    </ul>
+                    {/* IA Comparison Images */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <div className="aspect-[16/9] relative overflow-hidden rounded-lg">
+                          <Image
+                            src="https://image.blocktempo.com/2021/08/1phk9iopHgXQhXfJbzYX8gw.png"
+                            alt="Original Sale Page V1"
+                            fill
+                            className="object-cover object-top"
+                          />
+                        </div>
+                        <p className="text-[10px] md:text-xs text-muted-foreground/70 text-center mt-2">
+                          V1: Sale-Centric Layout
+                        </p>
+                      </div>
+                      <div>
+                        <div className="aspect-[16/9] relative overflow-hidden rounded-lg">
+                          <Image
+                            src="/Desktop-Standard Pool.png"
+                            alt="Desktop Standard Pool V2"
+                            fill
+                            className="object-cover object-top"
+                          />
+                        </div>
+                        <p className="text-[10px] md:text-xs text-muted-foreground/70 text-center mt-2">
+                          V2: Project-Centric Layout
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                   {t.idoCms.design.subsections?.map((subsection: { title: string; content: string; image?: string }, index: number) => (
                     <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center">
                       <div>
@@ -271,9 +319,31 @@ export function IdoCmsDetail() {
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6">
                   {t.idoCms.outcome.title}
                 </h2>
-                <RichText className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                  {t.idoCms.outcome.content}
-                </RichText>
+                <div className="space-y-8">
+                  {t.idoCms.outcome.items?.map((item: { title: string; content: string; image?: string }, index: number) => (
+                    <div key={index} className={item.image ? "grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center" : ""}>
+                      <div>
+                        <h3 className="text-lg md:text-xl font-semibold text-foreground mb-3">
+                          {item.title}
+                        </h3>
+                        <RichText className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                          {item.content}
+                        </RichText>
+                      </div>
+                      {item.image && (
+                        <div className="w-full">
+                          <Image
+                            src={item.image}
+                            alt={item.title}
+                            width={800}
+                            height={600}
+                            className="w-full h-auto rounded-lg"
+                          />
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
               </section>
             </div>
           </main>

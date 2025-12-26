@@ -1,5 +1,5 @@
 export const idoCmsEn = {
-  title: "IDO Platform & CMS Management System Redesign",
+  title: "IDO Platform & CMS Infrastructure",
   back: "Back",
   sections: {
     background: "Background",
@@ -22,7 +22,7 @@ export const idoCmsEn = {
     },
     timeline: {
       title: "02 Timeline",
-      content: "2–3 months. Scope: Initial research, IA planning, and iterative design for the platform frontend and backend management system.",
+      content: "3-6 months. Scope: Initial research, IA planning, and iterative design for the platform frontend and backend management system.",
     },
     challenge: {
       title: "03 Challenge",
@@ -60,6 +60,14 @@ export const idoCmsEn = {
     title: "Design",
     content: "Visual Guidance & Dual-Theme Redesign The design transforms the brand LOGO into a central visual element, using upward light projections to create an intuitive guiding language throughout the platform. For the core sales experience, we restructured the information hierarchy based on user feedback to ensure all critical data is clear at a glance. Additionally, we introduced both Dark and Light modes, granting users full autonomy over their viewing environment.",
     landingPageCaption: "Impossible Finance landing page design",
+    iaTitle: "IA Evolution: From Sale-Centric to Project-Centric",
+    iaContent: "In the platform's early stages, the interface used a straightforward single-sale layout. However, as the business expanded, a single project often included multiple sale types (e.g., Standard, Unlimited, Whitelist), causing duplicate information on the homepage and increasing users' filtering difficulty and cognitive load.",
+    iaContent2: "We restructured the product's Information Architecture, defining 'Project' as the top-level container and consolidating diverse sale modes into second-level inner pages:",
+    iaPoints: [
+      "**Data De-duplication**: The homepage list displays only unique project entries, significantly improving scanning efficiency.",
+      "**Progressive Disclosure**: Users are guided to inner pages first, then select sale modes based on investment preferences.",
+      "**Decision Efficiency**: V2 inner pages feature clear timeline progress bars and data comparisons, ensuring users intuitively grasp investment timing."
+    ],
     subsections: [
       {
         title: "CMS Design Strategy: Engineering Collaboration & Efficiency",
@@ -81,12 +89,22 @@ export const idoCmsEn = {
   // User Research Section
   userResearch: {
     title: "User Research",
-    content: "In a fully remote setup, we validated interface intuitiveness via Google Forms. Participants achieved a **high accuracy rate** in identifying interface functions, proving the design's \"self-explanatory\" clarity and reducing cross-team communication overhead.",
+    content: "In a fully remote setup, we validated interface intuitiveness via Google Forms. Participants achieved a **high accuracy rate** in identifying CMS interface functions, proving the design's \"self-explanatory\" clarity and reducing cross-team communication overhead.",
   },
   // Outcome Section
   outcome: {
-    title: "Outcome",
-    content: "Successfully consolidated the launch process and minimized operational errors. The platform has supported **20+ project launches** with scalable potential for future B2B expansion.",
+    title: "Outcome & Learnings",
+    items: [
+      {
+        title: "Operational Efficiency & Stability",
+        content: "Successfully automated the IDO listing process, transforming manual engineering tasks into a self-service workflow. This reduced deployment time from days to hours and reliably supported **20+ successful token launches.**"
+      },
+      {
+        title: "Smart Onboarding for Social Traffic",
+        content: "To address navigation confusion from imprecise Telegram referral links, I introduced a **First-Visit Detection** popup. This intelligent bridge ensures new users instantly recognize core functions—Explore, Manage, and Vesting—minimizing friction and ensuring a consistent brand experience from social media to the platform.",
+        image: "/IF-FirstVisit.png"
+      }
+    ]
   },
 }
 
@@ -152,6 +170,14 @@ export const idoCmsZh = {
     title: "設計",
     content: "視覺引導與雙色體驗重構 本次設計轉化品牌 LOGO 為視覺核心，透過向上投射的光影語彙建立直覺的視覺引導，並將此品牌感貫穿全站段落。針對銷售核心體驗，我們基於用戶反饋重新優化資訊排版，以達到「一目瞭然」的視覺效果，並首度導入深淺色模式切換，讓用戶能根據使用偏好自由選擇瀏覽環境。",
     landingPageCaption: "Impossible Finance landing page design",
+    iaTitle: "銷售頁面資訊架構演進：從「單一銷售導向」轉向「項目核心導向」",
+    iaContent: "在平台發展初期，介面採取「單一銷售模式」的直覺排版。然而，隨著業務擴張，單一項目常包含多種銷售模式（如：Standard, Unlimited, Whitelist），導致首頁列表出現重複資訊，增加了用戶的篩選難度與認知負荷。",
+    iaContent2: "我們重新梳理了產品的資訊架構，將「項目」定義為頂層容器，並將多元的銷售模式整合至第二層內頁：",
+    iaPoints: [
+      "**資訊降噪**：首頁列表僅顯示唯一項目入口，大幅提升掃視效率。",
+      "**分層揭露**：引導用戶進入內頁後，再根據投資偏好選擇銷售模式。",
+      "**優化決策流**：在 V2 內頁導入清晰的時程進度條與數據對比，確保用戶直觀掌握投資時效。"
+    ],
     subsections: [
       {
         title: "CMS 設計策略：工程協作與開發效率",
@@ -173,11 +199,21 @@ export const idoCmsZh = {
   // User Research Section
   userResearch: {
     title: "使用者研究",
-    content: "因應全遠端協作需求，透過 Google 表單進行內部原型測試。結果顯示受測者對介面功能佈局的**理解正確率極高**，驗證了介面具備強大的「自解釋能力」，有效降低溝通成本並提升產品信心。",
+    content: "因應全遠端協作需求，透過 Google 表單進行內部原型測試。結果顯示受測者對CMS介面功能佈局的**理解正確率極高**，驗證了介面具備強大的「自解釋能力」，有效降低溝通成本並提升產品信心。",
   },
   // Outcome Section
   outcome: {
-    title: "成果",
-    content: "成功整合上架流程，大幅降低操作失誤；穩定支撐 **20 餘場代幣發行**，並具備未來開放給外部合作夥伴使用的擴充潛力。",
+    title: "成果與學習",
+    items: [
+      {
+        title: "營運效率與穩定性",
+        content: "成功自動化 IDO 上架流程，將工程師手動配置轉化為自助式工作流程。這將部署時間從數天縮短至數小時，並穩定支援**超過 20 場成功的代幣發行。**"
+      },
+      {
+        title: "社群流量的智慧引導",
+        content: "為解決 Telegram 推薦連結導致的導航困惑，我導入了**首訪偵測彈窗**。這個智慧橋樑確保新用戶能立即識別核心功能——Explore、Manage 和 Vesting——最小化摩擦並確保從社群媒體到平台的一致品牌體驗。",
+        image: "/IF-FirstVisit.png"
+      }
+    ]
   },
 }
