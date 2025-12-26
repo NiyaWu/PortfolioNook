@@ -1,0 +1,271 @@
+export const commonEn = {
+  // Header
+  nav: {
+    home: "Home",
+    work: "Work",
+    about: "About",
+    contact: "Contact",
+  },
+  // Hero
+  hero: {
+    name: "Niya",
+    description: "I'm a Product Designer with multi-industry experience across Web3, SaaS, and large-scale system platforms.",
+  },
+  // Work Showcase
+  work: {
+    title: "Featured Work",
+    description: "A selection of projects I've worked on",
+    viewProject: "View project",
+    moreProjects: "More Projects",
+    projects: [
+      {
+        title: "IDO Platform & CMS Infrastructure",
+        category: "Web3 Launchpad · Product Design · Management System",
+        description: "Reimagining the IDO investment journey with a brand-driven frontend redesign, while architecting a modular CMS from the ground up to automate complex launch workflows.",
+        company: "Impossible Finance",
+        year: "2023",
+        image: "/IDO-Cover.png",
+        href: "/ido-cms",
+      },
+      {
+        title: "Surveillance Camera Management",
+        category: "UI/UX Design",
+        description: "Redesign of IVAR security camera management system",
+        company: "Gorilla Technology",
+        year: "2020",
+        image: "/portfolio/ivarRedesign.png",
+        href: "/ivar-redesign",
+      },
+      {
+        title: "Face Library Management",
+        category: "UI/UX Design",
+        description: "Face recognition and library management interface design",
+        company: "Gorilla Technology",
+        year: "2019",
+        image: "/portfolio/Face.png",
+        href: "/face-library",
+      },
+      {
+        title: "Data Visualization System",
+        category: "Dashboard Design",
+        description: "Real-time data visualization and monitoring dashboard",
+        company: "Gorilla Technology",
+        year: "2019",
+        image: "/portfolio/dashboard.png",
+        href: "/data-visualization",
+      },
+      {
+        title: "Video Analysis System",
+        category: "UI/UX Design",
+        description: "Video analysis and processing interface design",
+        company: "Gorilla Technology",
+        year: "2018",
+        image: "/portfolio/analyzing.png",
+        href: "/video-analysis",
+      },
+      {
+        title: "VOD Channel for Taiwan Mobile",
+        category: "Product Design",
+        description: "OTT streaming service channel redesign for myVideo",
+        company: "Taiwan Mobile",
+        year: "2016",
+        image: "/portfolio/VOD.png",
+        href: "/vod-channel",
+      },
+      {
+        title: "Chromecast Feature Design",
+        category: "UX Design",
+        description: "Chromecast streaming feature flow design for OTT service",
+        company: "Taiwan Mobile",
+        year: "2014",
+        image: "/portfolio/chromecast-phone.png",
+        href: "/chromecast",
+      },
+    ],
+  },
+  // About
+  about: {
+    title: "About Me",
+    emoji: "👋",
+    intro: "Hello, I'm Niya (Ming Hshiang Wu). I'm a UI/UX Designer who enjoys creating useful flow and researching interfaces.",
+    description: "I have extensive experience working with diverse stakeholders and scalable user experiences that support complex products and real-world operations.",
+    experienceTitle: "Experience",
+    experiences: [
+      {
+        company: "Impossible Finance",
+        period: "2021 - Present",
+        role: "Product Designer",
+        location: "Remote",
+        description: "Leading the design of Web3 products including IDO launchpad, token management CMS, and DeFi platforms. Collaborate with cross-functional teams to create intuitive user experiences for complex blockchain applications.",
+      },
+      {
+        company: "Gorilla Technology",
+        period: "June 2017 - May 2020",
+        role: "UI / UX Designer",
+        location: "Taipei, Taiwan",
+        description: "The design role of the main product (IVAR) for our company, not only design new features flow, and interfaces but also written HTML and CSS co-work like a UX engineer with our FE developers. Support design works for projects from the government, like the e-learning system and smart airport. Design and improve the user-flow of the company's internal system tools.",
+      },
+      {
+        company: "Taiwan Mobile Co., Ltd.",
+        period: "October 2013 - June 2017",
+        role: "UI / UX / Marketing Designer",
+        location: "Taipei, Taiwan",
+        description: "Organized the initial research of myVideo Set-Top box interfaces. Collaborated with Ogilvy One on usability research for myVideo, myBook and myMusic products. Design advanced product usability and make banner ads provide rich content for the myVideo team. Systematize the usual marketing website and weekly EDM. Assist the development team to design the user-flow for Chromecast features in myVideo products.",
+      },
+      {
+        company: "Cracking Design",
+        period: "January 2010 - December 2012",
+        role: "Co-founder / Web Designer",
+        location: "Taoyuan, Taiwan",
+        description: "Planned the business owners' website and find what they want through deep communication. Design the website, and build HTML, CSS files to developers.",
+      },
+    ],
+    contact: "Connect with me via email twmniya@gmail.com",
+  },
+  // CTA
+  cta: {
+    title: "Let's Work Together",
+    description: "Have a project in mind? Let's create something amazing together.",
+    button: "Get in Touch",
+  },
+  // Footer
+  footer: {
+    copyright: "© 2024 Your Name. All rights reserved.",
+  },
+}
+
+export const commonZh = {
+  // Header
+  nav: {
+    home: "首頁",
+    work: "作品",
+    about: "關於我",
+    contact: "聯絡",
+  },
+  // Hero
+  hero: {
+    name: "Niya",
+    description: "我是一位產品設計師，擁有 Web3、SaaS 和大型系統平台等多產業的經驗。",
+  },
+  // Work Showcase
+  work: {
+    title: "精選作品",
+    description: "我參與過的精選專案",
+    viewProject: "查看專案",
+    moreProjects: "更多專案",
+    projects: [
+      {
+        title: "IDO Platform & CMS Infrastructure",
+        category: "Web3 Launchpad · Product Design · Management System",
+        description: "透過品牌導向的設計重構 IDO 投資體驗，並從零打造模組化 CMS 系統，實現自動化代幣上架流程，大幅提升營運與開發效率。",
+        company: "Impossible Finance",
+        year: "2021",
+        image: "/IDO-Cover.png",
+        href: "/ido-cms",
+      },
+      {
+        title: "監控攝影機管理系統",
+        category: "UI/UX 設計",
+        description: "IVAR 安全監控攝影機管理系統重新設計",
+        company: "Gorilla Technology",
+        year: "2020",
+        image: "/portfolio/ivarRedesign.png",
+        href: "/ivar-redesign",
+      },
+      {
+        title: "人臉資料庫管理",
+        category: "UI/UX 設計",
+        description: "人臉辨識與資料庫管理介面設計",
+        company: "Gorilla Technology",
+        year: "2019",
+        image: "/portfolio/Face.png",
+        href: "/face-library",
+      },
+      {
+        title: "數據視覺化系統",
+        category: "儀表板設計",
+        description: "即時數據視覺化和監控儀表板",
+        company: "Gorilla Technology",
+        year: "2019",
+        image: "/portfolio/dashboard.png",
+        href: "/data-visualization",
+      },
+      {
+        title: "影片分析系統",
+        category: "UI/UX 設計",
+        description: "影片分析與處理介面設計",
+        company: "Gorilla Technology",
+        year: "2018",
+        image: "/portfolio/analyzing.png",
+        href: "/video-analysis",
+      },
+      {
+        title: "台灣大哥大 VOD 頻道",
+        category: "產品設計",
+        description: "myVideo OTT 串流服務頻道重新設計",
+        company: "台灣大哥大",
+        year: "2016",
+        image: "/portfolio/VOD.png",
+        href: "/vod-channel",
+      },
+      {
+        title: "Chromecast 功能設計",
+        category: "UX 設計",
+        description: "OTT 服務的 Chromecast 串流功能流程設計",
+        company: "台灣大哥大",
+        year: "2014",
+        image: "/portfolio/chromecast-phone.png",
+        href: "/chromecast",
+      },
+    ],
+  },
+  // About
+  about: {
+    title: "關於我",
+    emoji: "👋",
+    intro: "你好，我是 Niya（吳明祥）。我是一位 UI/UX 設計師，喜歡創造實用的流程和研究介面。",
+    description: "我擁有豐富的經驗，與不同的利益相關者合作，並打造可擴展的使用者體驗，以支援複雜的產品和實際營運。",
+    experienceTitle: "工作經歷",
+    experiences: [
+      {
+        company: "Impossible Finance",
+        period: "2021 - 現在",
+        role: "產品設計師",
+        location: "遠端",
+        description: "主導 Web3 產品設計，包括 IDO 發行平台、代幣管理 CMS 和 DeFi 平台。與跨職能團隊合作，為複雜的區塊鏈應用程式創造直觀的使用者體驗。",
+      },
+      {
+        company: "Gorilla Technology",
+        period: "2017年6月 - 2020年5月",
+        role: "UI / UX 設計師",
+        location: "台北，台灣",
+        description: "擔任公司主要產品（IVAR）的設計角色，不僅設計新功能流程和介面，還撰寫 HTML 和 CSS，像 UX 工程師一樣與前端開發人員合作。支援政府專案的設計工作，如電子學習系統和智慧機場。設計和改進公司內部系統工具的使用者流程。",
+      },
+      {
+        company: "台灣大哥大",
+        period: "2013年10月 - 2017年6月",
+        role: "UI / UX / 行銷設計師",
+        location: "台北，台灣",
+        description: "組織 myVideo 機上盒介面的初步研究。與奧美合作進行 myVideo、myBook 和 myMusic 產品的可用性研究。設計進階產品可用性，並為 myVideo 團隊製作豐富內容的橫幅廣告。系統化常規行銷網站和每週電子報。協助開發團隊設計 myVideo 產品中 Chromecast 功能的使用者流程。",
+      },
+      {
+        company: "Cracking Design",
+        period: "2010年1月 - 2012年12月",
+        role: "共同創辦人 / 網頁設計師",
+        location: "桃園，台灣",
+        description: "規劃企業主的網站，並透過深入溝通找出他們的需求。設計網站，並建立 HTML、CSS 檔案交給開發人員。",
+      },
+    ],
+    contact: "透過電子郵件 twmniya@gmail.com 與我聯繫",
+  },
+  // CTA
+  cta: {
+    title: "讓我們一起合作",
+    description: "有想法嗎？讓我們一起創造驚人的作品。",
+    button: "聯絡我",
+  },
+  // Footer
+  footer: {
+    copyright: "© 2024 你的名字。保留所有權利。",
+  },
+}
