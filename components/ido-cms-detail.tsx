@@ -320,7 +320,7 @@ export function IdoCmsDetail() {
                   {t.idoCms.outcome.title}
                 </h2>
                 <div className="space-y-8">
-                  {t.idoCms.outcome.items?.map((item: { title: string; content: string; image?: string }, index: number) => (
+                  {t.idoCms.outcome.items?.map((item: { title: string; content: string; image?: string; imageCaption?: string }, index: number) => (
                     <div key={index} className={item.image ? "grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center" : ""}>
                       <div>
                         <h3 className="text-lg md:text-xl font-semibold text-foreground mb-3">
@@ -339,6 +339,11 @@ export function IdoCmsDetail() {
                             height={600}
                             className="w-full h-auto rounded-lg"
                           />
+                          {item.imageCaption && (
+                            <p className="text-[10px] md:text-xs text-muted-foreground/70 text-center mt-3">
+                              {item.imageCaption}
+                            </p>
+                          )}
                         </div>
                       )}
                     </div>

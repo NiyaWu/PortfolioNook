@@ -42,10 +42,10 @@ export function WorkShowcase() {
                 <div key={work.id}>
                   {/* Desktop Layout - Contained grid */}
                   <div className={`hidden lg:grid lg:grid-cols-12 gap-8 xl:gap-12 items-center`}>
-                    {/* Text Side - 4 columns */}
+                    {/* Text Side - 5 columns */}
                     <Link
                       href={work.href}
-                      className={`col-span-4 flex flex-col justify-center space-y-5 group ${isEven ? 'order-2' : 'order-1'}`}
+                      className={`col-span-5 flex flex-col justify-center space-y-5 group ${isEven ? 'order-2' : 'order-1'}`}
                     >
                       <div>
                         <h3 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-foreground leading-tight">
@@ -65,8 +65,8 @@ export function WorkShowcase() {
                       </div>
                     </Link>
 
-                    {/* Image Side - 8 columns */}
-                    <div className={`col-span-8 ${isEven ? 'order-1' : 'order-2'}`}>
+                    {/* Image Side - 7 columns */}
+                    <div className={`col-span-7 ${isEven ? 'order-1' : 'order-2'}`}>
                       <div className="relative w-full rounded-lg overflow-hidden">
                         {work.animation && animationData[work.animation] ? (
                           <Lottie

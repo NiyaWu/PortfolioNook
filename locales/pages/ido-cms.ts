@@ -9,7 +9,7 @@ export const idoCmsEn = {
     outcome: "Outcome",
   },
   hero: {
-    duration: "2020 - 2020",
+    duration: "2021 - 2022",
     role: "Product Designer",
     company: "Impossible Finance",
   },
@@ -102,7 +102,8 @@ export const idoCmsEn = {
       {
         title: "Smart Onboarding for Social Traffic",
         content: "To address navigation confusion from imprecise Telegram referral links, I introduced a **First-Visit Detection** popup. This intelligent bridge ensures new users instantly recognize core functions—Explore, Manage, and Vesting—minimizing friction and ensuring a consistent brand experience from social media to the platform.",
-        image: "/IF-FirstVisit.png"
+        image: "/IF-FirstVisit.png",
+        imageCaption: "Auto-triggered popup for new users to bridge Telegram traffic gaps."
       }
     ]
   },
@@ -212,7 +213,8 @@ export const idoCmsZh = {
       {
         title: "社群流量的智慧引導",
         content: "為解決 Telegram 推薦連結導致的導航困惑，我導入了**首訪偵測彈窗**。這個智慧橋樑確保新用戶能立即識別核心功能——Explore、Manage 和 Vesting——最小化摩擦並確保從社群媒體到平台的一致品牌體驗。",
-        image: "/IF-FirstVisit.png"
+        image: "/IF-FirstVisit.png",
+        imageCaption: "為新用戶自動觸發的彈窗，用於彌補 Telegram 導流缺口。"
       }
     ]
   },

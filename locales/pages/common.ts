@@ -23,7 +23,7 @@ export const commonEn = {
         category: "Web3 Launchpad · Product Design · Management System",
         description: "Reimagining the IDO investment journey with a brand-driven frontend redesign, while architecting a modular CMS from the ground up to automate complex launch workflows.",
         company: "Impossible Finance",
-        year: "2023",
+        year: "2022",
         image: "/IDO-Cover.png",
         href: "/ido-cms",
       },
