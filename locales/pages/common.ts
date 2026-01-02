@@ -29,7 +29,7 @@ export const commonEn = {
       },
       {
         title: "Surveillance Camera Management",
-        category: "UI/UX Design",
+        category: "Product Design · Management System",
         description: "Redesign of IVAR security camera management system",
         company: "Gorilla Technology",
         year: "2020",

@@ -194,39 +194,6 @@ export function IvarRedesignDetail() {
 
           {/* Main Content Area */}
           <main className="flex-1 max-w-[840px]">
-            {/* Project Overview Grid */}
-            <div className="mb-16 md:mb-24">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-8 md:mb-12 text-center">
-                Project Overview
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                <div className="border border-border rounded-lg p-4 md:p-6">
-                  <h3 className="text-base md:text-lg font-bold text-foreground mb-2 md:mb-3">01 Role</h3>
-                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
-                    {t.ivarRedesign.hero.role}
-                  </p>
-                </div>
-                <div className="border border-border rounded-lg p-4 md:p-6">
-                  <h3 className="text-base md:text-lg font-bold text-foreground mb-2 md:mb-3">02 Platforms</h3>
-                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
-                    {t.ivarRedesign.hero.platforms}
-                  </p>
-                </div>
-                <div className="border border-border rounded-lg p-4 md:p-6">
-                  <h3 className="text-base md:text-lg font-bold text-foreground mb-2 md:mb-3">03 Deliverables</h3>
-                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
-                    {t.ivarRedesign.hero.deliverables}
-                  </p>
-                </div>
-                <div className="border border-border rounded-lg p-4 md:p-6">
-                  <h3 className="text-base md:text-lg font-bold text-foreground mb-2 md:mb-3">04 Year</h3>
-                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
-                    {t.ivarRedesign.hero.duration}
-                  </p>
-                </div>
-              </div>
-            </div>
-
             {/* Content Sections */}
             <div className="space-y-16 md:space-y-24 lg:space-y-32">
               {/* About */}
@@ -285,17 +252,10 @@ export function IvarRedesignDetail() {
                       {t.ivarRedesign.contentArea.content}
                     </p>
                   </div>
-                  <div className="w-full space-y-4">
+                  <div className="w-full">
                     <Image
                       src="/portfolio/ivar/sideMenu1.png"
-                      alt="Side Menu Before"
-                      width={600}
-                      height={300}
-                      className="w-full h-auto object-contain rounded-lg"
-                    />
-                    <Image
-                      src="/portfolio/ivar/sideMenu2.png"
-                      alt="Side Menu After"
+                      alt="Side Menu"
                       width={600}
                       height={300}
                       className="w-full h-auto object-contain rounded-lg"
@@ -312,7 +272,7 @@ export function IvarRedesignDetail() {
                 <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-8">
                   {t.ivarRedesign.siteMap.content}
                 </p>
-                <div className="w-full bg-muted/10 rounded-lg p-4 overflow-hidden">
+                <div className="w-full rounded-lg p-4 overflow-hidden" style={{ backgroundColor: '#f0f1f1' }}>
                   <Image
                     src="/portfolio/ivar/IVAR2Flow.png"
                     alt="Site Map Flow"
@@ -341,7 +301,7 @@ export function IvarRedesignDetail() {
                   </div>
                   <div className="w-full rounded-lg overflow-hidden">
                     <Image
-                      src="/portfolio/ivar/top-banner-4.gif"
+                      src="/portfolio/ivar/IVAR-in.gif"
                       alt="Initialization"
                       width={600}
                       height={400}
@@ -399,7 +359,7 @@ export function IvarRedesignDetail() {
                 <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-8">
                   {t.ivarRedesign.themes.content}
                 </p>
-                <div className="w-full bg-muted/10 rounded-lg p-4 space-y-4">
+                <div className="w-full rounded-lg p-4 space-y-4" style={{ backgroundColor: '#f0f1f1' }}>
                   <Image
                     src="/portfolio/ivar/themePic.png"
                     alt="Theme Design"
@@ -425,7 +385,7 @@ export function IvarRedesignDetail() {
                 <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-8">
                   {t.ivarRedesign.components.content}
                 </p>
-                <div className="w-full bg-muted/5 rounded-lg p-4">
+                <div className="w-full rounded-lg p-4" style={{ backgroundColor: '#f0f1f1' }}>
                   <Image
                     src="/portfolio/ivar/componentPic.png"
                     alt="Component Design"
@@ -444,7 +404,7 @@ export function IvarRedesignDetail() {
                 <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-8">
                   {t.ivarRedesign.flowFile.content}
                 </p>
-                <div className="w-full bg-muted/10 rounded-lg p-4">
+                <div className="w-full rounded-lg overflow-hidden">
                   <Image
                     src="/portfolio/ivar/Flow.png"
                     alt="Flow Design"
@@ -455,18 +415,6 @@ export function IvarRedesignDetail() {
                 </div>
               </section>
 
-              {/* Next Project */}
-              <section className="pt-16 border-t border-border">
-                <div className="text-center">
-                  <p className="text-sm text-muted-foreground mb-4">Next Project</p>
-                  <Link
-                    href="/"
-                    className="inline-flex items-center justify-center px-8 py-3 bg-accent text-white font-semibold rounded-lg hover:bg-accent/90 transition-colors"
-                  >
-                    View All Projects
-                  </Link>
-                </div>
-              </section>
             </div>
           </main>
         </div>
