@@ -1,3 +1,12 @@
+// Shared hero data (no translation needed)
+const videoAnalysisHero = {
+  duration: "2018",
+  role: "UI / UX",
+  company: "Gorilla Technology",
+  platforms: "Web",
+  deliverables: "Design and Interaction",
+}
+
 export const videoAnalysisEn = {
   title: "Video Analysis System",
   back: "Back",
@@ -11,13 +20,7 @@ export const videoAnalysisEn = {
     graphicalTool: "Graphical Tool",
     uiKit: "UI Kit",
   },
-  hero: {
-    duration: "2018",
-    role: "UI / UX",
-    company: "Gorilla Technology",
-    platforms: "Web",
-    deliverables: "Design and Interaction",
-  },
+  hero: videoAnalysisHero,
   about: {
     title: "About",
     content: "The configuration of different analyzings is an important feature in IVAR. Some Analyzing types should set a lot of items, not only general form settings but also graphical settings. We want to design the interface so that when users use the interface, they know how to set it up and why they need to do it (Learnability).",
@@ -68,13 +71,7 @@ export const videoAnalysisZh = {
     graphicalTool: "圖形工具",
     uiKit: "UI 元件庫",
   },
-  hero: {
-    duration: "2018年",
-    role: "UI / UX",
-    company: "Gorilla Technology",
-    platforms: "網頁",
-    deliverables: "設計與互動",
-  },
+  hero: videoAnalysisHero,
   about: {
     title: "關於",
     content: "不同分析類型的配置是 IVAR 中的重要功能。某些分析類型需要設定許多項目，不僅是一般表單設定，還包括圖形設定。我們希望設計介面，讓使用者在使用時知道如何設定以及為什麼需要這樣做（可學習性）。",

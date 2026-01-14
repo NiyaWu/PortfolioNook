@@ -1,3 +1,12 @@
+// Shared hero data (no translation needed)
+const faceLibraryHero = {
+  duration: "June 2019",
+  role: "UI / UX",
+  company: "Gorilla Technology",
+  platforms: "Web",
+  deliverables: "Design and Interaction",
+}
+
 export const faceLibraryEn = {
   title: "Face Library Management",
   back: "Back",
@@ -8,13 +17,7 @@ export const faceLibraryEn = {
     faceManagement: "Face Management",
     mockupFlow: "Mockup Flow",
   },
-  hero: {
-    duration: "June 2019",
-    role: "UI / UX",
-    company: "Gorilla Technology",
-    platforms: "Web",
-    deliverables: "Design and Interaction",
-  },
+  hero: faceLibraryHero,
   about: {
     title: "About Face Library Management",
     content: "This feature is connecting access control system and video analysis system, companies can enter their employee's picture and information to the connecting access control system. When people come to the company and stand in front of the camera, the system will tell you who is it.",
@@ -47,13 +50,7 @@ export const faceLibraryZh = {
     faceManagement: "人臉管理",
     mockupFlow: "設計稿流程",
   },
-  hero: {
-    duration: "2019年6月",
-    role: "UI / UX",
-    company: "Gorilla Technology",
-    platforms: "網頁",
-    deliverables: "設計與互動",
-  },
+  hero: faceLibraryHero,
   about: {
     title: "關於人臉資料庫管理",
     content: "這個功能連接門禁系統和影像分析系統，公司可以將員工的照片和資訊輸入到連接的門禁系統中。當有人來到公司並站在攝影機前，系統會告訴你這個人是誰。",

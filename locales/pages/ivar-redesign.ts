@@ -1,71 +1,110 @@
+// Shared hero data (no translation needed)
+const ivarRedesignHero = {
+  duration: "2020",
+  role: "UI / UX / Tool Research",
+  company: "Gorilla Technology",
+  platforms: "Web",
+  deliverables: "Design and Interaction",
+}
+
 export const ivarRedesignEn = {
   title: "Surveillance Camera Management",
   back: "Back",
   sections: {
-    about: "About",
     discovery: "Discovery",
-    tasks: "Tasks",
     siteMap: "Site Map",
-    initialization: "Initialization",
     systemStatus: "System Status",
-    themes: "Themes",
-    components: "Components",
+    designSystem: "Design System",
   },
-  hero: {
-    duration: "2020",
-    role: "UI / UX / Tool Research",
-    company: "Gorilla Technology",
-    platforms: "Web",
-    deliverables: "Design and Interaction",
-  },
-  about: {
-    title: "About IVAR & IVARM",
-    content: "IVAR (Intelligent Video Analytics Recorder) is a security product on one computer. In the past, customers wanted to manage IVARs' cameras, settings. They should install another software - IVARM. IVARM means IVAR manager. Customers can manage other IVARs that be connected.",
+  hero: ivarRedesignHero,
+  projectOverview: {
+    title: "Project Overview",
+    overview: {
+      title: "01 Overview",
+      content: "This project aimed to deeply integrate the standalone surveillance software (IVAR) with the remote management system (IVARM) into a unified, web-based management platform.",
+    },
+    timeline: {
+      title: "02 Timeline",
+      content: "3-6 months. Scope included user research, information architecture restructuring, and UI/UX design implementation.",
+    },
+    coreTasks: {
+      title: "03 Core Tasks",
+      content: "Integrate dual-system experience, restructure navigation architecture, and establish a Material-UI based design system.",
+    },
+    painPoints: {
+      title: "04 Pain Points Solved",
+      content: "Reduced cognitive load from multi-system switching and optimized visual space utilization on laptop screens.",
+    },
   },
   discovery: {
-    title: "Discovery",
-    content: "IVAR & IVARM are two products, if people want to manage more than two IVAR at the same time they should log in IVARM. That is difficult to understand. We will mix the features from two products. People can use different accounts to differentiate permissions, we have four default roles that can be used, the four roles have different features.",
-  },
-  tasks: {
-    title: "Task And Mission",
-    items: [
-      "Users should be set the basic settings before they used.",
-      "Quickly to know the states when users open the system.",
-      "How do we design the site map to make it easier for people to use?",
+    title: "Discovery & Insights",
+    subsections: [
+      {
+        title: "Dual System Integration Challenge",
+        content: "Previously, IVAR and IVARM had overlapping features with confusing switching logic. Through user research, we defined four default roles, shifting the product logic from \"system-oriented\" to \"Role-Based Access Control (RBAC)\", ensuring users at different levels (e.g., guards, system administrators) only need to focus on features relevant to their responsibilities.",
+      },
+      {
+        title: "Optimizing Layout to Enhance Surveillance View",
+        content: "Observation showed that stakeholders primarily operate on 13-15\" laptops, where the legacy top navigation excessively compressed the 16:9 surveillance feeds. We transitioned to a **collapsible side navigation**, which not only reclaimed critical vertical screen real estate for live monitoring but also provided superior scalability for multi-level menus, ensuring a focused and extensible user experience.",
+      },
     ],
   },
-  contentArea: {
-    title: "Content Area Size",
-    content: "When product managers use our products in their notebook, they always think the top menu occupies too much space on the screen. We modified the problem at this time. We used empathy maps to understand the users' needs. We discover most users usually focus on one or two features. Finally, we decide to change the top menu to the side menu.",
-  },
   siteMap: {
-    title: "Restructure Site Map",
-    content: "According to the result from the empathy map and SE's suggestions. We believe if we restructure the site map, users could less many times to switch the page. For instance, guards need to monitor the screen from CCTV, so that guards just need to stay on the view page.",
+    title: "Site Map & User Flow",
+    subsections: [
+      {
+        title: "Feature Mapping & Integration Evolution",
+        content: "To optimize user experience, we conducted a comprehensive feature review of IVARM and IVAR V1.9. Through modular mapping—such as consolidating \"Channel Overview\" into a unified \"Dashboard\" and streamlining system settings paths—we established a leaner, more intuitive architecture for IVAR V2.0, significantly reducing operational complexity.",
+        image: "/portfolio/ivar/IVAR2Flow.png",
+        imageCaption: "Feature Evolution Matrix: From Multi-System Parallel to Unified Architecture",
+      },
+      {
+        title: "Reduce Navigation, Optimize Surveillance Path",
+        content: "Based on empathy maps and engineering recommendations, we restructured the site map. Taking the \"Guard\" role as an example, we simplified their workflow to ensure they can stay on the viewing page after login, significantly reducing unnecessary page switches.",
+      },
+      {
+        title: "Guided Initialization (Onboarding)",
+        content: "For security products with high-barrier setup processes, we designed an \"Initialization Wizard\" that breaks down complex configurations into four intuitive steps:",
+        items: [
+          { label: "Security Hardening", description: "Admin password setup" },
+          { label: "Compliance Verification", description: "Software licensing" },
+          { label: "Information Sync", description: "IVAR device information linking" },
+          { label: "Hardware Check", description: "Storage space configuration" },
+        ],
+      },
+    ],
   },
-  initialization: {
-    title: "Initialization Setup",
-    content: "When people install open the product at first, we will guide them step by step.",
-    items: ["Admin password", "License", "IVAR Information", "Storage"],
+  systemStatus: {
+    title: "System Status & Dashboard",
+    subsections: [
+      {
+        title: "Dashboard Design: Key to Management Decisions",
+        content: "We designed a comprehensive dashboard for administrators, enabling them to assess system health and recording status at a glance upon login.",
+      },
+      {
+        title: "Status Bar Design: Real-time Risk Management",
+        content: "Security systems prioritize \"zero downtime.\" We designed a persistent status bar integrating warning lights, remaining disk space, and real-time notifications, ensuring critical indicators remain visible at all times to minimize maintenance risks.",
+      },
+    ],
   },
-  systemDashboard: {
-    title: "System Dashboard",
-    content: "If users login with an administrative account, it will show the system dashboard on homepage. Users can check whether the system is working well or not according to the dashboards.",
-  },
-  systemStatusBar: {
-    title: "System Status Bar",
-    content: "For security products, it's very important to keep the system always working well. Therefore, we design the status bar so that users can watch some important indicators at any time. For instance, warning light, disk space, system notification...",
-  },
-  themes: {
-    title: "Themes Design",
-    content: "In our company, we had a lot of customized projects. Developers hope UI/UX team can design UI-Kit base on material-UI, and they also hope designers maintain the themes file. My duties include tool research, design interfaces, and create HTML files. However, material-UI only has the basic themes, we add the level of content according to our needs in this product.",
-  },
-  components: {
-    title: "Component Design",
-    content: "The material-UI only included basic component. Therefore, we need to make new components and modify basic components to conform to our style for the product.",
+  designSystem: {
+    title: "Design System & Components",
+    subtitle: "Material-UI Based Extension",
+    intro: "To balance development efficiency with customization needs, I led the establishment of a MUI-based UI-Kit:",
+    items: [
+      {
+        label: "Visual Hierarchy Enhancement",
+        description: "Addressed the insufficient theme layers in original MUI by redefining color depth and information contrast based on surveillance requirements.",
+      },
+      {
+        label: "Component Customization",
+        description: "Created specialized components for security scenarios (e.g., multi-split surveillance views, device status labels), and maintained theme files and HTML tag specifications.",
+      },
+    ],
   },
   flowFile: {
-    title: "File With Developers",
-    content: "In the past, submitted prototype and mockups did not work well. To developers can easier to know the relationship between mockups and flow is very important. I decided to use the mockups to make a flow map for each feature, if necessary I will give animation too. The flow map really less time of communication.",
+    title: "Collaboration & Delivery",
+    content: "In the past, simply delivering annotated specs often led to communication gaps. I switched to collaborating with the engineering team using \"feature-oriented flow diagrams.\" These diagrams guide development by detailing interaction specifics and dynamic effects, significantly reducing back-and-forth between design and development.",
   },
 }
 
@@ -73,69 +112,99 @@ export const ivarRedesignZh = {
   title: "監控攝影機管理系統",
   back: "返回",
   sections: {
-    about: "關於",
-    discovery: "探索",
-    tasks: "任務",
-    siteMap: "網站架構",
-    initialization: "初始化",
+    discovery: "探索與洞察",
+    siteMap: "架構重構",
     systemStatus: "系統狀態",
-    themes: "主題設計",
-    components: "元件設計",
+    designSystem: "設計系統",
   },
-  hero: {
-    duration: "2020",
-    role: "UI / UX / 工具研究",
-    company: "Gorilla Technology",
-    platforms: "網頁",
-    deliverables: "設計與互動",
-  },
-  about: {
-    title: "關於 IVAR 與 IVARM",
-    content: "IVAR（智能影像分析錄影機）是一個在單一電腦上運行的安全產品。過去，客戶想要管理 IVAR 的攝影機和設定，需要安裝另一個軟體 - IVARM。IVARM 代表 IVAR 管理器，客戶可以管理其他連接的 IVAR。",
+  hero: ivarRedesignHero,
+  projectOverview: {
+    title: "專案概覽",
+    overview: {
+      title: "01 概覽",
+      content: "本專案目標是將原本獨立運作的單機監控軟體 (IVAR) 與遠端管理系統 (IVARM) 進行深度整合，打造一站式 Web 化管理平台。",
+    },
+    timeline: {
+      title: "02 時程",
+      content: "3~6個月。範圍包含使用者研究、資訊架構重構、工具研究，以及 UI/UX 設計實作。",
+    },
+    coreTasks: {
+      title: "03 核心任務",
+      content: "整合雙系統體驗、重構導覽架構、建立基於 Material-UI 的設計系統。",
+    },
+    painPoints: {
+      title: "04 解決痛點",
+      content: "降低使用者在多系統切換間的認知負荷，並優化在筆記型電腦上的視覺空間利用率。",
+    },
   },
   discovery: {
-    title: "探索發現",
-    content: "IVAR 與 IVARM 是兩個產品，如果人們想要同時管理超過兩台 IVAR，他們需要登入 IVARM。這很難理解。我們將兩個產品的功能合併，人們可以使用不同的帳號來區分權限，我們有四個預設角色可以使用，這四個角色有不同的功能。",
-  },
-  tasks: {
-    title: "任務與目標",
-    items: [
-      "使用者在使用前應先完成基本設定。",
-      "使用者開啟系統時能快速了解狀態。",
-      "如何設計網站架構讓使用者更容易使用？",
+    title: "探索與洞察",
+    subsections: [
+      {
+        title: "雙系統整合的挑戰",
+        content: "過去 IVAR 與 IVARM 兩者功能重疊且切換邏輯混亂。我們透過使用者研究定義了四種預設角色，將產品邏輯從「系統導向」轉為「角色權限導向 (RBAC)」，確保不同階層的使用者（如：警衛、系統管理員）只需專注於其職責相關的功能。",
+      },
+      {
+        title: "優化佈局以提升監控視野",
+        content: "我們觀察到業主多使用 13-15 吋筆記型電腦操作，原有的頂部選單嚴重壓迫了 16:9 的監控視窗。因此，我們改採**左側收納式導覽**，在釋放垂直視覺空間、提升監控專注度的同時，也優化了多層級選單的擴充性，解決了功能增加時的排版困境。",
+      },
     ],
   },
-  contentArea: {
-    title: "內容區域大小",
-    content: "當產品經理在筆記型電腦上使用我們的產品時，他們總是認為頂部選單佔據了螢幕太多空間。我們在這次修改了這個問題。我們使用同理心地圖來了解使用者的需求，發現大多數使用者通常只關注一兩個功能。最終，我們決定將頂部選單改為側邊選單。",
-  },
   siteMap: {
-    title: "重建網站架構",
-    content: "根據同理心地圖和軟體工程師的建議，我們相信如果重新架構網站，使用者可以減少很多切換頁面的次數。例如，警衛需要監控 CCTV 畫面，所以警衛只需要停留在檢視頁面即可。",
+    title: "架構重構",
+    subsections: [
+      {
+        title: "功能映射與整合演進",
+        content: "為了優化使用者體驗，我們針對 IVARM 與 IVAR V1.9 進行了全面的功能審查。透過模組化映射——例如將「頻道總覽」整合為統一的「儀表板」，並精簡系統設定路徑——我們為 IVAR V2.0 建立了更精簡、直覺的架構，從而大幅降低操作複雜度。",
+        image: "/portfolio/ivar/IVAR2Flow.png",
+        imageCaption: "功能演進矩陣：從多系統併行到單一整合架構",
+      },
+      {
+        title: "減少跳轉，優化監控路徑",
+        content: "根據同理心地圖與工程開發建議，我們重構了網站地圖。以「警衛」角色為例，我們將其流程簡化，確保其登入後能常駐於檢視頁面，大幅減少不必要的頁面切換。",
+      },
+      {
+        title: "引導式初始化 (Onboarding)",
+        content: "針對安全性產品高門檻的設定流程，我們設計了「初始化精靈」，將複雜的設定拆解為四個直覺步驟：",
+        items: [
+          { label: "安全強化", description: "管理員密碼設定" },
+          { label: "合規驗證", description: "軟體授權" },
+          { label: "資訊同步", description: "IVAR 裝置資訊連結" },
+          { label: "硬體檢查", description: "儲存空間配置" },
+        ],
+      },
+    ],
   },
-  initialization: {
-    title: "初始化設定",
-    content: "當人們第一次安裝並開啟產品時，我們會一步一步引導他們。",
-    items: ["管理員密碼", "授權", "IVAR 資訊", "儲存空間"],
+  systemStatus: {
+    title: "系統反饋與狀態",
+    subsections: [
+      {
+        title: "儀表板設計：管理決策的關鍵",
+        content: "我們為管理員設計了全方位的儀表板（Dashboard），讓其在登入首頁時即可一眼判別系統健康度與錄影狀態。",
+      },
+      {
+        title: "狀態列設計：即時風險控管",
+        content: "安控系統最重視「系統不中斷」。我們設計了常駐的狀態列（System Status Bar），整合了警示燈號、磁碟剩餘空間與即時通知，確保關鍵指標隨時處於可見狀態，降低維護風險。",
+      },
+    ],
   },
-  systemDashboard: {
-    title: "系統儀表板",
-    content: "如果使用者以管理員帳號登入，首頁會顯示系統儀表板。使用者可以根據儀表板來判斷系統是否正常運作。",
-  },
-  systemStatusBar: {
-    title: "系統狀態列",
-    content: "對於安全產品來說，保持系統始終正常運作非常重要。因此，我們設計了狀態列，讓使用者可以隨時查看一些重要指標。例如：警示燈、磁碟空間、系統通知...",
-  },
-  themes: {
-    title: "主題設計",
-    content: "在我們公司，有很多客製化專案。開發人員希望 UI/UX 團隊能基於 material-UI 設計 UI-Kit，也希望設計師維護主題檔案。我的職責包括工具研究、設計介面和建立 HTML 檔案。然而，material-UI 只有基本的主題，我們根據產品需求增加了內容層級。",
-  },
-  components: {
-    title: "元件設計",
-    content: "material-UI 只包含基本元件。因此，我們需要製作新的元件並修改基本元件以符合我們產品的風格。",
+  designSystem: {
+    title: "設計系統建構",
+    subtitle: "基於 Material-UI 的擴展",
+    intro: "為了兼顧開發效率與客製化需求，我主導建立了基於 MUI 的 UI-Kit：",
+    items: [
+      {
+        label: "視覺層級強化",
+        description: "彌補 MUI 原始主題層級不足的問題，根據監控需求重新定義顏色深度與資訊對比。",
+      },
+      {
+        label: "元件客製化",
+        description: "針對安控場景製作了專屬元件（如：多分割監控畫面、裝置狀態標籤），並負責維護主題檔案與 HTML 標籤規格。",
+      },
+    ],
   },
   flowFile: {
-    title: "與開發人員的檔案",
-    content: "過去，提交的原型和設計稿效果不佳。讓開發人員更容易了解設計稿和流程之間的關係非常重要。我決定使用設計稿為每個功能製作流程圖，必要時也會提供動畫。流程圖確實減少了很多溝通時間。",
+    title: "協作與交付",
+    content: "過去單純交付標註稿常導致溝通斷層。我改用「功能導向的流程圖」與工程團隊協作，流程圖引導開發，在圖中詳述互動細節與動態效果，減少了設計與開發來回確認時間。",
   },
 }

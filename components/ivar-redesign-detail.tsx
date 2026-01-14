@@ -2,24 +2,20 @@
 
 import { useEffect, useState } from "react"
 import Image from "next/image"
-import Link from "next/link"
 import { useLanguage } from "@/contexts/language-context"
 import { Header } from "@/components/header"
+import { RichText } from "@/components/rich-text"
 
 export function IvarRedesignDetail() {
   const { t } = useLanguage()
   const [showSidebar, setShowSidebar] = useState(false)
-  const [activeSection, setActiveSection] = useState("about")
+  const [activeSection, setActiveSection] = useState("discovery")
 
   const sections = [
-    { id: "about", label: t.ivarRedesign.sections.about },
     { id: "discovery", label: t.ivarRedesign.sections.discovery },
-    { id: "tasks", label: t.ivarRedesign.sections.tasks },
     { id: "siteMap", label: t.ivarRedesign.sections.siteMap },
-    { id: "initialization", label: t.ivarRedesign.sections.initialization },
     { id: "systemStatus", label: t.ivarRedesign.sections.systemStatus },
-    { id: "themes", label: t.ivarRedesign.sections.themes },
-    { id: "components", label: t.ivarRedesign.sections.components },
+    { id: "designSystem", label: t.ivarRedesign.sections.designSystem },
   ]
 
   useEffect(() => {
@@ -67,13 +63,13 @@ export function IvarRedesignDetail() {
       <Header />
 
       {/* Hero Section */}
-      <div className="pt-24 md:pt-32 pb-12 md:pb-16 flex flex-col items-center justify-center px-4 md:px-8 lg:px-12">
-        <div className="max-w-5xl mx-auto text-center mb-8 md:mb-12">
-          <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold text-foreground mb-6 md:mb-8 leading-tight">
+      <div className="pt-20 md:pt-28 pb-8 md:pb-12 flex flex-col items-center justify-center px-6 md:px-8 lg:px-12">
+        <div className="max-w-5xl mx-auto text-center mb-6 md:mb-8">
+          <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold text-foreground mb-4 md:mb-6 leading-tight">
             {t.ivarRedesign.title}
           </h1>
 
-          <div className="flex flex-wrap justify-center gap-4 md:gap-8 text-xs md:text-sm text-muted-foreground">
+          <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 md:gap-x-8 md:gap-y-1 text-xs md:text-sm text-muted-foreground leading-tight">
             <div>
               <span className="font-medium">Year: </span>
               {t.ivarRedesign.hero.duration}
@@ -167,7 +163,7 @@ export function IvarRedesignDetail() {
       `}</style>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 py-12 md:py-20 lg:py-24">
+      <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12 py-12 md:py-20 lg:py-24">
         <div className="flex gap-12 lg:gap-16">
           {/* Left Sidebar Navigation */}
           <aside className={`hidden lg:block w-32 flex-shrink-0 transition-opacity duration-300 ${
@@ -194,171 +190,220 @@ export function IvarRedesignDetail() {
 
           {/* Main Content Area */}
           <main className="flex-1 max-w-[840px]">
+            {/* Project Overview Grid */}
+            <div className="mb-16 md:mb-24">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-8 md:mb-12 text-center">
+                {t.ivarRedesign.projectOverview.title}
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                <div className="border border-border rounded-lg p-4 md:p-6">
+                  <h3 className="text-base md:text-lg font-bold text-foreground mb-2 md:mb-3">{t.ivarRedesign.projectOverview.overview.title}</h3>
+                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
+                    {t.ivarRedesign.projectOverview.overview.content}
+                  </p>
+                </div>
+                <div className="border border-border rounded-lg p-4 md:p-6">
+                  <h3 className="text-base md:text-lg font-bold text-foreground mb-2 md:mb-3">{t.ivarRedesign.projectOverview.timeline.title}</h3>
+                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
+                    {t.ivarRedesign.projectOverview.timeline.content}
+                  </p>
+                </div>
+                <div className="border border-border rounded-lg p-4 md:p-6">
+                  <h3 className="text-base md:text-lg font-bold text-foreground mb-2 md:mb-3">{t.ivarRedesign.projectOverview.coreTasks.title}</h3>
+                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
+                    {t.ivarRedesign.projectOverview.coreTasks.content}
+                  </p>
+                </div>
+                <div className="border border-border rounded-lg p-4 md:p-6">
+                  <h3 className="text-base md:text-lg font-bold text-foreground mb-2 md:mb-3">{t.ivarRedesign.projectOverview.painPoints.title}</h3>
+                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
+                    {t.ivarRedesign.projectOverview.painPoints.content}
+                  </p>
+                </div>
+              </div>
+            </div>
+
             {/* Content Sections */}
             <div className="space-y-16 md:space-y-24 lg:space-y-32">
-              {/* About */}
-              <section id="about">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6 lg:mb-8">
-                  {t.ivarRedesign.about.title}
-                </h2>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                  {t.ivarRedesign.about.content}
-                </p>
-              </section>
-
               {/* Discovery */}
               <section id="discovery">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
-                  <div>
-                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6 lg:mb-8">
-                      {t.ivarRedesign.discovery.title}
-                    </h2>
-                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                      {t.ivarRedesign.discovery.content}
-                    </p>
-                  </div>
-                  <div className="w-full rounded-lg overflow-hidden">
-                    <Image
-                      src="/portfolio/ivar/backgroundStory1.png"
-                      alt="Discovery"
-                      width={600}
-                      height={400}
-                      className="w-full h-auto object-contain"
-                    />
-                  </div>
-                </div>
-              </section>
-
-              {/* Tasks */}
-              <section id="tasks">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6 lg:mb-8">
-                  {t.ivarRedesign.tasks.title}
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-6 md:mb-8">
+                  {t.ivarRedesign.discovery.title}
                 </h2>
-                <ol className="list-decimal list-inside space-y-3 text-sm md:text-base text-muted-foreground leading-relaxed">
-                  {t.ivarRedesign.tasks.items.map((item, index) => (
-                    <li key={index}>{item}</li>
+                <div className="space-y-12">
+                  {t.ivarRedesign.discovery.subsections?.map((subsection: { title: string; content: string }, index: number) => (
+                    <div key={index} className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 items-center">
+                      <div>
+                        <h3 className="text-lg md:text-xl font-semibold text-foreground mb-3 md:mb-4">
+                          {subsection.title}
+                        </h3>
+                        <RichText className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                          {subsection.content}
+                        </RichText>
+                      </div>
+                      <div className="w-full rounded-lg overflow-hidden">
+                        <Image
+                          src={index === 0 ? "/portfolio/ivar/backgroundStory1.png" : "/portfolio/ivar/sideMenu2.png"}
+                          alt={subsection.title}
+                          width={600}
+                          height={400}
+                          className="w-full h-auto object-contain"
+                        />
+                      </div>
+                    </div>
                   ))}
-                </ol>
-              </section>
-
-              {/* Content Area Size */}
-              <section>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
-                  <div>
-                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6 lg:mb-8">
-                      {t.ivarRedesign.contentArea.title}
-                    </h2>
-                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                      {t.ivarRedesign.contentArea.content}
-                    </p>
-                  </div>
-                  <div className="w-full">
-                    <Image
-                      src="/portfolio/ivar/sideMenu1.png"
-                      alt="Side Menu"
-                      width={600}
-                      height={300}
-                      className="w-full h-auto object-contain rounded-lg"
-                    />
-                  </div>
                 </div>
               </section>
 
-              {/* Site Map */}
+              {/* Site Map & User Flow */}
               <section id="siteMap">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6 lg:mb-8">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-6 md:mb-8">
                   {t.ivarRedesign.siteMap.title}
                 </h2>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-8">
-                  {t.ivarRedesign.siteMap.content}
-                </p>
-                <div className="w-full rounded-lg p-4 overflow-hidden" style={{ backgroundColor: '#f0f1f1' }}>
-                  <Image
-                    src="/portfolio/ivar/IVAR2Flow.png"
-                    alt="Site Map Flow"
-                    width={1200}
-                    height={600}
-                    className="w-full h-auto object-contain"
-                  />
-                </div>
-              </section>
-
-              {/* Initialization */}
-              <section id="initialization">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
-                  <div>
-                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6 lg:mb-8">
-                      {t.ivarRedesign.initialization.title}
-                    </h2>
-                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-4">
-                      {t.ivarRedesign.initialization.content}
-                    </p>
-                    <ol className="list-decimal list-inside space-y-2 text-sm md:text-base text-muted-foreground">
-                      {t.ivarRedesign.initialization.items.map((item, index) => (
-                        <li key={index}>{item}</li>
-                      ))}
-                    </ol>
-                  </div>
-                  <div className="w-full rounded-lg overflow-hidden">
-                    <Image
-                      src="/portfolio/ivar/IVAR-in.gif"
-                      alt="Initialization"
-                      width={600}
-                      height={400}
-                      className="w-full h-auto object-contain"
-                      unoptimized
-                    />
-                  </div>
+                <div className="space-y-12">
+                  {t.ivarRedesign.siteMap.subsections?.map((subsection: { title: string; content: string; image?: string; imageCaption?: string; items?: { label: string; description: string }[] }, index: number) => (
+                    <div key={index}>
+                      {subsection.image ? (
+                        // First subsection with full-width image below
+                        <div>
+                          <h3 className="text-lg md:text-xl font-semibold text-foreground mb-3 md:mb-4">
+                            {subsection.title}
+                          </h3>
+                          <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-6">
+                            {subsection.content}
+                          </p>
+                          <div className="w-full rounded-lg p-4 overflow-hidden" style={{ backgroundColor: '#f0f1f1' }}>
+                            <Image
+                              src={subsection.image}
+                              alt={subsection.title}
+                              width={1200}
+                              height={600}
+                              className="w-full h-auto object-contain"
+                            />
+                          </div>
+                          {subsection.imageCaption && (
+                            <p className="text-[10px] md:text-xs text-muted-foreground/70 text-center mt-3">
+                              {subsection.imageCaption}
+                            </p>
+                          )}
+                        </div>
+                      ) : (
+                        // Other subsections with side-by-side layout
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 items-center">
+                          <div>
+                            <h3 className="text-lg md:text-xl font-semibold text-foreground mb-3 md:mb-4">
+                              {subsection.title}
+                            </h3>
+                            <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                              {subsection.content}
+                            </p>
+                            {subsection.items && (
+                              <ul className="mt-4 space-y-2">
+                                {subsection.items.map((item, itemIndex) => (
+                                  <li key={itemIndex} className="text-sm md:text-base text-muted-foreground leading-relaxed pl-4">
+                                    <span className="font-medium text-foreground">{item.label}：</span>
+                                    {item.description}
+                                  </li>
+                                ))}
+                              </ul>
+                            )}
+                          </div>
+                          <div className="w-full rounded-lg overflow-hidden">
+                            {subsection.items ? (
+                              <Image
+                                src="/portfolio/ivar/IVAR-in.gif"
+                                alt="Initialization"
+                                width={600}
+                                height={400}
+                                className="w-full h-auto object-contain"
+                                unoptimized
+                              />
+                            ) : (
+                              <Image
+                                src="/portfolio/ivar/sideMenu1.png"
+                                alt="Side Menu"
+                                width={600}
+                                height={300}
+                                className="w-full h-auto object-contain rounded-lg"
+                              />
+                            )}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  ))}
                 </div>
               </section>
 
               {/* System Status */}
               <section id="systemStatus">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center mb-16">
-                  <div>
-                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6 lg:mb-8">
-                      {t.ivarRedesign.systemDashboard.title}
-                    </h2>
-                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                      {t.ivarRedesign.systemDashboard.content}
-                    </p>
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-6 md:mb-8">
+                  {t.ivarRedesign.systemStatus.title}
+                </h2>
+                <div className="space-y-12">
+                  {/* Dashboard subsection */}
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 items-center">
+                    <div>
+                      <h3 className="text-lg md:text-xl font-semibold text-foreground mb-3 md:mb-4">
+                        {t.ivarRedesign.systemStatus.subsections[0].title}
+                      </h3>
+                      <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                        {t.ivarRedesign.systemStatus.subsections[0].content}
+                      </p>
+                    </div>
+                    <div className="w-full rounded-lg overflow-hidden">
+                      <Image
+                        src="/portfolio/ivar/systemDashboard.png"
+                        alt="System Dashboard"
+                        width={600}
+                        height={400}
+                        className="w-full h-auto object-contain"
+                      />
+                    </div>
                   </div>
-                  <div className="w-full rounded-lg overflow-hidden shadow-lg">
-                    <Image
-                      src="/portfolio/ivar/systemDashboard.png"
-                      alt="System Dashboard"
-                      width={600}
-                      height={400}
-                      className="w-full h-auto object-contain"
-                    />
-                  </div>
-                </div>
 
-                <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-foreground mb-4 md:mb-6">
-                  {t.ivarRedesign.systemStatusBar.title}
-                </h3>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-6">
-                  {t.ivarRedesign.systemStatusBar.content}
-                </p>
-                <div className="w-full rounded-lg overflow-hidden">
-                  <Image
-                    src="/portfolio/ivar/systemDashboard2.png"
-                    alt="System Status Bar"
-                    width={1200}
-                    height={200}
-                    className="w-full h-auto object-contain"
-                  />
+                  {/* Status Bar subsection */}
+                  <div>
+                    <h3 className="text-lg md:text-xl font-semibold text-foreground mb-3 md:mb-4">
+                      {t.ivarRedesign.systemStatus.subsections[1].title}
+                    </h3>
+                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-6">
+                      {t.ivarRedesign.systemStatus.subsections[1].content}
+                    </p>
+                    <div className="w-full rounded-lg overflow-hidden">
+                      <Image
+                        src="/portfolio/ivar/systemDashboard2.png"
+                        alt="System Status Bar"
+                        width={1200}
+                        height={200}
+                        className="w-full h-auto object-contain"
+                      />
+                    </div>
+                  </div>
                 </div>
               </section>
 
-              {/* Themes */}
-              <section id="themes">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6 lg:mb-8">
-                  {t.ivarRedesign.themes.title}
+              {/* Design System */}
+              <section id="designSystem">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-6 md:mb-8">
+                  {t.ivarRedesign.designSystem.title}
                 </h2>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-8">
-                  {t.ivarRedesign.themes.content}
-                </p>
+                <div className="mb-8">
+                  <h3 className="text-lg md:text-xl font-semibold text-foreground mb-3 md:mb-4">
+                    {t.ivarRedesign.designSystem.subtitle}
+                  </h3>
+                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-4">
+                    {t.ivarRedesign.designSystem.intro}
+                  </p>
+                  <ul className="space-y-3">
+                    {t.ivarRedesign.designSystem.items?.map((item: { label: string; description: string }, index: number) => (
+                      <li key={index} className="text-sm md:text-base text-muted-foreground leading-relaxed pl-4">
+                        <span className="font-medium text-foreground">{item.label}：</span>
+                        {item.description}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
                 <div className="w-full rounded-lg p-4 space-y-4" style={{ backgroundColor: '#f0f1f1' }}>
                   <Image
                     src="/portfolio/ivar/themePic.png"
@@ -374,18 +419,6 @@ export function IvarRedesignDetail() {
                     height={600}
                     className="w-full h-auto object-contain"
                   />
-                </div>
-              </section>
-
-              {/* Components */}
-              <section id="components">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6 lg:mb-8">
-                  {t.ivarRedesign.components.title}
-                </h2>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-8">
-                  {t.ivarRedesign.components.content}
-                </p>
-                <div className="w-full rounded-lg p-4" style={{ backgroundColor: '#f0f1f1' }}>
                   <Image
                     src="/portfolio/ivar/componentPic.png"
                     alt="Component Design"

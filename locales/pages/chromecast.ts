@@ -1,3 +1,12 @@
+// Shared hero data (no translation needed)
+const chromecastHero = {
+  duration: "September 2014",
+  role: "UI / Feature Research",
+  company: "Taiwan Mobile",
+  platforms: "Phone, Pad, PC web",
+  deliverables: "Design and Interaction",
+}
+
 export const chromecastEn = {
   title: "Chromecast Feature Design In ODD Service",
   back: "Back",
@@ -9,13 +18,7 @@ export const chromecastEn = {
     interfaceDesign: "Interface Design",
     testVideo: "Test Video",
   },
-  hero: {
-    duration: "September 2014",
-    role: "UI / Feature Research",
-    company: "Taiwan Mobile",
-    platforms: "Phone, Pad, PC web",
-    deliverables: "Design and Interaction",
-  },
+  hero: chromecastHero,
   about: {
     title: "About",
     content: "When Google what to find Chromecast sales partners in Taiwan. They find three telecommunications company one is our company Taiwan Mobile. We should develop the function in myVideo, and present it to them as soon as possible.",
@@ -53,13 +56,7 @@ export const chromecastZh = {
     interfaceDesign: "介面設計",
     testVideo: "測試影片",
   },
-  hero: {
-    duration: "2014年9月",
-    role: "UI / 功能研究",
-    company: "台灣大哥大",
-    platforms: "手機、平板、電腦網頁",
-    deliverables: "設計與互動",
-  },
+  hero: chromecastHero,
   about: {
     title: "關於",
     content: "當 Google 想在台灣尋找 Chromecast 銷售合作夥伴時，他們找到了三家電信公司，其中之一是我們公司台灣大哥大。我們需要在 myVideo 中開發這個功能，並儘快向他們展示。",

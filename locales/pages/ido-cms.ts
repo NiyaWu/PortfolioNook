@@ -1,3 +1,10 @@
+// Shared hero data (no translation needed)
+const idoCmsHero = {
+  duration: "2021 - 2025",
+  role: "Product Designer",
+  company: "Impossible Finance",
+}
+
 export const idoCmsEn = {
   title: "IDO Platform & CMS Infrastructure",
   back: "Back",
@@ -8,11 +15,7 @@ export const idoCmsEn = {
     userResearch: "User Research",
     outcome: "Outcome",
   },
-  hero: {
-    duration: "2021 - 2022",
-    role: "Product Designer",
-    company: "Impossible Finance",
-  },
+  hero: idoCmsHero,
   // Project Overview (顯示在 Hero 下方)
   projectOverview: {
     title: "Project Overview",
@@ -22,7 +25,7 @@ export const idoCmsEn = {
     },
     timeline: {
       title: "02 Timeline",
-      content: "3-6 months. Scope: Initial research, IA planning, and iterative design for the platform frontend and backend management system.",
+      content: "Initial Development: 2-3 months covered user research, information architecture planning, design iterations, and the official launch of both the frontend platform and CMS system.\nContinuous Iteration: Through 2025 to adapt to evolving fundraising and auction models, features and designs have been continuously optimized to meet diverse market demands.",
     },
     challenge: {
       title: "03 Challenge",
@@ -119,11 +122,7 @@ export const idoCmsZh = {
     userResearch: "使用者研究",
     outcome: "成果",
   },
-  hero: {
-    duration: "2020 - 2020",
-    role: "產品設計師",
-    company: "Impossible Finance",
-  },
+  hero: idoCmsHero,
   // Project Overview (顯示在 Hero 下方)
   projectOverview: {
     title: "專案概覽",
@@ -133,7 +132,7 @@ export const idoCmsZh = {
     },
     timeline: {
       title: "02 時程",
-      content: "歷時 2~3 個月，涵蓋前期研究、資訊架構規劃，以及前端頁面與 CMS 系統的設計迭代與上線。",
+      content: "初始開發: 2-3 Months 涵蓋前期研究、資訊架構規劃，以及前端與 CMS 系統的設計迭代、開發與正式上線。\n持續迭代 : ~ 2025 因應多樣化的募資與拍賣模式，功能與設計隨市場需求持續優化與調整。",
     },
     challenge: {
       title: "03 挑戰",

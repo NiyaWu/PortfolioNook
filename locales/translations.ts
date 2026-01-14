@@ -3,6 +3,7 @@ import { commonEn, commonZh } from './pages/common'
 
 // Import project page translations
 import { idoCmsEn, idoCmsZh } from './pages/ido-cms'
+import { tgballersEn, tgballersZh } from './pages/tgballers'
 import { ivarRedesignEn, ivarRedesignZh } from './pages/ivar-redesign'
 import { faceLibraryEn, faceLibraryZh } from './pages/face-library'
 import { dataVisualizationEn, dataVisualizationZh } from './pages/data-visualization'
@@ -16,6 +17,7 @@ export const translations = {
     ...commonEn,
     // Project page translations
     idoCms: idoCmsEn,
+    tgballers: tgballersEn,
     ivarRedesign: ivarRedesignEn,
     faceLibrary: faceLibraryEn,
     dataVisualization: dataVisualizationEn,
@@ -28,6 +30,7 @@ export const translations = {
     ...commonZh,
     // Project page translations
     idoCms: idoCmsZh,
+    tgballers: tgballersZh,
     ivarRedesign: ivarRedesignZh,
     faceLibrary: faceLibraryZh,
     dataVisualization: dataVisualizationZh,

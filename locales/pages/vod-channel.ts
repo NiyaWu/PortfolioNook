@@ -1,3 +1,12 @@
+// Shared hero data (no translation needed)
+const vodChannelHero = {
+  duration: "June 2016",
+  role: "UX / Contact Person",
+  company: "Taiwan Mobile",
+  platforms: "Phone, Pad, PC web",
+  deliverables: "User Research Result",
+}
+
 export const vodChannelEn = {
   title: "VOD Channel For Taiwan Mobile ODD Service",
   back: "Back",
@@ -9,13 +18,7 @@ export const vodChannelEn = {
     mockup: "Mockup",
     uiKit: "UI Kit",
   },
-  hero: {
-    duration: "June 2016",
-    role: "UX / Contact Person",
-    company: "Taiwan Mobile",
-    platforms: "Phone, Pad, PC web",
-    deliverables: "User Research Result",
-  },
+  hero: vodChannelHero,
   discovery: {
     title: "Discovery",
     content: "We according to the user who gave our APP under two stars messages and the GA data from backstage to make sure what we should notice.",
@@ -119,13 +122,7 @@ export const vodChannelZh = {
     mockup: "設計稿",
     uiKit: "UI 元件庫",
   },
-  hero: {
-    duration: "2016年6月",
-    role: "UX / 聯絡窗口",
-    company: "台灣大哥大",
-    platforms: "手機、平板、電腦網頁",
-    deliverables: "使用者研究結果",
-  },
+  hero: vodChannelHero,
   discovery: {
     title: "探索發現",
     content: "我們根據使用者在 APP 上給予兩顆星以下的評論訊息，以及後台的 GA 數據，來確定我們應該注意什麼。",

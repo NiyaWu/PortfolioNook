@@ -10,8 +10,7 @@ export function WorkShowcase() {
   const { t } = useLanguage()
   const [animationData, setAnimationData] = useState<Record<string, unknown>>({})
 
-  const works = t.work.projects.map((project, index) => ({
-    id: index + 1,
+  const works = t.work.projects.map((project) => ({
     ...project,
     href: (project as { href?: string }).href || "#",
     animation: (project as { animation?: string }).animation,
@@ -48,7 +47,7 @@ export function WorkShowcase() {
                       className={`col-span-5 flex flex-col justify-center space-y-5 group ${isEven ? 'order-2' : 'order-1'}`}
                     >
                       <div>
-                        <h3 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-foreground leading-tight">
+                        <h3 className="text-3xl lg:text-4xl xl:text-5xl text-foreground leading-tight">
                           {work.title}
                         </h3>
                         <p className="text-sm mt-1" style={{ color: '#A9A9A9' }}>
@@ -66,21 +65,21 @@ export function WorkShowcase() {
                     </Link>
 
                     {/* Image Side - 7 columns */}
-                    <div className={`col-span-7 ${isEven ? 'order-1' : 'order-2'}`}>
-                      <div className="relative w-full rounded-lg overflow-hidden">
+                    <div className={`col-span-7 ${isEven ? 'order-1' : 'order-2'} group`}>
+                      <div className="relative w-full rounded-lg">
                         {work.animation && animationData[work.animation] ? (
                           <Lottie
                             animationData={animationData[work.animation]}
                             loop={true}
-                            className="w-full h-auto"
+                            className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
                           />
                         ) : (
                           <Image
                             src={work.image || "/placeholder.svg"}
                             alt={work.title}
-                            width={800}
-                            height={600}
-                            className="w-full h-auto object-cover"
+                            width={1200}
+                            height={800}
+                            className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
                           />
                         )}
                       </div>
@@ -90,20 +89,20 @@ export function WorkShowcase() {
                   {/* Mobile Layout */}
                   <div className="lg:hidden flex flex-col space-y-6">
                     {/* Image */}
-                    <div className="w-full rounded-lg overflow-hidden">
+                    <div className="w-full rounded-lg group">
                       {work.animation && animationData[work.animation] ? (
                         <Lottie
                           animationData={animationData[work.animation]}
                           loop={true}
-                          className="w-full h-auto"
+                          className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
                         />
                       ) : (
                         <Image
                           src={work.image || "/placeholder.svg"}
                           alt={work.title}
-                          width={600}
-                          height={400}
-                          className="w-full h-auto object-cover"
+                          width={1200}
+                          height={800}
+                          className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
                         />
                       )}
                     </div>
@@ -111,7 +110,7 @@ export function WorkShowcase() {
                     {/* Text (clickable) */}
                     <Link href={work.href} className="flex flex-col space-y-4 group">
                       <div>
-                        <h3 className="text-2xl md:text-3xl font-bold text-foreground leading-tight">
+                        <h3 className="text-2xl md:text-3xl text-foreground leading-tight">
                           {work.title}
                         </h3>
                         <p className="text-sm mt-1" style={{ color: '#A9A9A9' }}>

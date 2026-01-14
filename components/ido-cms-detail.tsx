@@ -68,13 +68,13 @@ export function IdoCmsDetail() {
       <Header />
 
       {/* Hero Section */}
-      <div className="pt-24 md:pt-32 pb-12 md:pb-16 flex items-center justify-center px-4 md:px-8 lg:px-12">
+      <div className="pt-20 md:pt-28 pb-8 md:pb-12 flex items-center justify-center px-6 md:px-8 lg:px-12">
         <div className="max-w-5xl mx-auto text-center">
-          <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold text-foreground mb-6 md:mb-8 leading-tight">
+          <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold text-foreground mb-4 md:mb-6 leading-tight">
             {t.idoCms.title}
           </h1>
 
-          <div className="flex flex-wrap justify-center gap-4 md:gap-8 text-xs md:text-sm text-muted-foreground mb-8 md:mb-16">
+          <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 md:gap-x-8 md:gap-y-1 text-xs md:text-sm text-muted-foreground leading-tight mb-6 md:mb-10">
             <div>
               <span className="font-medium">Duration: </span>
               {t.idoCms.hero.duration}
@@ -101,7 +101,7 @@ export function IdoCmsDetail() {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 py-12 md:py-20 lg:py-24">
+      <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12 py-12 md:py-20 lg:py-24">
         <div className="flex gap-12 lg:gap-16">
           {/* Left Sidebar Navigation - Only shows after scrolling past hero */}
           <aside className={`hidden lg:block w-32 flex-shrink-0 transition-opacity duration-300 ${
@@ -142,7 +142,7 @@ export function IdoCmsDetail() {
                 </div>
                 <div className="border border-border rounded-lg p-4 md:p-6">
                   <h3 className="text-base md:text-lg font-bold text-foreground mb-2 md:mb-3">{t.idoCms.projectOverview.timeline.title}</h3>
-                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed whitespace-pre-line">
                     {t.idoCms.projectOverview.timeline.content}
                   </p>
                 </div>

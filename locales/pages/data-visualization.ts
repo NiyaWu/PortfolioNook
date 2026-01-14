@@ -1,3 +1,12 @@
+// Shared hero data (no translation needed)
+const dataVisualizationHero = {
+  duration: "February 2019",
+  role: "UI / UX / Tool Research",
+  company: "Gorilla Technology",
+  platforms: "Web",
+  deliverables: "Design and Interaction",
+}
+
 export const dataVisualizationEn = {
   title: "Data Visualization System",
   back: "Back",
@@ -6,13 +15,7 @@ export const dataVisualizationEn = {
     discovery: "Discovery",
     widgets: "Widgets Status",
   },
-  hero: {
-    duration: "February 2019",
-    role: "UI / UX / Tool Research",
-    company: "Gorilla Technology",
-    platforms: "Web",
-    deliverables: "Design and Interaction",
-  },
+  hero: dataVisualizationHero,
   about: {
     title: "About",
     content: "Dashboards can make people easier to understand data meanings or quickly operation. In this time we want to make a dashboard about analytics, that can be applied to various environments.",
@@ -57,13 +60,7 @@ export const dataVisualizationZh = {
     discovery: "探索",
     widgets: "元件狀態",
   },
-  hero: {
-    duration: "2019年2月",
-    role: "UI / UX / 工具研究",
-    company: "Gorilla Technology",
-    platforms: "網頁",
-    deliverables: "設計與互動",
-  },
+  hero: dataVisualizationHero,
   about: {
     title: "關於",
     content: "儀表板可以讓人們更容易理解數據含義或快速操作。這次我們想製作一個關於分析的儀表板，可以應用於各種環境。",

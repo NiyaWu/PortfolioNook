@@ -3,6 +3,7 @@ export { commonEn, commonZh } from './common'
 
 // Project page translations
 export { idoCmsEn, idoCmsZh } from './ido-cms'
+export { tgballersEn, tgballersZh } from './tgballers'
 export { ivarRedesignEn, ivarRedesignZh } from './ivar-redesign'
 export { faceLibraryEn, faceLibraryZh } from './face-library'
 export { dataVisualizationEn, dataVisualizationZh } from './data-visualization'

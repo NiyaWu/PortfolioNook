@@ -65,13 +65,13 @@ export function ChromecastDetail() {
       <Header />
 
       {/* Hero Section */}
-      <div className="pt-24 md:pt-32 pb-12 md:pb-16 flex flex-col items-center justify-center px-4 md:px-8 lg:px-12">
+      <div className="pt-24 md:pt-32 pb-12 md:pb-16 flex flex-col items-center justify-center px-6 md:px-8 lg:px-12">
         <div className="max-w-5xl mx-auto text-center mb-8 md:mb-12">
           <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold text-foreground mb-6 md:mb-8 leading-tight">
             {t.chromecast.title}
           </h1>
 
-          <div className="flex flex-wrap justify-center gap-4 md:gap-8 text-xs md:text-sm text-muted-foreground">
+          <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 md:gap-x-8 md:gap-y-1 text-xs md:text-sm text-muted-foreground leading-tight">
             <div>
               <span className="font-medium">Year: </span>
               {t.chromecast.hero.duration}
@@ -115,7 +115,7 @@ export function ChromecastDetail() {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 py-12 md:py-20 lg:py-24">
+      <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12 py-12 md:py-20 lg:py-24">
         <div className="flex gap-12 lg:gap-16">
           {/* Left Sidebar Navigation */}
           <aside className={`hidden lg:block w-32 flex-shrink-0 transition-opacity duration-300 ${
