@@ -10,11 +10,16 @@ export function WorkShowcase() {
   const { t } = useLanguage()
   const [animationData, setAnimationData] = useState<Record<string, unknown>>({})
 
-  const works = t.work.projects.map((project) => ({
-    ...project,
-    href: (project as { href?: string }).href || "#",
-    animation: (project as { animation?: string }).animation,
-  }))
+  // Exclude projects that should only appear in Other Work
+  const excludedFromHomepage = ["data-visualization", "ido-workflow", "panko-mascot", "face-library"]
+
+  const works = t.work.projects
+    .filter((project) => !excludedFromHomepage.includes((project as { id: string }).id))
+    .map((project) => ({
+      ...project,
+      href: (project as { href?: string }).href || "#",
+      animation: (project as { animation?: string }).animation,
+    }))
 
   useEffect(() => {
     works.forEach((work) => {
@@ -56,7 +61,7 @@ export function WorkShowcase() {
                         <p className="text-sm lg:text-base text-muted-foreground leading-relaxed mt-4">{work.description}</p>
                       </div>
 
-                      <div className="pt-4 flex items-center font-medium text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ color: '#6088FF' }}>
+                      <div className="pt-4 flex items-center font-medium text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ color: '#0071e3' }}>
                         {t.work.viewProject}
                         <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -119,7 +124,7 @@ export function WorkShowcase() {
                         <p className="text-sm text-muted-foreground leading-relaxed mt-3">{work.description}</p>
                       </div>
 
-                      <div className="pt-2 flex items-center font-medium text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ color: '#6088FF' }}>
+                      <div className="pt-2 flex items-center font-medium text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ color: '#0071e3' }}>
                         {t.work.viewProject}
                         <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -135,8 +140,9 @@ export function WorkShowcase() {
           {/* More Projects Button */}
           <div className="flex items-center justify-center pt-24 md:pt-32 lg:pt-40">
             <Link
-              href="/projects"
-              className="group relative inline-flex items-center justify-center px-8 py-3 md:px-10 md:py-4 border-2 border-accent text-accent font-semibold rounded-lg transition-all duration-300 hover:bg-accent hover:text-white"
+              href="/other-work"
+              className="group relative inline-flex items-center justify-center px-8 py-3 md:px-10 md:py-4 text-white rounded-full transition-all duration-300 hover:opacity-90"
+              style={{ backgroundColor: '#0071e3', fontSize: '17px', fontWeight: 400 }}
             >
               {t.work.moreProjects}
               <svg

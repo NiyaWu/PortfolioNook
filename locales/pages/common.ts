@@ -24,7 +24,7 @@ export const projectsData = [
     category: "Product Design · Management System",
     company: "Gorilla Technology",
     year: "2020",
-    image: "/portfolio/ivarRedesign.png",
+    image: "/Cover-SurveillanceCameraManagement.png",
     href: "/ivar-redesign",
   },
   {
@@ -33,8 +33,26 @@ export const projectsData = [
     category: "UI/UX Design",
     company: "Gorilla Technology",
     year: "2019",
-    image: "/portfolio/Face.png",
+    image: "/otherWork-FaceLibrary.png",
     href: "/face-library",
+  },
+  {
+    id: "ido-workflow",
+    title: "IDO Marketing Design Workflow Optimization",
+    category: "Design System · Workflow Optimization",
+    company: "Impossible Finance",
+    year: "2023",
+    image: "/otherWork-IDOWorkflow.png",
+    href: "#",
+  },
+  {
+    id: "panko-mascot",
+    title: "Panko Mascot Design",
+    category: "Character Design · Brand Identity",
+    company: "Impossible Finance",
+    year: "2023",
+    image: "/otherWork-PankoMascotDesign.png",
+    href: "#",
   },
   {
     id: "data-visualization",
@@ -42,7 +60,7 @@ export const projectsData = [
     category: "Dashboard Design",
     company: "Gorilla Technology",
     year: "2019",
-    image: "/portfolio/dashboard.png",
+    image: "/otherWork-DataVisualizationSystem.png",
     href: "/data-visualization",
   },
   {
@@ -51,7 +69,7 @@ export const projectsData = [
     category: "UI/UX Design",
     company: "Gorilla Technology",
     year: "2018",
-    image: "/portfolio/analyzing.png",
+    image: "/Cover-VideoAnalysisSystem.png",
     href: "/video-analysis",
   },
   {
@@ -170,6 +188,12 @@ export const commonEn = {
     description: "Have a project in mind? Let's create something amazing together.",
     button: "Get in Touch",
   },
+  // Other Work
+  otherWork: {
+    title: "Other Work",
+    subtitle: "Hello, I'm Niya. I'm a Product Designer with multi-industry experience across Web3, SaaS, and large-scale system platforms.",
+    contact: "Connect with me on Linkedin or via email at twmniya@gmail.com",
+  },
   // Footer
   footer: {
     copyright: "© 2024 Your Name. All rights reserved.",
@@ -241,6 +265,12 @@ export const commonZh = {
     title: "讓我們一起合作",
     description: "有想法嗎？讓我們一起創造驚人的作品。",
     button: "聯絡我",
+  },
+  // Other Work
+  otherWork: {
+    title: "其他作品",
+    subtitle: "你好，我是 Niya。我是一位產品設計師，擁有 Web3、SaaS 和大型系統平台等多產業的經驗。",
+    contact: "在 Linkedin 上與我聯繫，或透過電子郵件 twmniya@gmail.com",
   },
   // Footer
   footer: {
