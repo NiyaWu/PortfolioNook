@@ -1,6 +1,6 @@
 // Shared hero data (no translation needed)
 const videoAnalysisHero = {
-  duration: "2018",
+  duration: "2018 ~ 2020",
   role: "UI / UX",
   company: "Gorilla Technology",
   platforms: "Web",

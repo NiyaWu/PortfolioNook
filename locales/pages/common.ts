@@ -66,7 +66,7 @@ export const projectsData = [
   {
     id: "video-analysis",
     title: "Video Analysis System Design Optimization",
-    category: "UI/UX Design",
+    category: "Product Design · Management System",
     company: "Gorilla Technology",
     year: "2018",
     image: "/Cover-VideoAnalysisSystem.png",
@@ -75,7 +75,7 @@ export const projectsData = [
   {
     id: "vod-channel",
     title: "VOD Channel for Taiwan Mobile",
-    category: "Product Design",
+    category: "UX Design · Contact Person",
     company: "Taiwan Mobile",
     year: "2016",
     image: "/portfolio/VOD.png",
