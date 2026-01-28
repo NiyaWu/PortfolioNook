@@ -52,3 +52,5 @@ lerna-debug.log*
 
 
 *.mp4
+*.af
+*.af~lock~
