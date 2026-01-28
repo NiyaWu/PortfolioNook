@@ -2,22 +2,22 @@
 
 import { useEffect, useState } from "react"
 import Image from "next/image"
-import Link from "next/link"
 import { useLanguage } from "@/contexts/language-context"
 import { Header } from "@/components/header"
 
 export function VideoAnalysisDetail() {
   const { t } = useLanguage()
   const [showSidebar, setShowSidebar] = useState(false)
-  const [activeSection, setActiveSection] = useState("about")
+  const [activeSection, setActiveSection] = useState("designThinking")
 
   const sections = [
-    { id: "about", label: t.videoAnalysis.sections.about },
-    { id: "discovery", label: t.videoAnalysis.sections.discovery },
-    { id: "eventPanel", label: t.videoAnalysis.sections.eventPanel },
+    { id: "designThinking", label: t.videoAnalysis.sections.designThinking },
     { id: "analysisSettings", label: t.videoAnalysis.sections.analysisSettings },
+    { id: "scheduleSettings", label: t.videoAnalysis.sections.scheduleSettings },
     { id: "graphicalTool", label: t.videoAnalysis.sections.graphicalTool },
+    { id: "tvWall", label: t.videoAnalysis.sections.tvWall },
     { id: "uiKit", label: t.videoAnalysis.sections.uiKit },
+    { id: "outcome", label: t.videoAnalysis.sections.outcome },
   ]
 
   useEffect(() => {
@@ -225,31 +225,31 @@ export function VideoAnalysisDetail() {
             {/* Project Overview Grid */}
             <div className="mb-16 md:mb-24">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-8 md:mb-12 text-center">
-                Project Overview
+                {t.videoAnalysis.projectOverview.title}
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                 <div className="border border-border rounded-lg p-4 md:p-6">
-                  <h3 className="text-base md:text-lg font-bold text-foreground mb-2 md:mb-3">01 Role</h3>
+                  <h3 className="text-base md:text-lg font-bold text-foreground mb-2 md:mb-3">{t.videoAnalysis.projectOverview.overviewLabel}</h3>
                   <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
-                    {t.videoAnalysis.hero.role}
+                    {t.videoAnalysis.about.overview}
                   </p>
                 </div>
                 <div className="border border-border rounded-lg p-4 md:p-6">
-                  <h3 className="text-base md:text-lg font-bold text-foreground mb-2 md:mb-3">02 Platforms</h3>
+                  <h3 className="text-base md:text-lg font-bold text-foreground mb-2 md:mb-3">{t.videoAnalysis.projectOverview.timelineLabel}</h3>
                   <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
-                    {t.videoAnalysis.hero.platforms}
+                    {t.videoAnalysis.about.timeline}
                   </p>
                 </div>
                 <div className="border border-border rounded-lg p-4 md:p-6">
-                  <h3 className="text-base md:text-lg font-bold text-foreground mb-2 md:mb-3">03 Deliverables</h3>
+                  <h3 className="text-base md:text-lg font-bold text-foreground mb-2 md:mb-3">{t.videoAnalysis.projectOverview.challengeLabel}</h3>
                   <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
-                    {t.videoAnalysis.hero.deliverables}
+                    {t.videoAnalysis.about.challenge}
                   </p>
                 </div>
                 <div className="border border-border rounded-lg p-4 md:p-6">
-                  <h3 className="text-base md:text-lg font-bold text-foreground mb-2 md:mb-3">04 Year</h3>
+                  <h3 className="text-base md:text-lg font-bold text-foreground mb-2 md:mb-3">{t.videoAnalysis.projectOverview.outcomeLabel}</h3>
                   <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
-                    {t.videoAnalysis.hero.duration}
+                    {t.videoAnalysis.about.outcome}
                   </p>
                 </div>
               </div>
@@ -257,95 +257,14 @@ export function VideoAnalysisDetail() {
 
             {/* Content Sections */}
             <div className="space-y-16 md:space-y-24 lg:space-y-32">
-              {/* About */}
-              <section id="about">
+              {/* Design Thinking */}
+              <section id="designThinking">
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6 lg:mb-8">
-                  {t.videoAnalysis.about.title}
+                  {t.videoAnalysis.designThinking.title}
                 </h2>
                 <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                  {t.videoAnalysis.about.content}
+                  {t.videoAnalysis.designThinking.content}
                 </p>
-              </section>
-
-              {/* Discovery */}
-              <section id="discovery">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6 lg:mb-8">
-                  {t.videoAnalysis.discovery.title}
-                </h2>
-
-                {/* Early Explorations */}
-                <div className="mb-8">
-                  <p className="text-xs text-muted-foreground mb-4 text-center">
-                    {t.videoAnalysis.discovery.earlyExplorations}
-                  </p>
-                  <div className="grid grid-cols-2 md:grid-cols-5 gap-2">
-                    <Image
-                      src="/portfolio/video-analysis/tv-wall01.png"
-                      alt="TV Wall Exploration 1"
-                      width={200}
-                      height={150}
-                      className="w-full h-auto object-contain"
-                    />
-                    <Image
-                      src="/portfolio/video-analysis/tv-wall02.png"
-                      alt="TV Wall Exploration 2"
-                      width={200}
-                      height={150}
-                      className="w-full h-auto object-contain"
-                    />
-                    <Image
-                      src="/portfolio/video-analysis/tv-wall03.png"
-                      alt="TV Wall Exploration 3"
-                      width={200}
-                      height={150}
-                      className="w-full h-auto object-contain"
-                    />
-                    <Image
-                      src="/portfolio/video-analysis/tv-wall04.png"
-                      alt="TV Wall Exploration 4"
-                      width={200}
-                      height={150}
-                      className="w-full h-auto object-contain"
-                    />
-                    <Image
-                      src="/portfolio/video-analysis/tv-wall05.png"
-                      alt="TV Wall Exploration 5"
-                      width={200}
-                      height={150}
-                      className="w-full h-auto object-contain"
-                    />
-                  </div>
-                </div>
-
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                  {t.videoAnalysis.discovery.content}
-                </p>
-              </section>
-
-              {/* Event Panel */}
-              <section id="eventPanel">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6 lg:mb-8">
-                  {t.videoAnalysis.eventPanel.title}
-                </h2>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-8">
-                  {t.videoAnalysis.eventPanel.content}
-                </p>
-                <div className="relative w-full">
-                  <Image
-                    src="/portfolio/video-analysis/alertListBg.png"
-                    alt="Alert List Background"
-                    width={700}
-                    height={450}
-                    className="w-[85%] h-auto object-contain"
-                  />
-                  <Image
-                    src="/portfolio/video-analysis/alertList.png"
-                    alt="Alert List"
-                    width={200}
-                    height={400}
-                    className="absolute right-0 top-[10%] w-[22%] h-auto object-contain shadow-xl"
-                  />
-                </div>
               </section>
 
               {/* Analysis Settings */}
@@ -354,89 +273,95 @@ export function VideoAnalysisDetail() {
                   {t.videoAnalysis.analysisSettings.title}
                 </h2>
                 <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-4">
-                  {t.videoAnalysis.analysisSettings.content1}
+                  {t.videoAnalysis.analysisSettings.content}
                 </p>
                 <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-8">
                   {t.videoAnalysis.analysisSettings.content2}
                 </p>
+                <Image
+                  src="/portfolio/video-analysis/AnalyticFlow.png"
+                  alt="Analytic Flow"
+                  width={1200}
+                  height={600}
+                  className="w-full h-auto object-contain"
+                />
+              </section>
 
-                {/* Analysis Images - mobile: stacked, desktop: overlapping */}
-                {/* Mobile layout */}
-                <div className="md:hidden space-y-4">
-                  <Image
-                    src="/portfolio/video-analysis/analysis1.png"
-                    alt="Analysis Settings - Main Screen"
-                    width={800}
-                    height={500}
-                    className="w-full h-auto object-contain"
-                  />
-                  <Image
-                    src="/portfolio/video-analysis/analysis2.png"
-                    alt="Intrusion Detection"
-                    width={500}
-                    height={350}
-                    className="w-full h-auto object-contain"
-                  />
-                  <Image
-                    src="/portfolio/video-analysis/analysis3.png"
-                    alt="Schedule Settings"
-                    width={500}
-                    height={350}
-                    className="w-full h-auto object-contain"
-                  />
-                </div>
-                {/* Desktop overlapping layout */}
-                <div className="hidden md:block relative w-full h-[550px] lg:h-[650px]">
-                  {/* Main iMac image - background, smaller */}
-                  <Image
-                    src="/portfolio/video-analysis/analysis1.png"
-                    alt="Analysis Settings - Main Screen"
-                    width={800}
-                    height={500}
-                    className="absolute right-0 bottom-0 w-[60%] h-auto object-contain z-10"
-                  />
-                  {/* Intrusion Detection dialog - front left top */}
-                  <Image
-                    src="/portfolio/video-analysis/analysis2.png"
-                    alt="Intrusion Detection"
-                    width={500}
-                    height={350}
-                    className="absolute left-0 top-0 w-[55%] h-auto object-contain z-20 shadow-lg"
-                  />
-                  {/* Schedule Settings - front left bottom */}
-                  <Image
-                    src="/portfolio/video-analysis/analysis3.png"
-                    alt="Schedule Settings"
-                    width={500}
-                    height={350}
-                    className="absolute left-[5%] top-[40%] w-[55%] h-auto object-contain z-30 shadow-lg"
-                  />
+              {/* Schedule Settings */}
+              <section id="scheduleSettings">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
+                  <div>
+                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6 lg:mb-8">
+                      {t.videoAnalysis.scheduleSettings.title}
+                    </h2>
+                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-4">
+                      {t.videoAnalysis.scheduleSettings.content}
+                    </p>
+                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                      {t.videoAnalysis.scheduleSettings.content2}
+                    </p>
+                  </div>
+                  <div className="w-full rounded-lg overflow-hidden">
+                    <Image
+                      src="/portfolio/video-analysis/analysis3.png"
+                      alt="Schedule Settings"
+                      width={600}
+                      height={400}
+                      className="w-full h-auto object-contain"
+                    />
+                  </div>
                 </div>
               </section>
 
               {/* Graphical Tool */}
               <section id="graphicalTool">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6 lg:mb-8">
-                  {t.videoAnalysis.graphicalTool.title}
-                </h2>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-8">
-                  {t.videoAnalysis.graphicalTool.content}
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                  <Image
-                    src="/portfolio/video-analysis/turnLeftRole.png"
-                    alt="Turn Left Role"
-                    width={500}
-                    height={300}
-                    className="w-full h-auto object-contain"
-                  />
-                  <Image
-                    src="/portfolio/video-analysis/AnalyzingTool.png"
-                    alt="Analyzing Tool"
-                    width={500}
-                    height={300}
-                    className="w-full h-auto object-contain"
-                  />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
+                  <div>
+                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6 lg:mb-8">
+                      {t.videoAnalysis.graphicalTool.title}
+                    </h2>
+                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-4">
+                      {t.videoAnalysis.graphicalTool.content}
+                    </p>
+                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                      {t.videoAnalysis.graphicalTool.content2}
+                    </p>
+                  </div>
+                  <div className="w-full rounded-lg overflow-hidden">
+                    <Image
+                      src="/portfolio/video-analysis/01.jpg"
+                      alt="Double Cross Line Tool"
+                      width={600}
+                      height={400}
+                      className="w-full h-auto object-contain"
+                    />
+                  </div>
+                </div>
+              </section>
+
+              {/* TV Wall */}
+              <section id="tvWall">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
+                  <div>
+                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6 lg:mb-8">
+                      {t.videoAnalysis.tvWall.title}
+                    </h2>
+                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-4">
+                      {t.videoAnalysis.tvWall.content}
+                    </p>
+                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                      {t.videoAnalysis.tvWall.content2}
+                    </p>
+                  </div>
+                  <div className="w-full rounded-lg overflow-hidden">
+                    <Image
+                      src="/portfolio/video-analysis/alertListBg.png"
+                      alt="TV Wall Design"
+                      width={600}
+                      height={400}
+                      className="w-full h-auto object-contain"
+                    />
+                  </div>
                 </div>
               </section>
 
@@ -457,29 +382,16 @@ export function VideoAnalysisDetail() {
                 />
               </section>
 
-              {/* Final Showcase */}
-              <section>
-                <Image
-                  src="/portfolio/video-analysis/vd-01.png"
-                  alt="Video Analysis Final"
-                  width={1200}
-                  height={700}
-                  className="w-full h-auto"
-                />
+              {/* Outcome */}
+              <section id="outcome">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6 lg:mb-8">
+                  {t.videoAnalysis.outcome.title}
+                </h2>
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                  {t.videoAnalysis.outcome.content}
+                </p>
               </section>
 
-              {/* Next Project */}
-              <section className="pt-16 border-t border-border">
-                <div className="text-center">
-                  <p className="text-sm text-muted-foreground mb-4">Next Project</p>
-                  <Link
-                    href="/"
-                    className="inline-flex items-center justify-center px-8 py-3 bg-accent text-white font-semibold rounded-lg hover:bg-accent/90 transition-colors"
-                  >
-                    View All Projects
-                  </Link>
-                </div>
-              </section>
             </div>
           </main>
         </div>

@@ -65,7 +65,7 @@ export const projectsData = [
   },
   {
     id: "video-analysis",
-    title: "Video Analysis System",
+    title: "Video Analysis System Design Optimization",
     category: "UI/UX Design",
     company: "Gorilla Technology",
     year: "2018",

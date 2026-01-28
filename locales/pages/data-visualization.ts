@@ -17,12 +17,17 @@ export const dataVisualizationEn = {
   },
   hero: dataVisualizationHero,
   about: {
-    title: "About",
-    content: "Dashboards can make people easier to understand data meanings or quickly operation. In this time we want to make a dashboard about analytics, that can be applied to various environments.",
+    title: "Core Objectives",
+    content: "Developed a highly adaptable data visualization framework. The goal was to provide a consistent dashboard interface for various clients, enabling them to interpret data intuitively and find actionable insights quickly during reporting and decision-making.",
   },
   discovery: {
-    title: "Discovery",
-    content: "We list all of the event types according to the analysis types. According to the list and the data type, we design widgets with different types of chart for users can choose by themself.",
+    title: "Discovery & Strategy",
+    content: "To ensure technical feasibility, I began by researching Highcharts documentation. Based on the product's data types (e.g., behavior analytics, foot traffic), I parameterized chart styles and layouts to allow for efficient future selection. Key contributions include:",
+    items: [
+      "Standardized Highcharts configurations to manage colors, spacing, and styles globally.",
+      "Implemented a JSON-based theme configuration to enable rapid visual updates, significantly reducing engineering time for custom styling.",
+      "Mapped chart components to the full product feature list, using 'IVAR' as the primary implementation to create a dedicated dashboard."
+    ],
   },
   behaviorAnalytics: {
     title: "Behavior Analytics",
@@ -45,10 +50,10 @@ export const dataVisualizationEn = {
     items: ["Capture Hacker Attacks", "Capture The Location Of The Hacker Attack", "Malware Detection"],
   },
   widgetsStatus: {
-    title: "Widgets Status",
-    content: "To show the widget, data needs to pass-through several layers like API, DB, and frontend, etc. We got a request to demonstrate all the different errors in different ways on our widget. After discussions with developers, I came up with this design.",
-    zeroData: "System received data is 0",
-    nullData: "System received data is NULL, Dashboard loading, System received data is [ ]",
+    title: "Widget States",
+    content: "Data undergoes multiple processing layers (API, Database, Frontend) before visualization. To help users pinpoint issues, I collaborated with developers to design specific visual states for different data scenarios.",
+    zeroData: "Zero Data: The system is functioning normally, but the received value is 0.",
+    nullData: "Null/Error States: Differentiates between null values, loading states, and system errors to facilitate rapid troubleshooting.",
   },
 }
 
@@ -62,12 +67,17 @@ export const dataVisualizationZh = {
   },
   hero: dataVisualizationHero,
   about: {
-    title: "關於",
-    content: "儀表板可以讓人們更容易理解數據含義或快速操作。這次我們想製作一個關於分析的儀表板，可以應用於各種環境。",
+    title: "核心目標",
+    content: "建立一套可快速調整的圖表框架。目的是讓不同類別的業主，都能透過一致的儀表板介面理解數據，並在報告提問階段快速找到答案做出改善。",
   },
   discovery: {
     title: "探索發現",
-    content: "我們根據分析類型列出所有事件類型。根據列表和數據類型，我們設計了不同類型圖表的元件，讓使用者可以自行選擇。",
+    content: "為了確認設計的可行性，我先研究了開發使用的 Highcharts 文件。接著根據產品會遇到的數據類型（如行為分析、人流等），預先將圖表樣式與佈局參數化，讓未來可以根據需求快速選擇。主要工作：",
+    items: [
+      "整理 Highcharts 配置，將顏色、間距等樣式統一管理。",
+      "透過修改 JSON 檔案來快速更換儀表板主題，減少工程重複調整樣式的時間。",
+      "根據公司產品所有的功能列表，規劃對應的圖表元件與配置，並以 IVAR 為例製作出專屬儀表板",
+    ],
   },
   behaviorAnalytics: {
     title: "行為分析",
@@ -91,8 +101,8 @@ export const dataVisualizationZh = {
   },
   widgetsStatus: {
     title: "元件狀態",
-    content: "要顯示元件，數據需要經過 API、資料庫和前端等多層處理。我們收到了一個需求，要以不同方式在元件上展示所有不同的錯誤。經過與開發人員的討論，我提出了這個設計。",
-    zeroData: "系統接收數據為 0",
-    nullData: "系統接收數據為 NULL、儀表板載入中、系統接收數據為 [ ]",
+    content: "數據在顯示前會經過 API 與資料庫處理，為了讓使用者判斷問題點，我與開發人員討論後，針對不同數據狀態設計了對應的顯示樣式。",
+    zeroData: "無數據 (Zero)：系統運行正常，但接收數據為 0。",
+    nullData: "異常/讀取中 (Null)：區分數據為空值、系統載入中或回傳錯誤，方便快速排查問題",
   },
 }
