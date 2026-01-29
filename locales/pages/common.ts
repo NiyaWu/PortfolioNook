@@ -191,7 +191,7 @@ export const commonEn = {
   // Other Work
   otherWork: {
     title: "Other Work",
-    subtitle: "Hello, I'm Niya. I'm a Product Designer with multi-industry experience across Web3, SaaS, and large-scale system platforms.",
+    subtitle: "Diverse design practices beyond core products",
     contact: "Connect with me on Linkedin or via email at twmniya@gmail.com",
   },
   // Footer
@@ -269,7 +269,7 @@ export const commonZh = {
   // Other Work
   otherWork: {
     title: "其他作品",
-    subtitle: "你好，我是 Niya。我是一位產品設計師，擁有 Web3、SaaS 和大型系統平台等多產業的經驗。",
+    subtitle: "核心產品之外的多元設計實踐",
     contact: "在 Linkedin 上與我聯繫，或透過電子郵件 twmniya@gmail.com",
   },
   // Footer

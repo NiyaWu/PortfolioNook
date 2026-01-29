@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import { useLanguage } from "@/contexts/language-context"
 import { Header } from "@/components/header"
+import { Footer } from "@/components/footer"
 import { projectsData } from "@/locales/pages/common"
 
 export function OtherWork() {
@@ -60,8 +61,8 @@ export function OtherWork() {
       <Header />
 
       {/* Hero Section */}
-      <div className="pt-24 md:pt-32 pb-12 md:pb-16 px-6 md:px-8 lg:px-12">
-        <div className="max-w-4xl mx-auto text-center">
+      <div className="pt-24 md:pt-32 2xl:pt-40 pb-12 md:pb-16 2xl:pb-20 px-6 md:px-8 lg:px-12 2xl:px-16">
+        <div className="max-w-4xl 2xl:max-w-5xl mx-auto text-center">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 md:mb-6">
             {t.otherWork.title}
           </h1>
@@ -72,9 +73,9 @@ export function OtherWork() {
       </div>
 
       {/* Projects Grid - Apple style 2 columns */}
-      <div className="px-6 md:px-8 lg:px-12 pb-24 md:pb-32">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+      <div className="px-6 md:px-8 lg:px-12 2xl:px-16 pb-24 md:pb-32 2xl:pb-40">
+        <div className="max-w-6xl 2xl:max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 2xl:gap-6">
             {otherProjects.map((project) => (
               <button
                 key={project.id}
@@ -82,7 +83,7 @@ export function OtherWork() {
                 className="group relative overflow-hidden transition-all duration-300 text-left"
               >
                 {/* Image fills entire area - fixed height for consistency */}
-                <div className="h-[280px] md:h-[360px] lg:h-[420px] relative overflow-hidden">
+                <div className="h-[280px] md:h-[360px] lg:h-[420px] 2xl:h-[480px] relative overflow-hidden">
                   <Image
                     src={project.image}
                     alt={project.title}
@@ -105,12 +106,8 @@ export function OtherWork() {
         </div>
       </div>
 
-      {/* Footer Contact */}
-      <div className="py-8 md:py-12 text-center border-t border-gray-200">
-        <p className="text-sm text-muted-foreground">
-          {t.otherWork.contact}
-        </p>
-      </div>
+      {/* Footer */}
+      <Footer />
 
       {/* Data Visualization Popup */}
       {activePopup === "data-visualization" && (
@@ -269,132 +266,6 @@ export function OtherWork() {
                   <p className="text-[10px] md:text-xs text-muted-foreground/70 text-center mt-3">
                     {t.dataVisualization.widgetsStatus.nullData}
                   </p>
-                </div>
-              </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Video Analysis Popup */}
-      {activePopup === "video-analysis" && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center"
-          onClick={closePopup}
-        >
-          {/* Backdrop */}
-          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
-
-          {/* Popup Content */}
-          <div
-            ref={popupContentRef}
-            className="relative bg-white w-full h-full md:max-w-5xl md:max-h-[90vh] md:rounded-lg md:shadow-2xl overflow-y-auto"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Popup Header - Sticky */}
-            <div className={`sticky top-0 z-10 bg-white text-center border-b border-gray-100 transition-all duration-300 ${isScrolled ? "p-3 md:p-4" : "p-4 md:p-10"}`}>
-              <button
-                onClick={closePopup}
-                className="absolute top-3 right-3 md:top-4 md:right-4 w-10 h-10 flex items-center justify-center rounded-full bg-black/10 hover:bg-black/20 transition-colors"
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-              <h2 className={`font-bold text-foreground transition-all duration-300 ${isScrolled ? "text-lg md:text-xl mb-1" : "text-2xl md:text-3xl lg:text-4xl mb-2"}`}>
-                {t.videoAnalysis.title}
-              </h2>
-              <div className={`flex flex-wrap justify-center gap-x-4 gap-y-1 text-muted-foreground transition-all duration-300 ${isScrolled ? "text-xs" : "text-xs md:text-sm"}`}>
-                <span>Year: {t.videoAnalysis.hero.duration}</span>
-                <span>Role: {t.videoAnalysis.hero.role}</span>
-                <span>Company: {t.videoAnalysis.hero.company}</span>
-              </div>
-            </div>
-
-            {/* Popup Body */}
-            <div className="p-6 md:p-10">
-              <div className="max-w-[680px] mx-auto space-y-10">
-              {/* Hero Image */}
-              <div className="relative w-full">
-                <Image
-                  src="/portfolio/video-analysis/TVwallTop.png"
-                  alt="Video Analysis TV Wall"
-                  width={850}
-                  height={550}
-                  className="w-full h-auto object-contain"
-                />
-              </div>
-
-              {/* About Section */}
-              <div>
-                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">
-                  {t.videoAnalysis.about.title}
-                </h3>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                  {t.videoAnalysis.about.content}
-                </p>
-              </div>
-
-              {/* Discovery Section */}
-              <div>
-                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">
-                  {t.videoAnalysis.discovery.title}
-                </h3>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-8">
-                  {t.videoAnalysis.discovery.content}
-                </p>
-
-                {/* Features Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-3">
-                    <Image
-                      src="/portfolio/video-analysis/Schedule01.jpg"
-                      alt="Schedule Feature"
-                      width={400}
-                      height={300}
-                      className="w-full h-auto object-contain rounded-lg"
-                    />
-                    <h4 className="text-lg font-semibold text-foreground">
-                      {t.videoAnalysis.eventPanel.title}
-                    </h4>
-                  </div>
-                  <div className="space-y-3">
-                    <Image
-                      src="/portfolio/video-analysis/analysis1.png"
-                      alt="Analysis Settings"
-                      width={400}
-                      height={300}
-                      className="w-full h-auto object-contain rounded-lg"
-                    />
-                    <h4 className="text-lg font-semibold text-foreground">
-                      {t.videoAnalysis.analysisSettings.title}
-                    </h4>
-                  </div>
-                  <div className="space-y-3">
-                    <Image
-                      src="/portfolio/video-analysis/AnalyzingTool.png"
-                      alt="Graphical Tool"
-                      width={400}
-                      height={300}
-                      className="w-full h-auto object-contain rounded-lg"
-                    />
-                    <h4 className="text-lg font-semibold text-foreground">
-                      {t.videoAnalysis.graphicalTool.title}
-                    </h4>
-                  </div>
-                  <div className="space-y-3">
-                    <Image
-                      src="/portfolio/video-analysis/ui-kit.png"
-                      alt="UI Kit"
-                      width={400}
-                      height={300}
-                      className="w-full h-auto object-contain rounded-lg"
-                    />
-                    <h4 className="text-lg font-semibold text-foreground">
-                      {t.videoAnalysis.uiKit.title}
-                    </h4>
-                  </div>
                 </div>
               </div>
               </div>

@@ -195,7 +195,7 @@ export function VideoAnalysisDetail() {
       `}</style>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12 py-12 md:py-20 lg:py-24">
+      <div className="max-w-7xl 2xl:max-w-[1400px] mx-auto px-6 md:px-8 lg:px-12 2xl:px-16 py-12 md:py-20 lg:py-24 2xl:py-32">
         <div className="flex gap-12 lg:gap-16">
           {/* Left Sidebar Navigation */}
           <aside className={`hidden lg:block w-32 flex-shrink-0 transition-opacity duration-300 ${
@@ -221,9 +221,9 @@ export function VideoAnalysisDetail() {
           </aside>
 
           {/* Main Content Area */}
-          <main className="flex-1 max-w-[840px]">
+          <main className="flex-1 max-w-[840px] 2xl:max-w-[960px]">
             {/* Project Overview Grid */}
-            <div className="mb-16 md:mb-24">
+            <div className="mb-16 md:mb-24 2xl:mb-32">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-8 md:mb-12 text-center">
                 {t.videoAnalysis.projectOverview.title}
               </h2>
@@ -256,7 +256,7 @@ export function VideoAnalysisDetail() {
             </div>
 
             {/* Content Sections */}
-            <div className="space-y-16 md:space-y-24 lg:space-y-32">
+            <div className="space-y-16 md:space-y-24 lg:space-y-32 2xl:space-y-40">
               {/* Design Thinking */}
               <section id="designThinking">
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6 lg:mb-8">

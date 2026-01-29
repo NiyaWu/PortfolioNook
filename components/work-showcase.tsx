@@ -36,16 +36,16 @@ export function WorkShowcase() {
 
   return (
     <>
-      <section id="work" className="bg-white py-24 md:py-32 lg:py-40">
-        <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-12">
-          <div className="space-y-24 md:space-y-32 lg:space-y-40">
+      <section id="work" className="bg-white py-24 md:py-32 lg:py-40 2xl:py-48">
+        <div className="max-w-6xl 2xl:max-w-7xl mx-auto px-6 md:px-8 lg:px-12 2xl:px-16">
+          <div className="space-y-24 md:space-y-32 lg:space-y-40 2xl:space-y-48">
             {works.map((work, index) => {
               const isEven = index % 2 === 1
 
               return (
                 <div key={work.id}>
                   {/* Desktop Layout - Contained grid */}
-                  <div className={`hidden lg:grid lg:grid-cols-12 gap-8 xl:gap-12 items-center`}>
+                  <div className={`hidden lg:grid lg:grid-cols-12 gap-8 xl:gap-12 2xl:gap-16 items-center`}>
                     {/* Text Side - 5 columns */}
                     <Link
                       href={work.href}
@@ -69,8 +69,11 @@ export function WorkShowcase() {
                       </div>
                     </Link>
 
-                    {/* Image Side - 7 columns */}
-                    <div className={`col-span-7 ${isEven ? 'order-1' : 'order-2'} group`}>
+                    {/* Image Side - 7 columns (clickable on desktop) */}
+                    <Link
+                      href={work.href}
+                      className={`col-span-7 ${isEven ? 'order-1' : 'order-2'} group`}
+                    >
                       <div className="relative w-full rounded-lg">
                         {work.animation && animationData[work.animation] ? (
                           <Lottie
@@ -88,7 +91,7 @@ export function WorkShowcase() {
                           />
                         )}
                       </div>
-                    </div>
+                    </Link>
                   </div>
 
                   {/* Mobile Layout */}
@@ -138,7 +141,7 @@ export function WorkShowcase() {
           </div>
 
           {/* More Projects Button */}
-          <div className="flex items-center justify-center pt-24 md:pt-32 lg:pt-40">
+          <div className="flex items-center justify-center pt-24 md:pt-32 lg:pt-40 2xl:pt-48">
             <Link
               href="/other-work"
               className="group relative inline-flex items-center justify-center px-8 py-3 md:px-10 md:py-4 text-white rounded-full transition-all duration-300 hover:opacity-90"
