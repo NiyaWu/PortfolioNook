@@ -13,6 +13,9 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 md:px-8 lg:px-12 overflow-hidden">
+      {/* Bottom gradient fade to white */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 md:h-48 bg-gradient-to-b from-transparent to-white pointer-events-none z-20" />
+
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="ripple-effect absolute" />
         <div className="ripple-effect absolute" />

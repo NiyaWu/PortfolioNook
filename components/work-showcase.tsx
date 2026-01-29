@@ -143,7 +143,7 @@ export function WorkShowcase() {
           {/* More Projects Button */}
           <div className="flex items-center justify-center pt-24 md:pt-32 lg:pt-40 2xl:pt-48">
             <Link
-              href="/other-work"
+              href="/practices"
               className="group relative inline-flex items-center justify-center px-8 py-3 md:px-10 md:py-4 text-white rounded-full transition-all duration-300 hover:opacity-90"
               style={{ backgroundColor: '#0071e3', fontSize: '17px', fontWeight: 400 }}
             >

@@ -127,6 +127,7 @@ export const commonEn = {
   nav: {
     home: "Home",
     work: "Work",
+    practices: "Practices",
     about: "About",
     contact: "Contact",
   },
@@ -188,9 +189,9 @@ export const commonEn = {
     description: "Have a project in mind? Let's create something amazing together.",
     button: "Get in Touch",
   },
-  // Other Work
+  // Practices (Other Work)
   otherWork: {
-    title: "Other Work",
+    title: "Practices",
     subtitle: "Diverse design practices beyond core products",
     contact: "Connect with me on Linkedin or via email at twmniya@gmail.com",
   },
@@ -204,7 +205,8 @@ export const commonZh = {
   // Header
   nav: {
     home: "首頁",
-    work: "作品",
+    work: "主要專案",
+    practices: "設計實踐",
     about: "關於我",
     contact: "聯絡",
   },
@@ -266,9 +268,9 @@ export const commonZh = {
     description: "有想法嗎？讓我們一起創造驚人的作品。",
     button: "聯絡我",
   },
-  // Other Work
+  // Practices (Other Work)
   otherWork: {
-    title: "其他作品",
+    title: "設計實踐",
     subtitle: "核心產品之外的多元設計實踐",
     contact: "在 Linkedin 上與我聯繫，或透過電子郵件 twmniya@gmail.com",
   },

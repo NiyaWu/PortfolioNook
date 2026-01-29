@@ -175,7 +175,7 @@ export function VodChannelDetail() {
               {/* Discovery */}
               <section id="discovery">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
-                  <div>
+                  <div className="order-2 lg:order-1">
                     <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6 lg:mb-8">
                       {t.vodChannel.discovery.title}
                     </h2>
@@ -183,7 +183,7 @@ export function VodChannelDetail() {
                       {t.vodChannel.discovery.content}
                     </p>
                   </div>
-                  <div className="w-full">
+                  <div className="w-full order-1 lg:order-2">
                     <Image
                       src="/portfolio/vod-channel/userMessage01.png"
                       alt="User Messages"
@@ -277,7 +277,7 @@ export function VodChannelDetail() {
 
                 {/* Result 1 */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center mb-16">
-                  <div>
+                  <div className="order-2 lg:order-1">
                     <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">
                       {t.vodChannel.result1.title}
                     </h3>
@@ -288,7 +288,7 @@ export function VodChannelDetail() {
                       {t.vodChannel.result1.content2}
                     </p>
                   </div>
-                  <div className="w-full flex justify-center">
+                  <div className="w-full flex justify-center order-1 lg:order-2">
                     <Image
                       src="/portfolio/vod-channel/testB.gif"
                       alt="Result Animation"
@@ -319,7 +319,7 @@ export function VodChannelDetail() {
 
                 {/* Result 2 */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center mb-16">
-                  <div>
+                  <div className="order-2 lg:order-1">
                     <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">
                       {t.vodChannel.result2.title}
                     </h3>
@@ -327,7 +327,7 @@ export function VodChannelDetail() {
                       {t.vodChannel.result2.content}
                     </p>
                   </div>
-                  <div className="w-full flex justify-center gap-4">
+                  <div className="w-full flex justify-center gap-4 order-1 lg:order-2">
                     <Image
                       src="/portfolio/vod-channel/testC.png"
                       alt="Result C"
@@ -362,7 +362,7 @@ export function VodChannelDetail() {
 
                 {/* Result 3 */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center mb-16">
-                  <div>
+                  <div className="order-2 lg:order-1">
                     <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">
                       {t.vodChannel.result3.title}
                     </h3>
@@ -373,7 +373,7 @@ export function VodChannelDetail() {
                       {t.vodChannel.result3.content2}
                     </p>
                   </div>
-                  <div className="w-full flex justify-center gap-4">
+                  <div className="w-full flex justify-center gap-4 order-1 lg:order-2">
                     <Image
                       src="/portfolio/vod-channel/testE.png"
                       alt="Result E"
@@ -408,7 +408,7 @@ export function VodChannelDetail() {
 
                 {/* Result 4 */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center mb-16">
-                  <div>
+                  <div className="order-2 lg:order-1">
                     <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">
                       {t.vodChannel.result4.title}
                     </h3>
@@ -419,7 +419,7 @@ export function VodChannelDetail() {
                       {t.vodChannel.result4.content2}
                     </p>
                   </div>
-                  <div className="w-full flex justify-center gap-4">
+                  <div className="w-full flex justify-center gap-4 order-1 lg:order-2">
                     <Image
                       src="/portfolio/vod-channel/testG.png"
                       alt="Result G"
