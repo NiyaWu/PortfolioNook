@@ -56,6 +56,23 @@ export function OtherWork() {
     setIsScrolled(false)
   }
 
+  // Get projects that have popups
+  const popupProjects = otherProjects.filter(p =>
+    ["data-visualization", "ido-workflow", "panko-mascot", "face-library"].includes(p.id)
+  )
+
+  const goToNextProject = () => {
+    if (!activePopup) return
+    const currentIndex = popupProjects.findIndex(p => p.id === activePopup)
+    const nextIndex = (currentIndex + 1) % popupProjects.length
+    setActivePopup(popupProjects[nextIndex].id)
+    setIsScrolled(false)
+    // Scroll popup to top
+    if (popupContentRef.current) {
+      popupContentRef.current.scrollTop = 0
+    }
+  }
+
   return (
     <div className="min-h-screen bg-[#F5F5F5]">
       <Header />
@@ -268,6 +285,29 @@ export function OtherWork() {
                   </p>
                 </div>
               </div>
+
+              {/* Navigation Buttons */}
+              <div className="mt-12 flex justify-center gap-4">
+                <button
+                  onClick={closePopup}
+                  className="inline-flex items-center px-6 py-3 text-sm font-medium text-gray-600 hover:text-gray-900 border border-gray-300 rounded-full hover:border-gray-400 transition-colors"
+                >
+                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                  </svg>
+                  {t.otherWork.closeButton}
+                </button>
+                <button
+                  onClick={goToNextProject}
+                  className="inline-flex items-center px-6 py-3 text-sm font-medium text-white rounded-full transition-colors"
+                  style={{ backgroundColor: '#0071e3' }}
+                >
+                  {t.otherWork.nextProject}
+                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </button>
+              </div>
               </div>
             </div>
           </div>
@@ -394,6 +434,29 @@ export function OtherWork() {
                   {t.idoWorkflow.impact.content}
                 </p>
               </div>
+
+              {/* Navigation Buttons */}
+              <div className="mt-12 flex justify-center gap-4">
+                <button
+                  onClick={closePopup}
+                  className="inline-flex items-center px-6 py-3 text-sm font-medium text-gray-600 hover:text-gray-900 border border-gray-300 rounded-full hover:border-gray-400 transition-colors"
+                >
+                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                  </svg>
+                  {t.otherWork.closeButton}
+                </button>
+                <button
+                  onClick={goToNextProject}
+                  className="inline-flex items-center px-6 py-3 text-sm font-medium text-white rounded-full transition-colors"
+                  style={{ backgroundColor: '#0071e3' }}
+                >
+                  {t.otherWork.nextProject}
+                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </button>
+              </div>
               </div>
             </div>
           </div>
@@ -495,11 +558,34 @@ export function OtherWork() {
                   className="w-full h-auto object-contain rounded-lg"
                 />
                 <p className="text-[10px] md:text-xs text-muted-foreground/70 text-center mt-3 mb-6">
-                Sketches : Swap, Yield Farming, Incentives 
+                Sketches : Swap, Yield Farming, Incentives
                 </p>
                 <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                   {t.pankoMascot.connection.content}
                 </p>
+              </div>
+
+              {/* Navigation Buttons */}
+              <div className="mt-12 flex justify-center gap-4">
+                <button
+                  onClick={closePopup}
+                  className="inline-flex items-center px-6 py-3 text-sm font-medium text-gray-600 hover:text-gray-900 border border-gray-300 rounded-full hover:border-gray-400 transition-colors"
+                >
+                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                  </svg>
+                  {t.otherWork.closeButton}
+                </button>
+                <button
+                  onClick={goToNextProject}
+                  className="inline-flex items-center px-6 py-3 text-sm font-medium text-white rounded-full transition-colors"
+                  style={{ backgroundColor: '#0071e3' }}
+                >
+                  {t.otherWork.nextProject}
+                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </button>
               </div>
               </div>
             </div>
@@ -698,6 +784,29 @@ export function OtherWork() {
                         className="w-full h-auto object-contain"
                       />
                     </div>
+                  </div>
+
+                  {/* Navigation Buttons */}
+                  <div className="mt-12 flex justify-center gap-4">
+                    <button
+                      onClick={closePopup}
+                      className="inline-flex items-center px-6 py-3 text-sm font-medium text-gray-600 hover:text-gray-900 border border-gray-300 rounded-full hover:border-gray-400 transition-colors"
+                    >
+                      <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                      </svg>
+                      {t.otherWork.closeButton}
+                    </button>
+                    <button
+                      onClick={goToNextProject}
+                      className="inline-flex items-center px-6 py-3 text-sm font-medium text-white rounded-full transition-colors"
+                      style={{ backgroundColor: '#0071e3' }}
+                    >
+                      {t.otherWork.nextProject}
+                      <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </button>
                   </div>
                 </div>
               </div>

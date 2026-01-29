@@ -6,7 +6,7 @@ export function Footer() {
   const { t } = useLanguage()
 
   return (
-    <footer className="py-8 md:py-12 text-center border-t border-gray-200">
+    <footer className="pt-8 md:pt-12 pb-20 md:pb-24 text-center border-t border-gray-200">
       <p className="text-sm text-muted-foreground">
         {t.otherWork.contact}
       </p>

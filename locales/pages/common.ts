@@ -141,7 +141,7 @@ export const commonEn = {
     title: "Featured Work",
     description: "A selection of projects I've worked on",
     viewProject: "View project",
-    moreProjects: "More Projects",
+    moreProjects: "View Practices",
     projects: getProjectsWithDescriptions(projectDescriptionsEn),
   },
   // About
@@ -194,6 +194,8 @@ export const commonEn = {
     title: "Practices",
     subtitle: "Diverse design practices beyond core products",
     contact: "Connect with me on Linkedin or via email at twmniya@gmail.com",
+    closeButton: "Back to List",
+    nextProject: "Next Project",
   },
   // Footer
   footer: {
@@ -220,7 +222,7 @@ export const commonZh = {
     title: "精選作品",
     description: "我參與過的精選專案",
     viewProject: "查看專案",
-    moreProjects: "更多專案",
+    moreProjects: "探索更多",
     projects: getProjectsWithDescriptions(projectDescriptionsZh),
   },
   // About
@@ -273,6 +275,8 @@ export const commonZh = {
     title: "設計實踐",
     subtitle: "核心產品之外的多元設計實踐",
     contact: "在 Linkedin 上與我聯繫，或透過電子郵件 twmniya@gmail.com",
+    closeButton: "返回列表",
+    nextProject: "下一個專案",
   },
   // Footer
   footer: {

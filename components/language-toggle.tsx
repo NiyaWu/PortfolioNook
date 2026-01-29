@@ -13,12 +13,12 @@ export function LanguageToggle() {
     <div className="fixed bottom-6 right-6 z-50">
       <button
         onClick={toggleLanguage}
-        className="relative inline-flex items-center bg-background/95 backdrop-blur-sm border-2 border-border rounded-full p-1 shadow-lg hover:shadow-xl transition-all duration-300"
+        className="relative inline-flex items-center bg-gray-200 rounded-full p-1 shadow-lg hover:shadow-xl transition-all duration-300"
         aria-label="Toggle language"
       >
         {/* Sliding Background */}
         <div
-          className={`absolute inset-1 w-[calc(50%-4px)] bg-accent rounded-full transition-transform duration-300 ease-in-out ${
+          className={`absolute inset-1 w-[calc(50%-4px)] bg-white rounded-full transition-transform duration-300 ease-in-out shadow-sm ${
             locale === "zh" ? "translate-x-full" : "translate-x-0"
           }`}
         />
@@ -29,8 +29,8 @@ export function LanguageToggle() {
           <div
             className={`px-4 py-2 rounded-full text-sm font-semibold transition-colors duration-300 z-10 ${
               locale === "en"
-                ? "text-accent-foreground"
-                : "text-muted-foreground hover:text-foreground"
+                ? "text-[#0071e3]"
+                : "text-gray-500 hover:text-gray-700"
             }`}
           >
             EN
@@ -40,8 +40,8 @@ export function LanguageToggle() {
           <div
             className={`px-4 py-2 rounded-full text-sm font-semibold transition-colors duration-300 z-10 ${
               locale === "zh"
-                ? "text-accent-foreground"
-                : "text-muted-foreground hover:text-foreground"
+                ? "text-[#0071e3]"
+                : "text-gray-500 hover:text-gray-700"
             }`}
           >
             中文
