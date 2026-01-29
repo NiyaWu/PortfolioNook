@@ -64,14 +64,27 @@ export function OtherWork() {
   const goToNextProject = () => {
     if (!activePopup) return
     const currentIndex = popupProjects.findIndex(p => p.id === activePopup)
-    const nextIndex = (currentIndex + 1) % popupProjects.length
-    setActivePopup(popupProjects[nextIndex].id)
+    if (currentIndex >= popupProjects.length - 1) return
+    setActivePopup(popupProjects[currentIndex + 1].id)
     setIsScrolled(false)
-    // Scroll popup to top
     if (popupContentRef.current) {
       popupContentRef.current.scrollTop = 0
     }
   }
+
+  const goToPrevProject = () => {
+    if (!activePopup) return
+    const currentIndex = popupProjects.findIndex(p => p.id === activePopup)
+    if (currentIndex <= 0) return
+    setActivePopup(popupProjects[currentIndex - 1].id)
+    setIsScrolled(false)
+    if (popupContentRef.current) {
+      popupContentRef.current.scrollTop = 0
+    }
+  }
+
+  const isFirstProject = activePopup === popupProjects[0]?.id
+  const isLastProject = activePopup === popupProjects[popupProjects.length - 1]?.id
 
   return (
     <div className="min-h-screen bg-[#F5F5F5]">
@@ -142,10 +155,10 @@ export function OtherWork() {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Popup Header - Sticky */}
-            <div className={`sticky top-0 z-10 bg-white text-center border-b border-gray-100 transition-all duration-300 ${isScrolled ? "p-3 md:p-4" : "p-4 md:p-10"}`}>
+            <div className={`sticky top-0 z-10 bg-white text-center border-b border-gray-100 transition-all duration-300 ${isScrolled ? "p-3 px-14 md:p-4 md:px-16" : "p-4 px-14 md:p-10 md:px-16"}`}>
               <button
                 onClick={closePopup}
-                className="absolute top-3 right-3 md:top-4 md:right-4 w-10 h-10 flex items-center justify-center rounded-full bg-black/10 hover:bg-black/20 transition-colors"
+                className="absolute top-3 right-3 md:top-4 md:right-4 w-10 h-10 flex items-center justify-center rounded-full hover:bg-black/10 transition-colors"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -286,28 +299,48 @@ export function OtherWork() {
                 </div>
               </div>
 
-              {/* Navigation Buttons */}
-              <div className="mt-12 flex justify-center gap-4">
+              </div>
+            </div>
+
+            {/* Footer Navigation */}
+            <div className="md:sticky md:bottom-0 bg-white border-t border-gray-200 px-6 md:px-10 pt-4 pb-20 md:pb-4">
+              <div className="max-w-[680px] mx-auto flex justify-between items-center">
                 <button
                   onClick={closePopup}
-                  className="inline-flex items-center px-6 py-3 text-sm font-medium text-gray-600 hover:text-gray-900 border border-gray-300 rounded-full hover:border-gray-400 transition-colors"
+                  className="px-3 py-2 text-sm font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-all"
                 >
-                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                  </svg>
-                  {t.otherWork.closeButton}
+                  Close
                 </button>
-                <button
-                  onClick={goToNextProject}
-                  className="inline-flex items-center px-6 py-3 text-sm font-medium text-white rounded-full transition-colors"
-                  style={{ backgroundColor: '#0071e3' }}
-                >
-                  {t.otherWork.nextProject}
-                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </button>
-              </div>
+                <div className="flex items-center gap-6">
+                  <button
+                    onClick={goToPrevProject}
+                    disabled={isFirstProject}
+                    className={`group inline-flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-all ${
+                      isFirstProject
+                        ? "text-gray-300 cursor-not-allowed"
+                        : "text-gray-500 hover:text-gray-900 hover:bg-gray-100"
+                    }`}
+                  >
+                    <svg className={`w-4 h-4 mr-1.5 transition-transform ${!isFirstProject ? "group-hover:-translate-x-1" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                    </svg>
+                    Back
+                  </button>
+                  <button
+                    onClick={goToNextProject}
+                    disabled={isLastProject}
+                    className={`group inline-flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-all ${
+                      isLastProject
+                        ? "text-gray-300 cursor-not-allowed"
+                        : "text-[#0071e3] hover:bg-blue-50"
+                    }`}
+                  >
+                    Next
+                    <svg className={`w-4 h-4 ml-1.5 transition-transform ${!isLastProject ? "group-hover:translate-x-1" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -330,10 +363,10 @@ export function OtherWork() {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Popup Header - Sticky */}
-            <div className={`sticky top-0 z-10 bg-white text-center border-b border-gray-100 transition-all duration-300 ${isScrolled ? "p-3 md:p-4" : "p-4 md:p-10"}`}>
+            <div className={`sticky top-0 z-10 bg-white text-center border-b border-gray-100 transition-all duration-300 ${isScrolled ? "p-3 px-14 md:p-4 md:px-16" : "p-4 px-14 md:p-10 md:px-16"}`}>
               <button
                 onClick={closePopup}
-                className="absolute top-3 right-3 md:top-4 md:right-4 w-10 h-10 flex items-center justify-center rounded-full bg-black/10 hover:bg-black/20 transition-colors"
+                className="absolute top-3 right-3 md:top-4 md:right-4 w-10 h-10 flex items-center justify-center rounded-full hover:bg-black/10 transition-colors"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -435,28 +468,48 @@ export function OtherWork() {
                 </p>
               </div>
 
-              {/* Navigation Buttons */}
-              <div className="mt-12 flex justify-center gap-4">
+              </div>
+            </div>
+
+            {/* Footer Navigation */}
+            <div className="md:sticky md:bottom-0 bg-white border-t border-gray-200 px-6 md:px-10 pt-4 pb-20 md:pb-4">
+              <div className="max-w-[680px] mx-auto flex justify-between items-center">
                 <button
                   onClick={closePopup}
-                  className="inline-flex items-center px-6 py-3 text-sm font-medium text-gray-600 hover:text-gray-900 border border-gray-300 rounded-full hover:border-gray-400 transition-colors"
+                  className="px-3 py-2 text-sm font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-all"
                 >
-                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                  </svg>
-                  {t.otherWork.closeButton}
+                  Close
                 </button>
-                <button
-                  onClick={goToNextProject}
-                  className="inline-flex items-center px-6 py-3 text-sm font-medium text-white rounded-full transition-colors"
-                  style={{ backgroundColor: '#0071e3' }}
-                >
-                  {t.otherWork.nextProject}
-                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </button>
-              </div>
+                <div className="flex items-center gap-6">
+                  <button
+                    onClick={goToPrevProject}
+                    disabled={isFirstProject}
+                    className={`group inline-flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-all ${
+                      isFirstProject
+                        ? "text-gray-300 cursor-not-allowed"
+                        : "text-gray-500 hover:text-gray-900 hover:bg-gray-100"
+                    }`}
+                  >
+                    <svg className={`w-4 h-4 mr-1.5 transition-transform ${!isFirstProject ? "group-hover:-translate-x-1" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                    </svg>
+                    Back
+                  </button>
+                  <button
+                    onClick={goToNextProject}
+                    disabled={isLastProject}
+                    className={`group inline-flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-all ${
+                      isLastProject
+                        ? "text-gray-300 cursor-not-allowed"
+                        : "text-[#0071e3] hover:bg-blue-50"
+                    }`}
+                  >
+                    Next
+                    <svg className={`w-4 h-4 ml-1.5 transition-transform ${!isLastProject ? "group-hover:translate-x-1" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -479,10 +532,10 @@ export function OtherWork() {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Popup Header - Sticky */}
-            <div className={`sticky top-0 z-10 bg-white text-center border-b border-gray-100 transition-all duration-300 ${isScrolled ? "p-3 md:p-4" : "p-4 md:p-10"}`}>
+            <div className={`sticky top-0 z-10 bg-white text-center border-b border-gray-100 transition-all duration-300 ${isScrolled ? "p-3 px-14 md:p-4 md:px-16" : "p-4 px-14 md:p-10 md:px-16"}`}>
               <button
                 onClick={closePopup}
-                className="absolute top-3 right-3 md:top-4 md:right-4 w-10 h-10 flex items-center justify-center rounded-full bg-black/10 hover:bg-black/20 transition-colors"
+                className="absolute top-3 right-3 md:top-4 md:right-4 w-10 h-10 flex items-center justify-center rounded-full hover:bg-black/10 transition-colors"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -565,28 +618,48 @@ export function OtherWork() {
                 </p>
               </div>
 
-              {/* Navigation Buttons */}
-              <div className="mt-12 flex justify-center gap-4">
+              </div>
+            </div>
+
+            {/* Footer Navigation */}
+            <div className="md:sticky md:bottom-0 bg-white border-t border-gray-200 px-6 md:px-10 pt-4 pb-20 md:pb-4">
+              <div className="max-w-[680px] mx-auto flex justify-between items-center">
                 <button
                   onClick={closePopup}
-                  className="inline-flex items-center px-6 py-3 text-sm font-medium text-gray-600 hover:text-gray-900 border border-gray-300 rounded-full hover:border-gray-400 transition-colors"
+                  className="px-3 py-2 text-sm font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-all"
                 >
-                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                  </svg>
-                  {t.otherWork.closeButton}
+                  Close
                 </button>
-                <button
-                  onClick={goToNextProject}
-                  className="inline-flex items-center px-6 py-3 text-sm font-medium text-white rounded-full transition-colors"
-                  style={{ backgroundColor: '#0071e3' }}
-                >
-                  {t.otherWork.nextProject}
-                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </button>
-              </div>
+                <div className="flex items-center gap-6">
+                  <button
+                    onClick={goToPrevProject}
+                    disabled={isFirstProject}
+                    className={`group inline-flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-all ${
+                      isFirstProject
+                        ? "text-gray-300 cursor-not-allowed"
+                        : "text-gray-500 hover:text-gray-900 hover:bg-gray-100"
+                    }`}
+                  >
+                    <svg className={`w-4 h-4 mr-1.5 transition-transform ${!isFirstProject ? "group-hover:-translate-x-1" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                    </svg>
+                    Back
+                  </button>
+                  <button
+                    onClick={goToNextProject}
+                    disabled={isLastProject}
+                    className={`group inline-flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-all ${
+                      isLastProject
+                        ? "text-gray-300 cursor-not-allowed"
+                        : "text-[#0071e3] hover:bg-blue-50"
+                    }`}
+                  >
+                    Next
+                    <svg className={`w-4 h-4 ml-1.5 transition-transform ${!isLastProject ? "group-hover:translate-x-1" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -609,10 +682,10 @@ export function OtherWork() {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Popup Header - Sticky */}
-            <div className={`sticky top-0 z-10 bg-white text-center border-b border-gray-100 transition-all duration-300 ${isScrolled ? "p-3 md:p-4" : "p-4 md:p-10"}`}>
+            <div className={`sticky top-0 z-10 bg-white text-center border-b border-gray-100 transition-all duration-300 ${isScrolled ? "p-3 px-14 md:p-4 md:px-16" : "p-4 px-14 md:p-10 md:px-16"}`}>
               <button
                 onClick={closePopup}
-                className="absolute top-3 right-3 md:top-4 md:right-4 w-10 h-10 flex items-center justify-center rounded-full bg-black/10 hover:bg-black/20 transition-colors"
+                className="absolute top-3 right-3 md:top-4 md:right-4 w-10 h-10 flex items-center justify-center rounded-full hover:bg-black/10 transition-colors"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -631,7 +704,7 @@ export function OtherWork() {
 
             {/* Popup Body */}
             <div className="p-6 md:p-10">
-              <div className="max-w-[840px] mx-auto">
+              <div className="max-w-[680px] mx-auto space-y-10">
                 {/* Hero Images - Overlapping */}
                 <div className="relative w-full h-[250px] sm:h-[300px] md:h-[400px] mb-10">
                   {/* Main Device Image */}
@@ -786,28 +859,48 @@ export function OtherWork() {
                     </div>
                   </div>
 
-                  {/* Navigation Buttons */}
-                  <div className="mt-12 flex justify-center gap-4">
-                    <button
-                      onClick={closePopup}
-                      className="inline-flex items-center px-6 py-3 text-sm font-medium text-gray-600 hover:text-gray-900 border border-gray-300 rounded-full hover:border-gray-400 transition-colors"
-                    >
-                      <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                      </svg>
-                      {t.otherWork.closeButton}
-                    </button>
-                    <button
-                      onClick={goToNextProject}
-                      className="inline-flex items-center px-6 py-3 text-sm font-medium text-white rounded-full transition-colors"
-                      style={{ backgroundColor: '#0071e3' }}
-                    >
-                      {t.otherWork.nextProject}
-                      <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
-                    </button>
-                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Footer Navigation */}
+            <div className="md:sticky md:bottom-0 bg-white border-t border-gray-200 px-6 md:px-10 pt-4 pb-20 md:pb-4">
+              <div className="max-w-[680px] mx-auto flex justify-between items-center">
+                <button
+                  onClick={closePopup}
+                  className="px-3 py-2 text-sm font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-all"
+                >
+                  Close
+                </button>
+                <div className="flex items-center gap-6">
+                  <button
+                    onClick={goToPrevProject}
+                    disabled={isFirstProject}
+                    className={`group inline-flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-all ${
+                      isFirstProject
+                        ? "text-gray-300 cursor-not-allowed"
+                        : "text-gray-500 hover:text-gray-900 hover:bg-gray-100"
+                    }`}
+                  >
+                    <svg className={`w-4 h-4 mr-1.5 transition-transform ${!isFirstProject ? "group-hover:-translate-x-1" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                    </svg>
+                    Back
+                  </button>
+                  <button
+                    onClick={goToNextProject}
+                    disabled={isLastProject}
+                    className={`group inline-flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-all ${
+                      isLastProject
+                        ? "text-gray-300 cursor-not-allowed"
+                        : "text-[#0071e3] hover:bg-blue-50"
+                    }`}
+                  >
+                    Next
+                    <svg className={`w-4 h-4 ml-1.5 transition-transform ${!isLastProject ? "group-hover:translate-x-1" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
                 </div>
               </div>
             </div>
