@@ -194,8 +194,9 @@ export const commonEn = {
     title: "Practices",
     subtitle: "Diverse design practices beyond core products",
     contact: "Connect with me on Linkedin or via email at twmniya@gmail.com",
-    closeButton: "Back to List",
-    nextProject: "Next Project",
+    closeButton: "Close",
+    nextProject: "Next",
+    backProject: "Back",
   },
   // Footer
   footer: {
@@ -275,8 +276,9 @@ export const commonZh = {
     title: "設計實踐",
     subtitle: "核心產品之外的多元設計實踐",
     contact: "在 Linkedin 上與我聯繫，或透過電子郵件 twmniya@gmail.com",
-    closeButton: "返回列表",
-    nextProject: "下一個專案",
+    closeButton: "Close",
+    nextProject: "Next",
+    backProject: "Back",
   },
   // Footer
   footer: {

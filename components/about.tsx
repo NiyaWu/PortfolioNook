@@ -63,15 +63,8 @@ export function About() {
           ))}
         </div>
 
-          {/* Contact Footer */}
-          <div className="mt-20 md:mt-24 pt-12 border-t border-border">
-            <p className="text-sm md:text-base text-muted-foreground text-center">
-              {t.about.contact}
-            </p>
-          </div>
         </div>
       </div>
-
     </section>
   )
 }

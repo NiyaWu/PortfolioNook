@@ -86,17 +86,17 @@ export function Header() {
             >
               <span
                 className={`block w-5 h-0.5 bg-foreground transition-all duration-300 ${
-                  isMobileMenuOpen ? "rotate-45 translate-y-1" : ""
+                  isMobileMenuOpen ? "rotate-45 translate-y-[7px]" : ""
                 }`}
               />
               <span
-                className={`block w-5 h-0.5 bg-foreground mt-1 transition-all duration-300 ${
+                className={`block w-5 h-0.5 bg-foreground mt-1.5 transition-all duration-300 ${
                   isMobileMenuOpen ? "opacity-0" : ""
                 }`}
               />
               <span
-                className={`block w-5 h-0.5 bg-foreground mt-1 transition-all duration-300 ${
-                  isMobileMenuOpen ? "-rotate-45 -translate-y-1.5" : ""
+                className={`block w-5 h-0.5 bg-foreground mt-1.5 transition-all duration-300 ${
+                  isMobileMenuOpen ? "-rotate-45 -translate-y-[7px]" : ""
                 }`}
               />
             </button>
