@@ -1,7 +1,7 @@
 // Shared hero data (no translation needed)
 const pankoMascotHero = {
   duration: "2023",
-  role: "Character Design / Brand Identity",
+  role: "Character Design, Brand Identity",
   company: "Impossible Finance",
 }
 

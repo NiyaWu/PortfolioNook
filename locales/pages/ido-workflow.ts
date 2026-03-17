@@ -1,7 +1,7 @@
 // Shared hero data (no translation needed)
 const idoWorkflowHero = {
   duration: "2023",
-  role: "Design System / Workflow Design",
+  role: "Design System, Workflow Design",
   company: "Impossible Finance",
 }
 
@@ -48,7 +48,7 @@ export const idoWorkflowEn = {
   },
   impact: {
     title: "Outcomes & Learnings",
-    content: "By systematically managing design assets, I successfully elevated the design logic from \"single editing\" to \"global synchronization\", significantly reducing human errors in multi-specification production. This workflow also redefined cross-team collaboration boundaries, enabling marketing to independently fine-tune copy and completely eliminating the 12+ hour timezone waiting bottleneck. This experience taught me profoundly that a designer's value lies not only in visual output, but also in solving organizational-level productivity pain points through Toolchain Optimization.",
+    content: "By systematically managing design assets, I successfully elevated the design logic from \"single editing\" to \"global synchronization\", significantly reducing human errors in multi-specification production. This workflow also redefined cross-team collaboration boundaries, enabling marketing to independently fine-tune copy and completely eliminating the 12+ hour timezone waiting bottleneck. ",
   },
 }
 
@@ -95,6 +95,6 @@ export const idoWorkflowZh = {
   },
   impact: {
     title: "成效與學習",
-    content: "透過將設計資產系統化管理，我成功將設計邏輯從「單一編輯」提升至「全域同步」，大幅降低了多規格製作的人為疏失。此流程更重新定義了跨團隊協作邊界，讓行銷端能自主微調文案，徹底消除 12 小時以上的時區等待瓶頸。這讓我深刻體會到，設計師的價值不僅在於視覺產出，更在於能透過工具鏈的優化（Toolchain Optimization）解決組織層級的生產力痛點。",
+    content: "透過將設計資產系統化管理，我成功將設計邏輯從「單一編輯」提升至「全域同步」，大幅降低了多規格製作的人為疏失。此流程更重新定義了跨團隊協作邊界，讓行銷端能自主微調文案，徹底消除 12 小時以上的時區等待瓶頸。",
   },
 }

@@ -1,7 +1,7 @@
 // Shared hero data (no translation needed)
 const dataVisualizationHero = {
   duration: "February 2019",
-  role: "UI / UX / Tool Research",
+  role: "UI, UX, Tool Research",
   company: "Gorilla Technology",
   platforms: "Web",
   deliverables: "Design and Interaction",

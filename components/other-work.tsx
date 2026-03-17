@@ -40,7 +40,7 @@ export function OtherWork() {
   }, [activePopup])
 
   // Filter out projects shown on homepage and excluded projects
-  const excludedIds = ["vod-channel", "chromecast", "video-analysis"]
+  const excludedIds = ["vod-channel", "video-analysis"]
   const otherProjects = projectsData
     .slice(3)
     .filter((project) => !excludedIds.includes(project.id))
@@ -58,7 +58,7 @@ export function OtherWork() {
 
   // Get projects that have popups
   const popupProjects = otherProjects.filter(p =>
-    ["data-visualization", "ido-workflow", "panko-mascot", "face-library"].includes(p.id)
+    ["data-visualization", "ido-workflow", "panko-mascot", "face-library", "chromecast"].includes(p.id)
   )
 
   const goToNextProject = () => {
@@ -167,7 +167,7 @@ export function OtherWork() {
               <h2 className={`font-bold text-foreground transition-all duration-300 ${isScrolled ? "text-lg md:text-xl mb-1" : "text-2xl md:text-3xl lg:text-4xl mb-2"}`}>
                 {t.dataVisualization.title}
               </h2>
-              <div className={`flex flex-wrap justify-center gap-x-4 gap-y-1 text-muted-foreground transition-all duration-300 ${isScrolled ? "text-xs" : "text-xs md:text-sm"}`}>
+              <div className={`flex-wrap justify-center gap-x-4 gap-y-1 text-muted-foreground transition-all duration-300 ${isScrolled ? "hidden md:flex text-xs" : "flex text-xs md:text-sm"}`}>
                 <span>Year: {t.dataVisualization.hero.duration}</span>
                 <span>Role: {t.dataVisualization.hero.role}</span>
                 <span>Company: {t.dataVisualization.hero.company}</span>
@@ -375,7 +375,7 @@ export function OtherWork() {
               <h2 className={`font-bold text-foreground transition-all duration-300 ${isScrolled ? "text-lg md:text-xl mb-1" : "text-2xl md:text-3xl lg:text-4xl mb-2"}`}>
                 {t.idoWorkflow.title}
               </h2>
-              <div className={`flex flex-wrap justify-center gap-x-4 gap-y-1 text-muted-foreground transition-all duration-300 ${isScrolled ? "text-xs" : "text-xs md:text-sm"}`}>
+              <div className={`flex-wrap justify-center gap-x-4 gap-y-1 text-muted-foreground transition-all duration-300 ${isScrolled ? "hidden md:flex text-xs" : "flex text-xs md:text-sm"}`}>
                 <span>Year: {t.idoWorkflow.hero.duration}</span>
                 <span>Role: {t.idoWorkflow.hero.role}</span>
                 <span>Company: {t.idoWorkflow.hero.company}</span>
@@ -455,6 +455,61 @@ export function OtherWork() {
                 <div className="space-y-3 text-sm md:text-base text-muted-foreground leading-relaxed">
                   <p><span className="font-medium text-foreground">{t.idoWorkflow.phase3.approach}</span> {t.idoWorkflow.phase3.approachContent}</p>
                   <p><span className="font-medium text-foreground">{t.idoWorkflow.phase3.value}</span> {t.idoWorkflow.phase3.valueContent}</p>
+                </div>
+                {/* Jitter Dynamic Templates */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                  <div>
+                    <Image
+                      src="/portfolio/Jitter-Announcement.gif"
+                      alt="Jitter Dynamic Template - Announcement"
+                      width={850}
+                      height={550}
+                      className="w-full h-auto object-contain rounded-lg"
+                      unoptimized
+                    />
+                    <p className="text-[10px] md:text-xs text-muted-foreground/70 text-center mt-3">
+                      Animated Template: Partnership Teaser Graphic
+                    </p>
+                  </div>
+                  <div>
+                    <Image
+                      src="/portfolio/Jitter-Deposit.gif"
+                      alt="Jitter Dynamic Template - Deposit"
+                      width={850}
+                      height={550}
+                      className="w-full h-auto object-contain rounded-lg"
+                      unoptimized
+                    />
+                    <p className="text-[10px] md:text-xs text-muted-foreground/70 text-center mt-3">
+                      Animated Template: Deposit Period
+                    </p>
+                  </div>
+                  <div>
+                    <Image
+                      src="/portfolio/Jitter-IDO.gif"
+                      alt="Jitter Dynamic Template - IDO Report"
+                      width={850}
+                      height={550}
+                      className="w-full h-auto object-contain rounded-lg"
+                      unoptimized
+                    />
+                    <p className="text-[10px] md:text-xs text-muted-foreground/70 text-center mt-3">
+                      Animated Template: IDO Report
+                    </p>
+                  </div>
+                  <div>
+                    <Image
+                      src="/portfolio/Jitter-INO.gif"
+                      alt="Jitter Dynamic Template - INO Report"
+                      width={850}
+                      height={550}
+                      className="w-full h-auto object-contain rounded-lg"
+                      unoptimized
+                    />
+                    <p className="text-[10px] md:text-xs text-muted-foreground/70 text-center mt-3">
+                      Animated Template: INO Report
+                    </p>
+                  </div>
                 </div>
               </div>
 
@@ -544,7 +599,7 @@ export function OtherWork() {
               <h2 className={`font-bold text-foreground transition-all duration-300 ${isScrolled ? "text-lg md:text-xl mb-1" : "text-2xl md:text-3xl lg:text-4xl mb-2"}`}>
                 {t.pankoMascot.title}
               </h2>
-              <div className={`flex flex-wrap justify-center gap-x-4 gap-y-1 text-muted-foreground transition-all duration-300 ${isScrolled ? "text-xs" : "text-xs md:text-sm"}`}>
+              <div className={`flex-wrap justify-center gap-x-4 gap-y-1 text-muted-foreground transition-all duration-300 ${isScrolled ? "hidden md:flex text-xs" : "flex text-xs md:text-sm"}`}>
                 <span>Year: {t.pankoMascot.hero.duration}</span>
                 <span>Role: {t.pankoMascot.hero.role}</span>
                 <span>Company: {t.pankoMascot.hero.company}</span>
@@ -694,11 +749,10 @@ export function OtherWork() {
               <h2 className={`font-bold text-foreground transition-all duration-300 ${isScrolled ? "text-lg md:text-xl mb-1" : "text-2xl md:text-3xl lg:text-4xl mb-2"}`}>
                 {t.faceLibrary.title}
               </h2>
-              <div className={`flex flex-wrap justify-center gap-x-4 gap-y-1 text-muted-foreground transition-all duration-300 ${isScrolled ? "text-xs" : "text-xs md:text-sm"}`}>
+              <div className={`flex-wrap justify-center gap-x-4 gap-y-1 text-muted-foreground transition-all duration-300 ${isScrolled ? "hidden md:flex text-xs" : "flex text-xs md:text-sm"}`}>
                 <span>Year: {t.faceLibrary.hero.duration}</span>
                 <span>Role: {t.faceLibrary.hero.role}</span>
                 <span>Company: {t.faceLibrary.hero.company}</span>
-                <span>Platforms: {t.faceLibrary.hero.platforms}</span>
               </div>
             </div>
 
@@ -860,6 +914,225 @@ export function OtherWork() {
                   </div>
 
                 </div>
+              </div>
+            </div>
+
+            {/* Footer Navigation */}
+            <div className="md:sticky md:bottom-0 bg-white border-t border-gray-200 px-6 md:px-10 pt-4 pb-20 md:pb-4">
+              <div className="max-w-[680px] mx-auto flex justify-between items-center">
+                <button
+                  onClick={closePopup}
+                  className="px-3 py-2 text-sm font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-all"
+                >
+                  Close
+                </button>
+                <div className="flex items-center gap-6">
+                  <button
+                    onClick={goToPrevProject}
+                    disabled={isFirstProject}
+                    className={`group inline-flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-all ${
+                      isFirstProject
+                        ? "text-gray-300 cursor-not-allowed"
+                        : "text-gray-500 hover:text-gray-900 hover:bg-gray-100"
+                    }`}
+                  >
+                    <svg className={`w-4 h-4 mr-1.5 transition-transform ${!isFirstProject ? "group-hover:-translate-x-1" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                    </svg>
+                    Back
+                  </button>
+                  <button
+                    onClick={goToNextProject}
+                    disabled={isLastProject}
+                    className={`group inline-flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-all ${
+                      isLastProject
+                        ? "text-gray-300 cursor-not-allowed"
+                        : "text-[#0071e3] hover:bg-blue-50"
+                    }`}
+                  >
+                    Next
+                    <svg className={`w-4 h-4 ml-1.5 transition-transform ${!isLastProject ? "group-hover:translate-x-1" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Chromecast Popup */}
+      {activePopup === "chromecast" && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center"
+          onClick={closePopup}
+        >
+          {/* Backdrop */}
+          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
+
+          {/* Popup Content */}
+          <div
+            ref={popupContentRef}
+            className="relative bg-white w-full h-full md:max-w-5xl md:max-h-[90vh] md:rounded-lg md:shadow-2xl overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Popup Header - Sticky */}
+            <div className={`sticky top-0 z-10 bg-white text-center border-b border-gray-100 transition-all duration-300 ${isScrolled ? "p-3 px-14 md:p-4 md:px-16" : "p-4 px-14 md:p-10 md:px-16"}`}>
+              <button
+                onClick={closePopup}
+                className="absolute top-3 right-3 md:top-4 md:right-4 w-10 h-10 flex items-center justify-center rounded-full hover:bg-black/10 transition-colors"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+              <h2 className={`font-bold text-foreground transition-all duration-300 ${isScrolled ? "text-lg md:text-xl mb-1" : "text-2xl md:text-3xl lg:text-4xl mb-2"}`}>
+                {t.chromecast.title}
+              </h2>
+              <div className={`flex-wrap justify-center gap-x-4 gap-y-1 text-muted-foreground transition-all duration-300 ${isScrolled ? "hidden md:flex text-xs" : "flex text-xs md:text-sm"}`}>
+                <span>Year: {t.chromecast.hero.duration}</span>
+                <span>Role: {t.chromecast.hero.role}</span>
+                <span>Company: {t.chromecast.hero.company}</span>
+              </div>
+            </div>
+
+            {/* Popup Body */}
+            <div className="p-6 md:p-10">
+              <div className="max-w-[680px] mx-auto space-y-10">
+                {/* Hero Image - Title and Phone */}
+                <div className="relative w-full">
+                  <div className="relative w-[85%] max-w-[550px] mx-auto">
+                    <Image
+                      src="/portfolio/chromecast/myVideo-Chromecat-Title.png"
+                      alt="Chromecast Title"
+                      width={700}
+                      height={300}
+                      className="w-full h-auto object-contain"
+                    />
+                  </div>
+                  <div className="absolute right-[5%] bottom-0 w-[18%] max-w-[120px]">
+                    <Image
+                      src="/portfolio/chromecast/phone.png"
+                      alt="Chromecast Phone"
+                      width={150}
+                      height={300}
+                      className="w-full h-auto object-contain"
+                    />
+                  </div>
+                </div>
+
+                {/* About Section */}
+                <div>
+                  <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">
+                    {t.chromecast.about.title}
+                  </h3>
+                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                    {t.chromecast.about.content}
+                  </p>
+                </div>
+
+                {/* Discovery Section */}
+                <div>
+                  <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">
+                    {t.chromecast.discovery.title}
+                  </h3>
+                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-6">
+                    {t.chromecast.discovery.content}
+                  </p>
+                  <Image
+                    src="/portfolio/chromecast/chromecast-flow.png"
+                    alt="Chromecast Flow"
+                    width={600}
+                    height={400}
+                    className="w-full h-auto object-contain rounded-lg"
+                  />
+                  <p className="text-[10px] md:text-xs text-muted-foreground/70 text-center mt-3">
+                    {(t.chromecast.discovery as { caption?: string }).caption}
+                  </p>
+                </div>
+
+                {/* Phase Two Section */}
+                <div>
+                  <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">
+                    {t.chromecast.phaseTwo.title}
+                  </h3>
+                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-6">
+                    {t.chromecast.phaseTwo.content}
+                  </p>
+                  <div className="space-y-6">
+                    <div>
+                      <Image
+                        src="/portfolio/chromecast/chromecast-flow-phaseTwo_01.jpg"
+                        alt="Phase Two Design"
+                        width={1200}
+                        height={600}
+                        className="w-full h-auto object-contain rounded-lg"
+                      />
+                      <p className="text-[10px] md:text-xs text-muted-foreground/70 text-center mt-3">
+                        {(t.chromecast.phaseTwo as { caption?: string }).caption}
+                      </p>
+                    </div>
+                    <div>
+                      <Image
+                        src="/portfolio/chromecast/chromecast-flow-phaseTwo_02.jpg"
+                        alt="Phase Two Player Feature"
+                        width={1200}
+                        height={600}
+                        className="w-full h-auto object-contain rounded-lg"
+                      />
+                      <p className="text-[10px] md:text-xs text-muted-foreground/70 text-center mt-3">
+                        {(t.chromecast.phaseTwo as { caption2?: string }).caption2}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Interface Design Section */}
+                <div>
+                  <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">
+                    {t.chromecast.interfaceDesign.title}
+                  </h3>
+                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-6">
+                    {t.chromecast.interfaceDesign.content}
+                  </p>
+                  <Image
+                    src="/portfolio/chromecast/chromecast-flow-phaseTwo_03.jpg"
+                    alt="Interface Design in Different OS"
+                    width={1200}
+                    height={600}
+                    className="w-full h-auto object-contain rounded-lg"
+                  />
+                  <p className="text-[10px] md:text-xs text-muted-foreground/70 text-center mt-3">
+                    {(t.chromecast.interfaceDesign as { caption?: string }).caption}
+                  </p>
+                </div>
+
+                {/* Test Video Section */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center">
+                  <div>
+                    <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">
+                      {t.chromecast.testVideo.title}
+                    </h3>
+                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                      {t.chromecast.testVideo.content}
+                    </p>
+                  </div>
+                  <div>
+                    <video
+                      loop
+                      muted
+                      controls
+                      className="w-full h-auto rounded-lg"
+                    >
+                      <source src="/portfolio/chromecast/test.mp4" type="video/mp4" />
+                    </video>
+                    <p className="text-[10px] md:text-xs text-muted-foreground/70 text-center mt-3">
+                      {(t.chromecast.testVideo as { caption?: string }).caption}
+                    </p>
+                  </div>
+                </div>
+
               </div>
             </div>
 

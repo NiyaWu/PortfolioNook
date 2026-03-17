@@ -1,14 +1,14 @@
 // Shared hero data (no translation needed)
 const chromecastHero = {
   duration: "September 2014",
-  role: "UI / Feature Research",
+  role: "UI, Feature Research",
   company: "Taiwan Mobile",
   platforms: "Phone, Pad, PC web",
   deliverables: "Design and Interaction",
 }
 
 export const chromecastEn = {
-  title: "Chromecast Feature Design In ODD Service",
+  title: "Chromecast Streaming Design",
   back: "Back",
   sections: {
     about: "About",
@@ -21,32 +21,33 @@ export const chromecastEn = {
   hero: chromecastHero,
   about: {
     title: "About",
-    content: "When Google what to find Chromecast sales partners in Taiwan. They find three telecommunications company one is our company Taiwan Mobile. We should develop the function in myVideo, and present it to them as soon as possible.",
+    content: "Google was evaluating first-wave Chromecast partners in Taiwan, and myVideo was one of three invited telecom providers. Under competitive pressure, we had to complete development and demo within a tight deadline to become their strategic partner.",
   },
   discovery: {
-    title: "Discovery",
-    content: "The project will link the different devices, the flow only uses words is difficult to make people understand. I use the pictures on the Google website and schematic diagram to make the flow. The project manager can easier to communicate when he uses the flow map.",
+    title: "Requirement Translation & Communication",
+    content: "Due to complex cross-device interactions, text alone couldn't align understanding. I referenced Google's official icons to transform abstract requirements into visual flow diagrams, serving as the basis for internal communication and Google presentations, ensuring team consensus within tight timelines.",
+    caption: "Aligning cross-device connection logic with the team to ensure state synchronization between devices.",
   },
   phaseTwo: {
-    title: "Phase Two",
-    content: "In phase two we add the new feature, people can select subtitles and pronunciation when they play the video.",
-  },
-  newFeature: {
-    title: "New Feature In Player",
-    content: "In the player panel, we also add the feature. Due to the redesign style is flat design, we change the new button to easy line.",
+    title: "Evolution & Optimization",
+    content: "After basic casting was complete, phase two added subtitle and audio switching. Following brand flat design trends, new features were simplified to lightweight line icons, seamlessly integrating advanced controls into the existing player panel without visual burden.",
+    caption: "Android phone portrait feature introduction",
+    caption2: "Android phone landscape feature introduction",
   },
   interfaceDesign: {
-    title: "Interface Design In Difference OS",
-    content: "Product manager want to get the app platforms recommend. We design different OS interface basic on official design. For example, icons and spacing.",
+    title: "Cross-Platform Design Adaptation",
+    content: "To meet platform recommendation standards, we differentiated designs for iOS (Human Interface Guidelines) and Android (Material Design). Fine-tuned icon styles and system spacing to maintain brand consistency while ensuring users retain native operational familiarity.",
+    caption: "iOS feature introduction",
   },
   testVideo: {
-    title: "Feature Test Video",
-    content: "The interfaces will be changed due to the feature from phase one to phase two. We want to make sure the flow is clear, product managers help us to use the feature on the APP.",
+    title: "Live Demo: Phased Validation",
+    content: "To ensure development logic aligned with design under competitive timelines, we validated cross-device connection interactions through development-phase live recordings. This demo was used for final flow confirmation with product managers, ensuring core functionality met presentation requirements for successful launch.",
+    caption: "Live Demo",
   },
 }
 
 export const chromecastZh = {
-  title: "Chromecast 功能設計 ODD 服務",
+  title: "Chromecast Streaming Design",
   back: "返回",
   sections: {
     about: "關於",
@@ -58,27 +59,28 @@ export const chromecastZh = {
   },
   hero: chromecastHero,
   about: {
-    title: "關於",
-    content: "當 Google 想在台灣尋找 Chromecast 銷售合作夥伴時，他們找到了三家電信公司，其中之一是我們公司台灣大哥大。我們需要在 myVideo 中開發這個功能，並儘快向他們展示。",
+    title: "專案背景",
+    content: "當時 Google 正於台灣評選 Chromecast 首波合作夥伴，myVideo 為三家受邀電信商之一。在多方競爭的壓力下，我們必須在極短時限內完成功能開發與展示，以爭取成為其策略合作夥伴。",
   },
   discovery: {
-    title: "探索發現",
-    content: "這個專案將連接不同的裝置，只用文字描述的流程很難讓人理解。我使用 Google 網站上的圖片和示意圖來製作流程。產品經理在使用流程圖時可以更容易地溝通。",
+    title: "需求轉譯與溝通",
+    content: "由於跨裝置連結互動複雜，僅憑文字難以精確對齊理解。我參考 Google 官方圖示將抽象需求轉化為視覺化流程圖，作為內部溝通與向 Google 展示的基準，確保團隊在緊湊時程內達成共識。",
+    caption: "用於開發前與團隊對齊跨裝置連線邏輯，確保手機與電視端的狀態同步",
   },
   phaseTwo: {
-    title: "第二階段",
-    content: "在第二階段，我們新增了新功能，使用者在播放影片時可以選擇字幕和發音。",
-  },
-  newFeature: {
-    title: "播放器中的新功能",
-    content: "在播放器面板中，我們也新增了這個功能。由於重新設計的風格是扁平設計，我們將新按鈕改為簡單的線條。",
+    title: "功能演進與優化",
+    content: "在基礎投放功能完成後，第二階段新增了字幕與發音切換功能。配合品牌扁平化趨勢，將新功能簡化為輕量化的線條設計，在不增加視覺負擔的前提下，將進階控制選項無縫整合至現有播放面板。",
+    caption: "Android 手機直式功能介紹",
+    caption2: "Android 手機橫式功能介紹",
   },
   interfaceDesign: {
-    title: "不同作業系統的介面設計",
-    content: "產品經理希望獲得 APP 平台的推薦。我們根據官方設計來設計不同作業系統的介面。例如，圖示和間距。",
+    title: "跨系統設計適配",
+    content: "為滿足平台推薦規範，針對 iOS 與 Android 進行差異化設計。微調圖示樣式與系統間距，在維持品牌一致性的同時，確保用戶保有原生的操作熟悉感。",
+    caption: "iOS 功能介紹",
   },
   testVideo: {
-    title: "功能測試影片",
-    content: "由於功能從第一階段到第二階段的變化，介面會有所改變。我們希望確保流程清晰，產品經理幫助我們在 APP 上使用這個功能。",
+    title: "成果展示：階段性實機驗證",
+    content: "為確保在競爭時程下開發邏輯與設計一致，透過開發階段的實機錄影驗證跨裝置連線互動。此演示用於與產品經理進行最終流程確認，確保核心功能符合展示需求並能順利交付上線。",
+    caption: "實機操作演示",
   },
 }

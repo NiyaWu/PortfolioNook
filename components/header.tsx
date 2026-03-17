@@ -70,12 +70,6 @@ export function Header() {
               >
                 {t.nav.about}
               </Link>
-              <Link
-                href="#contact"
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300"
-              >
-                {t.nav.contact}
-              </Link>
             </nav>
 
             {/* Mobile Menu Button */}
@@ -131,13 +125,6 @@ export function Header() {
             onClick={closeMobileMenu}
           >
             {t.nav.about}
-          </Link>
-          <Link
-            href="#contact"
-            className="text-2xl text-foreground hover:text-accent transition-colors duration-300"
-            onClick={closeMobileMenu}
-          >
-            {t.nav.contact}
           </Link>
         </nav>
       </div>
