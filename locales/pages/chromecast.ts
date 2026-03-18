@@ -34,6 +34,10 @@ export const chromecastEn = {
     caption: "Android phone portrait feature introduction",
     caption2: "Android phone landscape feature introduction",
   },
+  newFeature: {
+    title: "New Feature in Player",
+    content: "Added subtitle and audio track switching controls directly into the player interface, allowing users to customize their viewing experience without interrupting playback.",
+  },
   interfaceDesign: {
     title: "Cross-Platform Design Adaptation",
     content: "To meet platform recommendation standards, we differentiated designs for iOS (Human Interface Guidelines) and Android (Material Design). Fine-tuned icon styles and system spacing to maintain brand consistency while ensuring users retain native operational familiarity.",
@@ -72,6 +76,10 @@ export const chromecastZh = {
     content: "在基礎投放功能完成後，第二階段新增了字幕與發音切換功能。配合品牌扁平化趨勢，將新功能簡化為輕量化的線條設計，在不增加視覺負擔的前提下，將進階控制選項無縫整合至現有播放面板。",
     caption: "Android 手機直式功能介紹",
     caption2: "Android 手機橫式功能介紹",
+  },
+  newFeature: {
+    title: "播放器新功能",
+    content: "將字幕與音軌切換控制直接整合至播放器介面，讓用戶在不中斷播放的情況下自訂觀看體驗。",
   },
   interfaceDesign: {
     title: "跨系統設計適配",
