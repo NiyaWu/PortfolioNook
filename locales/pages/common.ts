@@ -183,7 +183,6 @@ export const commonEn = {
       {
         company: "Taiwan Mobile Co., Ltd.",
         period: "October 2013 - June 2017",
-        location: "Taipei, Taiwan",
         roles: [
           {
             role: "Digital Multimedia Div. UX Team - Product Designer",
@@ -224,6 +223,7 @@ export const commonEn = {
       // },
     ],
     contact: "Connect with me via email twmniya@gmail.com",
+    contactLine1: "Connect with me via email",
   },
   // CTA
   cta: {
@@ -236,6 +236,7 @@ export const commonEn = {
     title: "Practices",
     subtitle: "Diverse design practices beyond core products",
     contact: "Connect with me on Linkedin or via email at twmniya@gmail.com",
+    contactLine1: "Connect with me on Linkedin or via email at",
     closeButton: "Close",
     nextProject: "Next",
     backProject: "Back",
@@ -307,7 +308,6 @@ export const commonZh = {
       {
         company: "台灣大哥大",
         period: "2013年10月 - 2017年6月",
-        location: "台北，台灣",
         roles: [
           {
             role: "數位多媒體處 UX團隊 - 產品設計師",
@@ -348,6 +348,7 @@ export const commonZh = {
       // },
     ],
     contact: "透過電子郵件 twmniya@gmail.com 與我聯繫",
+    contactLine1: "透過電子郵件與我聯繫",
   },
   // CTA
   cta: {
@@ -360,6 +361,7 @@ export const commonZh = {
     title: "設計實踐",
     subtitle: "核心產品之外的多元設計實踐",
     contact: "在 Linkedin 上與我聯繫，或透過電子郵件 twmniya@gmail.com",
+    contactLine1: "在 Linkedin 上與我聯繫，或透過電子郵件",
     closeButton: "Close",
     nextProject: "Next",
     backProject: "Back",

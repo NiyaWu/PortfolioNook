@@ -17,11 +17,9 @@ export function About() {
 
           <div className="space-y-4 text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
             <p>{t.about.intro}</p>
-            <ul className="list-disc list-inside space-y-1">
-              {t.about.description.map((item, i) => (
-                <li key={i}>{item}</li>
-              ))}
-            </ul>
+            {t.about.description.map((item, i) => (
+              <p key={i}>{item}</p>
+            ))}
           </div>
         </div>
       </div>
@@ -29,7 +27,7 @@ export function About() {
       {/* Experience Timeline - White Background */}
       <div className="bg-background min-h-screen py-20 md:py-24 lg:py-32 px-6 md:px-12 lg:px-16">
         <div className="max-w-4xl mx-auto">
-        <div className="space-y-10">
+        <div className="space-y-14 md:space-y-10">
           {t.about.experiences.map((experience: any, index: number) => (
             <div key={index}>
               {experience.roles ? (
@@ -40,7 +38,7 @@ export function About() {
                     <h2 className="text-3xl md:text-4xl font-bold text-foreground">
                       {experience.company}
                     </h2>
-                    <p className="text-sm md:text-base text-muted-foreground font-medium mt-2">
+                    <p className="text-sm md:text-base text-muted-foreground mt-2">
                       {experience.period}
                     </p>
                     <p className="text-sm md:text-base text-muted-foreground">
@@ -49,26 +47,26 @@ export function About() {
                   </div>
 
                   {/* Sub-roles */}
-                  <div className="space-y-10">
+                  <div className="space-y-8 md:space-y-10">
                     {experience.roles.map((roleItem: any, roleIndex: number) => (
-                      <div key={roleIndex} className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-12">
+                      <div key={roleIndex} className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-12">
                         {/* Left: Role + Period + Vertical line */}
                         <div className="flex flex-col">
                           <div className="space-y-1 bg-background relative z-10">
                             <h3 className="text-sm md:text-base text-muted-foreground">
                               {roleItem.role}
                             </h3>
-                            <p className="text-sm text-muted-foreground">
+                            <p className="text-sm md:text-base text-muted-foreground">
                               {roleItem.period}
                             </p>
                           </div>
                           {roleIndex < experience.roles.length - 1 && (
-                            <div className="w-px flex-1 min-h-[3rem] bg-border mt-3" />
+                            <div className="hidden md:block w-px flex-1 min-h-[3rem] bg-border mt-3" />
                           )}
                         </div>
 
                         {/* Right: Description */}
-                        <div className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                        <div className="text-sm md:text-base text-muted-foreground leading-relaxed md:mt-0 border-l border-border pl-6 md:border-l-0 md:pl-0">
                           <ul className="space-y-2">
                             {roleItem.description.map((item: string, i: number) => (
                               <li key={i} className="flex items-baseline gap-3">
@@ -84,14 +82,14 @@ export function About() {
                 </div>
               ) : (
                 /* Single-role experience */
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-12">
                   {/* Left: Title, Date, Role + Vertical line */}
                   <div className="flex flex-col">
                     <div className="space-y-2 bg-background relative z-10">
                       <h2 className="text-3xl md:text-4xl font-bold text-foreground">
                         {experience.company}
                       </h2>
-                      <p className="text-sm md:text-base text-muted-foreground font-medium">
+                      <p className="text-sm md:text-base text-muted-foreground">
                         {experience.period}
                       </p>
                       <p className="text-sm md:text-base text-muted-foreground">
@@ -99,12 +97,12 @@ export function About() {
                       </p>
                     </div>
                     {index < t.about.experiences.length - 1 && (
-                      <div className="w-px flex-1 min-h-[3rem] bg-border mt-3" />
+                      <div className="hidden md:block w-px flex-1 min-h-[3rem] bg-border mt-3" />
                     )}
                   </div>
 
                   {/* Right: Description with bullet points */}
-                  <div className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                  <div className="text-sm md:text-base text-muted-foreground leading-relaxed md:mt-0 border-l border-border pl-6 md:border-l-0 md:pl-0">
                     <ul className="space-y-2">
                       {(Array.isArray(experience.description) ? experience.description : experience.description.split('. ').filter((item: string) => item.trim())).map((item: string, i: number) => (
                         <li key={i} className="flex items-baseline gap-3">

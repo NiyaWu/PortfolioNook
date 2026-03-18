@@ -80,7 +80,7 @@ export function Header() {
             >
               <span
                 className={`block w-5 h-0.5 bg-foreground transition-all duration-300 ${
-                  isMobileMenuOpen ? "rotate-45 translate-y-[7px]" : ""
+                  isMobileMenuOpen ? "rotate-45 translate-y-[8px]" : ""
                 }`}
               />
               <span
@@ -90,7 +90,7 @@ export function Header() {
               />
               <span
                 className={`block w-5 h-0.5 bg-foreground mt-1.5 transition-all duration-300 ${
-                  isMobileMenuOpen ? "-rotate-45 -translate-y-[7px]" : ""
+                  isMobileMenuOpen ? "-rotate-45 -translate-y-[8px]" : ""
                 }`}
               />
             </button>
@@ -104,24 +104,24 @@ export function Header() {
           isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       >
-        <nav className="flex flex-col items-center justify-center h-full gap-8">
+        <nav className="flex flex-col items-center justify-center h-full gap-12">
           <Link
             href="/#work"
-            className="text-2xl text-foreground hover:text-accent transition-colors duration-300"
+            className="text-2xl px-12 py-3 text-foreground hover:text-accent transition-colors duration-300"
             onClick={closeMobileMenu}
           >
             {t.nav.work}
           </Link>
           <Link
             href="/practices"
-            className="text-2xl text-foreground hover:text-accent transition-colors duration-300"
+            className="text-2xl px-12 py-3 text-foreground hover:text-accent transition-colors duration-300"
             onClick={closeMobileMenu}
           >
             {t.nav.practices}
           </Link>
           <Link
             href="/about"
-            className="text-2xl text-foreground hover:text-accent transition-colors duration-300"
+            className="text-2xl px-12 py-3 text-foreground hover:text-accent transition-colors duration-300"
             onClick={closeMobileMenu}
           >
             {t.nav.about}
