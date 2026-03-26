@@ -1,10 +1,13 @@
 "use client"
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
+import { usePathname } from "next/navigation"
 import { useLanguage } from "@/contexts/language-context"
 
 export function Header() {
   const { t } = useLanguage()
+  const pathname = usePathname()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
@@ -45,28 +48,38 @@ export function Header() {
         <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12 py-4 md:py-6">
           <div className="flex items-center justify-between">
             <Link href="/" className="group" onClick={closeMobileMenu}>
-              <h1 className="text-xl md:text-2xl font-bold text-foreground tracking-tight hover:text-accent transition-colors duration-300">
-                {t.hero.name}
-              </h1>
+              <Image
+                src="/logo.svg"
+                alt={t.hero.name}
+                width={40}
+                height={40}
+                className="w-8 h-8 md:w-10 md:h-10 hover:opacity-70 transition-opacity duration-300"
+              />
             </Link>
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-8 lg:gap-12">
               <Link
                 href="/#work"
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300"
+                className={`text-sm transition-colors duration-300 ${
+                  pathname === "/" ? "text-foreground underline underline-offset-4 decoration-foreground" : "text-muted-foreground hover:text-foreground"
+                }`}
               >
                 {t.nav.work}
               </Link>
               <Link
                 href="/practices"
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300"
+                className={`text-sm transition-colors duration-300 ${
+                  pathname === "/practices" ? "text-foreground underline underline-offset-4 decoration-foreground" : "text-muted-foreground hover:text-foreground"
+                }`}
               >
                 {t.nav.practices}
               </Link>
               <Link
                 href="/about"
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300"
+                className={`text-sm transition-colors duration-300 ${
+                  pathname === "/about" ? "text-foreground underline underline-offset-4 decoration-foreground" : "text-muted-foreground hover:text-foreground"
+                }`}
               >
                 {t.nav.about}
               </Link>
@@ -107,21 +120,27 @@ export function Header() {
         <nav className="flex flex-col items-center justify-center h-full gap-12">
           <Link
             href="/#work"
-            className="text-2xl px-12 py-3 text-foreground hover:text-accent transition-colors duration-300"
+            className={`text-2xl px-12 py-3 transition-colors duration-300 ${
+              pathname === "/" ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+            }`}
             onClick={closeMobileMenu}
           >
             {t.nav.work}
           </Link>
           <Link
             href="/practices"
-            className="text-2xl px-12 py-3 text-foreground hover:text-accent transition-colors duration-300"
+            className={`text-2xl px-12 py-3 transition-colors duration-300 ${
+              pathname === "/practices" ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+            }`}
             onClick={closeMobileMenu}
           >
             {t.nav.practices}
           </Link>
           <Link
             href="/about"
-            className="text-2xl px-12 py-3 text-foreground hover:text-accent transition-colors duration-300"
+            className={`text-2xl px-12 py-3 transition-colors duration-300 ${
+              pathname === "/about" ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+            }`}
             onClick={closeMobileMenu}
           >
             {t.nav.about}

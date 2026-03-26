@@ -27,96 +27,83 @@ export function About() {
       {/* Experience Timeline - White Background */}
       <div className="bg-background min-h-screen py-20 md:py-24 lg:py-32 px-6 md:px-12 lg:px-16">
         <div className="max-w-4xl mx-auto">
-        <div className="space-y-14 md:space-y-10">
-          {t.about.experiences.map((experience: any, index: number) => (
-            <div key={index}>
-              {experience.roles ? (
-                /* Multi-role experience (e.g. Taiwan Mobile) */
-                <div>
-                  {/* Company header */}
-                  <div className="mb-8 bg-background relative z-10">
-                    <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                      {experience.company}
-                    </h2>
-                    <p className="text-sm md:text-base text-muted-foreground mt-2">
-                      {experience.period}
-                    </p>
-                    <p className="text-sm md:text-base text-muted-foreground">
-                      {experience.location}
-                    </p>
-                  </div>
+        {(() => {
+          // Flatten experiences: multi-role entries become separate timeline items
+          // Only show company name on the first role
+          const flatItems: any[] = []
+          t.about.experiences.forEach((exp: any) => {
+            if (exp.roles) {
+              exp.roles.forEach((roleItem: any, roleIndex: number) => {
+                flatItems.push({
+                  company: roleIndex === 0 ? exp.company : "",
+                  period: roleItem.period,
+                  role: roleItem.role,
+                  location: roleIndex === 0 ? exp.location : undefined,
+                  description: roleItem.description,
+                })
+              })
+            } else {
+              flatItems.push(exp)
+            }
+          })
 
-                  {/* Sub-roles */}
-                  <div className="space-y-8 md:space-y-10">
-                    {experience.roles.map((roleItem: any, roleIndex: number) => (
-                      <div key={roleIndex} className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-12">
-                        {/* Left: Role + Period + Vertical line */}
-                        <div className="flex flex-col">
-                          <div className="space-y-1 bg-background relative z-10">
-                            <h3 className="text-sm md:text-base text-muted-foreground">
-                              {roleItem.role}
-                            </h3>
+          return (
+            <div className="relative">
+              {/* Continuous timeline line - desktop only */}
+              <div className="hidden md:block absolute top-[1.25rem] bottom-0 w-px" style={{ left: 'calc(50% + 0.1rem - 8px)', background: 'linear-gradient(to bottom, var(--border) 0%, var(--border) 85%, transparent 100%)' }} />
+
+              <div className="space-y-14 md:space-y-20">
+                {flatItems.map((item: any, index: number) => (
+                  <div key={index} className="relative md:grid md:grid-cols-[1fr_1fr] md:gap-0">
+                    {/* Left: Title + Dot together */}
+                    <div className="mb-4 md:mb-0">
+                      <div className="md:sticky md:top-32 md:flex md:items-start md:justify-end md:gap-6">
+                        <div className="md:text-right bg-background">
+                          {item.company && (
+                            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+                              {item.company}
+                            </h2>
+                          )}
+                          <p className={`text-sm md:text-base text-muted-foreground ${item.company ? 'mt-2' : ''}`}>
+                            {item.period}
+                          </p>
+                          {item.location && (
                             <p className="text-sm md:text-base text-muted-foreground">
-                              {roleItem.period}
+                              {item.location}
                             </p>
-                          </div>
-                          {roleIndex < experience.roles.length - 1 && (
-                            <div className="hidden md:block w-px flex-1 min-h-[3rem] bg-border mt-3" />
+                          )}
+                          {item.role && (
+                            <p className="text-sm md:text-base text-muted-foreground">
+                              {item.role}
+                            </p>
                           )}
                         </div>
-
-                        {/* Right: Description */}
-                        <div className="text-sm md:text-base text-muted-foreground leading-relaxed md:mt-0 border-l border-border pl-6 md:border-l-0 md:pl-0">
-                          <ul className="space-y-2">
-                            {roleItem.description.map((item: string, i: number) => (
-                              <li key={i} className="flex items-baseline gap-3">
-                                <span className="w-1 h-1 rounded-full bg-muted-foreground flex-shrink-0 relative top-[-0.15em]"></span>
-                                <span>{item.endsWith('.') ? item : `${item}.`}</span>
-                              </li>
-                            ))}
-                          </ul>
+                        {/* Dot */}
+                        <div className="hidden md:flex items-center" style={{ height: item.company ? '2.5rem' : '1.5rem' }}>
+                          <div className="w-3 h-3 rounded-full bg-gray-300 z-10" />
                         </div>
                       </div>
-                    ))}
-                  </div>
-                </div>
-              ) : (
-                /* Single-role experience */
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-12">
-                  {/* Left: Title, Date, Role + Vertical line */}
-                  <div className="flex flex-col">
-                    <div className="space-y-2 bg-background relative z-10">
-                      <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                        {experience.company}
-                      </h2>
-                      <p className="text-sm md:text-base text-muted-foreground">
-                        {experience.period}
-                      </p>
-                      <p className="text-sm md:text-base text-muted-foreground">
-                        {experience.role}
-                      </p>
                     </div>
-                    {index < t.about.experiences.length - 1 && (
-                      <div className="hidden md:block w-px flex-1 min-h-[3rem] bg-border mt-3" />
-                    )}
-                  </div>
 
-                  {/* Right: Description with bullet points */}
-                  <div className="text-sm md:text-base text-muted-foreground leading-relaxed md:mt-0 border-l border-border pl-6 md:border-l-0 md:pl-0">
-                    <ul className="space-y-2">
-                      {(Array.isArray(experience.description) ? experience.description : experience.description.split('. ').filter((item: string) => item.trim())).map((item: string, i: number) => (
-                        <li key={i} className="flex items-baseline gap-3">
-                          <span className="w-1 h-1 rounded-full bg-muted-foreground flex-shrink-0 relative top-[-0.15em]"></span>
-                          <span>{item.endsWith('.') ? item : `${item}.`}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    {/* Right: Description */}
+                    <div className="md:pl-12 md:pt-2">
+                      <div className="text-sm md:text-base text-muted-foreground leading-relaxed border-l border-border pl-6 md:border-l-0 md:pl-0">
+                        <ul className="space-y-2">
+                          {(Array.isArray(item.description) ? item.description : item.description.split('. ').filter((d: string) => d.trim())).map((desc: string, i: number) => (
+                            <li key={i} className="flex items-baseline gap-3">
+                              <span className="w-1 h-1 rounded-full bg-muted-foreground flex-shrink-0 relative top-[-0.15em]"></span>
+                              <span>{desc.endsWith('.') ? desc : `${desc}.`}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              )}
+                ))}
+              </div>
             </div>
-          ))}
-        </div>
+          )
+        })()}
 
         </div>
       </div>

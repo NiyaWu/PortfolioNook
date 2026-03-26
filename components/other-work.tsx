@@ -58,7 +58,7 @@ export function OtherWork() {
 
   // Get projects that have popups
   const popupProjects = otherProjects.filter(p =>
-    ["data-visualization", "ido-workflow", "panko-mascot", "face-library", "chromecast"].includes(p.id)
+    ["otterly", "data-visualization", "ido-workflow", "panko-mascot", "face-library", "chromecast"].includes(p.id)
   )
 
   const goToNextProject = () => {
@@ -139,6 +139,120 @@ export function OtherWork() {
       {/* Footer */}
       <Footer />
 
+      {/* Otterly Popup */}
+      {activePopup === "otterly" && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center"
+          onClick={closePopup}
+        >
+          {/* Backdrop */}
+          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
+
+          {/* Popup Content */}
+          <div
+            ref={popupContentRef}
+            className="relative bg-white w-full h-full md:max-w-5xl md:max-h-[90vh] md:rounded-lg md:shadow-2xl overflow-hidden flex flex-col"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Popup Header */}
+            <div className="bg-white text-center border-b border-gray-100 p-4 px-14 md:p-10 md:px-16">
+              <button
+                onClick={closePopup}
+                className="absolute top-3 right-3 md:top-4 md:right-4 w-10 h-10 flex items-center justify-center rounded-full hover:bg-black/10 transition-colors z-10"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+              <h2 className="font-bold text-foreground text-2xl md:text-3xl lg:text-4xl mb-2">
+                {t.otterly.title}
+              </h2>
+              <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 text-muted-foreground text-xs md:text-sm">
+                <span>Year: {t.otterly.hero.duration}</span>
+                <span>Role: {t.otterly.hero.role}</span>
+                <span>{t.otterly.hero.company}</span>
+              </div>
+            </div>
+
+            {/* Popup Body */}
+            <div className="relative p-6 md:p-10 flex-1">
+              <div className="max-w-[680px] mx-auto space-y-10">
+
+              {/* Section 1 */}
+              <div>
+                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">
+                  {t.otterly.section1.title}
+                </h3>
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-4">
+                  {t.otterly.section1.intro}
+                </p>
+                <div className="space-y-4 text-sm md:text-base text-muted-foreground leading-relaxed">
+                  {t.otterly.section1.items.map((item: { label: string; content: string }, index: number) => (
+                    <p key={index}><strong className="font-semibold text-foreground">{item.label}</strong>{item.content}</p>
+                  ))}
+                </div>
+              </div>
+
+              </div>
+
+              {/* White gradient overlay with Coming Soon */}
+              <div className="absolute inset-x-0 bottom-0 h-[85%] bg-gradient-to-t from-white from-60% via-white/95 to-transparent flex flex-col items-center justify-end pb-24">
+                <div className="text-center px-6 max-w-md">
+                  <p className="text-lg md:text-xl font-bold text-gray-900 mb-3">{t.otterly.comingSoonTitle}</p>
+                  <p className="text-sm md:text-base text-gray-500 leading-relaxed">
+                    {t.otterly.comingSoonDescBefore}
+                    <a href="https://www.linkedin.com/in/niya-wu-097976182/" target="_blank" rel="noopener noreferrer" className="underline text-gray-700 hover:text-gray-900 transition-colors">{t.otterly.comingSoonDescLink}</a>
+                    {t.otterly.comingSoonDescAfter}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Footer Navigation */}
+            <div className="md:sticky md:bottom-0 bg-white border-t border-gray-200 px-6 md:px-10 pt-4 pb-20 md:pb-4">
+              <div className="max-w-[680px] mx-auto flex justify-between items-center">
+                <button
+                  onClick={closePopup}
+                  className="px-3 py-2 text-sm font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-all"
+                >
+                  Close
+                </button>
+                <div className="flex items-center gap-6">
+                  <button
+                    onClick={goToPrevProject}
+                    disabled={isFirstProject}
+                    className={`group inline-flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-all ${
+                      isFirstProject
+                        ? "text-gray-300 cursor-not-allowed"
+                        : "text-gray-500 hover:text-gray-900 hover:bg-gray-100"
+                    }`}
+                  >
+                    <svg className={`w-4 h-4 mr-1.5 transition-transform ${!isFirstProject ? "group-hover:-translate-x-1" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                    </svg>
+                    Back
+                  </button>
+                  <button
+                    onClick={goToNextProject}
+                    disabled={isLastProject}
+                    className={`group inline-flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-all ${
+                      isLastProject
+                        ? "text-gray-300 cursor-not-allowed"
+                        : "text-[#0071e3] hover:bg-blue-50"
+                    }`}
+                  >
+                    Next
+                    <svg className={`w-4 h-4 ml-1.5 transition-transform ${!isLastProject ? "group-hover:translate-x-1" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Data Visualization Popup */}
       {activePopup === "data-visualization" && (
         <div
@@ -206,7 +320,7 @@ export function OtherWork() {
                 <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-4">
                   {t.dataVisualization.discovery.content}
                 </p>
-                <ul className="text-sm md:text-base text-muted-foreground leading-relaxed mb-8 list-disc list-inside space-y-2">
+                <ul className="text-sm md:text-base text-muted-foreground leading-relaxed mb-8 list-disc pl-5 space-y-2">
                   {t.dataVisualization.discovery.items.map((item: string, index: number) => (
                     <li key={index}>{item}</li>
                   ))}
@@ -876,20 +990,20 @@ export function OtherWork() {
                         {t.faceLibrary.faceManagement.content}
                       </p>
                     </div>
-                    <div className="md:order-1 w-full relative h-[280px] md:h-[320px]">
+                    <div className="md:order-1 w-full relative h-[280px] md:h-[320px] overflow-hidden">
                       <Image
                         src="/portfolio/face-library/FaceA.png"
                         alt="Face Add"
                         width={400}
                         height={300}
-                        className="absolute right-0 top-0 w-[80%] h-auto object-contain shadow-lg"
+                        className="absolute right-0 top-0 w-[80%] h-auto object-contain shadow-lg z-0"
                       />
                       <Image
                         src="/portfolio/face-library/FaceB.png"
                         alt="Face Report"
                         width={350}
                         height={250}
-                        className="absolute left-0 bottom-0 w-[75%] h-auto object-contain shadow-xl z-10"
+                        className="absolute left-0 bottom-0 w-[65%] h-auto object-contain shadow-xl z-0"
                       />
                     </div>
                   </div>

@@ -11,7 +11,7 @@ export function WorkShowcase() {
   const [animationData, setAnimationData] = useState<Record<string, unknown>>({})
 
   // Exclude projects that should only appear in Other Work
-  const excludedFromHomepage = ["data-visualization", "ido-workflow", "panko-mascot", "face-library", "chromecast"]
+  const excludedFromHomepage = ["otterly", "data-visualization", "ido-workflow", "panko-mascot", "face-library", "chromecast"]
 
   const works = t.work.projects
     .filter((project) => !excludedFromHomepage.includes((project as { id: string }).id))

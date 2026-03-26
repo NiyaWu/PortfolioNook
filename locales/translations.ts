@@ -12,6 +12,7 @@ import { pankoMascotEn, pankoMascotZh } from './pages/panko-mascot'
 import { videoAnalysisEn, videoAnalysisZh } from './pages/video-analysis'
 import { vodChannelEn, vodChannelZh } from './pages/vod-channel'
 import { chromecastEn, chromecastZh } from './pages/chromecast'
+import { otterlyEn, otterlyZh } from './pages/otterly'
 
 export const translations = {
   en: {
@@ -28,6 +29,7 @@ export const translations = {
     videoAnalysis: videoAnalysisEn,
     vodChannel: vodChannelEn,
     chromecast: chromecastEn,
+    otterly: otterlyEn,
   },
   zh: {
     // Common translations (nav, hero, work, about, cta, footer)
@@ -43,6 +45,7 @@ export const translations = {
     videoAnalysis: videoAnalysisZh,
     vodChannel: vodChannelZh,
     chromecast: chromecastZh,
+    otterly: otterlyZh,
   },
 }
 

@@ -301,20 +301,20 @@ export function FaceLibraryDetail() {
                       {t.faceLibrary.faceManagement.content}
                     </p>
                   </div>
-                  <div className="lg:order-1 w-full relative h-[350px] md:h-[400px]">
+                  <div className="lg:order-1 w-full relative h-[400px] md:h-[480px]">
                     <Image
                       src="/portfolio/face-library/FaceA.png"
                       alt="Face Add"
                       width={400}
                       height={300}
-                      className="absolute right-0 top-0 w-[80%] h-auto object-contain shadow-lg"
+                      className="absolute right-0 top-0 w-[80%] h-auto object-contain shadow-lg z-10"
                     />
                     <Image
                       src="/portfolio/face-library/FaceB.png"
                       alt="Face Report"
                       width={350}
                       height={250}
-                      className="absolute left-0 bottom-0 w-[75%] h-auto object-contain shadow-xl z-10"
+                      className="absolute left-0 bottom-0 w-[65%] h-auto object-contain shadow-xl z-0"
                     />
                   </div>
                 </div>

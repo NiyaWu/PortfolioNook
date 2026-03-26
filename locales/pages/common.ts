@@ -37,6 +37,15 @@ export const projectsData = [
     href: "/face-library",
   },
   {
+    id: "otterly",
+    title: "Otterly - Breaking Ice on TON",
+    category: "Web3 · TMA",
+    company: "Personal Project",
+    year: "2026",
+    image: "/otherWork-Otterly.png",
+    href: "#",
+  },
+  {
     id: "ido-workflow",
     title: "IDO Marketing Design Workflow Optimization",
     category: "Design System · Workflow Optimization",
@@ -74,7 +83,7 @@ export const projectsData = [
   },
   {
     id: "vod-channel",
-    title: "VOD Channel for Taiwan Mobile",
+    title: "myVideo UX Redesign & Partner Collaboration",
     category: "UX Design · Contact Person",
     company: "Taiwan Mobile",
     year: "2016",
@@ -96,22 +105,22 @@ export const projectsData = [
 const projectDescriptionsEn: Record<string, string> = {
   "ido-cms": "Elevated IDO investment experience through brand-centric design and a custom modular CMS, streamlining token launches and operational workflows.",
   "tgballers": "A Telegram interactive game developed for TOKEN2049 Singapore. In just 72 hours, I synchronized cross-departmental requirements to finalize specifications, leveraging AI to integrate technology and design for high-quality delivery under a tight deadline.",
-  "ivar-redesign": "Redesign of IVAR security camera management system",
+  "ivar-redesign": "Consolidated fragmented management workflows and optimized the information architecture to deliver a more intuitive, seamless device monitoring experience.",
   "face-library": "Face recognition and library management interface design",
   "data-visualization": "Real-time data visualization and monitoring dashboard",
-  "video-analysis": "Video analysis and processing interface design",
-  "vod-channel": "OTT streaming service channel redesign for myVideo",
+  "video-analysis": "Optimized complex video analysis workflows by reorganizing deep technical parameters into intuitive flows, enabling general users to quickly complete high-precision configurations.",
+  "vod-channel": "Bridged external partners and internal teams, using research-driven validation to resolve design challenges and drive the myVideo experience redesign initiative.",
   "chromecast": "Chromecast streaming feature flow design for OTT service",
 }
 
 const projectDescriptionsZh: Record<string, string> = {
   "ido-cms": "以品牌導向重構 IDO 投資體驗，並開發模組化 CMS 系統，有效加速代幣上架流程與開發效率。",
   "tgballers": "為 TOKEN2049 Singapore 打造的 Telegram 互動遊戲。在 72 小時內橫向收斂各部門需求並確立規格，運用 AI 深度整合技術與設計，確保在極短時程內達成高品質交付。",
-  "ivar-redesign": "IVAR 安全監控攝影機管理系統重新設計",
+  "ivar-redesign": "整合碎片化的管理流程，透過優化資訊架構，提供更直觀、無縫的設備監控體驗。",
   "face-library": "人臉辨識與資料庫管理介面設計",
   "data-visualization": "即時數據視覺化和監控儀表板",
-  "video-analysis": "影片分析與處理介面設計",
-  "vod-channel": "myVideo OTT 串流服務頻道重新設計",
+  "video-analysis": "優化複雜的影像分析流程，將深層技術參數重新整合並建立直覺動線，使一般使用者也能快速完成高精度的設定。",
+  "vod-channel": "串聯外部合作夥伴與內部團隊，透過研究驗證化解設計質疑，推動 myVideo 體驗重塑計畫。",
   "chromecast": "OTT 服務的 Chromecast 串流功能流程設計",
 }
 
@@ -148,9 +157,10 @@ export const commonEn = {
   about: {
     title: "About Me",
     emoji: "👋",
-    intro: "Hello, I'm Niya (Ming Hshiang Wu). I'm a UI/UX Designer who enjoys creating useful flow and researching interfaces.",
+    intro: "Hello! I'm Niya.",
     description: [
-      "I have extensive experience working with diverse stakeholders and scalable user experiences that support complex products and real-world operations.",
+      "As a UI/UX Designer, I love breaking down complex systems and redefining how people interact with them. My design journey spans the fast-moving world of Web3 and the rigorous demands of SaaS platforms.",
+      "Passionate about user research and interface refinement, I strive to create intuitive, engaging product experiences. I enjoy adopting new technologies and tools to optimize workflows and enhance cross-functional collaboration.",
     ],
     experienceTitle: "Experience",
     experiences: [
@@ -236,7 +246,9 @@ export const commonEn = {
     title: "Practices",
     subtitle: "Diverse design practices beyond core products",
     contact: "Connect with me on Linkedin or via email at twmniya@gmail.com",
-    contactLine1: "Connect with me on Linkedin or via email at",
+    contactLine1Before: "Connect with me on ",
+    contactLine1Link: "LinkedIn",
+    contactLine1After: " or via email at",
     closeButton: "Close",
     nextProject: "Next",
     backProject: "Back",
@@ -273,9 +285,10 @@ export const commonZh = {
   about: {
     title: "關於我",
     emoji: "👋",
-    intro: "你好，我是 Niya 。我是一位 UI/UX 設計師，喜歡創造實用的流程和研究介面。",
+    intro: "你好！我是 Niya 。",
     description: [
-      "我擁有豐富的經驗，與不同的利益相關者合作，並打造可擴展的使用者體驗，以支援複雜的產品和實際營運。",
+      "身為一名 UI/UX ，我喜歡拆解複雜的系統，並重新定義它們的互動方式。我的設計旅程跨越了瞬息萬變的 Web3 世界與嚴謹的 SaaS 平台。",
+      "熱衷於用戶研究與介面打磨，致力於打造直覺且具黏著度的產品體驗。擅長導入新技術與工具優化工作流，提升團隊跨職能協作的效率與溝通品質。",
     ],
     experienceTitle: "工作經歷",
     experiences: [
@@ -361,7 +374,9 @@ export const commonZh = {
     title: "設計實踐",
     subtitle: "核心產品之外的多元設計實踐",
     contact: "在 Linkedin 上與我聯繫，或透過電子郵件 twmniya@gmail.com",
-    contactLine1: "在 Linkedin 上與我聯繫，或透過電子郵件",
+    contactLine1Before: "在 ",
+    contactLine1Link: "LinkedIn",
+    contactLine1After: " 上與我聯繫，或透過電子郵件",
     closeButton: "Close",
     nextProject: "Next",
     backProject: "Back",

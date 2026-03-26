@@ -16,6 +16,9 @@ export function VodChannelDetail() {
     { id: "researchGoals", label: t.vodChannel.sections.researchGoals },
     { id: "usabilityTesting", label: t.vodChannel.sections.usabilityTesting },
     { id: "abTesting", label: t.vodChannel.sections.abTesting },
+    { id: "loginTest", label: t.vodChannel.sections.loginTest },
+    { id: "videoTypeTest", label: t.vodChannel.sections.videoTypeTest },
+    { id: "paymentTest", label: t.vodChannel.sections.paymentTest },
     { id: "mockup", label: t.vodChannel.sections.mockup },
     { id: "uiKit", label: t.vodChannel.sections.uiKit },
   ]
@@ -118,7 +121,7 @@ export function VodChannelDetail() {
       <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12 py-12 md:py-20 lg:py-24">
         <div className="flex gap-12 lg:gap-16">
           {/* Left Sidebar Navigation */}
-          <aside className={`hidden lg:block w-32 flex-shrink-0 transition-opacity duration-300 ${
+          <aside className={`hidden lg:block w-48 flex-shrink-0 transition-opacity duration-300 ${
             showSidebar ? "opacity-100" : "opacity-0 pointer-events-none"
           }`}>
             <div className="sticky top-32">
@@ -142,31 +145,36 @@ export function VodChannelDetail() {
 
           {/* Main Content Area */}
           <main className="flex-1 max-w-[840px]">
-            {/* Project Info Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mb-12 md:mb-16">
-              <div>
-                <h3 className="text-base md:text-lg font-bold text-foreground mb-2 md:mb-3">Role</h3>
-                <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
-                  {t.vodChannel.hero.role}
-                </p>
-              </div>
-              <div>
-                <h3 className="text-base md:text-lg font-bold text-foreground mb-2 md:mb-3">Platforms</h3>
-                <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
-                  {t.vodChannel.hero.platforms}
-                </p>
-              </div>
-              <div>
-                <h3 className="text-base md:text-lg font-bold text-foreground mb-2 md:mb-3">Deliverables</h3>
-                <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
-                  {t.vodChannel.hero.deliverables}
-                </p>
-              </div>
-              <div>
-                <h3 className="text-base md:text-lg font-bold text-foreground mb-2 md:mb-3">Year</h3>
-                <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
-                  {t.vodChannel.hero.duration}
-                </p>
+            {/* Project Overview Grid */}
+            <div className="mb-16 md:mb-24">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-8 md:mb-12 text-center">
+                {t.vodChannel.projectOverview.title}
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                <div className="border border-border rounded-lg p-4 md:p-6">
+                  <h3 className="text-base md:text-lg font-bold text-foreground mb-2 md:mb-3">{t.vodChannel.projectOverview.overview.title}</h3>
+                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
+                    {t.vodChannel.projectOverview.overview.content}
+                  </p>
+                </div>
+                <div className="border border-border rounded-lg p-4 md:p-6">
+                  <h3 className="text-base md:text-lg font-bold text-foreground mb-2 md:mb-3">{t.vodChannel.projectOverview.timeline.title}</h3>
+                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
+                    {t.vodChannel.projectOverview.timeline.content}
+                  </p>
+                </div>
+                <div className="border border-border rounded-lg p-4 md:p-6">
+                  <h3 className="text-base md:text-lg font-bold text-foreground mb-2 md:mb-3">{t.vodChannel.projectOverview.challenge.title}</h3>
+                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
+                    {t.vodChannel.projectOverview.challenge.content}
+                  </p>
+                </div>
+                <div className="border border-border rounded-lg p-4 md:p-6">
+                  <h3 className="text-base md:text-lg font-bold text-foreground mb-2 md:mb-3">{t.vodChannel.projectOverview.outcome.title}</h3>
+                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
+                    {t.vodChannel.projectOverview.outcome.content}
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -179,9 +187,18 @@ export function VodChannelDetail() {
                     <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6 lg:mb-8">
                       {t.vodChannel.discovery.title}
                     </h2>
-                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                      {t.vodChannel.discovery.content}
-                    </p>
+                    <div className="text-sm md:text-base text-muted-foreground leading-relaxed space-y-4">
+                      <p>{t.vodChannel.discovery.intro}</p>
+                      <ul className="space-y-2">
+                        {t.vodChannel.discovery.items.map((item: string, i: number) => (
+                          <li key={i} className="flex items-start gap-3">
+                            <span className="w-1 h-1 rounded-full bg-muted-foreground mt-2 flex-shrink-0" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                      <p>{t.vodChannel.discovery.conclusion}</p>
+                    </div>
                   </div>
                   <div className="w-full order-1 lg:order-2">
                     <Image
@@ -189,7 +206,7 @@ export function VodChannelDetail() {
                       alt="User Messages"
                       width={500}
                       height={350}
-                      className="w-[80%] mx-auto h-auto object-contain"
+                      className="w-full h-auto object-contain"
                     />
                   </div>
                 </div>
@@ -299,10 +316,13 @@ export function VodChannelDetail() {
                   </div>
                 </div>
 
-                {/* Login Test */}
-                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">
+              </section>
+
+              {/* Login Test */}
+              <section id="loginTest">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6 lg:mb-8">
                   {t.vodChannel.loginTest.title}
-                </h3>
+                </h2>
                 <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-2">
                   {t.vodChannel.loginTest.content}
                 </p>
@@ -345,10 +365,13 @@ export function VodChannelDetail() {
                   </div>
                 </div>
 
-                {/* Video Type Test */}
-                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">
+              </section>
+
+              {/* Video Type Test */}
+              <section id="videoTypeTest">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6 lg:mb-8">
                   {t.vodChannel.videoTypeTest.title}
-                </h3>
+                </h2>
                 <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-8">
                   {t.vodChannel.videoTypeTest.content}
                 </p>
@@ -391,10 +414,13 @@ export function VodChannelDetail() {
                   </div>
                 </div>
 
-                {/* Payment Test */}
-                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">
+              </section>
+
+              {/* Payment Test */}
+              <section id="paymentTest">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6 lg:mb-8">
                   {t.vodChannel.paymentTest.title}
-                </h3>
+                </h2>
                 <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-8">
                   {t.vodChannel.paymentTest.content}
                 </p>
@@ -498,19 +524,6 @@ export function VodChannelDetail() {
                   height={600}
                   className="w-full h-auto object-contain"
                 />
-              </section>
-
-              {/* Next Project */}
-              <section className="pt-16 border-t border-border">
-                <div className="text-center">
-                  <p className="text-sm text-muted-foreground mb-4">Next Project</p>
-                  <Link
-                    href="/"
-                    className="inline-flex items-center justify-center px-8 py-3 bg-accent text-white font-semibold rounded-lg hover:bg-accent/90 transition-colors"
-                  >
-                    View All Projects
-                  </Link>
-                </div>
               </section>
             </div>
           </main>
