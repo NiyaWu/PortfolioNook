@@ -24,11 +24,11 @@ export const tgballersEn = {
     },
     timeline: {
       title: "02 Timeline",
-      content: "The project required a launch within one week. To save time for backend development, I utilized the first 3 days to finalize functional logic and visual interfaces, ensuring a precise scope to minimize subsequent revisions.",
+      content: "The project required launch within one week. To maximize backend development time, I used the first 3 days to finalize functional logic and visual interfaces, locking down a precise scope to minimize subsequent revisions.",
     },
     coreTasks: {
       title: "03 Core Tasks",
-      content: "I integrated design, technology, and AI resources: utilizing flowcharts to synchronize development, researching source code to overcome rendering limitations, and implementing a visual iteration workflow through AI tools.",
+      content: "Integrated design, technology, and AI resources: utilized flowcharts to synchronize development progress, researched source code to overcome rendering limitations, and established a visual iteration workflow through AI tools.",
     },
     painPoints: {
       title: "04 Pain Points Solved",
@@ -58,8 +58,8 @@ export const tgballersEn = {
     },
     {
       id: "impact",
-      title: "Practicing Autonomous Management and Technical Empowerment",
-      content: "I successfully completed the majority of the UI implementation within 72 hours, significantly reducing potential adjustment costs during the subsequent development phases. This experience strengthened my autonomous project management skills in an environment without PM support and characterized by fragmented communication. It further proved that by understanding technical logic and collaborating with AI tools, designers can effectively break through development bottlenecks and enhance output quality under extreme resource constraints.\n\nReflecting on this project, I initially attempted to challenge myself with a completely original design style. However, under extreme time pressure, I realized that the margin for error was slim and the cost of revisions was too high, making it difficult to perform major adjustments to visual details in the later stages. In future ultra-short-term challenges, I will be better equipped to evaluate the balance between technical feasibility and design style, prioritizing strategies that offer both visual appeal and developmental safety.",
+      title: "Autonomous Management & Technical Empowerment in Practice",
+      content: "I completed the majority of the UI implementation within 72 hours, significantly reducing potential adjustment costs during subsequent development phases. This experience strengthened my autonomous project management skills in an environment without PM support and fragmented communication. It demonstrated that by understanding technical logic and collaborating with AI tools, designers can effectively break through development bottlenecks and elevate output quality under extreme resource constraints.\n\nReflecting on this project, I initially attempted a completely original design style. However, under extreme time pressure, I realized the margin for error was too slim and revision costs too high, making it difficult to adjust visual details in later stages. For future ultra-short-term challenges, I will be better equipped to evaluate the balance between technical feasibility and design ambition, prioritizing strategies that deliver both visual appeal and developmental safety.",
     },
   ],
 }

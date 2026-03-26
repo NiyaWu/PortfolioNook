@@ -41,7 +41,7 @@ export const ivarRedesignEn = {
     subsections: [
       {
         title: "Dual System Integration Challenge",
-        content: "Previously, IVAR and IVARM had overlapping features with confusing switching logic. Through user research, we defined four default roles, shifting the product logic from \"system-oriented\" to \"Role-Based Access Control (RBAC)\", ensuring users at different levels (e.g., guards, system administrators) only need to focus on features relevant to their responsibilities.",
+        content: "Previously, IVAR and IVARM had overlapping features with confusing switching logic. Through user research, we defined four default roles, shifting the product logic from \"system-oriented\" to \"Role-Based Access Control (RBAC)\" — ensuring users at different levels (e.g., guards, system administrators) only see features relevant to their responsibilities.",
       },
       {
         title: "Optimizing Layout to Enhance Surveillance View",
@@ -104,7 +104,7 @@ export const ivarRedesignEn = {
   },
   flowFile: {
     title: "Collaboration & Delivery",
-    content: "In the past, simply delivering annotated specs often led to communication gaps. I switched to collaborating with the engineering team using \"feature-oriented flow diagrams.\" These diagrams guide development by detailing interaction specifics and dynamic effects, significantly reducing back-and-forth between design and development.",
+    content: "Previously, delivering annotated specs alone often led to communication gaps. I shifted to collaborating with engineers through \"feature-oriented flow diagrams\" that detail interaction specifics and dynamic behaviors, significantly reducing back-and-forth between design and development.",
   },
 }
 

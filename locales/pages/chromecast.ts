@@ -21,16 +21,16 @@ export const chromecastEn = {
   hero: chromecastHero,
   about: {
     title: "About",
-    content: "Google was evaluating first-wave Chromecast partners in Taiwan, and myVideo was one of three invited telecom providers. Under competitive pressure, we had to complete development and demo within a tight deadline to become their strategic partner.",
+    content: "Google was evaluating first-wave Chromecast partners in Taiwan, and myVideo was one of three invited telecom providers. Under competitive pressure, we needed to complete development and deliver a working demo within a tight deadline to secure the strategic partnership.",
   },
   discovery: {
     title: "Requirement Translation & Communication",
-    content: "Due to complex cross-device interactions, text alone couldn't align understanding. I referenced Google's official icons to transform abstract requirements into visual flow diagrams, serving as the basis for internal communication and Google presentations, ensuring team consensus within tight timelines.",
+    content: "Due to complex cross-device interactions, text descriptions alone couldn't align understanding across teams. I referenced Google's official icons to transform abstract requirements into visual flow diagrams, which served as the basis for both internal communication and Google presentations — ensuring team consensus within tight timelines.",
     caption: "Aligning cross-device connection logic with the team to ensure state synchronization between devices.",
   },
   phaseTwo: {
     title: "Evolution & Optimization",
-    content: "After basic casting was complete, phase two added subtitle and audio switching. Following brand flat design trends, new features were simplified to lightweight line icons, seamlessly integrating advanced controls into the existing player panel without visual burden.",
+    content: "After basic casting was complete, phase two introduced subtitle and audio track switching. Following the brand's flat design direction, new features were simplified to lightweight line icons, seamlessly integrating advanced controls into the existing player panel without adding visual burden.",
     caption: "Android phone portrait feature introduction",
     caption2: "Android phone landscape feature introduction",
   },
@@ -40,7 +40,7 @@ export const chromecastEn = {
   },
   interfaceDesign: {
     title: "Cross-Platform Design Adaptation",
-    content: "To meet platform recommendation standards, we differentiated designs for iOS (Human Interface Guidelines) and Android (Material Design). Fine-tuned icon styles and system spacing to maintain brand consistency while ensuring users retain native operational familiarity.",
+    content: "To meet platform design standards, we created differentiated designs for iOS (Human Interface Guidelines) and Android (Material Design). We fine-tuned icon styles and system spacing to maintain brand consistency while preserving native platform familiarity for users.",
     caption: "iOS feature introduction",
   },
   testVideo: {

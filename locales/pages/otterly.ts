@@ -14,11 +14,11 @@ export const otterlyEn = {
     items: [
       {
         label: "Social Barriers & Isolation:",
-        content: "On-site networking heavily relies on existing connections. Without prior networks, attendees often end up just grabbing food and leaving, unable to proactively build high-quality connections with strangers.",
+        content: "On-site networking heavily relies on existing connections. Without prior networks, attendees often end up grabbing food and leaving — unable to proactively build meaningful connections with strangers.",
       },
       {
         label: "Unconscious Bias in First Impressions:",
-        content: "Traditional socializing is easily constrained by appearance, ethnicity, or nationality biases, causing people with shared professional goals to miss opportunities due to instinctive psychological barriers.",
+        content: "Traditional networking is easily constrained by appearance, ethnicity, or nationality biases — causing people with shared professional goals to miss connection opportunities due to instinctive psychological barriers.",
       },
     ],
   },
@@ -28,7 +28,7 @@ export const otterlyEn = {
     items: [
       {
         label: "Skill-First Approach:",
-        content: "Prioritize displaying skill tags (e.g., Solidity Developer, UX Designer) and topics of interest over physical traits. Guide users to connect based on professional complementarity, making cross-border collaboration more genuine.",
+        content: "Prioritize displaying skill tags (e.g., Solidity Developer, UX Designer) and topics of interest over physical traits — guiding users to connect based on professional complementarity and making cross-border collaboration more genuine.",
       },
       {
         label: "Contextual Ice-breaking:",

@@ -84,7 +84,7 @@ export const projectsData = [
   {
     id: "vod-channel",
     title: "myVideo UX Redesign & Partner Collaboration",
-    category: "UX Design · Contact Person",
+    category: "UX Design · Stakeholder Liaison",
     company: "Taiwan Mobile",
     year: "2016",
     image: "/portfolio/VOD.png",
@@ -93,7 +93,7 @@ export const projectsData = [
   {
     id: "chromecast",
     title: "Chromecast Streaming Design",
-    category: "UI Design ・ Feature Research",
+    category: "UI Design · Feature Research",
     company: "Taiwan Mobile",
     year: "2014",
     image: "/otherWork-Chromecast.png",
@@ -106,11 +106,11 @@ const projectDescriptionsEn: Record<string, string> = {
   "ido-cms": "Elevated IDO investment experience through brand-centric design and a custom modular CMS, streamlining token launches and operational workflows.",
   "tgballers": "A Telegram interactive game developed for TOKEN2049 Singapore. In just 72 hours, I synchronized cross-departmental requirements to finalize specifications, leveraging AI to integrate technology and design for high-quality delivery under a tight deadline.",
   "ivar-redesign": "Consolidated fragmented management workflows and optimized the information architecture to deliver a more intuitive, seamless device monitoring experience.",
-  "face-library": "Face recognition and library management interface design",
-  "data-visualization": "Real-time data visualization and monitoring dashboard",
+  "face-library": "Designed an integrated face recognition and library management interface, bridging access control with video analytics to enable real-time identity verification.",
+  "data-visualization": "Architected a flexible data visualization framework with standardized chart configurations, enabling rapid dashboard deployment across diverse client scenarios.",
   "video-analysis": "Optimized complex video analysis workflows by reorganizing deep technical parameters into intuitive flows, enabling general users to quickly complete high-precision configurations.",
   "vod-channel": "Bridged external partners and internal teams, using research-driven validation to resolve design challenges and drive the myVideo experience redesign initiative.",
-  "chromecast": "Chromecast streaming feature flow design for OTT service",
+  "chromecast": "Designed the Chromecast streaming feature for myVideo's OTT service, translating complex cross-device interactions into clear visual flows to help secure a strategic Google partnership.",
 }
 
 const projectDescriptionsZh: Record<string, string> = {
@@ -148,7 +148,7 @@ export const commonEn = {
   // Work Showcase
   work: {
     title: "Featured Work",
-    description: "A selection of projects I've worked on",
+    description: "A curated selection of impactful projects I've led and contributed to",
     viewProject: "View project",
     moreProjects: "View Practices",
     projects: getProjectsWithDescriptions(projectDescriptionsEn),
@@ -159,8 +159,8 @@ export const commonEn = {
     emoji: "👋",
     intro: "Hello! I'm Niya.",
     description: [
-      "As a UI/UX Designer, I love breaking down complex systems and redefining how people interact with them. My design journey spans the fast-moving world of Web3 and the rigorous demands of SaaS platforms.",
-      "Passionate about user research and interface refinement, I strive to create intuitive, engaging product experiences. I enjoy adopting new technologies and tools to optimize workflows and enhance cross-functional collaboration.",
+      "As a Product Designer, I thrive on breaking down complex systems and redefining how people interact with them. My design journey spans the fast-moving world of Web3 and the rigorous demands of enterprise SaaS platforms.",
+      "Driven by user research and iterative refinement, I craft intuitive, engaging product experiences. I actively adopt emerging technologies and tools to optimize design workflows and strengthen cross-functional collaboration.",
     ],
     experienceTitle: "Experience",
     experiences: [
@@ -170,11 +170,11 @@ export const commonEn = {
         role: "Product Designer",
         location: "Remote",
         description: [
-          "Led the core product design of the IDO platform, optimizing user participation flows for token launches and asset staking.",
-          "Provided design support for external partnership projects, including Node Sale and Token Minting flow planning, translating diverse business requirements into intuitive interfaces.",
-          "Flexibly supported marketing and promotional needs, producing community visual assets and assisting with promotional video editing as needed.",
-          "Maintained and iterated on a cross-project design system, ensuring consistency across core products and external partnerships in a multi-chain environment.",
-          "Collaborated closely with the engineering team to ensure high-fidelity implementation of designs, providing front-end styling support during development phases.",
+          "Drove the core product design of the IDO platform, optimizing user participation flows for token launches and asset staking.",
+          "Delivered end-to-end design for external partnership projects, including Node Sale and Token Minting flow planning, translating diverse business requirements into intuitive interfaces.",
+          "Supported marketing and promotional needs with agility, producing community visual assets and assisting with promotional video editing as needed.",
+          "Maintained and iterated on a cross-project design system, ensuring visual consistency across core products and external partnerships in a multi-chain environment.",
+          "Partnered closely with the engineering team to ensure high-fidelity implementation, providing front-end styling support during development phases.",
         ],
       },
       {
@@ -255,7 +255,7 @@ export const commonEn = {
   },
   // Footer
   footer: {
-    copyright: "© 2024 Your Name. All rights reserved.",
+    copyright: "© 2026 Niya. All rights reserved.",
   },
 }
 

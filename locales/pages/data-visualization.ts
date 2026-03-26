@@ -18,7 +18,7 @@ export const dataVisualizationEn = {
   hero: dataVisualizationHero,
   about: {
     title: "Core Objectives",
-    content: "Developed a highly adaptable data visualization framework. The goal was to provide a consistent dashboard interface for various clients, enabling them to interpret data intuitively and find actionable insights quickly during reporting and decision-making.",
+    content: "Developed a highly adaptable data visualization framework. The goal was to provide a consistent dashboard interface for diverse clients, enabling them to interpret data intuitively and surface actionable insights quickly during reporting and decision-making.",
   },
   discovery: {
     title: "Discovery & Strategy",
@@ -51,7 +51,7 @@ export const dataVisualizationEn = {
   },
   widgetsStatus: {
     title: "Widget States",
-    content: "Data undergoes multiple processing layers (API, Database, Frontend) before visualization. To help users pinpoint issues, I collaborated with developers to design specific visual states for different data scenarios.",
+    content: "Data passes through multiple processing layers (API, database, frontend) before visualization. To help users pinpoint issues at each stage, I collaborated with developers to design distinct visual states for different data scenarios.",
     zeroData: "Zero Data: The system is functioning normally, but the received value is 0.",
     nullData: "Null/Error States: Differentiates between null values, loading states, and system errors to facilitate rapid troubleshooting.",
   },

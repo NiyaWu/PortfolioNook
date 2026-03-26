@@ -20,23 +20,23 @@ export const faceLibraryEn = {
   hero: faceLibraryHero,
   about: {
     title: "About Face Library Management",
-    content: "This feature is connecting access control system and video analysis system, companies can enter their employee's picture and information to the connecting access control system. When people come to the company and stand in front of the camera, the system will tell you who is it.",
+    content: "This feature bridges the access control system with the video analysis system. Companies can upload employee photos and information into the connected access control system. When someone approaches a camera on-site, the system automatically identifies them in real time.",
   },
   flowMap: {
     title: "Flow Map",
-    content: "We use the flow map to communicate with developers and product managers. That can make sure everyone knows what features include this project.",
+    content: "We used flow maps to align with developers and product managers, ensuring all stakeholders shared a clear understanding of the project's feature scope.",
   },
   eventPage: {
     title: "Modify Event Page",
-    content: "The original filter tool can not explain the logic completely. So I modify the filter interface to express the intention behind the implementation.",
+    content: "The original filter tool failed to clearly convey the underlying logic. I redesigned the filter interface to better express the intent behind each interaction.",
   },
   faceManagement: {
     title: "Face Add/Report",
-    content: "According to the event result, users' next step will be different. If the result is an unknown person, users can add the person to the face library. If users find the error analysis, they can correct the analysis and update the result to the face library, too.",
+    content: "Depending on the event result, the user's next action differs. If the system detects an unknown person, users can add them to the face library. If users spot an incorrect analysis, they can correct it and update the record directly.",
   },
   mockupFlow: {
     title: "Mockup Flow Map",
-    content: "Finally, we use the mockups to make a flow map. On the one hand, it can ensure that the different states of the interface have been completed, on the other hand, developers can understand the link between the flow and the mockups.",
+    content: "Finally, we combined mockups into a comprehensive flow map. This served a dual purpose: verifying that all interface states were accounted for, and helping developers understand how each screen connects within the overall flow.",
   },
 }
 

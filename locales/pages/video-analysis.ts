@@ -29,24 +29,24 @@ export const videoAnalysisEn = {
   },
   about: {
     title: "Overview",
-    overview: "IVAR is a video recognition system designed to assist human video identification, providing early warnings to reduce incidents. However, due to its complex functionality, this interface optimization was conducted to prevent users from losing focus.",
-    timeline: "The first optimization took two weeks, with subsequent additions of new analysis features.",
-    challenge: "Enable users monitoring the surveillance wall to quickly understand the status of each screen for subsequent troubleshooting; video analysis involves high-density parameter settings—how to prevent users from losing focus in complex forms.",
-    outcome: "The new interface for analysis settings better shows which settings are more relevant to the video; established multi-level operation guidelines and UI Kit to accelerate design delivery for subsequent new feature development.",
+    overview: "IVAR is a video recognition system designed to assist with visual identification, providing early warnings to help reduce incidents. Due to its complex functionality, this interface optimization aimed to prevent users from losing focus during configuration.",
+    timeline: "The initial optimization took two weeks, followed by ongoing iterations as new analysis features were added.",
+    challenge: "Enable surveillance wall operators to quickly assess the status of each screen for efficient troubleshooting; simplify high-density parameter settings to prevent users from losing focus in complex forms.",
+    outcome: "The redesigned analysis settings interface clearly surfaces which parameters are most relevant to the video feed. Additionally, established multi-level operation guidelines and a UI Kit to accelerate design delivery for subsequent feature development.",
   },
   designThinking: {
     title: "Design Thinking",
-    content: "Configuring different analysis types is a crucial feature in IVAR. Some analysis types require setting many items, not only general form settings but also graphical settings. We aim to design an interface that helps users understand how to configure settings and why they need to do so, enabling users to comprehend the entire analysis workflow.",
+    content: "Configuring different analysis types is a crucial feature in IVAR. Some analysis types require extensive parameter settings — not only standard form inputs but also graphical configurations. Our goal was to design an interface that helps users understand both how to configure settings and why each setting matters, enabling them to grasp the entire analysis workflow.",
   },
   analysisSettings: {
     title: "Multiple Image Analysis Settings",
-    content: "For camera analysis configuration, we want cameras to perform different analyses at different times. For example, a camera at a supermarket entrance can be set for people counting during business hours and intrusion detection after closing. On the settings page, multiple analysis configurations can be placed under each camera, allowing users to schedule when to use which analysis.",
-    content2: "The interface design adopts a \"segmented progressive guidance\" approach. When users select \"Intrusion Detection\", the interface automatically hides \"People Counting\" parameters, showing only the necessary settings for that scenario.",
+    content: "For camera analysis configuration, we designed cameras to perform different analyses at different times. For example, a camera at a supermarket entrance can run people counting during business hours and switch to intrusion detection after closing. On the settings page, multiple analysis configurations can be assigned to each camera, allowing users to schedule which analysis runs and when.",
+    content2: "The interface adopts a \"segmented progressive guidance\" approach. When a user selects \"Intrusion Detection,\" the interface automatically hides \"People Counting\" parameters, displaying only the settings relevant to that scenario.",
   },
   scheduleSettings: {
     title: "Analysis Schedule Settings",
-    content: "For schedule design, we use a chart-based approach where users can select desired time segments by drawing, enabling quick and intuitive configuration.",
-    content2: "The analyzable channels vary based on the user's purchased plan. Using a table format resolves conflicts in multi-task overlapping configurations.",
+    content: "For schedule design, we adopted a chart-based approach where users can select time segments by drawing directly on the timeline, enabling quick and intuitive configuration.",
+    content2: "The number of analyzable channels varies based on the user's purchased plan. A table format was used to resolve conflicts in overlapping multi-task configurations.",
   },
   graphicalTool: {
     title: "New Graphical Tool Design - Double Cross Line",
@@ -55,16 +55,16 @@ export const videoAnalysisEn = {
   },
   tvWall: {
     title: "TV Wall Design",
-    content: "Based on analysis items and information users may need, we organized the information display on the TV wall.",
-    content2: "The event list on the right was designed based on the 2020 pandemic situation, featuring mask detection and body temperature monitoring.",
+    content: "Based on the active analysis types and the information users need most, we organized the TV wall's information display for clarity.",
+    content2: "The event list on the right was designed in response to the 2020 pandemic, featuring mask detection and body temperature monitoring.",
   },
   uiKit: {
     title: "UI Kit",
-    content: "The company had a basic UI kit for some products, but it wasn't sufficient for the entire product line. Especially for multi-level operation menus, we established the operation logic and component fundamentals together in this project.",
+    content: "The company had a basic UI Kit covering some products, but it was insufficient for the full product line. In particular, multi-level operation menus lacked clear standards. Through this project, we established the interaction logic and foundational components together.",
   },
   outcome: {
     title: "Outcomes & Learnings",
-    content: "At a stage where video recognition technology still requires extensive manual parameter calibration, I realized that design's value lies in lowering technical barriers and improving configuration accuracy. By restructuring IVAR's information architecture, I transformed complex algorithm parameters into intuitive interface semantics, effectively reducing users' learning curve while ensuring system accuracy across different professional scenarios (such as traffic recognition and pandemic detection).",
+    content: "At a stage where video recognition technology still requires extensive manual parameter calibration, I recognized that design's core value lies in lowering technical barriers and improving configuration accuracy. By restructuring IVAR's information architecture, I transformed complex algorithm parameters into intuitive interface semantics — effectively reducing the learning curve while maintaining system accuracy across diverse professional scenarios such as traffic analysis and pandemic detection.",
   },
 }
 

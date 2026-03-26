@@ -29,7 +29,7 @@ export const idoCmsEn = {
     },
     challenge: {
       title: "03 Challenge",
-      content: "Fragmented Launch Workflow: Reliance on multiple platforms led to disjointed issuance paths and hindered real-time error correction. \n Low Information Transparency: Scattered data on subscription pages made it hard for users to find key info, impacting investment decisions.",
+      content: "Fragmented Launch Workflow: Reliance on multiple platforms led to disjointed issuance paths and hindered real-time error correction.\nLow Information Transparency: Scattered data on subscription pages made it difficult for users to locate key information, impacting investment decisions.",
     },
     outcome: {
       title: "04 Outcome",
@@ -56,15 +56,15 @@ export const idoCmsEn = {
   // Solution Section
   solution: {
     title: "Solution",
-    content: "Modular Workflow Design We streamlined the launch process by categorizing data into two core modules: Project Info and Sale Details. This established a clear hierarchy with real-time tracking and error-prevention, significantly reducing preparation time and improving team collaboration.",
+    content: "Modular Workflow Design: We streamlined the launch process by categorizing data into two core modules — Project Info and Sale Details. This established a clear hierarchy with real-time tracking and error prevention, significantly reducing preparation time and improving team collaboration.",
   },
   // Design Section
   design: {
     title: "Design",
-    content: "Visual Guidance & Dual-Theme Redesign The design transforms the brand LOGO into a central visual element, using upward light projections to create an intuitive guiding language throughout the platform. For the core sales experience, we restructured the information hierarchy based on user feedback to ensure all critical data is clear at a glance. Additionally, we introduced both Dark and Light modes, granting users full autonomy over their viewing environment.",
+    content: "Visual Guidance & Dual-Theme Redesign: The design transforms the brand logo into a central visual element, using upward light projections to create an intuitive guiding language throughout the platform. For the core sales experience, we restructured the information hierarchy based on user feedback to ensure all critical data is clear at a glance. Additionally, we introduced both Dark and Light modes, granting users full autonomy over their viewing environment.",
     landingPageCaption: "Impossible Finance landing page design",
     iaTitle: "IA Evolution: From Sale-Centric to Project-Centric",
-    iaContent: "In the platform's early stages, the interface used a straightforward single-sale layout. However, as the business expanded, a single project often included multiple sale types (e.g., Standard, Unlimited, Whitelist), causing duplicate information on the homepage and increasing users' filtering difficulty and cognitive load.",
+    iaContent: "In the platform's early stages, the interface followed a straightforward single-sale layout. However, as the business expanded, a single project often included multiple sale types (e.g., Standard, Unlimited, Whitelist), resulting in duplicate entries on the homepage and increasing users' filtering difficulty and cognitive load.",
     iaContent2: "We restructured the product's Information Architecture, defining 'Project' as the top-level container and consolidating diverse sale modes into second-level inner pages:",
     iaPoints: [
       "**Data De-duplication**: The homepage list displays only unique project entries, significantly improving scanning efficiency.",
@@ -92,7 +92,7 @@ export const idoCmsEn = {
   // User Research Section
   userResearch: {
     title: "User Research",
-    content: "In a fully remote setup, we validated interface intuitiveness via Google Forms. Participants achieved a **high accuracy rate** in identifying CMS interface functions, proving the design's \"self-explanatory\" clarity and reducing cross-team communication overhead.",
+    content: "In a fully remote setup, we validated interface intuitiveness through Google Forms surveys. Participants achieved a **high accuracy rate** in identifying CMS interface functions, confirming the design's \"self-explanatory\" clarity and reducing cross-team communication overhead.",
   },
   // Outcome Section
   outcome: {

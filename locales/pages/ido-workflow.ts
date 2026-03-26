@@ -40,15 +40,15 @@ export const idoWorkflowEn = {
   },
   phase3: {
     title: "Phase 3: Introducing Highly Flexible Dynamic Templates",
-    description: "To address marketing's need for \"subtle motion\", I researched and introduced Jitter, which integrates seamlessly with Figma.",
+    description: "To address marketing's need for \"subtle motion,\" I researched and introduced Jitter, which integrates seamlessly with Figma.",
     approach: "Approach:",
     approachContent: "Import Figma visuals into Jitter to create dynamic templates.",
     value: "Value:",
-    valueContent: "Jitter allows marketing personnel, even without animation background, to independently adjust text and export dynamic visuals as easily as operating PowerPoint, ensuring both flexibility and quality.",
+    valueContent: "Jitter allows marketing personnel — even without an animation background — to independently adjust text and export dynamic visuals as easily as using PowerPoint, ensuring both flexibility and quality.",
   },
   impact: {
     title: "Outcomes & Learnings",
-    content: "By systematically managing design assets, I successfully elevated the design logic from \"single editing\" to \"global synchronization\", significantly reducing human errors in multi-specification production. This workflow also redefined cross-team collaboration boundaries, enabling marketing to independently fine-tune copy and completely eliminating the 12+ hour timezone waiting bottleneck. ",
+    content: "By systematizing design asset management, I elevated the workflow from \"single editing\" to \"global synchronization,\" significantly reducing human errors in multi-specification production. This approach also redefined cross-team collaboration boundaries — enabling marketing to independently fine-tune copy and completely eliminating the 12+ hour timezone waiting bottleneck.",
   },
 }
 
