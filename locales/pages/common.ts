@@ -43,6 +43,7 @@ export const projectsData = [
     company: "Personal Project",
     year: "2026",
     image: "/otherWork-Otterly.png",
+    animation: "/portfolio/Otter-HomePage.json",
     href: "#",
   },
   {

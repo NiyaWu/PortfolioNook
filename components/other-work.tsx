@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
+import Lottie from "lottie-react"
 import { useLanguage } from "@/contexts/language-context"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
@@ -11,6 +12,7 @@ export function OtherWork() {
   const { t } = useLanguage()
   const [activePopup, setActivePopup] = useState<string | null>(null)
   const [isScrolled, setIsScrolled] = useState(false)
+  const [animationData, setAnimationData] = useState<Record<string, unknown>>({})
   const popupContentRef = useRef<HTMLDivElement>(null)
 
   // Lock body scroll when popup is open
@@ -45,6 +47,20 @@ export function OtherWork() {
     .slice(3)
     .filter((project) => !excludedIds.includes(project.id))
     .sort((a, b) => parseInt(b.year) - parseInt(a.year))
+
+  useEffect(() => {
+    otherProjects.forEach((project) => {
+      const animation = (project as { animation?: string }).animation
+      if (animation && !animationData[animation]) {
+        fetch(animation)
+          .then((res) => res.json())
+          .then((data) => {
+            setAnimationData((prev) => ({ ...prev, [animation]: data }))
+          })
+          .catch(console.error)
+      }
+    })
+  }, [otherProjects, animationData])
 
   const handleProjectClick = (projectId: string, e: React.MouseEvent) => {
     e.preventDefault()
@@ -114,12 +130,21 @@ export function OtherWork() {
               >
                 {/* Image fills entire area - fixed height for consistency */}
                 <div className="h-[280px] md:h-[360px] lg:h-[420px] 2xl:h-[480px] relative overflow-hidden">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
+                  {(project as { animation?: string }).animation && animationData[(project as { animation?: string }).animation!] ? (
+                    <Lottie
+                      animationData={animationData[(project as { animation?: string }).animation!]}
+                      loop={true}
+                      rendererSettings={{ preserveAspectRatio: "xMidYMid slice" }}
+                      className="absolute inset-0 w-full h-full transition-transform duration-500 group-hover:scale-105"
+                    />
+                  ) : (
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  )}
                   {/* Text overlay at top center */}
                   <div className="absolute top-0 left-0 right-0 p-5 pt-8 md:p-6 md:pt-10 lg:p-8 lg:pt-14 text-center">
                     <h3 className="text-lg md:text-xl lg:text-2xl font-semibold text-black mb-1 lg:mb-2">
@@ -175,8 +200,24 @@ export function OtherWork() {
             </div>
 
             {/* Popup Body */}
-            <div className="relative p-6 md:p-10 flex-1">
+            <div className="p-6 md:p-10 flex-1 overflow-y-auto">
               <div className="max-w-[680px] mx-auto space-y-10">
+
+              {/* Hero: Image + Intro */}
+              <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
+                <div className="flex justify-center">
+                  <Image
+                    src="/portfolio/otterly-homepageInPhone.png"
+                    alt={t.otterly.title}
+                    width={1200}
+                    height={1200}
+                    className="w-full max-w-sm h-auto"
+                  />
+                </div>
+                <p className="text-base md:text-lg text-muted-foreground leading-relaxed italic">
+                  {t.otterly.intro}
+                </p>
+              </div>
 
               {/* Section 1 */}
               <div>
@@ -193,18 +234,97 @@ export function OtherWork() {
                 </div>
               </div>
 
+              {/* Section 2 */}
+              <div>
+                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">
+                  {t.otterly.section2.title}
+                </h3>
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-6">
+                  {t.otterly.section2.intro}
+                </p>
+                <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+                  {t.otterly.section2.items.map((item: { label: string; content: string }, index: number) => (
+                    <div key={index} className="space-y-3">
+                      <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                        <strong className="font-semibold text-foreground">{item.label}</strong>{item.content}
+                      </p>
+                      <Image
+                        src={`/portfolio/Otterly-0${index + 1}.png`}
+                        alt={item.label}
+                        width={580}
+                        height={580}
+                        className="w-full h-auto rounded-lg"
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
 
-              {/* White gradient overlay with Coming Soon */}
-              <div className="absolute inset-x-0 bottom-0 h-[85%] bg-gradient-to-t from-white from-60% via-white/95 to-transparent flex flex-col items-center justify-end pb-24">
-                <div className="text-center px-6 max-w-md">
-                  <p className="text-lg md:text-xl font-bold text-gray-900 mb-3">{t.otterly.comingSoonTitle}</p>
-                  <p className="text-sm md:text-base text-gray-500 leading-relaxed">
-                    {t.otterly.comingSoonDescBefore}
-                    <a href="https://www.linkedin.com/in/niya-wu-097976182/" target="_blank" rel="noopener noreferrer" className="underline text-gray-700 hover:text-gray-900 transition-colors">{t.otterly.comingSoonDescLink}</a>
-                    {t.otterly.comingSoonDescAfter}
-                  </p>
+              {/* Section 3 */}
+              <div>
+                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">
+                  {t.otterly.section3.title}
+                </h3>
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-4">
+                  {t.otterly.section3.intro}
+                </p>
+                <div className="space-y-4 text-sm md:text-base text-muted-foreground leading-relaxed">
+                  {t.otterly.section3.items.map((item: { label: string; content: string }, index: number) => (
+                    <p key={index}><strong className="font-semibold text-foreground">{item.label}</strong>{item.content}</p>
+                  ))}
                 </div>
+              </div>
+
+              {/* Section 4 */}
+              <div>
+                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">
+                  {t.otterly.section4.title}
+                </h3>
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-6">
+                  {t.otterly.section4.intro}
+                </p>
+
+                {/* Row 1: Claude + Stitch bullets, with changeUI image */}
+                <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
+                  <div className="space-y-4 text-sm md:text-base text-muted-foreground leading-relaxed">
+                    {t.otterly.section4.items.slice(0, 2).map((item: { label: string; content: string }, index: number) => (
+                      <p key={index}><strong className="font-semibold text-foreground">{item.label}</strong>{item.content}</p>
+                    ))}
+                  </div>
+                  <Image
+                    src="/portfolio/Otterly-changeUI.png"
+                    alt="Claude prototype redesigned with Google Stitch"
+                    width={1424}
+                    height={1068}
+                    className="w-full h-auto rounded-lg"
+                  />
+                </div>
+
+                {/* Row 2: ChatGPT bullet, with character image */}
+                <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center mt-6">
+                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                    <strong className="font-semibold text-foreground">{t.otterly.section4.items[2].label}</strong>{t.otterly.section4.items[2].content}
+                  </p>
+                  <Image
+                    src="/portfolio/Otterly-changeOtter.png"
+                    alt="Otter character refined with ChatGPT"
+                    width={618}
+                    height={473}
+                    className="w-full h-auto rounded-lg"
+                  />
+                </div>
+              </div>
+
+              {/* Section 5 */}
+              <div>
+                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">
+                  {t.otterly.section5.title}
+                </h3>
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                  {t.otterly.section5.content}
+                </p>
+              </div>
+
               </div>
             </div>
 
