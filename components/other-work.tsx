@@ -62,6 +62,18 @@ export function OtherWork() {
     })
   }, [otherProjects, animationData])
 
+  useEffect(() => {
+    const path = "/portfolio/otter-Run.json"
+    if (activePopup === "otterly" && !animationData[path]) {
+      fetch(path)
+        .then((res) => res.json())
+        .then((data) => {
+          setAnimationData((prev) => ({ ...prev, [path]: data }))
+        })
+        .catch(console.error)
+    }
+  }, [activePopup, animationData])
+
   const handleProjectClick = (projectId: string, e: React.MouseEvent) => {
     e.preventDefault()
     setActivePopup(projectId)
@@ -324,6 +336,22 @@ export function OtherWork() {
                   {t.otterly.section5.content}
                 </p>
               </div>
+
+              {/* Closing animation */}
+              {animationData["/portfolio/otter-Run.json"] ? (
+                <div className="flex justify-center pt-4">
+                  <div
+                    className="w-full max-w-[200px]"
+                    style={{ clipPath: "inset(0 0 30px 0)", marginBottom: "-30px" }}
+                  >
+                    <Lottie
+                      animationData={animationData["/portfolio/otter-Run.json"]}
+                      loop={true}
+                      className="w-full h-auto"
+                    />
+                  </div>
+                </div>
+              ) : null}
 
               </div>
             </div>
