@@ -44,7 +44,7 @@ export function LanguageToggle() {
                 : "text-gray-500 hover:text-gray-700"
             }`}
           >
-            中文
+            繁中
           </div>
         </div>
       </button>
