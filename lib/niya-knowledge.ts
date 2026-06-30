@@ -49,7 +49,7 @@ Enterprise smart video analytics.
   and metro platform surveillance.
 - Built IVAR's component library on Material-UI and Highcharts, and wrote production
   HTML / CSS that shipped to the live product.
-- Smart airport AI system: integrated access management, certification e-learning, and
+- Smart airport system: integrated access management, certification e-learning, and
   license plate recognition into one system.
 - Research at Gorilla was usability testing (not user interviews).
 

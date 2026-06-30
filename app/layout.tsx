@@ -4,7 +4,6 @@ import { Geist, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { LanguageProvider } from "@/contexts/language-context"
 import { LanguageToggle } from "@/components/language-toggle"
-import { ChatWidget } from "@/components/chat-widget"
 import "./globals.css"
 
 const _geist = Geist({ subsets: ["latin"] })
@@ -44,7 +43,6 @@ export default function RootLayout({
         <LanguageProvider>
           {children}
           <LanguageToggle />
-          <ChatWidget />
           <Analytics />
         </LanguageProvider>
       </body>

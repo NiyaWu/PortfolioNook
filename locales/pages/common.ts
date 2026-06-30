@@ -144,7 +144,7 @@ export const commonEn = {
   // Hero
   hero: {
     name: "Niya",
-    description: "I'm a Product Designer with multi-industry experience across Web3, SaaS, and large-scale system platforms.",
+    description: "I'm a Product Designer who turns complex systems into products people can actually use.",
   },
   // Work Showcase
   work: {
@@ -272,7 +272,7 @@ export const commonZh = {
   // Hero
   hero: {
     name: "Niya",
-    description: "我是一位產品設計師，擁有 Web3、SaaS 和大型系統平台等多產業的經驗。",
+    description: "我是產品設計師，把複雜的系統變成一般人也能輕鬆使用的產品。",
   },
   // Work Showcase
   work: {
