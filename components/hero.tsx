@@ -40,16 +40,16 @@ const CHAT_COPY = {
     restart: "Start over",
     tryLabel: "Try asking",
     scroll: "See selected work",
-    contactHint: "Want to talk to Niya? Just leave your email in the chat and she'll follow up.",
+    contactHint: "Want to talk to Niya? Leave your email, and feel free to add your company and role. She'll follow up.",
     eyebrow: "Product Designer",
     headlinePre: "I make ",
     headlineAccent: "complex systems",
     headlinePost: " simple.",
     subline: "These days, I build with AI tools too.",
     strengths: [
-      "End-to-end product design, from research to high-fidelity prototypes",
-      "Design systems built to scale, dark/light and white-label",
-      "AI tools in my daily work, from prototyping to UI and motion",
+      "End-to-end product design, from research and planning to high-fidelity prototypes",
+      "I understand and edit HTML/CSS, so designs stay faithful in code",
+      "AI woven into my design, from prototyping to UI and visual",
     ],
     openChat: "Ask my AI assistant",
     chatTitle: "Ask about Niya",
@@ -63,16 +63,16 @@ const CHAT_COPY = {
     restart: "重新開始",
     tryLabel: "可以這樣問",
     scroll: "往下看作品",
-    contactHint: "想預約面試？在對話裡留下你的 email，Niya 會主動跟你聯絡。",
+    contactHint: "想預約面試？留下你的 email，也歡迎附上公司與職位，Niya 會主動跟你聯絡。",
     eyebrow: "Niya · 產品設計師",
     headlinePre: "把",
     headlineAccent: "複雜的系統",
     headlinePost: "變簡單。",
     subline: "這陣子，我也用 AI 工具一起做。",
     strengths: [
-      "完整的產品設計流程，從研究到高擬真原型",
-      "可規模化的設計系統，涵蓋深色／淺色與白標",
-      "每天用 AI 工具，從原型到介面與動態",
+      "完整產品設計流程，從研究、規劃到高擬真原型",
+      "理解也能改 HTML／CSS，讓設計準確實作",
+      "把 AI 帶進設計，從原型到 UI 與視覺",
     ],
     openChat: "問問我的 AI 助理",
     chatTitle: "問問關於 Niya",
@@ -127,7 +127,7 @@ export function Hero() {
     // background with recent context. Best-effort; never blocks the chat.
     const emailMatch = trimmed.match(EMAIL_RE)
     if (emailMatch) {
-      const transcript = next.slice(-6).map((m) => `${m.role}: ${m.content}`).join("\n")
+      const transcript = next.slice(-12).map((m) => `${m.role}: ${m.content}`).join("\n")
       fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -193,7 +193,7 @@ export function Hero() {
           </p>
           <ul className="mx-auto mt-6 w-fit space-y-2.5 text-left md:mx-0">
             {c.strengths.map((s) => (
-              <li key={s} className="flex items-start gap-3 text-sm text-gray-700 md:text-base">
+              <li key={s} className="flex items-start gap-3 text-base text-gray-700 md:text-lg">
                 <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#0071e3]/10 text-[#0071e3]">
                   <Check className="h-3 w-3" strokeWidth={3} />
                 </span>
@@ -247,7 +247,7 @@ export function Hero() {
               className="flex-1 space-y-2.5 overflow-y-auto p-5 text-left"
             >
               {/* Greeting (assistant, left) */}
-              <div className="mr-auto w-fit max-w-[88%] rounded-2xl rounded-tl-sm bg-gray-100 px-3.5 py-2 text-sm leading-relaxed text-gray-700">
+              <div className="mr-auto w-fit max-w-[88%] rounded-2xl rounded-tl-sm bg-gray-100 px-3.5 py-2 text-[15px] leading-relaxed text-gray-700">
                 {c.greeting}
               </div>
 
@@ -257,8 +257,8 @@ export function Hero() {
                   key={i}
                   className={
                     m.role === "user"
-                      ? "ml-auto w-fit max-w-[88%] rounded-2xl rounded-tr-sm bg-[#0071e3] px-3.5 py-2 text-sm leading-relaxed text-white"
-                      : "mr-auto w-fit max-w-[88%] rounded-2xl rounded-tl-sm bg-gray-100 px-3.5 py-2 text-sm leading-relaxed text-gray-700"
+                      ? "ml-auto w-fit max-w-[88%] rounded-2xl rounded-tr-sm bg-[#0071e3] px-3.5 py-2 text-[15px] leading-relaxed text-white"
+                      : "mr-auto w-fit max-w-[88%] rounded-2xl rounded-tl-sm bg-gray-100 px-3.5 py-2 text-[15px] leading-relaxed text-gray-700"
                   }
                 >
                   {m.role === "assistant" ? renderRich(m.content) : m.content}
@@ -277,7 +277,7 @@ export function Hero() {
                   <button
                     key={s}
                     onClick={() => send(s)}
-                    className="ml-auto block w-fit max-w-[88%] rounded-2xl rounded-tr-sm border border-[#0071e3] bg-white px-3.5 py-2 text-sm leading-relaxed text-[#0071e3] transition-colors hover:bg-[#0071e3] hover:text-white"
+                    className="ml-auto block w-fit max-w-[88%] rounded-2xl rounded-tr-sm border border-[#0071e3] bg-white px-3.5 py-2 text-[15px] leading-relaxed text-[#0071e3] transition-colors hover:bg-[#0071e3] hover:text-white"
                   >
                     {s}
                   </button>

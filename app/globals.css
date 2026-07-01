@@ -283,6 +283,32 @@
     animation: ripple-5 2s ease-in-out infinite;
     animation-delay: 0.8s;
   }
+
+  /* Scale the ripple up on larger screens so the outer rings spill past the
+     viewport edges instead of sitting fully visible in a sea of white. */
+  @media (min-width: 1280px) {
+    .ripple-effect:nth-child(1) { width: 560px; height: 560px; }
+    .ripple-effect:nth-child(2) { width: 760px; height: 760px; }
+    .ripple-effect:nth-child(3) { width: 960px; height: 960px; }
+    .ripple-effect:nth-child(4) { width: 1160px; height: 1160px; }
+    .ripple-effect:nth-child(5) { width: 1360px; height: 1360px; }
+  }
+
+  @media (min-width: 1536px) {
+    .ripple-effect:nth-child(1) { width: 680px; height: 680px; }
+    .ripple-effect:nth-child(2) { width: 920px; height: 920px; }
+    .ripple-effect:nth-child(3) { width: 1160px; height: 1160px; }
+    .ripple-effect:nth-child(4) { width: 1400px; height: 1400px; }
+    .ripple-effect:nth-child(5) { width: 1640px; height: 1640px; }
+  }
+
+  @media (min-width: 1920px) {
+    .ripple-effect:nth-child(1) { width: 820px; height: 820px; }
+    .ripple-effect:nth-child(2) { width: 1100px; height: 1100px; }
+    .ripple-effect:nth-child(3) { width: 1380px; height: 1380px; }
+    .ripple-effect:nth-child(4) { width: 1660px; height: 1660px; }
+    .ripple-effect:nth-child(5) { width: 1940px; height: 1940px; }
+  }
 }
 
 /* Hide the global header and language toggle while the mobile chat overlay is open */
