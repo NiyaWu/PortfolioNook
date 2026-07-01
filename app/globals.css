@@ -284,3 +284,9 @@
     animation-delay: 0.8s;
   }
 }
+
+/* Hide the global header and language toggle while the mobile chat overlay is open */
+body.chat-open header,
+body.chat-open .lang-toggle {
+  display: none;
+}

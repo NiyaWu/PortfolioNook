@@ -10,7 +10,7 @@ export function LanguageToggle() {
   }
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className="lang-toggle fixed bottom-6 right-6 z-50">
       <button
         onClick={toggleLanguage}
         className="relative inline-flex items-center bg-gray-200 rounded-full p-1 shadow-lg hover:shadow-xl transition-all duration-300"

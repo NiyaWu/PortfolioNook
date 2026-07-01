@@ -1,8 +1,9 @@
 "use client"
 
 import { Fragment, useEffect, useRef, useState, type ReactNode } from "react"
-import { Send, Loader2, RotateCcw, Sparkles } from "lucide-react"
+import { Send, Loader2, RotateCcw, Sparkles, ArrowDown, X, Check } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
+import { PillButton } from "@/components/pill-button"
 
 type Msg = { role: "user" | "assistant"; content: string }
 
@@ -40,6 +41,18 @@ const CHAT_COPY = {
     tryLabel: "Try asking",
     scroll: "See selected work",
     contactHint: "Want to talk to Niya? Just leave your email in the chat and she'll follow up.",
+    eyebrow: "Product Designer",
+    headlinePre: "I make ",
+    headlineAccent: "complex systems",
+    headlinePost: " simple.",
+    subline: "These days, I build with AI tools too.",
+    strengths: [
+      "End-to-end product design, from research to high-fidelity prototypes",
+      "Design systems built to scale, dark/light and white-label",
+      "AI tools in my daily work, from prototyping to UI and motion",
+    ],
+    openChat: "Ask my AI assistant",
+    chatTitle: "Ask about Niya",
   },
   zh: {
     placeholder: "關於 Niya，什麼都可以問我…",
@@ -51,6 +64,18 @@ const CHAT_COPY = {
     tryLabel: "可以這樣問",
     scroll: "往下看作品",
     contactHint: "想預約面試？在對話裡留下你的 email，Niya 會主動跟你聯絡。",
+    eyebrow: "Niya · 產品設計師",
+    headlinePre: "把",
+    headlineAccent: "複雜的系統",
+    headlinePost: "變簡單。",
+    subline: "這陣子，我也用 AI 工具一起做。",
+    strengths: [
+      "完整的產品設計流程，從研究到高擬真原型",
+      "可規模化的設計系統，涵蓋深色／淺色與白標",
+      "每天用 AI 工具，從原型到介面與動態",
+    ],
+    openChat: "問問我的 AI 助理",
+    chatTitle: "問問關於 Niya",
   },
 }
 
@@ -62,9 +87,24 @@ export function Hero() {
   const [messages, setMessages] = useState<Msg[]>([])
   const [input, setInput] = useState("")
   const [loading, setLoading] = useState(false)
+  // Follow-up suggestions returned by the model; falls back to the defaults.
+  const [dynamicSuggestions, setDynamicSuggestions] = useState<string[] | null>(null)
+  // Mobile only: open the chat as a full-screen overlay.
+  const [open, setOpen] = useState(false)
   const scrollRef = useRef<HTMLDivElement>(null)
 
+  useEffect(() => {
+    if (!open) return
+    document.body.style.overflow = "hidden"
+    document.body.classList.add("chat-open")
+    return () => {
+      document.body.style.overflow = ""
+      document.body.classList.remove("chat-open")
+    }
+  }, [open])
+
   const started = messages.length > 0
+  const suggestions = dynamicSuggestions ?? c.suggestions
 
   useEffect(() => {
     setIsVisible(true)
@@ -104,6 +144,9 @@ export function Hero() {
       const data = await res.json()
       const reply = res.ok && data.reply ? data.reply : data.error || c.error
       setMessages([...next, { role: "assistant", content: reply }])
+      if (res.ok && Array.isArray(data.suggestions) && data.suggestions.length > 0) {
+        setDynamicSuggestions(data.suggestions)
+      }
     } catch {
       setMessages([...next, { role: "assistant", content: c.error }])
     } finally {
@@ -115,14 +158,15 @@ export function Hero() {
     setMessages([])
     setInput("")
     setLoading(false)
+    setDynamicSuggestions(null)
   }
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-6 md:px-8 lg:px-12 overflow-hidden">
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 py-20 md:px-8 md:py-0 lg:px-12">
       {/* Bottom gradient fade to white */}
       <div className="absolute bottom-0 left-0 right-0 h-32 md:h-48 bg-gradient-to-b from-transparent to-white pointer-events-none z-20" />
 
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center isolate">
         <div className="ripple-effect absolute" />
         <div className="ripple-effect absolute" />
         <div className="ripple-effect absolute" />
@@ -131,140 +175,173 @@ export function Hero() {
       </div>
 
       <div
-        className={`relative z-10 flex w-full max-w-3xl flex-col items-center gap-8 transition-all duration-1000 ${
+        className={`relative grid w-full max-w-6xl grid-cols-1 items-center gap-10 transition-all duration-1000 md:grid-cols-2 lg:gap-16 ${
           isVisible ? "opacity-100" : "opacity-0"
         }`}
       >
-        {/* Top: intro */}
-        <div className="text-center">
-          <h1 className="mb-5 text-5xl font-bold leading-tight tracking-tight text-foreground md:text-6xl lg:text-7xl">
+        {/* Left: intro */}
+        <div className="text-center md:text-left">
+          <h1 className="text-6xl font-bold leading-none text-foreground md:text-7xl lg:text-[5rem]">
             {t.hero.name}
           </h1>
-          <p className="mx-auto max-w-md text-lg leading-relaxed text-muted-foreground md:text-xl">
-            {t.hero.description}
+          <p className="mt-4 text-xl font-medium leading-snug text-gray-600 md:text-2xl">
+            {c.headlinePre}
+            <span className="bg-gradient-to-r from-[#0071e3] to-[#06b6d4] bg-clip-text text-transparent">
+              {c.headlineAccent}
+            </span>
+            {c.headlinePost}
           </p>
+          <ul className="mx-auto mt-6 w-fit space-y-2.5 text-left md:mx-0">
+            {c.strengths.map((s) => (
+              <li key={s} className="flex items-start gap-3 text-sm text-gray-700 md:text-base">
+                <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#0071e3]/10 text-[#0071e3]">
+                  <Check className="h-3 w-3" strokeWidth={3} />
+                </span>
+                <span>{s}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-8 flex flex-col items-stretch gap-3 md:flex-row md:items-center md:justify-start">
+            <PillButton
+              onClick={() => document.getElementById("work")?.scrollIntoView({ behavior: "smooth" })}
+              className="w-full md:w-auto"
+            >
+              {c.scroll}
+              <ArrowDown className="h-4 w-4" />
+            </PillButton>
+            {/* Mobile only: open the chat (desktop has the inline panel) */}
+            <PillButton
+              variant="outline"
+              onClick={() => setOpen(true)}
+              className="w-full md:hidden"
+            >
+              <Sparkles className="h-4 w-4" />
+              {c.openChat}
+            </PillButton>
+          </div>
         </div>
 
-        {/* Bottom: chat area (solid surfaces so it reads as one complete block) */}
-        <div className="w-full space-y-4">
-          {/* Chat panel — conversation + input live in one box */}
-          <div className="flex w-full flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-[0_10px_40px_rgba(0,0,0,0.06)] transition-shadow focus-within:shadow-[0_10px_40px_rgba(0,0,0,0.10)]">
-            {/* Conversation thread (appears once a message is sent) */}
-            {started && (
-              <div
-                ref={scrollRef}
-                className="max-h-[40vh] space-y-2.5 overflow-y-auto border-b border-gray-100 p-5 text-left"
+        {/* Right: chat panel — inline card on desktop; full-screen overlay on
+            mobile (opened from the secondary button) */}
+        <div className="w-full">
+          <div
+            className={`${
+              open ? "fixed inset-0 z-[60] flex h-full w-full flex-col bg-white" : "hidden"
+            } overflow-hidden md:static md:z-auto md:flex md:h-[32rem] md:w-full md:flex-col md:rounded-2xl md:border md:border-gray-200 md:bg-white md:shadow-[0_10px_40px_rgba(0,0,0,0.06)]`}
+          >
+            {/* Mobile header with close */}
+            <div className="flex items-center justify-between border-b border-gray-200 px-4 py-3 md:hidden">
+              <span className="text-sm font-semibold text-gray-900">{c.chatTitle}</span>
+              <button
+                onClick={() => setOpen(false)}
+                aria-label="Close"
+                className="rounded-full p-1.5 text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-700"
               >
-                <div className="mr-auto w-fit max-w-[88%] rounded-2xl rounded-tl-sm bg-gray-100 px-3.5 py-2 text-sm leading-relaxed text-gray-700">
-                  {c.greeting}
-                </div>
+                <X className="h-5 w-5" />
+              </button>
+            </div>
 
-                {messages.map((m, i) => (
-                  <div
-                    key={i}
-                    className={
-                      m.role === "user"
-                        ? "ml-auto w-fit max-w-[88%] rounded-2xl rounded-tr-sm bg-[#0071e3] px-3.5 py-2 text-sm leading-relaxed text-white"
-                        : "mr-auto w-fit max-w-[88%] rounded-2xl rounded-tl-sm bg-gray-100 px-3.5 py-2 text-sm leading-relaxed text-gray-700"
-                    }
-                  >
-                    {m.role === "assistant" ? renderRich(m.content) : m.content}
-                  </div>
-                ))}
-
-                {loading && (
-                  <div className="mr-auto flex w-fit items-center gap-2 rounded-2xl rounded-tl-sm bg-gray-100 px-3.5 py-2 text-sm text-gray-500">
-                    <Loader2 className="h-4 w-4 animate-spin" />
-                  </div>
-                )}
+            {/* Conversation thread */}
+            <div
+              ref={scrollRef}
+              className="flex-1 space-y-2.5 overflow-y-auto p-5 text-left"
+            >
+              {/* Greeting (assistant, left) */}
+              <div className="mr-auto w-fit max-w-[88%] rounded-2xl rounded-tl-sm bg-gray-100 px-3.5 py-2 text-sm leading-relaxed text-gray-700">
+                {c.greeting}
               </div>
-            )}
 
-            {/* Input */}
+              {/* Conversation */}
+              {messages.map((m, i) => (
+                <div
+                  key={i}
+                  className={
+                    m.role === "user"
+                      ? "ml-auto w-fit max-w-[88%] rounded-2xl rounded-tr-sm bg-[#0071e3] px-3.5 py-2 text-sm leading-relaxed text-white"
+                      : "mr-auto w-fit max-w-[88%] rounded-2xl rounded-tl-sm bg-gray-100 px-3.5 py-2 text-sm leading-relaxed text-gray-700"
+                  }
+                >
+                  {m.role === "assistant" ? renderRich(m.content) : m.content}
+                </div>
+              ))}
+
+              {loading && (
+                <div className="mr-auto flex w-fit items-center gap-2 rounded-2xl rounded-tl-sm bg-gray-100 px-3.5 py-2 text-sm text-gray-500">
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                </div>
+              )}
+
+              {/* Suggested questions as tappable bubbles (right side, like quick replies) */}
+              {!loading &&
+                suggestions.map((s) => (
+                  <button
+                    key={s}
+                    onClick={() => send(s)}
+                    className="ml-auto block w-fit max-w-[88%] rounded-2xl rounded-tr-sm border border-[#0071e3] bg-white px-3.5 py-2 text-sm leading-relaxed text-[#0071e3] transition-colors hover:bg-[#0071e3] hover:text-white"
+                  >
+                    {s}
+                  </button>
+                ))}
+            </div>
+
+            {/* Input (white field floating on the gray panel) */}
             <form
               onSubmit={(e) => {
                 e.preventDefault()
                 send(input)
               }}
-              className="flex flex-col gap-3 px-5 py-4"
+              className="p-3"
             >
-              <div className="flex items-start gap-3">
-                <Sparkles className="mt-1.5 h-5 w-5 shrink-0 text-[#0071e3]" />
+              <div className="flex items-center gap-2 rounded-full border border-gray-200 bg-white py-1.5 pl-3 pr-1.5 shadow-sm transition-shadow focus-within:shadow-md">
+                {started ? (
+                  <button
+                    type="button"
+                    onClick={reset}
+                    aria-label={c.restart}
+                    title={c.restart}
+                    className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-700"
+                  >
+                    <RotateCcw className="h-4 w-4" />
+                  </button>
+                ) : (
+                  <Sparkles className="h-5 w-5 shrink-0 text-[#0071e3]" />
+                )}
                 <textarea
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={(e) => {
-                    if (e.key === "Enter" && !e.shiftKey) {
+                    // Skip while an IME is composing (e.g. Chinese input) so the
+                    // Enter that confirms characters doesn't also submit.
+                    if (e.key === "Enter" && !e.shiftKey && !e.nativeEvent.isComposing) {
                       e.preventDefault()
                       send(input)
                     }
                   }}
                   placeholder={c.placeholder}
                   maxLength={1000}
-                  rows={3}
+                  rows={1}
                   aria-label={c.placeholder}
-                  className="flex-1 resize-none bg-transparent text-base leading-relaxed text-gray-900 outline-none placeholder:text-gray-400"
+                  className="flex-1 resize-none self-center bg-transparent text-base text-gray-900 outline-none placeholder:text-gray-400"
                 />
-              </div>
-              <div className="flex justify-end">
                 <button
                   type="submit"
                   disabled={loading || !input.trim()}
-                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#0071e3] text-white transition-opacity hover:opacity-90 disabled:opacity-40"
+                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#0071e3] text-white transition-opacity hover:opacity-90 disabled:opacity-40"
                   aria-label={c.send}
                 >
                   {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Send className="h-4 w-4" />}
                 </button>
               </div>
             </form>
-          </div>
 
-          {/* Example cards (always visible — click to fill the input) */}
-          <div className="pt-1 text-left">
-            <div className="mb-3 flex items-center justify-between px-1">
-              <p className="text-xs font-medium uppercase tracking-wider text-gray-400">
-                {c.tryLabel}
-              </p>
-              {started && (
-                <button
-                  onClick={reset}
-                  className="inline-flex items-center gap-1.5 text-xs text-gray-400 transition-colors hover:text-gray-600"
-                >
-                  <RotateCcw className="h-3.5 w-3.5" />
-                  {c.restart}
-                </button>
-              )}
-            </div>
-            <div className="grid grid-cols-1 gap-2 sm:grid-cols-3">
-              {c.suggestions.map((s) => (
-                <button
-                  key={s}
-                  onClick={() => send(s)}
-                  className="rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 text-left text-xs leading-relaxed text-gray-600 transition-colors hover:border-[#0071e3]/40 hover:bg-white hover:text-gray-900"
-                >
-                  {s}
-                </button>
-              ))}
+            {/* Footer: interview hint */}
+            <div className="px-4 pb-3 pt-0.5 text-center">
+              <p className="px-1 text-xs text-gray-400">{c.contactHint}</p>
             </div>
           </div>
-
-          {/* Interview booking happens in the chat: leaving an email notifies Niya */}
-          <p className="px-1 text-center text-xs text-gray-400">{c.contactHint}</p>
         </div>
       </div>
 
-      {/* Scroll cue (idle only) — gives a reason to scroll: her work is below */}
-      {!started && (
-        <a
-          href="#work"
-          className="group absolute bottom-8 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-2 text-gray-400 transition-colors hover:text-gray-700"
-        >
-          <span className="text-[11px] font-medium uppercase tracking-[0.15em]">{c.scroll}</span>
-          <svg className="h-5 w-5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
-        </a>
-      )}
     </section>
   )
 }

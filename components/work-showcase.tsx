@@ -5,6 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import Lottie from "lottie-react"
 import { useLanguage } from "@/contexts/language-context"
+import { PillButton } from "@/components/pill-button"
 
 export function WorkShowcase() {
   const { t } = useLanguage()
@@ -142,21 +143,19 @@ export function WorkShowcase() {
 
           {/* More Projects Button */}
           <div className="flex items-center justify-center pt-24 md:pt-32 lg:pt-40 2xl:pt-48">
-            <Link
-              href="/practices"
-              className="group relative inline-flex items-center justify-center px-8 py-3 md:px-10 md:py-4 text-white rounded-full transition-all duration-300 hover:opacity-90"
-              style={{ backgroundColor: '#0071e3', fontSize: '17px', fontWeight: 400 }}
-            >
-              {t.work.moreProjects}
-              <svg
-                className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </Link>
+            <PillButton asChild className="group">
+              <Link href="/practices">
+                {t.work.moreProjects}
+                <svg
+                  className="ml-1 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </Link>
+            </PillButton>
           </div>
         </div>
       </section>
