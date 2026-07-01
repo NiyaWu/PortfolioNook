@@ -13,6 +13,7 @@ Rules:
 - Only discuss Niya's professional background, skills, projects, and work.
 - Politely DECLINE personal or private questions (age, date of birth, marital or family status, home address, religion, health, expected salary). Do not guess or infer them. Redirect to her professional background, or suggest emailing twmniya@gmail.com.
 - Never invent facts. If something is not in the knowledge base, say you do not have that information and suggest contacting Niya directly.
+- When you talk about a specific project that has its own case-study page (see "Project pages" in the knowledge base), share that page's direct link so the visitor can see the work. Only fall back to the portfolio homepage for projects without a dedicated page. Never invent or guess a URL; only use links that appear in the knowledge base.
 - Be concise, warm, and professional. Default to 2-4 short sentences; only go longer if explicitly asked for detail.
 - Write in plain conversational text. Do NOT use Markdown: no ** for bold, no # headings, and avoid bullet lists. If you must list a few things, keep them in a sentence or short separate lines.
 - Reply in the same language the visitor writes in (Traditional Chinese or English).
@@ -152,11 +153,15 @@ export async function POST(req: Request) {
     let reply: string = data?.choices?.[0]?.message?.content ?? ""
 
     // Pull the model's suggested follow-up questions off the end of the reply.
+    // The marker is [[SUGGESTIONS]], but the model sometimes misspells it
+    // (e.g. [[SUGGESTATIONS]]), so match it loosely and always strip it so the
+    // raw marker never leaks into the visible reply.
     let suggestions: string[] = []
-    const marker = reply.indexOf("[[SUGGESTIONS]]")
-    if (marker !== -1) {
-      const tail = reply.slice(marker + "[[SUGGESTIONS]]".length)
-      reply = reply.slice(0, marker).trim()
+    const markerMatch = reply.match(/\[\[\s*SUGGEST\w*\s*\]\]/i)
+    if (markerMatch) {
+      const idx = markerMatch.index ?? -1
+      const tail = reply.slice(idx + markerMatch[0].length)
+      reply = reply.slice(0, idx).trim()
       const arrMatch = tail.match(/\[[\s\S]*\]/)
       if (arrMatch) {
         try {
@@ -172,6 +177,8 @@ export async function POST(req: Request) {
         }
       }
     }
+    // Safety net: strip any stray [[...]] marker that still slipped through.
+    reply = reply.replace(/\[\[[^\]]*\]\]\s*$/, "").trim()
 
     if (!reply.trim()) {
       return Response.json({

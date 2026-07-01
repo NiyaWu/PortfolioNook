@@ -34,7 +34,7 @@ const CHAT_COPY = {
   en: {
     placeholder: "Ask me anything about Niya…",
     greeting: "Hi! I'm Niya's assistant. Ask me anything about her work, projects, or skills.",
-    suggestions: ["What are her design strengths?", "Tell me about Otterly", "How does she use AI in her work?"],
+    suggestions: ["What are her design strengths?", "What projects has she worked on?", "How does she use AI in her work?"],
     error: "Sorry, something went wrong. Please try again.",
     send: "Send",
     restart: "Start over",
@@ -57,7 +57,7 @@ const CHAT_COPY = {
   zh: {
     placeholder: "關於 Niya，什麼都可以問我…",
     greeting: "嗨！我是 Niya 的小助理，關於她的經歷、專案、能力都可以問我。",
-    suggestions: ["她的設計強項是什麼？", "介紹一下 Otterly", "她怎麼把 AI 用在工作裡？"],
+    suggestions: ["她的設計強項是什麼？", "她做過哪些專案？", "她怎麼把 AI 用在工作裡？"],
     error: "抱歉，出了點問題，請再試一次。",
     send: "送出",
     restart: "重新開始",
@@ -166,7 +166,7 @@ export function Hero() {
       {/* Bottom gradient fade to white */}
       <div className="absolute bottom-0 left-0 right-0 h-32 md:h-48 bg-gradient-to-b from-transparent to-white pointer-events-none z-20" />
 
-      <div className="pointer-events-none absolute inset-0 flex items-center justify-center isolate">
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center isolate opacity-[0.72]">
         <div className="ripple-effect absolute" />
         <div className="ripple-effect absolute" />
         <div className="ripple-effect absolute" />

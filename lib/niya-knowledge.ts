@@ -71,6 +71,20 @@ time-limited, interest-based matching.
   taking it from design all the way to a working product. (It is a personal project; it
   does not have public user metrics.)
 
+## Project pages (direct links)
+When you discuss a specific project, link directly to its own case-study page instead of
+only the homepage. Only use the links below; never invent a URL.
+- IDO Platform & CMS (Impossible Finance): https://niya-nook.vercel.app/ido-cms
+- TGBallers, TON mini-game (Impossible Finance): https://niya-nook.vercel.app/tgballers
+- IVAR surveillance camera management (Gorilla): https://niya-nook.vercel.app/ivar-redesign
+- Video analysis system (Gorilla): https://niya-nook.vercel.app/video-analysis
+- Face library management (Gorilla): https://niya-nook.vercel.app/face-library
+- Data visualization system (Gorilla): https://niya-nook.vercel.app/data-visualization
+- myVideo UX redesign / VOD channel (Taiwan Mobile): https://niya-nook.vercel.app/vod-channel
+- Chromecast streaming (Taiwan Mobile): https://niya-nook.vercel.app/chromecast
+Otterly and a few smaller works do not have a standalone page yet. For those, or when you
+are unsure which page fits, point to the portfolio homepage: https://niya-nook.vercel.app/
+
 ## Mentoring
 She has mentored junior designers, including one based overseas. She works as an
 individual contributor; this is mentoring, not formal team management.
