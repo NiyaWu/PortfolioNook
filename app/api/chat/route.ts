@@ -3,7 +3,7 @@ import { NIYA_KNOWLEDGE } from "@/lib/niya-knowledge"
 
 // Groq (OpenAI-compatible). Free tier is far more generous than Gemini's,
 // which keeps the portfolio chat reliable for recruiters. Override with env.
-const MODEL = process.env.GROQ_MODEL || "llama-3.3-70b-versatile"
+const MODEL = process.env.GROQ_MODEL || "openai/gpt-oss-120b"
 const MAX_MESSAGES = 16 // only keep the last N turns
 const MAX_CHARS = 1000 // per-message cap (anti-abuse)
 
