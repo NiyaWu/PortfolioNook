@@ -10,8 +10,48 @@ type Msg = { role: "user" | "assistant"; content: string }
 // If a visitor types an email, we notify Niya in the background (in-chat booking).
 const EMAIL_RE = /[^\s@]+@[^\s@]+\.[^\s@]+/
 
-// Lightweight, dependency-free renderer: turns **bold** into <strong> and
-// leading -/* markers into proper bullets, so stray Markdown never shows raw.
+// Turn plain URLs and [text](url) markdown links in a string into clickable
+// anchors. Links open in a new tab so visitors don't lose the chat.
+function linkify(text: string, keyPrefix: string): ReactNode[] {
+  // Matches [label](url) markdown links, or bare http(s) URLs.
+  const re = /\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)|(https?:\/\/[^\s<]+)/g
+  const out: ReactNode[] = []
+  let last = 0
+  let m: RegExpExecArray | null
+  let k = 0
+  while ((m = re.exec(text)) !== null) {
+    if (m.index > last) out.push(<Fragment key={`${keyPrefix}-t${k}`}>{text.slice(last, m.index)}</Fragment>)
+    const label = m[1] ?? m[3]
+    let href = m[2] ?? m[3]
+    // Don't swallow trailing punctuation that belongs to the sentence.
+    const trailMatch = href.match(/[.,;:!?)]+$/)
+    let trail = ""
+    if (!m[1] && trailMatch) {
+      trail = trailMatch[0]
+      href = href.slice(0, href.length - trail.length)
+    }
+    out.push(
+      <a
+        key={`${keyPrefix}-a${k}`}
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="font-medium text-[#0071e3] underline underline-offset-2 hover:text-[#005bb5]"
+      >
+        {m[1] ? label : label.replace(/^https?:\/\//, "")}
+      </a>,
+    )
+    if (trail) out.push(<Fragment key={`${keyPrefix}-tr${k}`}>{trail}</Fragment>)
+    last = re.lastIndex
+    k++
+  }
+  if (last < text.length) out.push(<Fragment key={`${keyPrefix}-t${k}`}>{text.slice(last)}</Fragment>)
+  return out
+}
+
+// Lightweight, dependency-free renderer: turns **bold** into <strong>, URLs
+// into clickable links, and leading -/* markers into proper bullets, so stray
+// Markdown never shows raw.
 function renderRich(text: string): ReactNode {
   const lines = text.split("\n")
   return lines.map((line, i) => {
@@ -19,7 +59,7 @@ function renderRich(text: string): ReactNode {
     const body = bullet ? bullet[1] : line
     const segments = body.split(/(\*\*[^*]+\*\*)/g).map((seg, j) => {
       const m = seg.match(/^\*\*([^*]+)\*\*$/)
-      return m ? <strong key={j}>{m[1]}</strong> : <Fragment key={j}>{seg}</Fragment>
+      return m ? <strong key={j}>{m[1]}</strong> : <Fragment key={j}>{linkify(seg, `${i}-${j}`)}</Fragment>
     })
     return (
       <p key={i} className={bullet ? "flex gap-1.5" : i > 0 ? "mt-1.5" : ""}>
