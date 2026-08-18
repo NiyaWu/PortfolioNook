@@ -56,7 +56,7 @@ export const idoCmsEn = {
   // Solution Section
   solution: {
     title: "Solution",
-    content: "On the backend, settings that used to live across several tools were pulled into one flow, so a non-technical teammate could take a launch from start to finish in one place. On the frontend, Project became the container holding a project's different sale types, instead of each sale competing for its own entry.",
+    content: "On the backend, settings that used to live across several tools were pulled into one flow, so a non-technical teammate could take a launch from start to finish in one place. On the frontend, Project became the container that holds a project's different sale types in one place. Before that they were spread across the listing, and it was hard to tell which one to open.",
   },
   // Design Section
   design: {
@@ -172,7 +172,7 @@ export const idoCmsZh = {
   // Solution Section
   solution: {
     title: "解決方案",
-    content: "後台把原本散在多個工具的設定收進同一條流程，讓非技術同事能在一個地方從頭走到完成。前台則以 Project 當容器，收納同一個項目的不同 Sale，不再讓每種 Sale 各自搶一個入口。",
+    content: "後台把原本散在多個工具的設定收進同一條流程，讓非技術同事能在一個地方從頭走到完成。前台則以 Project 當容器，把同一個項目的不同 Sale 收在一起。原本這些 Sale 分散在列表上，使用者不容易判斷該點哪一個。",
   },
   // Design Section
   design: {
