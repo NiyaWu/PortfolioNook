@@ -21,7 +21,7 @@ export const idoCmsEn = {
     title: "Project Overview",
     overview: {
       title: "01 Overview",
-      content: "As token launches increased, projects became harder to browse and each listing still required developer support. The project therefore restructured the frontend and CMS together.",
+      content: "Impossible Finance helps blockchain projects launch tokens. This case covers two things at once: how projects are browsed on the frontend, and an internal CMS built from scratch for listing them.",
     },
     timeline: {
       title: "02 Timeline",
@@ -29,18 +29,18 @@ export const idoCmsEn = {
     },
     challenge: {
       title: "03 Challenge",
-      content: "Setup required switching between several tools and manual developer configuration. I restructured the flow, validated it remotely with an interactive prototype, then refined the information architecture and setup steps based on the results.",
+      content: "Listing information was scattered across several tools and every launch needed manual developer configuration. The hard part was letting non-technical teammates finish a launch on their own without simply moving the burden onto them.",
     },
     outcome: {
       title: "04 Outcome",
-      content: "Created a self-service CMS that reduced launch setup from days to hours and supported 20+ token launches.",
+      content: "Launch setup went from days to hours, supporting 20+ token launches, and the product later extended into a white-label line.",
     },
   },
   // Background Section
   background: {
     title: "Background & Challenge",
     intro: "Impossible Finance is a Web3 launchpad that helps blockchain projects launch tokens. As the number of projects grew, both the frontend and the internal workflow stopped scaling well.",
-    challengeIntro: "We needed to solve two connected problems:",
+    challengeIntro: "There were two connected problems to solve:",
     challenges: [
       {
         title: "Hard to Browse Projects",
@@ -56,7 +56,7 @@ export const idoCmsEn = {
   // Solution Section
   solution: {
     title: "Solution",
-    content: "I restructured the setup flow around two core modules — Project Info and Sale Details. Shared, required information appears first; settings that change by sale type are deferred to later steps. This reduced context switching and made the workflow easier for non-technical teammates to follow.",
+    content: "On the backend, settings that used to live across several tools were pulled into one flow, so a non-technical teammate could take a launch from start to finish in one place. On the frontend, Project became the container holding a project's different sale types, instead of each sale competing for its own entry.",
   },
   // Design Section
   design: {
@@ -64,8 +64,8 @@ export const idoCmsEn = {
     content: "This case covers two connected changes: restructuring sales discovery around projects on the frontend, and turning a fragmented, developer-dependent setup process into a CMS.",
     landingPageCaption: "Impossible Finance landing page design",
     iaTitle: "IA Evolution: From Sale-Centric to Project-Centric",
-    iaContent: "Originally, each sale mode appeared as a standalone listing. As projects introduced multiple sale types, the homepage filled with duplicate project entries and became harder to scan.",
-    iaContent2: "I made Project the top-level container, then placed different sale types within each project page:",
+    iaContent: "Originally each sale mode appeared as a standalone listing. Once projects started offering multiple sale types, the homepage filled with duplicate project entries and became harder to scan.",
+    iaContent2: "This was not part of the original scope. I noticed it while using the product myself and raised it, then made Project the top-level container and placed different sale types within each project page:",
     iaPoints: [
       "**Reduced duplication**: The homepage shows one entry per project.",
       "**Progressive disclosure**: Users enter a project first, then choose the relevant sale type.",
@@ -101,12 +101,21 @@ export const idoCmsEn = {
     items: [
       {
         title: "Operational Efficiency & Stability",
-        content: "Turned a developer-dependent setup process into a CMS that internal teammates could use independently. This reduced launch setup from days to hours and supported **20+ token launches**, creating a reusable, reliable workflow for the team."
+        content: "Turned a developer-dependent setup process into a CMS that internal teammates could use independently. Feedback from the prototype validation also led me to rework how information sat within each step of the listing flow, grouping the important settings onto the same page so operators did not have to stay on edge at every step. This reduced launch setup from days to hours and supported **20+ token launches**, creating a reusable, reliable workflow for the team.",
+        image: "/Projects/Project_Sale Contract_Empty.png",
+        imageCaption: "Sale setup: payment, price and supply, and the sale period completed on one page."
       },
       {
         title: "Extended into a White-label Product Line",
         content: "The product later expanded into a white-label offering. By keeping the core information architecture and interaction flows fixed while allowing logos, colors, and assets to change, a client-branded version could be prepared in one to two days.",
         images: ["/Node Sale-Moonveil.png", "/Node Sale-Alpha Goats Sale.png"],
+        imageCaption: "The same architecture and flow, rebranded for two clients: Moonveil and Alpha Goats.",
+      },
+      {
+        title: "Post-launch Improvement: First-visit Guidance",
+        content: "Telegram referral links brought new users straight into the platform, but the links were not precise enough, so people often arrived without knowing where they were or what they could do. I ran into this while using the live product myself and proposed a fix: a first-visit popup that lays out the core functions, Explore, Manage and Vesting, so visitors coming from social channels know what the platform offers and where to go next.",
+        image: "/IF-FirstVisit.png",
+        imageCaption: "Auto-triggered on a first visit, so users quickly grasp what the platform is and what it offers.",
       },
     ]
   },
@@ -128,7 +137,7 @@ export const idoCmsZh = {
     title: "專案概覽",
     overview: {
       title: "01 概覽",
-      content: "隨著代幣發行專案增加，使用者更難瀏覽不同項目，內部上架也仍仰賴工程師手動處理。因此，我們同步重整前台資訊架構與 CMS。",
+      content: "Impossible Finance 是協助區塊鏈專案發行代幣的平台。這個案子同時處理兩件事：前台的項目瀏覽架構，以及內部從零建構的上架 CMS。",
     },
     timeline: {
       title: "02 時程",
@@ -136,18 +145,18 @@ export const idoCmsZh = {
     },
     challenge: {
       title: "03 挑戰",
-      content: "原先上架需在多個工具間切換，且仰賴工程師手動設定。我重整流程，並以互動 Prototype 進行遠端驗證；再根據結果調整資訊架構與設定步驟。",
+      content: "上架資訊分散在多個工具，每次都需要工程師手動設定。難的地方在於：要讓非技術同事能獨立完成上架，又不能只是把負擔轉嫁給他們。",
     },
     outcome: {
       title: "04 成果",
-      content: "建立可由內部同事自行操作的 CMS，將上架時間從數天縮短至數小時，並支援 20+ 次代幣發行。",
+      content: "上架時間從數天縮短至數小時，累計支援 20+ 次代幣發行，後續並延伸為 white-label 產品線。",
     },
   },
   // Background Section
   background: {
     title: "背景與問題",
     intro: "Impossible Finance 是協助區塊鏈專案發行代幣的 Web3 Launchpad。隨著合作專案增加，前台與內部流程都開始難以擴展。",
-    challengeIntro: "我們需要解決兩個彼此相關的問題：",
+    challengeIntro: "有兩個彼此相關的問題要解決：",
     challenges: [
       {
         title: "前台項目難以瀏覽",
@@ -158,21 +167,21 @@ export const idoCmsZh = {
         content: "上架資訊分散在多個網站，內部同事也需反覆確認合約內容；每次上架往往耗時數天，且仍需工程師手動設定。",
       },
     ],
-    goal: "專案目標是：以前台的 Project 架構整理不同 Sale，並建立**讓非技術同事可自行操作的 CMS**。",
+    goal: "目標有兩個：前台用 Project 收攏同一個項目的多種 Sale，後台建立**讓非技術同事可自行操作的 CMS**。",
   },
   // Solution Section
   solution: {
     title: "解決方案",
-    content: "我將上架流程重整為「項目方資訊」與「銷售資訊」兩個核心模組。共通且必填的資訊先完成；會依不同 Sale 改變的設定則延後至下一步，降低切換脈絡的負擔，也讓非技術同事更容易理解整個流程。",
+    content: "後台把原本散在多個工具的設定收進同一條流程，讓非技術同事能在一個地方從頭走到完成。前台則以 Project 當容器，收納同一個項目的不同 Sale，不再讓每種 Sale 各自搶一個入口。",
   },
   // Design Section
   design: {
     title: "設計",
     content: "本案包含兩個相連的調整：前台以 Project 為核心整理多種 Sale；後台則將原本分散、仰賴工程師的設定流程轉為 CMS。",
-    landingPageCaption: "Impossible Finance landing page design",
-    iaTitle: "銷售頁面資訊架構演進：從「單一銷售導向」轉向「項目核心導向」",
-    iaContent: "原本每種 Sale 都是獨立的列表入口。當同一項目有多種 Sale 時，首頁便出現重複項目，使用者也更難快速掃視。",
-    iaContent2: "我將「Project」設為頂層容器，再將不同 Sale 收納在各自的項目頁中：",
+    landingPageCaption: "Impossible Finance 網站首頁設計",
+    iaTitle: "資訊架構演進：從 Sale 導向轉為 Project 導向",
+    iaContent: "原本每種 Sale 都是獨立的列表入口。當同一個項目開始有多種 Sale，首頁就堆滿重複的項目入口，使用者也更難快速掃視。",
+    iaContent2: "這個問題原本不在需求範圍內，是我實際使用產品後發現並提出的。我將「Project」設為頂層容器，再將不同 Sale 收納在各自的項目頁中：",
     iaPoints: [
       "**減少重複**：首頁只保留一個項目入口。",
       "**分層呈現**：進入項目後，再選擇相關的 Sale 類型。",
@@ -186,7 +195,7 @@ export const idoCmsZh = {
       },
       {
         title: "CMS 上架流程規劃：分層設定與流程引導",
-        content: "將共通設定集中在前段；依 Sale 類型才需要的條件式設定，於後續步驟再顯示。必填欄位未完成時無法進入下一步，並提供提示說明該資訊會呈現在前台的哪個位置。",
+        content: "共通設定集中在前段，依 Sale 類型才需要的條件式設定留到後續步驟再出現。必填欄位沒填完不能進入下一步，並在欄位旁標示這筆資訊會顯示在前台的哪個位置。",
         image: "/Sale-Dialog.png",
       },
       {
@@ -208,12 +217,21 @@ export const idoCmsZh = {
     items: [
       {
         title: "營運效率與穩定性",
-        content: "將原本仰賴工程師的設定流程，轉為內部同事可自行操作的 CMS。上架時間從數天縮短至數小時，並支援**超過 20 次代幣發行**，成為團隊可持續使用的穩定流程。"
+        content: "將原本仰賴工程師的設定流程，轉為內部同事可自行操作的 CMS。原型驗證的回饋也讓我重新調整上架流程中每個步驟的資訊配置，把重要設定盡量收在同一頁完成，讓操作者不必每一步都繃緊精神確認。上架時間從數天縮短至數小時，並支援**超過 20 次代幣發行**，成為團隊可持續使用的穩定流程。",
+        image: "/Projects/Project_Sale Contract_Empty.png",
+        imageCaption: "Sale 設定：付款方式、價格與供給、銷售期間收在同一頁完成。"
       },
       {
         title: "延伸為 White-label 產品線",
         content: "後續將產品延伸為 White-label。在保留核心資訊架構與互動流程下，透過可替換的 Logo、色彩與素材，讓不同客戶品牌的客製能在一至兩天內完成。",
         images: ["/Node Sale-Moonveil.png", "/Node Sale-Alpha Goats Sale.png"],
+        imageCaption: "同一套架構與流程，換上不同客戶的品牌樣式：Moonveil 與 Alpha Goats。",
+      },
+      {
+        title: "上線後的主動優化：首次造訪引導",
+        content: "Telegram 的推薦連結會把新使用者直接帶進平台，但連結不夠精準，人進來之後常常不知道自己在哪、能做什麼。這是我上線後自己使用時遇到的，於是主動提案補上首次造訪的彈窗，把 Explore、Manage、Vesting 幾個核心功能一次說明清楚，讓從社群進來的人知道下一步可以去哪裡。",
+        image: "/IF-FirstVisit.png",
+        imageCaption: "首次造訪時自動出現，讓使用者快速理解這是什麼平台、提供哪些服務。",
       },
     ]
   },

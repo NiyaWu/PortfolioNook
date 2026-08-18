@@ -227,73 +227,73 @@ export function IdoCmsDetail() {
 
                 {/* Design Subsections */}
                 <div className="space-y-12 md:space-y-16">
-                  {/* IA Evolution - First subsection */}
+                  {/* IA Evolution */}
                   <div>
-                    <h3 className="text-lg md:text-xl font-semibold text-foreground mb-3 md:mb-4">
-                      {t.idoCms.design.iaTitle}
-                    </h3>
-                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-4">
-                      {t.idoCms.design.iaContent}
-                    </p>
-                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-4">
-                      {t.idoCms.design.iaContent2}
-                    </p>
-                    <ul className="space-y-2 mb-8">
-                      {t.idoCms.design.iaPoints?.map((point: string, index: number) => (
-                        <li key={index} className="text-sm md:text-base text-muted-foreground leading-relaxed pl-8">
-                          <RichText>{point}</RichText>
-                        </li>
-                      ))}
-                    </ul>
-                    {/* IA Comparison Slider */}
-                    <div>
-                      <div className="group aspect-[16/9] relative overflow-hidden rounded-lg border border-border bg-muted select-none">
+                  <h3 className="text-lg md:text-xl font-semibold text-foreground mb-3 md:mb-4">
+                    {t.idoCms.design.iaTitle}
+                  </h3>
+                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-4">
+                    {t.idoCms.design.iaContent}
+                  </p>
+                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-4">
+                    {t.idoCms.design.iaContent2}
+                  </p>
+                  <ul className="space-y-2 mb-8">
+                    {t.idoCms.design.iaPoints?.map((point: string, index: number) => (
+                      <li key={index} className="text-sm md:text-base text-muted-foreground leading-relaxed pl-8">
+                        <RichText>{point}</RichText>
+                      </li>
+                    ))}
+                  </ul>
+                  {/* IA Comparison Slider */}
+                  <div>
+                    <div className="group aspect-[16/9] relative overflow-hidden rounded-lg border border-border bg-muted select-none">
+                      <Image
+                        src="/Desktop-Standard Pool.png"
+                        alt="V2 project-centric sale page layout"
+                        fill
+                        className="object-cover object-top"
+                      />
+                      <div
+                        className="absolute inset-0 overflow-hidden"
+                        style={{ clipPath: `inset(0 ${100 - comparisonPosition}% 0 0)` }}
+                      >
                         <Image
-                          src="/Desktop-Standard Pool.png"
-                          alt="V2 project-centric sale page layout"
+                          src="https://image.blocktempo.com/2021/08/1phk9iopHgXQhXfJbzYX8gw.png"
+                          alt="V1 sale-centric page layout"
                           fill
                           className="object-cover object-top"
                         />
-                        <div
-                          className="absolute inset-0 overflow-hidden"
-                          style={{ clipPath: `inset(0 ${100 - comparisonPosition}% 0 0)` }}
-                        >
-                          <Image
-                            src="https://image.blocktempo.com/2021/08/1phk9iopHgXQhXfJbzYX8gw.png"
-                            alt="V1 sale-centric page layout"
-                            fill
-                            className="object-cover object-top"
-                          />
-                        </div>
-                        <div
-                          className="absolute inset-y-0 w-0.5 bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.15)] pointer-events-none"
-                          style={{ left: `${comparisonPosition}%` }}
-                        >
-                          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex h-9 w-9 items-center justify-center rounded-full border border-border bg-background text-xs text-foreground shadow-sm">
-                            ↔
-                          </div>
-                        </div>
-                        <span className="absolute left-3 top-3 rounded border border-background/30 bg-foreground/90 px-2 py-1 text-[10px] font-medium text-background shadow-sm opacity-0 transition-opacity group-hover:opacity-100 group-focus-within:opacity-100 pointer-events-none">
-                          V1 · Sale-centric
-                        </span>
-                        <span className="absolute right-3 top-3 rounded border border-background/30 bg-foreground/90 px-2 py-1 text-[10px] font-medium text-background shadow-sm opacity-0 transition-opacity group-hover:opacity-100 group-focus-within:opacity-100 pointer-events-none">
-                          V2 · Project-centric
-                        </span>
-                        <input
-                          type="range"
-                          min="0"
-                          max="100"
-                          value={comparisonPosition}
-                          onChange={(event) => setComparisonPosition(Number(event.target.value))}
-                          aria-label="Compare V1 and V2 sale page layouts"
-                          className="absolute inset-0 h-full w-full cursor-ew-resize opacity-0"
-                        />
                       </div>
-                      <p className="text-[10px] md:text-xs text-muted-foreground/70 text-center mt-3">
-                        Drag to compare V1 and V2 layouts
-                      </p>
+                      <div
+                        className="absolute inset-y-0 w-0.5 bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.15)] pointer-events-none"
+                        style={{ left: `${comparisonPosition}%` }}
+                      >
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex h-9 w-9 items-center justify-center rounded-full border border-border bg-background text-xs text-foreground shadow-sm">
+                          ↔
+                        </div>
+                      </div>
+                      <span className="absolute left-3 top-3 rounded border border-background/30 bg-foreground/90 px-2 py-1 text-[10px] font-medium text-background shadow-sm opacity-0 transition-opacity group-hover:opacity-100 group-focus-within:opacity-100 pointer-events-none">
+                        V1 · Sale-centric
+                      </span>
+                      <span className="absolute right-3 top-3 rounded border border-background/30 bg-foreground/90 px-2 py-1 text-[10px] font-medium text-background shadow-sm opacity-0 transition-opacity group-hover:opacity-100 group-focus-within:opacity-100 pointer-events-none">
+                        V2 · Project-centric
+                      </span>
+                      <input
+                        type="range"
+                        min="0"
+                        max="100"
+                        value={comparisonPosition}
+                        onChange={(event) => setComparisonPosition(Number(event.target.value))}
+                        aria-label="Compare V1 and V2 sale page layouts"
+                        className="absolute inset-0 h-full w-full cursor-ew-resize opacity-0"
+                      />
                     </div>
+                    <p className="text-[10px] md:text-xs text-muted-foreground/70 text-center mt-3">
+                      Drag to compare V1 and V2 layouts
+                    </p>
                   </div>
+                </div>
                   {t.idoCms.design.subsections?.map((subsection: { title: string; content: string; image?: string }, index: number) => (
                     <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center">
                       <div>
@@ -385,6 +385,7 @@ export function IdoCmsDetail() {
                         </div>
                       )}
                       {item.images && (
+                        <div className="w-full">
                         <div className="relative aspect-[4/3] w-full" aria-label={item.title}>
                           <div className="absolute left-0 top-0 w-[72%] overflow-hidden rounded-lg border border-border bg-muted shadow-sm">
                             <Image
@@ -404,6 +405,12 @@ export function IdoCmsDetail() {
                               className="aspect-[4/3] w-full object-cover object-top"
                             />
                           </div>
+                        </div>
+                        {item.imageCaption && (
+                          <p className="text-[10px] md:text-xs text-muted-foreground/70 text-center mt-3">
+                            {item.imageCaption}
+                          </p>
+                        )}
                         </div>
                       )}
                     </div>
