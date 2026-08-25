@@ -62,3 +62,6 @@ lerna-debug.log*
 public/Branding & Graphic Design/
 public/Aethir/
 public/CMS-Prototype.mov
+
+# 作品集頁面用的網頁版影片（原檔仍被 *.mp4 擋住）
+!public/branding/*.mp4
