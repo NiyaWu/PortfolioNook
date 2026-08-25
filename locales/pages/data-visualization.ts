@@ -14,20 +14,41 @@ export const dataVisualizationEn = {
     about: "About",
     discovery: "Discovery",
     widgets: "Widgets Status",
+    outcome: "Outcome",
   },
   hero: dataVisualizationHero,
+  projectOverview: {
+    title: "Project Overview",
+    overview: {
+      title: "01 Overview",
+      content: "A company-wide chart and data component library. I researched how Highcharts' JSON theme configuration could be customised, checked how each product feature mapped onto a chart type, and implemented the result in IVAR.",
+    },
+    timeline: {
+      title: "02 Timeline",
+      content: "Started February 2019. I researched the charting library and its theme configuration, worked with my manager on which components the product line needed, tested with the engineer who owned the components, and built out IVAR's dashboard as the first implementation.",
+    },
+    challenge: {
+      title: "03 Challenge",
+      content: "One set of components had to serve behaviour analytics, business intelligence, people, vehicle and security features at once, without any single product being locked to choices made for another.",
+    },
+    outcome: {
+      title: "04 Outcome",
+      content: "IVAR shipped with a complete dashboard, every feature checked against the chart type that suited it, and changing colours no longer needed an engineer: a designer hands over a JSON file and the whole look follows.",
+    },
+  },
   about: {
     title: "Core Objectives",
-    content: "Developed a highly adaptable data visualization framework. The goal was to provide a consistent dashboard interface for diverse clients, enabling them to interpret data intuitively and surface actionable insights quickly during reporting and decision-making.",
+    content: "The goal was a shared chart and data component library the whole product line could draw on, so different products would present data through the same dashboard language. My manager and I worked through which components the product line would need; my own part was researching the theme configuration, checking how each feature mapped onto a chart type, testing with the engineer who owned the components, and building out IVAR as the first implementation to prove the approach worked.",
   },
   discovery: {
     title: "Discovery & Strategy",
     content: "To ensure technical feasibility, I began by researching Highcharts documentation. Based on the product's data types (e.g., behavior analytics, foot traffic), I parameterized chart styles and layouts to allow for efficient future selection. Key contributions include:",
     items: [
       "Standardized Highcharts configurations to manage colors, spacing, and styles globally.",
-      "Implemented a JSON-based theme configuration to enable rapid visual updates, significantly reducing engineering time for custom styling.",
-      "Mapped chart components to the full product feature list, using 'IVAR' as the primary implementation to create a dedicated dashboard."
+      "Worked out how to use the library's JSON theme configuration so a designer can deliver the theme file directly, without engineering having to adjust styling for each project.",
+      "Checked how the product feature list mapped onto chart types, tested with the engineer who owned the components, and applied the result to IVAR as the first full dashboard."
     ],
+    tradeoff: "Building a shared library means settling styles and parameters up front, so no single product gets a version tailored purely to it, and a request outside those parameters means changing the framework rather than editing that one product. I took that cost because the value of the library only shows up once the other product lines plug into it.",
   },
   behaviorAnalytics: {
     title: "Behavior Analytics",
@@ -49,6 +70,10 @@ export const dataVisualizationEn = {
     title: "System Security - Honeypot",
     items: ["Capture Hacker Attacks", "Capture The Location Of The Hacker Attack", "Malware Detection"],
   },
+  outcome: {
+    title: "Outcome",
+    content: "IVAR's dashboard was built out in full as the library's first implementation, with each feature checked against the chart type that suited it and tested alongside the engineer who owned the components. The theme setup meant changing colours no longer went through engineering: a designer could hand over a JSON file and the whole look would follow, instead of styling being edited chart by chart on every project.",
+  },
   widgetsStatus: {
     title: "Widget States",
     content: "Data passes through multiple processing layers (API, database, frontend) before visualization. To help users pinpoint issues at each stage, I collaborated with developers to design distinct visual states for different data scenarios.",
@@ -64,20 +89,41 @@ export const dataVisualizationZh = {
     about: "關於",
     discovery: "探索",
     widgets: "元件狀態",
+    outcome: "成果",
   },
   hero: dataVisualizationHero,
+  projectOverview: {
+    title: "專案概覽",
+    overview: {
+      title: "01 概覽",
+      content: "一套全公司通用的圖形資料元件庫。我研究 Highcharts 的 JSON 主題設定可以如何客製，確認各項功能適合套用哪種圖表，並實際套用到 IVAR 上。",
+    },
+    timeline: {
+      title: "02 時程",
+      content: "2019 年 2 月開始。先研究圖表套件與主題設定的能力，與主管一起確認產品線需要哪些元件，再與負責元件的工程師協作測試，最後以 IVAR 作為第一個實作把儀表板做出來。",
+    },
+    challenge: {
+      title: "03 挑戰",
+      content: "同一套元件要同時服務行為分析、商業智慧、人員、車輛與系統安全等功能，又不能讓某個產品被別的產品的決定綁死。",
+    },
+    outcome: {
+      title: "04 成果",
+      content: "IVAR 的儀表板完整交付，每項功能都確認過適合套用哪種圖表；改顏色不再需要工程師介入，設計師直接提供 JSON 檔案就能換掉整套視覺。",
+    },
+  },
   about: {
     title: "核心目標",
-    content: "建立一套可快速調整的圖表框架。目的是讓不同類別的業主，都能透過一致的儀表板介面理解數據，並在報告提問階段快速找到答案做出改善。",
+    content: "目標是做一套公司通用的圖形與資料元件庫，讓不同產品線都能接上同一套圖表規則，用一致的方式呈現數據。元件與配置的規劃由我和主管一起進行；我負責的部分是研究主題設定、確認各項功能適合套用哪種圖表、與負責元件的工程師協作測試，並以 IVAR 作為第一個實作把整套儀表板做出來驗證可行。",
   },
   discovery: {
     title: "探索發現",
     content: "為了確認設計的可行性，我先研究了開發使用的 Highcharts 文件。接著根據產品會遇到的數據類型（如行為分析、人流等），預先將圖表樣式與佈局參數化，讓未來可以根據需求快速選擇。主要工作：",
     items: [
       "整理 Highcharts 配置，將顏色、間距等樣式統一管理。",
-      "透過修改 JSON 檔案來快速更換儀表板主題，減少工程重複調整樣式的時間。",
-      "根據公司產品所有的功能列表，規劃對應的圖表元件與配置，並以 IVAR 為例製作出專屬儀表板",
+      "整理出用套件本身的 JSON 主題設定換掉整體視覺的做法，讓設計端可以直接交付主題檔案，不必每個案子都請工程調樣式。",
+      "對照公司產品的功能列表確認各功能適合套用哪種圖表，與負責元件的工程師協作測試，並套用到 IVAR 做出第一個完整的儀表板。",
     ],
+    tradeoff: "做通用元件庫要先把樣式與參數收斂，代價是單一產品拿到的不會是為它量身訂做的版本；規格外的需求得回頭改框架，而不是在那個產品裡改掉。我選擇這樣做，是因為這套元件的價值要等其他產品線接上時才會出現。",
   },
   behaviorAnalytics: {
     title: "行為分析",
@@ -98,6 +144,10 @@ export const dataVisualizationZh = {
   honeypot: {
     title: "系統安全 - 蜜罐",
     items: ["捕獲駭客攻擊", "捕獲駭客攻擊位置", "惡意軟體偵測"],
+  },
+  outcome: {
+    title: "成果",
+    content: "IVAR 的儀表板完整做出來，作為這套元件庫的第一個實作；每項功能都確認過適合套用哪種圖表，並與負責元件的工程師一起測試過。主題設定整理好之後，改顏色不再需要工程師介入，設計師直接交付一份 JSON 檔案就能換掉整套視覺，不必在每個案子裡逐個圖表調樣式。",
   },
   widgetsStatus: {
     title: "元件狀態",

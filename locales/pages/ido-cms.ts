@@ -113,7 +113,7 @@ export const idoCmsEn = {
       },
       {
         title: "Post-launch Improvement: First-visit Guidance",
-        content: "Telegram referral links brought new users straight into the platform, but the links were not precise enough, so people often arrived without knowing where they were or what they could do. I ran into this while using the live product myself and proposed a fix: a first-visit popup that lays out the core functions, Explore, Manage and Vesting, so visitors coming from social channels know what the platform offers and where to go next.",
+        content: "Telegram referral links brought new users straight into the platform, but the links were not precise enough, so people often arrived without knowing where they were or what they could do. I ran into this while using the live product myself and proposed a fix: a first-visit popup that lays out the core functions, Explore, Manage and Vesting, so visitors coming from social channels know what the platform offers and where to go next. An auto-triggered popup does interrupt someone who has just arrived, but that costs less than letting them leave without knowing where they are, so it only fires on a first visit.",
         image: "/IF-FirstVisit.png",
         imageCaption: "Auto-triggered on a first visit, so users quickly grasp what the platform is and what it offers.",
       },
@@ -229,7 +229,7 @@ export const idoCmsZh = {
       },
       {
         title: "上線後的主動優化：首次造訪引導",
-        content: "Telegram 的推薦連結會把新使用者直接帶進平台，但連結不夠精準，人進來之後常常不知道自己在哪、能做什麼。這是我上線後自己使用時遇到的，於是主動提案補上首次造訪的彈窗，把 Explore、Manage、Vesting 幾個核心功能一次說明清楚，讓從社群進來的人知道下一步可以去哪裡。",
+        content: "Telegram 的推薦連結會把新使用者直接帶進平台，但連結不夠精準，人進來之後常常不知道自己在哪、能做什麼。這是我上線後自己使用時遇到的，於是主動提案補上首次造訪的彈窗，把 Explore、Manage、Vesting 幾個核心功能一次說明清楚，讓從社群進來的人知道下一步可以去哪裡。自動彈出會多打斷一次剛進來的人，但比起讓他們在不知道自己在哪的情況下離開，這個打斷值得，所以只在首次造訪時出現。",
         image: "/IF-FirstVisit.png",
         imageCaption: "首次造訪時自動出現，讓使用者快速理解這是什麼平台、提供哪些服務。",
       },

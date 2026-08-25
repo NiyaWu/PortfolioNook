@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react"
 import Image from "next/image"
-import Link from "next/link"
 import { useLanguage } from "@/contexts/language-context"
 import { Header } from "@/components/header"
 
@@ -15,6 +14,7 @@ export function DataVisualizationDetail() {
     { id: "about", label: t.dataVisualization.sections.about },
     { id: "discovery", label: t.dataVisualization.sections.discovery },
     { id: "widgets", label: t.dataVisualization.sections.widgets },
+    { id: "outcome", label: t.dataVisualization.sections.outcome },
   ]
 
   useEffect(() => {
@@ -190,33 +190,19 @@ export function DataVisualizationDetail() {
             {/* Project Overview Grid */}
             <div className="mb-16 md:mb-24">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-8 md:mb-12 text-center">
-                Project Overview
+                {t.dataVisualization.projectOverview.title}
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                <div className="border border-border rounded-lg p-4 md:p-6">
-                  <h3 className="text-base md:text-lg font-bold text-foreground mb-2 md:mb-3">01 Role</h3>
-                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
-                    {t.dataVisualization.hero.role}
-                  </p>
-                </div>
-                <div className="border border-border rounded-lg p-4 md:p-6">
-                  <h3 className="text-base md:text-lg font-bold text-foreground mb-2 md:mb-3">02 Platforms</h3>
-                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
-                    {t.dataVisualization.hero.platforms}
-                  </p>
-                </div>
-                <div className="border border-border rounded-lg p-4 md:p-6">
-                  <h3 className="text-base md:text-lg font-bold text-foreground mb-2 md:mb-3">03 Deliverables</h3>
-                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
-                    {t.dataVisualization.hero.deliverables}
-                  </p>
-                </div>
-                <div className="border border-border rounded-lg p-4 md:p-6">
-                  <h3 className="text-base md:text-lg font-bold text-foreground mb-2 md:mb-3">04 Year</h3>
-                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
-                    {t.dataVisualization.hero.duration}
-                  </p>
-                </div>
+                {(["overview", "timeline", "challenge", "outcome"] as const).map((key) => (
+                  <div key={key} className="border border-border rounded-lg p-4 md:p-6">
+                    <h3 className="text-base md:text-lg font-bold text-foreground mb-2 md:mb-3">
+                      {t.dataVisualization.projectOverview[key].title}
+                    </h3>
+                    <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
+                      {t.dataVisualization.projectOverview[key].content}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
 
@@ -237,8 +223,22 @@ export function DataVisualizationDetail() {
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6 lg:mb-8">
                   {t.dataVisualization.discovery.title}
                 </h2>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-12">
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-4">
                   {t.dataVisualization.discovery.content}
+                </p>
+                <ul className="space-y-2 mb-8">
+                  {t.dataVisualization.discovery.items.map((item: string, index: number) => (
+                    <li
+                      key={index}
+                      className="flex gap-3 text-sm md:text-base text-muted-foreground leading-relaxed"
+                    >
+                      <span className="mt-2 h-1 w-1 flex-shrink-0 rounded-full bg-muted-foreground"></span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-12">
+                  {t.dataVisualization.discovery.tradeoff}
                 </p>
 
                 {/* Analytics Categories */}
@@ -462,18 +462,16 @@ export function DataVisualizationDetail() {
                 </div>
               </section>
 
-              {/* Next Project */}
-              <section className="pt-16 border-t border-border">
-                <div className="text-center">
-                  <p className="text-sm text-muted-foreground mb-4">Next Project</p>
-                  <Link
-                    href="/"
-                    className="inline-flex items-center justify-center px-8 py-3 bg-accent text-white font-semibold rounded-lg hover:bg-accent/90 transition-colors"
-                  >
-                    View All Projects
-                  </Link>
-                </div>
+              {/* Outcome */}
+              <section id="outcome">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6 lg:mb-8">
+                  {t.dataVisualization.outcome.title}
+                </h2>
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                  {t.dataVisualization.outcome.content}
+                </p>
               </section>
+
             </div>
           </main>
         </div>
