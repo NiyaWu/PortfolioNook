@@ -13,6 +13,7 @@ import { videoAnalysisEn, videoAnalysisZh } from './pages/video-analysis'
 import { vodChannelEn, vodChannelZh } from './pages/vod-channel'
 import { chromecastEn, chromecastZh } from './pages/chromecast'
 import { otterlyEn, otterlyZh } from './pages/otterly'
+import { brandingEn, brandingZh } from './pages/branding'
 
 export const translations = {
   en: {
@@ -30,6 +31,7 @@ export const translations = {
     vodChannel: vodChannelEn,
     chromecast: chromecastEn,
     otterly: otterlyEn,
+    branding: brandingEn,
   },
   zh: {
     // Common translations (nav, hero, work, about, cta, footer)
@@ -46,6 +48,7 @@ export const translations = {
     vodChannel: vodChannelZh,
     chromecast: chromecastZh,
     otterly: otterlyZh,
+    branding: brandingZh,
   },
 }
 

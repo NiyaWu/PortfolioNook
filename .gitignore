@@ -57,3 +57,8 @@ lerna-debug.log*
 
 # Cover letters (private)
 /cover-letters
+
+# 個人品牌/視覺作品原檔，勿進公開 repo
+public/Branding & Graphic Design/
+public/Aethir/
+public/CMS-Prototype.mov
