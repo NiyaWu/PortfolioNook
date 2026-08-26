@@ -84,12 +84,12 @@ export const brandingEn = {
   hero: brandingHero,
   media,
   intro:
-    "Marketing visuals for token launches and partner campaigns. Each run **extends the partner project's own official brand while blending with our platform's visual language**, so the assets read as theirs and as ours at the same time. Beyond digital assets, the work covers on-site event production, motion pieces and light video editing.",
+    "Marketing visuals for token launches and partner campaigns. Each run **extends the partner project's own official brand while blending with our platform's visual language**, so the assets read as theirs and as ours at the same time. Licensing limits and whatever assets the partner hands over often mean extending their existing design is the only route available. Beyond digital assets, the work covers on-site event production, motion pieces and light video editing.",
   sections: {
     campaigns: {
       tag: "Impossible Finance · 3 campaigns · 25 pieces",
       title: "IDO / INO Campaign Assets",
-      desc: "Promotional assets for token sale campaigns. Every run follows the same beats, from the first teaser and announcement through staking, purchase and claim, so people can tell where a sale has got to. What changes is the look: each set extends that project's own brand and still has to sit inside the platform. Same rhythm, different face.",
+      desc: "Promotional assets for token sale campaigns. Every run follows the same beats, from the first teaser and announcement through staking, purchase and claim, so people can tell where a sale has got to. The sequence stays fixed while the visuals differ: each set extends that project's own brand and still has to sit inside the platform.",
       switchLabel: "Project",
       supportingLabel: "Supporting",
       projects: [
@@ -127,18 +127,18 @@ export const brandingEn = {
       eventNote: "Backdrop and standee in use on the day",
     },
     shui: {
-      tag: "Conflux liquid staking · Product marketing · 10 pieces",
+      tag: "Conflux liquid staking · Commissioned · 10 pieces",
       title: "SHUI",
-      desc: "Product marketing visuals built on SHUI's own brand. The long-form page has to build a reading rhythm that carries people to the bottom; the short pieces have to stay legible at social thumbnail size. Staking and yield are hard to explain, so layout and information hierarchy were the main work here.",
+      desc: "Commissioned work, based on their official website and extended into product marketing assets. The main job was settling the banner layout so they could keep adding pieces themselves afterwards. Staking and yield are hard to explain, so layout and information hierarchy carried most of the weight: the long-form page has to build a reading rhythm that carries people to the bottom, and the short pieces have to stay legible at social thumbnail size.",
       onePage: { name: "One-page Overview", note: "Long-form graphic covering staking, yield and governance in one read" },
       names: ["APY Boost Summer Campaign", "Leaderboard", "Interest Comparison"],
       subMore: "Campaign and explainers",
       moreNames: ["Vesting & Distribution", "Roadmap", "Why SHUI on Conflux", "Zealy Quest", "Earn with OKX Wallet", "Tweet End Card"],
     },
     blade: {
-      tag: "Onchain game and AI agents · Social · 9 pieces",
+      tag: "Onchain game and AI agents · Commissioned · 9 pieces",
       title: "BLADE",
-      desc: "Token generation event key visuals and social campaign assets, plus a diagram that lays out how the ecosystem fits together. The same launch needed both a wide social version and a square one, so the layout had to survive being recomposed rather than just cropped.",
+      desc: "Also commissioned, based on their official site and extended into token generation event key visuals, social assets and a diagram that lays out how the ecosystem fits together. Some pieces ran as ads on other platforms, so partner brand elements had to sit in the same frame. The look is post-apocalyptic and the official asset pack was limited, so backgrounds were generated with Midjourney to match, which left visual consistency and layout as the real work: the same launch needed both a wide version and a square one, so the layout had to survive being recomposed rather than just cropped.",
       wideNames: ["TGE Poster", "Ambassador Program", "Community Town Hall", "FOCG Summer Giveaway", "BladeXGate", "Onchain Game + AI Agent Ecosystem"],
       subOther: "Other formats",
       otherNames: ["Roadmap", "Prize Pool", "TGE Poster (Square)"],
@@ -153,12 +153,12 @@ export const brandingZh = {
   hero: brandingHero,
   media,
   intro:
-    "代幣發行與合作專案的行銷視覺。每個檔期都要**延伸該項目自己的官方品牌設計，同時和平台的視覺融合**，讓素材看起來既是對方的品牌，也屬於我們的平台。除了數位素材，也支援實體展場的佈置設計，以及動態素材與簡單的影片剪輯。",
+    "代幣發行與合作專案的行銷視覺。每個檔期都要**延伸對方的官方品牌設計，並和平台的視覺達到融合**，讓素材看起來既是對方的品牌，也屬於我們的平台。有時受版權限制，或對方只提供有限的素材，就只能從他們既有的設計往下延伸。除了數位素材，也支援實體展場的佈置設計，以及動態素材與簡單的影片剪輯。",
   sections: {
     campaigns: {
       tag: "Impossible Finance · 3 個檔期 · 25 件",
       title: "IDO / INO 行銷素材",
-      desc: "代幣發行檔期的宣傳素材。每個檔期都走同一組節點，從預告、公告，到質押、購買、領取，讓人一眼看得出這個檔期走到哪裡。變的是長相：每一組都延伸該項目自己的品牌，同時還要放得進平台裡。節奏一樣，臉不一樣。",
+      desc: "代幣發行檔期的宣傳素材。每個檔期都走同一組節點，從預告、公告，到質押、購買、領取，讓人一眼看得出這個檔期走到哪裡。流程固定，視覺各自不同：每一組都延伸該項目自己的品牌，同時要能放進平台裡。",
       switchLabel: "專案",
       supportingLabel: "補充素材",
       projects: [
@@ -196,18 +196,18 @@ export const brandingZh = {
       eventNote: "背板與立牌在現場的實際使用",
     },
     shui: {
-      tag: "Conflux 流動性質押 · 產品行銷 · 10 件",
+      tag: "Conflux 流動性質押 · 外部委託 · 10 件",
       title: "SHUI",
-      desc: "以 SHUI 自己的品牌為基礎做的產品行銷視覺。長圖要在一頁裡建立閱讀節奏，讓人一路看到底；短版素材要在社群縮圖的尺寸下仍然讀得到重點。質押與收益本來就難解釋，所以排版與資訊層級是這組的主要工作。",
+      desc: "外部委託的案子，設計依據是他們的官方網站，再往產品行銷素材延伸。這組的重點是把 banner 的版型定下來，讓他們之後要自己新增素材也接得上去。質押與收益本來就難解釋，所以排版與資訊層級是主要工作：長圖要在一頁裡建立閱讀節奏，讓人一路看到底；短版素材要在社群縮圖的尺寸下仍然讀得到重點。",
       onePage: { name: "One-page Overview", note: "產品長圖，把質押機制、收益與治理一次說完" },
       names: ["APY Boost Summer Campaign", "Leaderboard", "Interest Comparison"],
       subMore: "活動與說明素材",
       moreNames: ["Vesting & Distribution", "Roadmap", "Why SHUI on Conflux", "Zealy Quest", "Earn with OKX Wallet", "Tweet End Card"],
     },
     blade: {
-      tag: "鏈上遊戲與 AI Agent · 社群 · 9 件",
+      tag: "鏈上遊戲與 AI Agent · 外部委託 · 9 件",
       title: "BLADE",
-      desc: "代幣發行主視覺與社群活動素材，以及把生態關係畫清楚的架構圖。同一次發行要出寬版和方版，所以版面不能只靠裁切，得經得起重新編排。",
+      desc: "同樣是外部委託，設計依據是他們的官網，再延伸成代幣發行主視覺、社群素材與生態架構圖。有些素材要投到其他平台，所以還得把合作品牌方的元素放進同一個畫面裡。整體是廢土風格，官方能提供的素材有限，背景因此以 Midjourney 產出同風格的延伸畫面，我的工作集中在視覺連貫性與排版：同一次發行要出寬版和方版，版面不能只靠裁切，得經得起重新編排。",
       wideNames: ["TGE Poster", "Ambassador Program", "Community Town Hall", "FOCG Summer Giveaway", "BladeXGate", "Onchain Game + AI Agent Ecosystem"],
       subOther: "其他版式",
       otherNames: ["Roadmap", "Prize Pool", "TGE Poster (Square)"],
