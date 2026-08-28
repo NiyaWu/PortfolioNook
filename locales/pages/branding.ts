@@ -84,7 +84,7 @@ export const brandingEn = {
   hero: brandingHero,
   media,
   intro:
-    "Marketing visuals for token launches and partner campaigns. Each run **extends the partner project's own official brand while blending with our platform's visual language**, so the assets read as theirs and as ours at the same time. Licensing limits and whatever assets the partner hands over often mean extending their existing design is the only route available. Beyond digital assets, the work covers on-site event production. Most of the campaign banners are animated, built as vector animation and able to ship as Lottie; they are exported as GIF here to match where they originally ran. The Aethir explainer is my own edit.",
+    "Marketing visuals for token launches and partner campaigns. Each run **extends the partner project's own official brand while blending with our platform's visual language**, so the assets read as theirs and as ours at the same time. Licensing limits and whatever assets the partner hands over often mean extending their existing design is the only route available. Beyond digital assets, the work covers on-site event production. Most of the campaign banners are animated, made in Jitter and able to ship as Lottie; they are exported as GIF here to match where they originally ran. The Aethir explainer is my own edit.",
   sections: {
     campaigns: {
       tag: "Impossible Finance · 3 campaigns · 25 pieces",
@@ -153,7 +153,7 @@ export const brandingZh = {
   hero: brandingHero,
   media,
   intro:
-    "代幣發行與合作專案的行銷視覺。每個檔期都要**延伸對方的官方品牌設計，並和平台的視覺達到融合**，讓素材看起來既是對方的品牌，也屬於我們的平台。有時受版權限制，或對方只提供有限的素材，就只能從他們既有的設計往下延伸。除了數位素材，也支援實體展場的佈置設計。發行檔期的 banner 多數是動態的，以向量動畫製作、可輸出 Lottie，這頁依當時的投放通道輸出成 GIF；Aethir 的說明影片則是我剪的。",
+    "代幣發行與合作專案的行銷視覺。每個檔期都要**延伸對方的官方品牌設計，並和平台的視覺達到融合**，讓素材看起來既是對方的品牌，也屬於我們的平台。有時受版權限制，或對方只提供有限的素材，就只能從他們既有的設計往下延伸。除了數位素材，也支援實體展場的佈置設計。發行檔期的 banner 多數是動態的，以 Jitter 製作、可輸出 Lottie，這頁依當時的投放通道輸出成 GIF；Aethir 的說明影片則是我剪的。",
   sections: {
     campaigns: {
       tag: "Impossible Finance · 3 個檔期 · 25 件",
