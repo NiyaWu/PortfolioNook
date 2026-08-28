@@ -181,7 +181,7 @@ export const idoCmsZh = {
     landingPageCaption: "Impossible Finance 網站首頁設計",
     iaTitle: "資訊架構演進：從 Sale 導向轉為 Project 導向",
     iaContent: "原本每種 Sale 都是獨立的列表入口。當同一個項目開始有多種 Sale，首頁就堆滿重複的項目入口，使用者也更難快速掃視。",
-    iaContent2: "這個問題原本不在需求範圍內，是我實際使用產品後發現並提出的。我將「Project」設為頂層容器，再將不同 Sale 收納在各自的項目頁中：",
+    iaContent2: "我將「Project」設為頂層容器，再將不同 Sale 收納在各自的項目頁中：",
     iaPoints: [
       "**減少重複**：首頁只保留一個項目入口。",
       "**分層呈現**：進入項目後，再選擇相關的 Sale 類型。",
