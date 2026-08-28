@@ -84,7 +84,7 @@ export const brandingEn = {
   hero: brandingHero,
   media,
   intro:
-    "Marketing visuals for token launches and partner campaigns. Each run **extends the partner project's own official brand while blending with our platform's visual language**, so the assets read as theirs and as ours at the same time. Licensing limits and whatever assets the partner hands over often mean extending their existing design is the only route available. Beyond digital assets, the work covers on-site event production, motion pieces and light video editing.",
+    "Marketing visuals for token launches and partner campaigns. Each run **extends the partner project's own official brand while blending with our platform's visual language**, so the assets read as theirs and as ours at the same time. Licensing limits and whatever assets the partner hands over often mean extending their existing design is the only route available. Beyond digital assets, the work covers on-site event production, motion pieces and light video editing; the Aethir explainer on this page is my own edit.",
   sections: {
     campaigns: {
       tag: "Impossible Finance · 3 campaigns · 25 pieces",
@@ -153,7 +153,7 @@ export const brandingZh = {
   hero: brandingHero,
   media,
   intro:
-    "代幣發行與合作專案的行銷視覺。每個檔期都要**延伸對方的官方品牌設計，並和平台的視覺達到融合**，讓素材看起來既是對方的品牌，也屬於我們的平台。有時受版權限制，或對方只提供有限的素材，就只能從他們既有的設計往下延伸。除了數位素材，也支援實體展場的佈置設計，以及動態素材與簡單的影片剪輯。",
+    "代幣發行與合作專案的行銷視覺。每個檔期都要**延伸對方的官方品牌設計，並和平台的視覺達到融合**，讓素材看起來既是對方的品牌，也屬於我們的平台。有時受版權限制，或對方只提供有限的素材，就只能從他們既有的設計往下延伸。除了數位素材，也支援實體展場的佈置設計，以及動態素材與簡單的影片剪輯，這頁的 Aethir 說明影片就是我剪的。",
   sections: {
     campaigns: {
       tag: "Impossible Finance · 3 個檔期 · 25 件",
