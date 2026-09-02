@@ -467,31 +467,38 @@ export function BrandingDetail() {
                 </button>
               ))}
             </div>
+            {/* Arrows sit against the viewport edges so they stay put as image widths change. */}
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation()
+                step(-1)
+              }}
+              aria-label="Previous"
+              className="absolute left-3 md:left-6 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-background/80 text-muted-foreground backdrop-blur-sm transition-colors hover:border-foreground/40 hover:text-foreground"
+            >
+              ←
+            </button>
             <div
-              className="flex w-full items-center justify-center gap-3 md:gap-6"
+              className="flex w-full items-center justify-center px-12 md:px-20"
               onClick={(e) => e.stopPropagation()}
             >
-              <button
-                type="button"
-                onClick={() => step(-1)}
-                aria-label="Previous"
-                className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:border-foreground/40 hover:text-foreground"
-              >
-                ←
-              </button>
               <Media
                 piece={allPieces[zoomIdx]}
                 className="max-h-[78vh] w-auto max-w-full rounded-lg object-contain"
               />
-              <button
-                type="button"
-                onClick={() => step(1)}
-                aria-label="Next"
-                className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:border-foreground/40 hover:text-foreground"
-              >
-                →
-              </button>
             </div>
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation()
+                step(1)
+              }}
+              aria-label="Next"
+              className="absolute right-3 md:right-6 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-background/80 text-muted-foreground backdrop-blur-sm transition-colors hover:border-foreground/40 hover:text-foreground"
+            >
+              →
+            </button>
             <p
               className="text-xs md:text-sm text-muted-foreground"
               onClick={(e) => e.stopPropagation()}
