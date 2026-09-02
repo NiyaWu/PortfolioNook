@@ -146,7 +146,7 @@ function Gallery({
 // end up close in height.
 function Split({ tall, stack }: { tall: Piece; stack: Piece[] }) {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-[55fr_45fr] gap-5 md:gap-6 items-start">
+    <div className="grid grid-cols-1 xl:grid-cols-[55fr_45fr] gap-5 md:gap-6 items-start">
       <Tile piece={tall} />
       <div className="flex flex-col gap-5 md:gap-6">
         {stack.map((p) => (
