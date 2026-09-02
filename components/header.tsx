@@ -76,6 +76,14 @@ export function Header() {
                 {t.nav.practices}
               </Link>
               <Link
+                href="/branding"
+                className={`text-sm transition-colors duration-300 ${
+                  pathname === "/branding" ? "text-foreground underline underline-offset-4 decoration-foreground" : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {t.nav.branding}
+              </Link>
+              <Link
                 href="/about"
                 className={`text-sm transition-colors duration-300 ${
                   pathname === "/about" ? "text-foreground underline underline-offset-4 decoration-foreground" : "text-muted-foreground hover:text-foreground"
@@ -135,6 +143,15 @@ export function Header() {
             onClick={closeMobileMenu}
           >
             {t.nav.practices}
+          </Link>
+          <Link
+            href="/branding"
+            className={`text-2xl px-12 py-3 transition-colors duration-300 ${
+              pathname === "/branding" ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+            }`}
+            onClick={closeMobileMenu}
+          >
+            {t.nav.branding}
           </Link>
           <Link
             href="/about"

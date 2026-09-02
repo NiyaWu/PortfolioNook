@@ -65,3 +65,7 @@ public/CMS-Prototype.mov
 
 # 作品集頁面用的網頁版影片（原檔仍被 *.mp4 擋住）
 !public/branding/*.mp4
+
+# 本機存檔，不進 repo、不對外提供
+archive-local/
+*.zip
