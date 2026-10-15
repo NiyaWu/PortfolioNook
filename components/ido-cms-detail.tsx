@@ -148,7 +148,7 @@ export function IdoCmsDetail() {
           </aside>
 
           {/* Main Content Area */}
-          <main className="flex-1 max-w-[840px]">
+          <main className="min-w-0 flex-1 max-w-[840px]">
             <ProjectOverview
               title={t.idoCms.projectOverview.title}
               items={[
@@ -206,15 +206,20 @@ export function IdoCmsDetail() {
                               </p>
                               <p className="text-[10px] text-muted-foreground">{lane.audience}</p>
                             </div>
-                            <ol className="mt-4 flex items-center gap-2">
+                            <ol className="mt-4 flex flex-col gap-2 md:flex-row md:items-center">
                               {lane.steps.map((step, stepIndex) => {
                                 const isActive = isJourneyStepActive(laneIndex, stepIndex)
                                 const activeColor = laneIndex === 0 ? "border-[#655bb4] bg-[#655bb4]" : "border-[#197487] bg-[#197487]"
 
                                 return (
                                   <Fragment key={step}>
-                                    {stepIndex > 0 && <span className="shrink-0 text-muted-foreground/50">→</span>}
-                                    <li className={`flex min-h-16 flex-1 flex-col justify-center rounded-lg border px-3 py-2 shadow-sm transition-colors duration-200 ${isActive ? activeColor : "border-white/90 bg-white/80"}`}>
+                                    {stepIndex > 0 && (
+                                      <>
+                                        <span className="self-center text-muted-foreground/50 md:hidden">↓</span>
+                                        <span className="hidden shrink-0 text-muted-foreground/50 md:inline">→</span>
+                                      </>
+                                    )}
+                                    <li className={`flex min-h-16 w-full flex-col justify-center rounded-lg border px-3 py-2 shadow-sm transition-colors duration-200 md:flex-1 ${isActive ? activeColor : "border-white/90 bg-white/80"}`}>
                                       <span className={`text-[10px] font-semibold ${isActive ? "text-white/80" : laneIndex === 0 ? "text-[#655bb4]" : "text-[#197487]"}`}>
                                         0{stepIndex + 1}
                                       </span>

@@ -58,12 +58,12 @@ export const idoCmsEn = {
         {
           label: "CMS",
           audience: "Internal operators / future project teams",
-          steps: ["Organize project details\nCreate project", "Define participation rules\nCreate sale", "Review frontend content\nPreview & publish"],
+          steps: ["Organize project details and create project", "Define participation rules and create sale", "Review frontend content, preview, and publish"],
         },
         {
           label: "IDO frontend",
           audience: "Customers",
-          steps: ["Explore and compare\nprojects", "Stake\nvesting tokens", "Purchase\nsale tokens", "Withdraw\nvesting tokens", "Claim allocation\nsale tokens"],
+          steps: ["Explore and compare projects", "Stake vesting tokens", "Purchase sale tokens", "Withdraw vesting tokens", "Claim sale tokens"],
         },
       ],
     },
@@ -239,12 +239,12 @@ export const idoCmsZh = {
         {
           label: "CMS",
           audience: "內部營運人員／未來專案方",
-          steps: ["整理項目資料\n建立 Project", "設定參與規則\n建立 Sale", "確認前台內容\n預覽並發布"],
+          steps: ["整理項目資料並建立 Project", "設定參與規則並建立 Sale", "確認前台內容、預覽並發布"],
         },
         {
           label: "IDO 前台",
           audience: "一般客戶",
-          steps: ["探索並比較\n項目", "投入\nVest Token", "依規則購買\nSale Token", "期滿取回\nVest Token", "查看額度並 Claim\nSale Token"],
+          steps: ["探索並比較項目", "投入 Vest Token", "依規則購買 Sale Token", "期滿取回 Vest Token", "查看額度並 Claim Sale Token"],
         },
       ],
     },
