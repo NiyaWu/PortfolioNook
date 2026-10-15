@@ -4,6 +4,8 @@ import { useEffect, useState } from "react"
 import Image from "next/image"
 import { useLanguage } from "@/contexts/language-context"
 import { Header } from "@/components/header"
+import { ProjectOverview } from "@/components/project-overview"
+import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 
 export function TgballersDetail() {
   const { t } = useLanguage()
@@ -68,6 +70,10 @@ export function TgballersDetail() {
             {t.tgballers.title}
           </h1>
 
+          <p className="mx-auto mb-6 max-w-3xl text-xs leading-relaxed text-muted-foreground md:text-sm">
+            {t.tgballers.subtitle}
+          </p>
+
           <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 md:gap-x-8 md:gap-y-1 text-xs md:text-sm text-muted-foreground leading-tight mb-6 md:mb-10">
             <div>
               <span className="font-medium">Year: </span>
@@ -88,7 +94,7 @@ export function TgballersDetail() {
           </div>
 
           {/* Hero Image */}
-          <div className="w-full max-w-3xl mx-auto">
+          <div className="w-full rounded-lg overflow-hidden shadow-lg">
             <Image
               src="/portfolio/tgballers/TGBall-Hero.png"
               alt={t.tgballers.title}
@@ -128,69 +134,94 @@ export function TgballersDetail() {
 
           {/* Main Content Area */}
           <main className="flex-1 max-w-[840px]">
-            {/* Project Overview Grid */}
-            <div className="mb-16 md:mb-24">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-8 md:mb-12 text-center">
-                {t.tgballers.projectOverview.title}
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                <div className="border border-border rounded-lg p-4 md:p-6">
-                  <h3 className="text-base md:text-lg font-bold text-foreground mb-2 md:mb-3">{t.tgballers.projectOverview.overview.title}</h3>
-                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
-                    {t.tgballers.projectOverview.overview.content}
-                  </p>
-                </div>
-                <div className="border border-border rounded-lg p-4 md:p-6">
-                  <h3 className="text-base md:text-lg font-bold text-foreground mb-2 md:mb-3">{t.tgballers.projectOverview.timeline.title}</h3>
-                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
-                    {t.tgballers.projectOverview.timeline.content}
-                  </p>
-                </div>
-                <div className="border border-border rounded-lg p-4 md:p-6">
-                  <h3 className="text-base md:text-lg font-bold text-foreground mb-2 md:mb-3">{t.tgballers.projectOverview.coreTasks.title}</h3>
-                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
-                    {t.tgballers.projectOverview.coreTasks.content}
-                  </p>
-                </div>
-                <div className="border border-border rounded-lg p-4 md:p-6">
-                  <h3 className="text-base md:text-lg font-bold text-foreground mb-2 md:mb-3">{t.tgballers.projectOverview.painPoints.title}</h3>
-                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
-                    {t.tgballers.projectOverview.painPoints.content}
-                  </p>
-                </div>
-              </div>
-            </div>
+            <ProjectOverview
+              title={t.tgballers.projectOverview.title}
+              items={[
+                t.tgballers.projectOverview.overview,
+                t.tgballers.projectOverview.timeline,
+                t.tgballers.projectOverview.coreTasks,
+                t.tgballers.projectOverview.painPoints,
+              ]}
+            />
 
             {/* Content Sections */}
             <div className="space-y-16 md:space-y-24 lg:space-y-32">
-              {t.tgballers.contentSections?.map((section: { id: string; title: string; content: string; image?: string; imagePosition?: string }) => (
+              {t.tgballers.contentSections?.map((section: { id: string; title: string; headline: string; content: string; image?: string; imagePosition?: string }) => (
                 <section key={section.id} id={section.id}>
                   {section.image && section.imagePosition === "bottom" ? (
                     // Image below text
                     <>
-                      <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-6 md:mb-8">
+                      <h2 className="mb-2 text-2xl font-bold text-foreground md:text-3xl lg:text-4xl">
                         {section.title}
                       </h2>
+                      <h3 className="mb-4 text-lg font-semibold leading-snug text-foreground md:mb-6 md:text-xl">
+                        {section.headline}
+                      </h3>
                       <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-8 whitespace-pre-line">
                         {section.content}
                       </p>
-                      <div className="w-full overflow-hidden">
-                        <Image
-                          src={section.image}
-                          alt={section.title}
-                          width={1200}
-                          height={600}
-                          className="w-full h-auto object-contain"
-                        />
-                      </div>
+                      {section.id === "requirements" ? (
+                        <Dialog>
+                          <DialogTrigger asChild>
+                            <button
+                              type="button"
+                              className="group block w-full cursor-zoom-in overflow-hidden rounded-lg text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                              aria-label={t.tgballers.flowchartHint}
+                            >
+                              <Image
+                                src={section.image}
+                                alt={section.title}
+                                width={2037}
+                                height={651}
+                                className="h-auto w-full rounded-lg object-contain transition-transform duration-300 group-hover:scale-[1.01]"
+                              />
+                            </button>
+                          </DialogTrigger>
+                          <DialogContent className="w-[2800px] max-w-[96vw] overflow-hidden p-3 sm:max-w-[96vw]">
+                            <DialogTitle className="sr-only">{section.title}</DialogTitle>
+                            <DialogDescription className="sr-only">
+                              {t.tgballers.flowchartHint}
+                            </DialogDescription>
+                            <div className="flex w-full max-h-[86vh] items-start overflow-auto rounded-md bg-background">
+                              <div className="w-full min-w-[2800px] shrink-0">
+                                <Image
+                                  src={section.image}
+                                  alt={section.title}
+                                  width={2037}
+                                  height={651}
+                                  className="h-auto w-full max-w-none"
+                                />
+                              </div>
+                            </div>
+                          </DialogContent>
+                        </Dialog>
+                      ) : (
+                        <div className="w-full overflow-hidden rounded-lg">
+                          <Image
+                            src={section.image}
+                            alt={section.title}
+                            width={1200}
+                            height={600}
+                            className="h-auto w-full rounded-lg object-contain"
+                          />
+                        </div>
+                      )}
+                      {section.id === "requirements" && (
+                        <p className="mt-3 text-center text-[10px] text-muted-foreground/70 md:text-xs">
+                          {t.tgballers.flowchartHint}
+                        </p>
+                      )}
                     </>
                   ) : section.image ? (
                     // Text on the left, image on the right
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 items-center">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center">
                       <div>
-                        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-6 md:mb-8">
+                        <h2 className="mb-2 text-2xl font-bold text-foreground md:text-3xl lg:text-4xl">
                           {section.title}
                         </h2>
+                        <h3 className="mb-4 text-lg font-semibold leading-snug text-foreground md:text-xl">
+                          {section.headline}
+                        </h3>
                         <p className="text-sm md:text-base text-muted-foreground leading-relaxed whitespace-pre-line">
                           {section.content}
                         </p>
@@ -208,9 +239,12 @@ export function TgballersDetail() {
                   ) : (
                     // No image
                     <>
-                      <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-6 md:mb-8">
+                      <h2 className="mb-2 text-2xl font-bold text-foreground md:text-3xl lg:text-4xl">
                         {section.title}
                       </h2>
+                      <h3 className="mb-4 text-lg font-semibold leading-snug text-foreground md:mb-6 md:text-xl">
+                        {section.headline}
+                      </h3>
                       <p className="text-sm md:text-base text-muted-foreground leading-relaxed whitespace-pre-line">
                         {section.content}
                       </p>

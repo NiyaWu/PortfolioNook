@@ -104,7 +104,7 @@ export const projectsData = [
 
 // Project descriptions (need translation)
 const projectDescriptionsEn: Record<string, string> = {
-  "ido-cms": "Elevated IDO investment experience through brand-centric design and a custom modular CMS, streamlining token launches and operational workflows.",
+  "ido-cms": "Connected a guided CMS for launch teams with a clearer IDO experience for customers, reducing internal setup from days to hours across 20+ launches.",
   "tgballers": "A Telegram interactive game developed for TOKEN2049 Singapore. In just 72 hours, I synchronized cross-departmental requirements to finalize specifications, leveraging AI to integrate technology and design for high-quality delivery under a tight deadline.",
   "ivar-redesign": "Consolidated fragmented management workflows and optimized the information architecture to deliver a more intuitive, seamless device monitoring experience.",
   "face-library": "Designed an integrated face recognition and library management interface, bridging access control with video analytics to enable real-time identity verification.",
@@ -115,7 +115,7 @@ const projectDescriptionsEn: Record<string, string> = {
 }
 
 const projectDescriptionsZh: Record<string, string> = {
-  "ido-cms": "以品牌導向重構 IDO 投資體驗，並開發模組化 CMS 系統，有效加速代幣上架流程與開發效率。",
+  "ido-cms": "串連發行端的引導式 CMS 與一般客戶的 IDO 前台體驗，並將內部上架從數天縮短至數小時，累計支援 20+ 次發行。",
   "tgballers": "為 TOKEN2049 Singapore 打造的 Telegram 互動遊戲。在 72 小時內橫向收斂各部門需求並確立規格，運用 AI 深度整合技術與設計，確保在極短時程內達成高品質交付。",
   "ivar-redesign": "整合碎片化的管理流程，透過優化資訊架構，提供更直觀、無縫的設備監控體驗。",
   "face-library": "人臉辨識與資料庫管理介面設計",

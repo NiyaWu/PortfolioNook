@@ -69,3 +69,4 @@ public/CMS-Prototype.mov
 # 本機存檔，不進 repo、不對外提供
 archive-local/
 *.zip
+.aider*

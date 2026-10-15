@@ -20,19 +20,19 @@ export const dataVisualizationEn = {
   projectOverview: {
     title: "Project Overview",
     overview: {
-      title: "01 Overview",
+      title: "Project Goal",
       content: "A company-wide chart and data component library. I researched how Highcharts' JSON theme configuration could be customised, checked how each product feature mapped onto a chart type, and implemented the result in IVAR.",
     },
     timeline: {
-      title: "02 Timeline",
-      content: "Started February 2019. I researched the charting library and its theme configuration, worked with my manager on which components the product line needed, tested with the engineer who owned the components, and built out IVAR's dashboard as the first implementation.",
-    },
-    challenge: {
-      title: "03 Challenge",
+      title: "Core Challenge",
       content: "One set of components had to serve behaviour analytics, business intelligence, people, vehicle and security features at once, without any single product being locked to choices made for another.",
     },
+    challenge: {
+      title: "My Role",
+      content: "I researched the charting library and its theme configuration, co-defined the components with my manager, tested them with the responsible engineer, and built IVAR's dashboard as the first implementation.",
+    },
     outcome: {
-      title: "04 Outcome",
+      title: "Outcome",
       content: "IVAR shipped with a complete dashboard, every feature checked against the chart type that suited it, and changing colours no longer needed an engineer: a designer hands over a JSON file and the whole look follows.",
     },
   },
@@ -95,19 +95,19 @@ export const dataVisualizationZh = {
   projectOverview: {
     title: "專案概覽",
     overview: {
-      title: "01 概覽",
+      title: "專案目標",
       content: "一套全公司通用的圖形資料元件庫。我研究 Highcharts 的 JSON 主題設定可以如何客製，確認各項功能適合套用哪種圖表，並實際套用到 IVAR 上。",
     },
     timeline: {
-      title: "02 時程",
-      content: "2019 年 2 月開始。先研究圖表套件與主題設定的能力，與主管一起確認產品線需要哪些元件，再與負責元件的工程師協作測試，最後以 IVAR 作為第一個實作把儀表板做出來。",
-    },
-    challenge: {
-      title: "03 挑戰",
+      title: "核心挑戰",
       content: "同一套元件要同時服務行為分析、商業智慧、人員、車輛與系統安全等功能，又不能讓某個產品被別的產品的決定綁死。",
     },
+    challenge: {
+      title: "我的角色",
+      content: "研究圖表套件與主題設定能力，與主管共同定義產品線所需元件，和負責元件的工程師協作測試，並以 IVAR 儀表板作為第一個實作。",
+    },
     outcome: {
-      title: "04 成果",
+      title: "成果",
       content: "IVAR 的儀表板完整交付，每項功能都確認過適合套用哪種圖表；改顏色不再需要工程師介入，設計師直接提供 JSON 檔案就能換掉整套視覺。",
     },
   },

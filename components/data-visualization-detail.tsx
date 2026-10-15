@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import Image from "next/image"
 import { useLanguage } from "@/contexts/language-context"
 import { Header } from "@/components/header"
+import { ProjectOverview } from "@/components/project-overview"
 
 export function DataVisualizationDetail() {
   const { t } = useLanguage()
@@ -187,24 +188,12 @@ export function DataVisualizationDetail() {
 
           {/* Main Content Area */}
           <main className="flex-1 max-w-[840px]">
-            {/* Project Overview Grid */}
-            <div className="mb-16 md:mb-24">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-8 md:mb-12 text-center">
-                {t.dataVisualization.projectOverview.title}
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                {(["overview", "timeline", "challenge", "outcome"] as const).map((key) => (
-                  <div key={key} className="border border-border rounded-lg p-4 md:p-6">
-                    <h3 className="text-base md:text-lg font-bold text-foreground mb-2 md:mb-3">
-                      {t.dataVisualization.projectOverview[key].title}
-                    </h3>
-                    <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
-                      {t.dataVisualization.projectOverview[key].content}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <ProjectOverview
+              title={t.dataVisualization.projectOverview.title}
+              items={(["overview", "timeline", "challenge", "outcome"] as const).map(
+                (key) => t.dataVisualization.projectOverview[key]
+              )}
+            />
 
             {/* Content Sections */}
             <div className="space-y-16 md:space-y-24 lg:space-y-32">

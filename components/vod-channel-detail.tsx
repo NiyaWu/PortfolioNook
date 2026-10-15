@@ -2,25 +2,152 @@
 
 import { useEffect, useState } from "react"
 import Image from "next/image"
-import Link from "next/link"
 import { useLanguage } from "@/contexts/language-context"
 import { Header } from "@/components/header"
+import { ProjectOverview } from "@/components/project-overview"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+
+function ZoomableTestDiagram({
+  src,
+  alt,
+  width,
+  height,
+  hint,
+}: {
+  src: string
+  alt: string
+  width: number
+  height: number
+  hint: string
+}) {
+  return (
+    <Dialog>
+      <DialogTrigger asChild>
+        <button
+          type="button"
+          className="block w-full cursor-zoom-in text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+          aria-label={hint}
+        >
+          <Image
+            src={src}
+            alt={alt}
+            width={width}
+            height={height}
+            className="h-auto w-full object-contain"
+          />
+        </button>
+      </DialogTrigger>
+      <p className="mt-3 text-center text-xs text-muted-foreground/70">
+        {hint}
+      </p>
+      <DialogContent className="w-[1600px] max-w-[96vw] overflow-hidden p-3 sm:max-w-[96vw]">
+        <DialogTitle className="sr-only">{alt}</DialogTitle>
+        <DialogDescription className="sr-only">{hint}</DialogDescription>
+        <div className="w-full max-h-[86vh] overflow-auto">
+          <div className="w-full min-w-[1600px] max-w-none">
+            <Image
+              src={src}
+              alt={alt}
+              width={width}
+              height={height}
+              className="h-auto w-full max-w-none"
+            />
+          </div>
+        </div>
+      </DialogContent>
+    </Dialog>
+  )
+}
 
 export function VodChannelDetail() {
   const { t } = useLanguage()
   const [showSidebar, setShowSidebar] = useState(false)
   const [activeSection, setActiveSection] = useState("discovery")
 
+  const sectionTitleClass =
+    "mb-4 max-w-3xl text-2xl font-bold leading-tight text-foreground md:mb-6 md:text-3xl lg:mb-8"
+  const featureTitleClass =
+    "mb-3 text-lg font-semibold leading-snug text-foreground md:text-xl"
+  const bodyClass = "text-sm leading-relaxed text-muted-foreground md:text-base"
+
   const sections = [
     { id: "discovery", label: t.vodChannel.sections.discovery },
-    { id: "researchGoals", label: t.vodChannel.sections.researchGoals },
     { id: "usabilityTesting", label: t.vodChannel.sections.usabilityTesting },
-    { id: "abTesting", label: t.vodChannel.sections.abTesting },
-    { id: "loginTest", label: t.vodChannel.sections.loginTest },
-    { id: "videoTypeTest", label: t.vodChannel.sections.videoTypeTest },
-    { id: "paymentTest", label: t.vodChannel.sections.paymentTest },
-    { id: "mockup", label: t.vodChannel.sections.mockup },
-    { id: "uiKit", label: t.vodChannel.sections.uiKit },
+    { id: "decisions", label: t.vodChannel.sections.decisions },
+    { id: "delivery", label: t.vodChannel.sections.delivery },
+  ]
+
+  const decisionCases = [
+    {
+      id: "homepage",
+      title: t.vodChannel.abTesting.title,
+      problem: [t.vodChannel.abTesting.content],
+      researchImage: "/portfolio/vod-channel/test-1.png",
+      researchImageWidth: 2000,
+      researchImageHeight: 1581,
+      decisionTitle: t.vodChannel.result1.title,
+      decision: [t.vodChannel.result1.content1, t.vodChannel.result1.content2],
+      resultImages: ["/portfolio/vod-channel/testB.gif"],
+    },
+    {
+      id: "login",
+      title: t.vodChannel.loginTest.title,
+      problem: [t.vodChannel.loginTest.content, t.vodChannel.loginTest.content2],
+      researchImage: "/portfolio/vod-channel/test-2.png",
+      researchImageWidth: 2000,
+      researchImageHeight: 979,
+      decisionTitle: t.vodChannel.result2.title,
+      decision: [t.vodChannel.result2.content],
+      resultImages: [
+        "/portfolio/vod-channel/testC.png",
+        "/portfolio/vod-channel/testD.png",
+      ],
+    },
+    {
+      id: "category",
+      title: t.vodChannel.videoTypeTest.title,
+      problem: [t.vodChannel.videoTypeTest.content],
+      researchImage: "/portfolio/vod-channel/test-3.png",
+      researchImageWidth: 2000,
+      researchImageHeight: 669,
+      decisionTitle: t.vodChannel.result3.title,
+      decision: [t.vodChannel.result3.content1, t.vodChannel.result3.content2],
+      resultImages: [
+        "/portfolio/vod-channel/testE.png",
+        "/portfolio/vod-channel/testF.png",
+      ],
+    },
+    {
+      id: "payment",
+      title: t.vodChannel.paymentTest.title,
+      problem: [t.vodChannel.paymentTest.content],
+      researchImage: "/portfolio/vod-channel/test-4.png",
+      researchImageWidth: 2000,
+      researchImageHeight: 739,
+      decisionTitle: t.vodChannel.result4.title,
+      decision: [t.vodChannel.result4.content1, t.vodChannel.result4.content2],
+      resultImages: [
+        "/portfolio/vod-channel/testG.png",
+        "/portfolio/vod-channel/testH.png",
+      ],
+    },
+    {
+      id: "live",
+      title: t.vodChannel.liveVideoTest.title,
+      problem: [t.vodChannel.liveVideoTest.content],
+      researchImage: "/portfolio/vod-channel/test-5.png",
+      researchImageWidth: 2000,
+      researchImageHeight: 791,
+      decisionTitle: t.vodChannel.result5.title,
+      decision: t.vodChannel.result5.items,
+      resultImages: [],
+    },
   ]
 
   useEffect(() => {
@@ -73,6 +200,10 @@ export function VodChannelDetail() {
           <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold text-foreground mb-6 md:mb-8 leading-tight">
             {t.vodChannel.title}
           </h1>
+
+          <p className="mx-auto mb-6 max-w-3xl text-sm leading-relaxed text-muted-foreground md:text-base">
+            {t.vodChannel.subtitle}
+          </p>
 
           <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 md:gap-x-8 md:gap-y-1 text-xs md:text-sm text-muted-foreground leading-tight">
             <div>
@@ -145,384 +276,169 @@ export function VodChannelDetail() {
 
           {/* Main Content Area */}
           <main className="flex-1 max-w-[840px]">
-            {/* Project Overview Grid */}
-            <div className="mb-16 md:mb-24">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-8 md:mb-12 text-center">
-                {t.vodChannel.projectOverview.title}
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                <div className="border border-border rounded-lg p-4 md:p-6">
-                  <h3 className="text-base md:text-lg font-bold text-foreground mb-2 md:mb-3">{t.vodChannel.projectOverview.overview.title}</h3>
-                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
-                    {t.vodChannel.projectOverview.overview.content}
-                  </p>
-                </div>
-                <div className="border border-border rounded-lg p-4 md:p-6">
-                  <h3 className="text-base md:text-lg font-bold text-foreground mb-2 md:mb-3">{t.vodChannel.projectOverview.timeline.title}</h3>
-                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
-                    {t.vodChannel.projectOverview.timeline.content}
-                  </p>
-                </div>
-                <div className="border border-border rounded-lg p-4 md:p-6">
-                  <h3 className="text-base md:text-lg font-bold text-foreground mb-2 md:mb-3">{t.vodChannel.projectOverview.challenge.title}</h3>
-                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
-                    {t.vodChannel.projectOverview.challenge.content}
-                  </p>
-                </div>
-                <div className="border border-border rounded-lg p-4 md:p-6">
-                  <h3 className="text-base md:text-lg font-bold text-foreground mb-2 md:mb-3">{t.vodChannel.projectOverview.outcome.title}</h3>
-                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
-                    {t.vodChannel.projectOverview.outcome.content}
-                  </p>
-                </div>
-              </div>
-            </div>
+            <ProjectOverview
+              title={t.vodChannel.projectOverview.title}
+              items={[
+                t.vodChannel.projectOverview.overview,
+                t.vodChannel.projectOverview.timeline,
+                t.vodChannel.projectOverview.challenge,
+                t.vodChannel.projectOverview.outcome,
+              ]}
+            />
 
             {/* Content Sections */}
             <div className="space-y-16 md:space-y-24 lg:space-y-32">
-              {/* Discovery */}
               <section id="discovery">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
-                  <div className="order-2 lg:order-1">
-                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6 lg:mb-8">
-                      {t.vodChannel.discovery.title}
-                    </h2>
-                    <div className="text-sm md:text-base text-muted-foreground leading-relaxed space-y-4">
-                      <p>{t.vodChannel.discovery.intro}</p>
-                      <ul className="space-y-2">
-                        {t.vodChannel.discovery.items.map((item: string, i: number) => (
-                          <li key={i} className="flex items-start gap-3">
-                            <span className="w-1 h-1 rounded-full bg-muted-foreground mt-2 flex-shrink-0" />
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                      <p>{t.vodChannel.discovery.conclusion}</p>
-                    </div>
+                <h2 className={sectionTitleClass}>{t.vodChannel.discovery.title}</h2>
+                <div className="grid grid-cols-1 items-start gap-x-8 gap-y-5 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-x-12">
+                  <p className={`${bodyClass} md:col-start-2`}>
+                    {t.vodChannel.discovery.intro}
+                  </p>
+                  <Image
+                    src="/portfolio/vod-channel/userMessage01.png"
+                    alt="User feedback collected from app stores"
+                    width={700}
+                    height={408}
+                    className="h-auto w-full object-contain md:col-start-1 md:row-start-1 md:row-span-3"
+                  />
+                  <div className="md:col-start-2">
+                    <ul className="space-y-4">
+                      {t.vodChannel.discovery.items.map((item: string, index: number) => (
+                        <li key={index} className={`${bodyClass} flex items-start gap-3`}>
+                          <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-foreground/40" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <div className="w-full order-1 lg:order-2">
-                    <Image
-                      src="/portfolio/vod-channel/userMessage01.png"
-                      alt="User Messages"
-                      width={500}
-                      height={350}
-                      className="w-full h-auto object-contain"
-                    />
-                  </div>
+                  <p className={`${bodyClass} border-t border-border/70 pt-4 md:col-start-2`}>
+                    {t.vodChannel.discovery.conclusion}
+                  </p>
                 </div>
               </section>
 
-              {/* Research Goals */}
-              <section id="researchGoals">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6 lg:mb-8">
-                  {t.vodChannel.researchGoals.title}
-                </h2>
-                <ul className="space-y-2">
-                  {t.vodChannel.researchGoals.items.map((item, index) => (
-                    <li key={index} className="flex items-start gap-3 text-sm md:text-base text-muted-foreground">
-                      <span className="w-1 h-1 rounded-full bg-muted-foreground mt-2 flex-shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </section>
-
-              {/* Usability Testing */}
               <section id="usabilityTesting">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6 lg:mb-8">
-                  {t.vodChannel.usabilityTesting.title}
-                </h2>
-
-                {/* Wireframes */}
-                <div className="mb-8">
-                  <div className="flex flex-wrap gap-2 mb-4 justify-center">
-                    {[7, 8, 9, 10, 1, 2, 3, 4, 5, 6].map((num) => (
-                      <Image
-                        key={num}
-                        src={`/portfolio/vod-channel/phone-w${num}.jpg`}
-                        alt={`Wireframe ${num}`}
-                        width={100}
-                        height={180}
-                        className="w-[80px] md:w-[100px] h-auto object-contain"
-                      />
-                    ))}
-                  </div>
-                  <p className="text-xs text-muted-foreground text-center">{t.vodChannel.usabilityTesting.wireframes}</p>
-                </div>
-
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-8">
+                <h2 className={sectionTitleClass}>{t.vodChannel.usabilityTesting.title}</h2>
+                <p className={`${bodyClass} mb-8 max-w-3xl`}>
                   {t.vodChannel.usabilityTesting.content}
                 </p>
 
-                {/* Participants */}
-                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">
-                  {t.vodChannel.participants.title}
-                </h3>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-8">
-                  {t.vodChannel.participants.content}
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                  <article className="rounded-xl border border-border/70 bg-white p-5 md:p-6">
+                    <h3 className={featureTitleClass}>{t.vodChannel.participants.title}</h3>
+                    <p className={bodyClass}>{t.vodChannel.participants.content}</p>
+                  </article>
+                  <article className="rounded-xl border border-border/70 bg-white p-5 md:p-6">
+                    <h3 className={featureTitleClass}>{t.vodChannel.researchGoals.title}</h3>
+                    <ul className="space-y-2">
+                      {t.vodChannel.researchGoals.items.map((item, index) => (
+                        <li key={index} className={`${bodyClass} flex items-start gap-3`}>
+                          <span className="mt-2 h-1 w-1 flex-shrink-0 rounded-full bg-foreground/40" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </article>
+                </div>
+              </section>
+
+              <section id="decisions">
+                <h2 className={sectionTitleClass}>{t.vodChannel.decisionSection.title}</h2>
+                <p className={`${bodyClass} mb-10 max-w-3xl`}>
+                  {t.vodChannel.decisionSection.intro}
                 </p>
 
-                {/* Test Objectives */}
-                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">
-                  {t.vodChannel.testObjectives.title}
-                </h3>
-                <ul className="space-y-2">
-                  {t.vodChannel.testObjectives.items.map((item, index) => (
-                    <li key={index} className="flex items-start gap-3 text-sm md:text-base text-muted-foreground">
-                      <span className="w-1 h-1 rounded-full bg-muted-foreground mt-2 flex-shrink-0" />
-                      {item}
-                    </li>
+                <div className="space-y-16 md:space-y-20">
+                  {decisionCases.map((item, index) => (
+                    <article key={item.id} className="border-t border-border/70 pt-8 first:border-t-0 first:pt-0">
+                      <div className="mb-6 flex items-start gap-4">
+                        <span className="mt-0.5 text-xs font-medium tabular-nums text-muted-foreground/60">
+                          {String(index + 1).padStart(2, "0")}
+                        </span>
+                        <div>
+                          <h3 className={featureTitleClass}>{item.title}</h3>
+                          <div className="space-y-3">
+                            {item.problem.map((paragraph) => (
+                              <p key={paragraph} className={bodyClass}>{paragraph}</p>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="mb-8">
+                        <ZoomableTestDiagram
+                          src={item.researchImage}
+                          alt={item.title}
+                          width={item.researchImageWidth}
+                          height={item.researchImageHeight}
+                          hint={t.vodChannel.zoomHint}
+                        />
+                      </div>
+
+                      <div className={`grid grid-cols-1 items-center gap-6 rounded-xl border border-border/70 bg-white p-5 md:p-6 ${item.resultImages.length > 0 ? "md:grid-cols-2" : ""}`}>
+                        <div>
+                          <p className="mb-2 text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground/60">
+                            {t.vodChannel.decisionSection.decisionLabel}
+                          </p>
+                          <h4 className="mb-3 text-base font-semibold text-foreground md:text-lg">
+                            {item.decisionTitle}
+                          </h4>
+                          <ul className="space-y-2">
+                            {item.decision.map((paragraph) => (
+                              <li key={paragraph} className={`${bodyClass} flex items-start gap-3`}>
+                                <span className="mt-2 h-1 w-1 flex-shrink-0 rounded-full bg-foreground/40" />
+                                {paragraph}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        {item.resultImages.length > 0 && (
+                          <div className="flex min-w-0 items-center justify-center gap-3">
+                            {item.resultImages.map((src) => (
+                              <Image
+                                key={src}
+                                src={src}
+                                alt={item.decisionTitle}
+                                width={420}
+                                height={600}
+                                className={`${item.resultImages.length === 1 ? "max-h-[360px] max-w-full" : "max-h-[420px] w-[46%]"} h-auto object-contain`}
+                              />
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    </article>
                   ))}
-                </ul>
+                </div>
               </section>
 
-              {/* AB Testing */}
-              <section id="abTesting">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6 lg:mb-8">
-                  {t.vodChannel.abTesting.title}
-                </h2>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-8">
-                  {t.vodChannel.abTesting.content}
-                </p>
-                <Image
-                  src="/portfolio/vod-channel/test-1.png"
-                  alt="AB Testing"
-                  width={1000}
-                  height={600}
-                  className="w-full h-auto object-contain mb-12"
-                />
-
-                {/* Result 1 */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center mb-16">
-                  <div className="order-2 lg:order-1">
-                    <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">
-                      {t.vodChannel.result1.title}
-                    </h3>
-                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-2">
-                      {t.vodChannel.result1.content1}
-                    </p>
-                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                      {t.vodChannel.result1.content2}
-                    </p>
-                  </div>
-                  <div className="w-full flex justify-center order-1 lg:order-2">
-                    <Image
-                      src="/portfolio/vod-channel/testB.gif"
-                      alt="Result Animation"
-                      width={300}
-                      height={500}
-                      className="w-[60%] h-auto object-contain"
-                    />
-                  </div>
-                </div>
-
-              </section>
-
-              {/* Login Test */}
-              <section id="loginTest">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6 lg:mb-8">
-                  {t.vodChannel.loginTest.title}
-                </h2>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-2">
-                  {t.vodChannel.loginTest.content}
-                </p>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-8">
-                  {t.vodChannel.loginTest.content2}
-                </p>
-                <Image
-                  src="/portfolio/vod-channel/test-2.png"
-                  alt="Login Test"
-                  width={1000}
-                  height={600}
-                  className="w-full h-auto object-contain mb-12"
-                />
-
-                {/* Result 2 */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center mb-16">
-                  <div className="order-2 lg:order-1">
-                    <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">
-                      {t.vodChannel.result2.title}
-                    </h3>
-                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                      {t.vodChannel.result2.content}
-                    </p>
-                  </div>
-                  <div className="w-full flex justify-center gap-4 order-1 lg:order-2">
-                    <Image
-                      src="/portfolio/vod-channel/testC.png"
-                      alt="Result C"
-                      width={200}
-                      height={350}
-                      className="w-[45%] h-auto object-contain"
-                    />
-                    <Image
-                      src="/portfolio/vod-channel/testD.png"
-                      alt="Result D"
-                      width={200}
-                      height={350}
-                      className="w-[45%] h-auto object-contain"
-                    />
-                  </div>
-                </div>
-
-              </section>
-
-              {/* Video Type Test */}
-              <section id="videoTypeTest">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6 lg:mb-8">
-                  {t.vodChannel.videoTypeTest.title}
-                </h2>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-8">
-                  {t.vodChannel.videoTypeTest.content}
-                </p>
-                <Image
-                  src="/portfolio/vod-channel/test-3.png"
-                  alt="Video Type Test"
-                  width={1000}
-                  height={600}
-                  className="w-full h-auto object-contain mb-12"
-                />
-
-                {/* Result 3 */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center mb-16">
-                  <div className="order-2 lg:order-1">
-                    <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">
-                      {t.vodChannel.result3.title}
-                    </h3>
-                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-2">
-                      {t.vodChannel.result3.content1}
-                    </p>
-                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                      {t.vodChannel.result3.content2}
-                    </p>
-                  </div>
-                  <div className="w-full flex justify-center gap-4 order-1 lg:order-2">
-                    <Image
-                      src="/portfolio/vod-channel/testE.png"
-                      alt="Result E"
-                      width={200}
-                      height={350}
-                      className="w-[45%] h-auto object-contain"
-                    />
-                    <Image
-                      src="/portfolio/vod-channel/testF.png"
-                      alt="Result F"
-                      width={200}
-                      height={350}
-                      className="w-[45%] h-auto object-contain"
-                    />
-                  </div>
-                </div>
-
-              </section>
-
-              {/* Payment Test */}
-              <section id="paymentTest">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6 lg:mb-8">
-                  {t.vodChannel.paymentTest.title}
-                </h2>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-8">
-                  {t.vodChannel.paymentTest.content}
-                </p>
-                <Image
-                  src="/portfolio/vod-channel/test-4.png"
-                  alt="Payment Test"
-                  width={1000}
-                  height={600}
-                  className="w-full h-auto object-contain mb-12"
-                />
-
-                {/* Result 4 */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center mb-16">
-                  <div className="order-2 lg:order-1">
-                    <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">
-                      {t.vodChannel.result4.title}
-                    </h3>
-                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-2">
-                      {t.vodChannel.result4.content1}
-                    </p>
-                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                      {t.vodChannel.result4.content2}
-                    </p>
-                  </div>
-                  <div className="w-full flex justify-center gap-4 order-1 lg:order-2">
-                    <Image
-                      src="/portfolio/vod-channel/testG.png"
-                      alt="Result G"
-                      width={200}
-                      height={350}
-                      className="w-[45%] h-auto object-contain"
-                    />
-                    <Image
-                      src="/portfolio/vod-channel/testH.png"
-                      alt="Result H"
-                      width={200}
-                      height={350}
-                      className="w-[45%] h-auto object-contain"
-                    />
-                  </div>
-                </div>
-
-                {/* Live Video Test */}
-                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">
-                  {t.vodChannel.liveVideoTest.title}
-                </h3>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-8">
-                  {t.vodChannel.liveVideoTest.content}
-                </p>
-                <Image
-                  src="/portfolio/vod-channel/test-5.png"
-                  alt="Live Video Test"
-                  width={1000}
-                  height={600}
-                  className="w-full h-auto object-contain mb-8"
-                />
-
-                {/* Result 5 */}
-                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">
-                  {t.vodChannel.result5.title}
-                </h3>
-                <ul className="space-y-2">
-                  {t.vodChannel.result5.items.map((item, index) => (
-                    <li key={index} className="flex items-start gap-3 text-sm md:text-base text-muted-foreground">
-                      <span className="w-1 h-1 rounded-full bg-muted-foreground mt-2 flex-shrink-0" />
-                      {item}
-                    </li>
+              <section id="delivery">
+                <h2 className={sectionTitleClass}>{t.vodChannel.delivery.title}</h2>
+                <p className={`${bodyClass} mb-8 max-w-3xl`}>{t.vodChannel.delivery.content}</p>
+                <div className="mb-10 grid grid-cols-1 gap-4 md:grid-cols-3">
+                  {t.vodChannel.delivery.items.map((item: { title: string; content: string }) => (
+                    <article key={item.title} className="rounded-xl border border-border/70 bg-white p-5">
+                      <h3 className="mb-2 text-base font-semibold text-foreground">{item.title}</h3>
+                      <p className={bodyClass}>{item.content}</p>
+                    </article>
                   ))}
-                </ul>
-              </section>
-
-              {/* Mockup */}
-              <section id="mockup">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6 lg:mb-8">
-                  {t.vodChannel.mockup.title}
-                </h2>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-8">
-                  {t.vodChannel.mockup.content}
-                </p>
-                <Image
-                  src="/portfolio/vod-channel/VOD-mockup.jpg"
-                  alt="VOD Mockup"
-                  width={1200}
-                  height={700}
-                  className="w-full h-auto object-contain"
-                />
-              </section>
-
-              {/* UI Kit */}
-              <section id="uiKit">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6 lg:mb-8">
-                  {t.vodChannel.uiKit.title}
-                </h2>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-8">
-                  {t.vodChannel.uiKit.content}
-                </p>
+                </div>
+                <h3 className={featureTitleClass}>{t.vodChannel.uiKit.title}</h3>
+                <p className={`${bodyClass} mb-8`}>{t.vodChannel.uiKit.content}</p>
                 <Image
                   src="/portfolio/vod-channel/themePic.png"
-                  alt="UI Kit"
+                  alt="myVideo UI Kit"
                   width={1200}
+                  height={1008}
+                  className="h-auto w-full object-contain"
+                />
+                <Image
+                  src="/portfolio/vod-channel/VOD-mockup.jpg"
+                  alt="myVideo final design"
+                  width={1440}
                   height={600}
-                  className="w-full h-auto object-contain"
+                  className="mt-12 h-auto w-full object-contain md:mt-16"
                 />
               </section>
             </div>

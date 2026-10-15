@@ -317,7 +317,7 @@ export function Hero() {
                   <button
                     key={s}
                     onClick={() => send(s)}
-                    className="ml-auto block w-fit max-w-[88%] rounded-2xl rounded-tr-sm border border-[#0071e3] bg-white px-3.5 py-2 text-[15px] leading-relaxed text-[#0071e3] transition-colors hover:bg-[#0071e3] hover:text-white"
+                    className="ml-auto block w-fit max-w-[88%] rounded-2xl rounded-tr-sm border border-[#0071e3] bg-white px-3.5 py-2 text-left text-[15px] leading-relaxed text-[#0071e3] transition-colors hover:bg-[#0071e3] hover:text-white"
                   >
                     {s}
                   </button>

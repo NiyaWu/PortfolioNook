@@ -4,18 +4,25 @@ import { useEffect, useState } from "react"
 import Image from "next/image"
 import { useLanguage } from "@/contexts/language-context"
 import { Header } from "@/components/header"
+import { ProjectOverview } from "@/components/project-overview"
+import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 
 export function VideoAnalysisDetail() {
   const { t } = useLanguage()
   const [showSidebar, setShowSidebar] = useState(false)
-  const [activeSection, setActiveSection] = useState("designThinking")
+  const [activeSection, setActiveSection] = useState("problem")
+
+  const sectionTitleClass =
+    "mb-4 text-2xl font-bold leading-tight text-foreground md:mb-6 md:text-3xl lg:mb-8 lg:text-4xl"
+  const featureTitleClass =
+    "mb-3 text-lg font-semibold leading-snug text-foreground md:text-xl"
+  const bodyClass =
+    "text-sm leading-relaxed text-muted-foreground md:text-base"
 
   const sections = [
-    { id: "designThinking", label: t.videoAnalysis.sections.designThinking },
+    { id: "problem", label: t.videoAnalysis.sections.problem },
     { id: "analysisSettings", label: t.videoAnalysis.sections.analysisSettings },
-    { id: "scheduleSettings", label: t.videoAnalysis.sections.scheduleSettings },
-    { id: "graphicalTool", label: t.videoAnalysis.sections.graphicalTool },
-    { id: "tvWall", label: t.videoAnalysis.sections.tvWall },
+    { id: "tvWall", label: t.videoAnalysis.sections.monitoring },
     { id: "uiKit", label: t.videoAnalysis.sections.uiKit },
     { id: "outcome", label: t.videoAnalysis.sections.outcome },
   ]
@@ -71,6 +78,10 @@ export function VideoAnalysisDetail() {
             {t.videoAnalysis.title}
           </h1>
 
+          <p className="mx-auto mb-6 max-w-3xl text-sm leading-relaxed text-muted-foreground md:text-base lg:text-lg">
+            {t.videoAnalysis.subtitle}
+          </p>
+
           <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 md:gap-x-8 md:gap-y-1 text-xs md:text-sm text-muted-foreground leading-tight">
             <div>
               <span className="font-medium">Year: </span>
@@ -91,108 +102,17 @@ export function VideoAnalysisDetail() {
           </div>
         </div>
 
-        {/* Hero Image - TV Wall with animated text */}
-        <div className="relative w-full max-w-4xl mx-auto">
-          {/* TV Wall Image - centered */}
-          <div className="relative w-[70%] sm:w-[65%] md:w-[70%] max-w-[750px] mx-auto">
-            <Image
-              src="/portfolio/video-analysis/TVwallTop.png"
-              alt="Video Analysis TV Wall"
-              width={700}
-              height={430}
-              className="w-full h-auto object-contain"
-            />
-          </div>
-
-          {/* VIDEO - left side of image */}
-          <div className="animate-video absolute top-[40%] left-[0%] font-medium italic text-muted-foreground/70">
-            <span className="relative z-10 text-xl sm:text-2xl md:text-3xl lg:text-4xl px-2 md:px-3">VIDEO</span>
-            <div className="animate-greenBox2 absolute border-2 md:border-[3px] border-green-500 -inset-1 md:-inset-2" />
-          </div>
-
-          {/* Animated Text Box - right side */}
-          <div className="absolute top-0 left-[60%] sm:left-[58%] md:left-[60%] w-[40%] sm:w-[42%] md:w-[40%] h-full font-medium italic text-muted-foreground/70">
-            {/* NVR - top right */}
-            <div className="animate-nvr absolute top-[20%] right-[5%]">
-              <span className="relative z-10 text-xl sm:text-2xl md:text-3xl lg:text-4xl px-2 md:px-3">NVR</span>
-              <div className="animate-greenBox1 absolute border-2 md:border-[3px] border-green-500 -inset-1 md:-inset-2" />
-            </div>
-
-            {/* Analysis - bottom right */}
-            <div className="animate-analysis absolute top-[70%] right-[-15%]">
-              <span className="relative z-10 text-xl sm:text-2xl md:text-3xl lg:text-4xl px-2 md:px-3">Analysis</span>
-              <div className="animate-greenBox3 absolute border-2 md:border-[3px] border-green-500 -inset-1 md:-inset-2" />
-            </div>
-          </div>
+        <div className="w-full max-w-4xl mx-auto">
+          <Image
+            src="/portfolio/video-analysis/TVwallTop.png"
+            alt="Video Analysis TV Wall"
+            width={1200}
+            height={736}
+            className="w-full h-auto object-contain"
+            priority
+          />
         </div>
       </div>
-
-      {/* CSS Animation Styles */}
-      <style jsx global>{`
-        @keyframes nvr {
-          0%   { transform: scale(0.5); opacity: 0; }
-          15%  { transform: scale(1);   opacity: 1; }
-          25%  { transform: scale(1);   opacity: 1; }
-          90%  { transform: scale(1);   opacity: 1; }
-          100% { opacity: 0; }
-        }
-        @keyframes video {
-          0%   { transform: scale(0.5); opacity: 0; }
-          20%  { transform: scale(0.5); opacity: 0; }
-          25%  { transform: scale(1);   opacity: 1; }
-          90%  { transform: scale(1);   opacity: 1; }
-          100% { opacity: 0; }
-        }
-        @keyframes analysis {
-          0%   { transform: scale(0.5); opacity: 0; }
-          30%  { transform: scale(0.5); opacity: 0; }
-          35%  { transform: scale(1);   opacity: 1; }
-          90%  { transform: scale(1);   opacity: 1; }
-          100% { opacity: 0; }
-        }
-        @keyframes greenBox1 {
-          0%   { opacity: 0; }
-          15%  { opacity: 0; transform: scale(1.5); }
-          20%  { opacity: 1; transform: scale(1); }
-          90%  { opacity: 1; }
-          91%  { opacity: 0; }
-          100% { opacity: 0; }
-        }
-        @keyframes greenBox2 {
-          0%   { opacity: 0; }
-          25%  { opacity: 0; transform: scale(1.5); }
-          30%  { opacity: 1; transform: scale(1); }
-          90%  { opacity: 1; }
-          91%  { opacity: 0; }
-          100% { opacity: 0; }
-        }
-        @keyframes greenBox3 {
-          0%   { opacity: 0; }
-          35%  { opacity: 0; transform: scale(1.5); }
-          40%  { opacity: 1; transform: scale(1); }
-          90%  { opacity: 1; }
-          91%  { opacity: 0; }
-          100% { opacity: 0; }
-        }
-        .animate-nvr {
-          animation: nvr 10s ease-in-out infinite;
-        }
-        .animate-video {
-          animation: video 10s ease-in-out infinite;
-        }
-        .animate-analysis {
-          animation: analysis 10s ease-in-out infinite;
-        }
-        .animate-greenBox1 {
-          animation: greenBox1 10s infinite;
-        }
-        .animate-greenBox2 {
-          animation: greenBox2 10s infinite;
-        }
-        .animate-greenBox3 {
-          animation: greenBox3 10s infinite;
-        }
-      `}</style>
 
       {/* Main Content */}
       <div className="max-w-7xl 2xl:max-w-[1400px] mx-auto px-6 md:px-8 lg:px-12 2xl:px-16 py-12 md:py-20 lg:py-24 2xl:py-32">
@@ -222,134 +142,156 @@ export function VideoAnalysisDetail() {
 
           {/* Main Content Area */}
           <main className="flex-1 max-w-[840px] 2xl:max-w-[960px]">
-            {/* Project Overview Grid */}
-            <div className="mb-16 md:mb-24 2xl:mb-32">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-8 md:mb-12 text-center">
-                {t.videoAnalysis.projectOverview.title}
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                <div className="border border-border rounded-lg p-4 md:p-6">
-                  <h3 className="text-base md:text-lg font-bold text-foreground mb-2 md:mb-3">{t.videoAnalysis.projectOverview.overviewLabel}</h3>
-                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
-                    {t.videoAnalysis.about.overview}
-                  </p>
-                </div>
-                <div className="border border-border rounded-lg p-4 md:p-6">
-                  <h3 className="text-base md:text-lg font-bold text-foreground mb-2 md:mb-3">{t.videoAnalysis.projectOverview.timelineLabel}</h3>
-                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
-                    {t.videoAnalysis.about.timeline}
-                  </p>
-                </div>
-                <div className="border border-border rounded-lg p-4 md:p-6">
-                  <h3 className="text-base md:text-lg font-bold text-foreground mb-2 md:mb-3">{t.videoAnalysis.projectOverview.challengeLabel}</h3>
-                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
-                    {t.videoAnalysis.about.challenge}
-                  </p>
-                </div>
-                <div className="border border-border rounded-lg p-4 md:p-6">
-                  <h3 className="text-base md:text-lg font-bold text-foreground mb-2 md:mb-3">{t.videoAnalysis.projectOverview.outcomeLabel}</h3>
-                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
-                    {t.videoAnalysis.about.outcome}
-                  </p>
-                </div>
-              </div>
-            </div>
+            <ProjectOverview
+              title={t.videoAnalysis.projectOverview.title}
+              items={[
+                { title: t.videoAnalysis.projectOverview.overviewLabel, content: t.videoAnalysis.about.overview },
+                { title: t.videoAnalysis.projectOverview.timelineLabel, content: t.videoAnalysis.about.challenge },
+                { title: t.videoAnalysis.projectOverview.challengeLabel, content: t.videoAnalysis.projectOverview.roleContent },
+                { title: t.videoAnalysis.projectOverview.outcomeLabel, content: t.videoAnalysis.about.outcome },
+              ]}
+            />
 
             {/* Content Sections */}
             <div className="space-y-16 md:space-y-24 lg:space-y-32 2xl:space-y-40">
-              {/* Design Thinking */}
-              <section id="designThinking">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6 lg:mb-8">
-                  {t.videoAnalysis.designThinking.title}
+              {/* Problem */}
+              <section id="problem">
+                <h2 className={sectionTitleClass}>
+                  {t.videoAnalysis.problem.title}
                 </h2>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                  {t.videoAnalysis.designThinking.content}
+                <p className={`${bodyClass} mb-6 max-w-3xl`}>
+                  {t.videoAnalysis.problem.intro}
                 </p>
+                <div className="grid grid-cols-1 gap-3 md:grid-cols-3">
+                  {t.videoAnalysis.problem.items.map((item: { title: string; content: string }) => (
+                    <article key={item.title} className="rounded-xl border border-border/70 bg-white p-4 md:p-5">
+                      <h3 className="mb-2 text-sm font-semibold text-foreground md:text-base">
+                        {item.title}
+                      </h3>
+                      <p className="text-xs leading-relaxed text-muted-foreground md:text-sm">
+                        {item.content}
+                      </p>
+                    </article>
+                  ))}
+                </div>
               </section>
 
               {/* Analysis Settings */}
               <section id="analysisSettings">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6 lg:mb-8">
+                <h2 className={sectionTitleClass}>
                   {t.videoAnalysis.analysisSettings.title}
                 </h2>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-4">
+                <p className={`${bodyClass} mb-10 max-w-3xl`}>
                   {t.videoAnalysis.analysisSettings.content}
                 </p>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-8">
-                  {t.videoAnalysis.analysisSettings.content2}
-                </p>
-                <Image
-                  src="/portfolio/video-analysis/AnalyticFlow.png"
-                  alt="Analytic Flow"
-                  width={1200}
-                  height={600}
-                  className="w-full h-auto object-contain"
-                />
-              </section>
 
-              {/* Schedule Settings */}
-              <section id="scheduleSettings">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
-                  <div>
-                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6 lg:mb-8">
-                      {t.videoAnalysis.scheduleSettings.title}
-                    </h2>
-                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-4">
-                      {t.videoAnalysis.scheduleSettings.content}
+                <div className="space-y-12 md:space-y-16">
+                  <article>
+                    <h3 className={featureTitleClass}>
+                      {t.videoAnalysis.analysisSettings.progressiveTitle}
+                    </h3>
+                    <p className={`${bodyClass} mb-5`}>
+                      {t.videoAnalysis.analysisSettings.content2}
                     </p>
-                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                      {t.videoAnalysis.scheduleSettings.content2}
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <button
+                          type="button"
+                          className="block w-full cursor-zoom-in text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                          aria-label={t.videoAnalysis.analysisSettings.flowHint}
+                        >
+                          <Image
+                            src="/portfolio/video-analysis/AnalyticFlow.png"
+                            alt="Analytic Flow"
+                            width={3006}
+                            height={434}
+                            className="h-auto w-full"
+                          />
+                        </button>
+                      </DialogTrigger>
+                      <DialogContent className="w-[1800px] max-w-[96vw] overflow-hidden p-3 sm:max-w-[96vw]">
+                        <DialogTitle className="sr-only">
+                          {t.videoAnalysis.analysisSettings.progressiveTitle}
+                        </DialogTitle>
+                        <DialogDescription className="sr-only">
+                          {t.videoAnalysis.analysisSettings.flowHint}
+                        </DialogDescription>
+                        <div className="w-full max-h-[86vh] overflow-auto">
+                          <div className="w-full min-w-[1800px] shrink-0">
+                            <Image
+                              src="/portfolio/video-analysis/AnalyticFlow.png"
+                              alt="Analytic Flow"
+                              width={3006}
+                              height={434}
+                              className="h-auto w-full max-w-none"
+                            />
+                          </div>
+                        </div>
+                      </DialogContent>
+                    </Dialog>
+                    <p className="mt-3 text-center text-[10px] text-muted-foreground/70 md:text-xs">
+                      {t.videoAnalysis.analysisSettings.flowHint}
                     </p>
-                  </div>
-                  <div className="w-full rounded-lg overflow-hidden">
+                  </article>
+
+                  <article className="grid grid-cols-1 items-center gap-6 md:grid-cols-2 md:gap-8 lg:gap-12">
+                    <div>
+                      <h3 className={featureTitleClass}>
+                        {t.videoAnalysis.scheduleSettings.title}
+                      </h3>
+                      <p className={`${bodyClass} mb-3`}>
+                        {t.videoAnalysis.scheduleSettings.content}
+                      </p>
+                      <p className={bodyClass}>
+                        {t.videoAnalysis.scheduleSettings.content2}
+                      </p>
+                    </div>
                     <Image
                       src="/portfolio/video-analysis/analysis3.png"
                       alt="Schedule Settings"
-                      width={600}
-                      height={400}
-                      className="w-full h-auto object-contain"
+                      width={1000}
+                      height={840}
+                      className="h-auto w-full object-contain"
                     />
-                  </div>
-                </div>
-              </section>
+                  </article>
 
-              {/* Graphical Tool */}
-              <section id="graphicalTool">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
-                  <div>
-                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6 lg:mb-8">
-                      {t.videoAnalysis.graphicalTool.title}
-                    </h2>
-                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-4">
-                      {t.videoAnalysis.graphicalTool.content}
-                    </p>
-                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                      {t.videoAnalysis.graphicalTool.content2}
-                    </p>
-                  </div>
-                  <div className="w-full rounded-lg overflow-hidden">
+                  <article className="grid grid-cols-1 items-center gap-6 md:grid-cols-2 md:gap-8 lg:gap-12">
+                    <div>
+                      <h3 className={featureTitleClass}>
+                        {t.videoAnalysis.graphicalTool.title}
+                      </h3>
+                      <p className={`${bodyClass} mb-3`}>
+                        {t.videoAnalysis.graphicalTool.content}
+                      </p>
+                      <p className={bodyClass}>
+                        {t.videoAnalysis.graphicalTool.content2}
+                      </p>
+                    </div>
                     <Image
                       src="/portfolio/video-analysis/01.jpg"
                       alt="Double Cross Line Tool"
-                      width={600}
-                      height={400}
-                      className="w-full h-auto object-contain"
+                      width={1200}
+                      height={800}
+                      className="h-auto w-full object-contain"
                     />
-                  </div>
+                  </article>
                 </div>
               </section>
 
               {/* TV Wall */}
               <section id="tvWall">
+                <h2 className={sectionTitleClass}>
+                  {t.videoAnalysis.sections.monitoring}
+                </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
                   <div>
-                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6 lg:mb-8">
+                    <h3 className={featureTitleClass}>
                       {t.videoAnalysis.tvWall.title}
-                    </h2>
-                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-4">
+                    </h3>
+                    <p className={`${bodyClass} mb-4`}>
                       {t.videoAnalysis.tvWall.content}
                     </p>
-                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                    <p className={bodyClass}>
                       {t.videoAnalysis.tvWall.content2}
                     </p>
                   </div>
@@ -367,10 +309,10 @@ export function VideoAnalysisDetail() {
 
               {/* UI Kit */}
               <section id="uiKit">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6 lg:mb-8">
+                <h2 className={sectionTitleClass}>
                   {t.videoAnalysis.uiKit.title}
                 </h2>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-8">
+                <p className={`${bodyClass} mb-8`}>
                   {t.videoAnalysis.uiKit.content}
                 </p>
                 <Image
@@ -384,10 +326,10 @@ export function VideoAnalysisDetail() {
 
               {/* Outcome */}
               <section id="outcome">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6 lg:mb-8">
+                <h2 className={sectionTitleClass}>
                   {t.videoAnalysis.outcome.title}
                 </h2>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                <p className={bodyClass}>
                   {t.videoAnalysis.outcome.content}
                 </p>
               </section>

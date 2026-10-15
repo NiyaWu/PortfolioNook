@@ -19,7 +19,7 @@ export const pankoMascotEn = {
     caption: "Evolution Process",
   },
   connection: {
-    title: "Visualizing Functions",
+    title: "Character Applications",
     content: "Instead of pursuing complex rendering, I focused on using simple characters to make rigid financial functions more intuitive. By integrating Panko into various product scenarios—from the protective grasp of tokens during a swap to the humorous visual metaphor of 'frying' for yield farming—these visual translations help alleviate user anxiety. Combined with playful details like the paw-print tickets, the design adds a touch of human-centric companionship to the decentralized trading experience.",
   },
 }

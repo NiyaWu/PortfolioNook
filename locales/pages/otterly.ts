@@ -10,7 +10,7 @@ export const otterlyEn = {
   hero: otterlyHero,
   intro: "Otterly is a social Mini App built for Web3 offline events. It helps attendees find each other through professional interests, staying anonymous within a 72-hour window until both sides agree to exchange Telegram IDs.",
   section1: {
-    title: "Why I Built This",
+    title: "Product Motivation",
     intro: "At the Web3 offline events I've been to, I noticed two recurring social frustrations on the ground. These observations are where Otterly started:",
     items: [
       {
@@ -96,7 +96,7 @@ export const otterlyZh = {
   hero: otterlyHero,
   intro: "Otterly 是為 Web3 線下活動設計的社交 Mini App，讓參與者透過「專業興趣」找到彼此。整段流程匿名、72 小時時效，雙方同意才交換 Telegram ID。",
   section1: {
-    title: "為什麼做這個產品",
+    title: "產品動機",
     intro: "在參加過的 Web3 線下活動裡，看見兩個讓人挫折的社交困境，這也是 Otterly 出發的起點：",
     items: [
       {
