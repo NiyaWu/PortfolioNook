@@ -207,19 +207,19 @@ export function VodChannelDetail() {
 
           <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 md:gap-x-8 md:gap-y-1 text-xs md:text-sm text-muted-foreground leading-tight">
             <div>
-              <span className="font-medium">Year: </span>
+              <span className="font-medium">{t.vodChannel.metaLabels.date}: </span>
               {t.vodChannel.hero.duration}
             </div>
             <div>
-              <span className="font-medium">Role: </span>
+              <span className="font-medium">{t.vodChannel.metaLabels.role}: </span>
               {t.vodChannel.hero.role}
             </div>
             <div>
-              <span className="font-medium">Company: </span>
+              <span className="font-medium">{t.vodChannel.metaLabels.company}: </span>
               {t.vodChannel.hero.company}
             </div>
             <div>
-              <span className="font-medium">Platforms: </span>
+              <span className="font-medium">{t.vodChannel.metaLabels.platforms}: </span>
               {t.vodChannel.hero.platforms}
             </div>
           </div>

@@ -97,15 +97,15 @@ export function IdoCmsDetail() {
 
           <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 md:gap-x-8 md:gap-y-1 text-xs md:text-sm text-muted-foreground leading-tight mb-6 md:mb-10">
             <div>
-              <span className="font-medium">Duration: </span>
+              <span className="font-medium">{t.idoCms.metaLabels.period}: </span>
               {t.idoCms.hero.duration}
             </div>
             <div>
-              <span className="font-medium">Role: </span>
+              <span className="font-medium">{t.idoCms.metaLabels.role}: </span>
               {t.idoCms.hero.role}
             </div>
             <div>
-              <span className="font-medium">Company: </span>
+              <span className="font-medium">{t.idoCms.metaLabels.company}: </span>
               {t.idoCms.hero.company}
             </div>
           </div>
@@ -326,16 +326,16 @@ export function IdoCmsDetail() {
                       {index === 2 ? (
                         <div>
                           <div className="group relative aspect-[16/9] overflow-hidden rounded-lg border border-border bg-muted select-none">
-                            <Image src="/IDO-Project-Sales.png" alt="Project-centric page containing multiple sale pools" fill className="object-cover object-[center_32%]" />
+                            <Image src="/IDO-Project-Sales.png" alt={t.idoCms.design.comparison.afterAlt} fill className="object-cover object-[center_32%]" />
                             <div className="absolute inset-0 overflow-hidden" style={{ clipPath: `inset(0 ${100 - comparisonPosition}% 0 0)` }}>
-                              <Image src="https://image.blocktempo.com/2021/08/1phk9iopHgXQhXfJbzYX8gw.png" alt="Sale-centric page layout" fill className="object-cover object-top" />
+                              <Image src="/IDO-Sale-First.png" alt={t.idoCms.design.comparison.beforeAlt} fill className="object-cover object-top" />
                             </div>
                             <div className="absolute inset-y-0 w-0.5 bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.15)] pointer-events-none" style={{ left: `${comparisonPosition}%` }}>
                               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex h-9 w-9 items-center justify-center rounded-full border border-border bg-background text-xs text-foreground shadow-sm">↔</div>
                             </div>
-                            <span className="absolute left-3 top-3 rounded bg-foreground/90 px-2 py-1 text-[10px] font-medium text-background">V1 · Sale-centric</span>
-                            <span className="absolute right-3 top-3 rounded bg-foreground/90 px-2 py-1 text-[10px] font-medium text-background">V2 · Project-centric</span>
-                            <input type="range" min="0" max="100" value={comparisonPosition} onChange={(event) => setComparisonPosition(Number(event.target.value))} aria-label="Compare sale-centric and project-centric layouts" className="absolute inset-0 h-full w-full cursor-ew-resize opacity-0" />
+                            <span className="absolute left-3 top-3 rounded bg-foreground/90 px-2 py-1 text-[10px] font-medium text-background">{t.idoCms.design.comparison.before}</span>
+                            <span className="absolute right-3 top-3 rounded bg-foreground/90 px-2 py-1 text-[10px] font-medium text-background">{t.idoCms.design.comparison.after}</span>
+                            <input type="range" min="0" max="100" value={comparisonPosition} onChange={(event) => setComparisonPosition(Number(event.target.value))} aria-label={t.idoCms.design.comparison.ariaLabel} className="absolute inset-0 h-full w-full cursor-ew-resize opacity-0" />
                           </div>
                           <p className="text-[10px] md:text-xs text-muted-foreground/70 text-center mt-3">{decision.imageCaption}</p>
                         </div>

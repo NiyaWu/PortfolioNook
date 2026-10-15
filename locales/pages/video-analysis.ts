@@ -1,7 +1,6 @@
 // Shared hero data (no translation needed)
-const videoAnalysisHero = {
+const videoAnalysisHeroBase = {
   duration: "2018 ~ 2020",
-  role: "UI / UX",
   company: "Gorilla Technology",
   platforms: "Web",
   deliverables: "Design and Interaction",
@@ -11,6 +10,7 @@ export const videoAnalysisEn = {
   title: "Video Analysis System Design Optimization",
   subtitle: "I reorganized analysis configuration, scheduling, and monitoring information to make algorithm-heavy workflows easier to understand and operate.",
   back: "Back",
+  metaLabels: { period: "Period", role: "Role", company: "Company", platforms: "Platform" },
   sections: {
     problem: "Problem & Approach",
     analysisSettings: "Configuration Flow",
@@ -18,7 +18,7 @@ export const videoAnalysisEn = {
     uiKit: "Interaction Standards",
     outcome: "Outcome",
   },
-  hero: videoAnalysisHero,
+  hero: { ...videoAnalysisHeroBase, role: "UI / UX" },
   projectOverview: {
     title: "Project Overview",
     overviewLabel: "Project Goal",
@@ -47,7 +47,7 @@ export const videoAnalysisEn = {
     title: "Configuration Flow",
     content: "After clarifying the dependencies behind each analysis, I translated the engineering structure into three user-facing steps: choose an analysis, decide when it runs, and define how the image should be interpreted.",
     progressiveTitle: "Show Only the Settings Needed for the Selected Analysis",
-    content2: "The interface adopts a \"segmented progressive guidance\" approach. When a user selects \"Intrusion Detection,\" the interface automatically hides \"People Counting\" parameters, displaying only the settings relevant to that scenario.",
+    content2: "The interface uses progressive disclosure. When a user selects \"Intrusion Detection,\" it hides \"People Counting\" parameters and displays only the settings relevant to that scenario.",
     flowHint: "Select the flow diagram to inspect each step.",
   },
   scheduleSettings: {
@@ -71,7 +71,7 @@ export const videoAnalysisEn = {
   },
   outcome: {
     title: "Outcome",
-    content: "The redesigned flow turned scattered algorithm parameters into a staged configuration experience. Operators could see only the settings relevant to the selected analysis and identify schedule conflicts before applying them. Later, cross-line analysis reused the same structure while introducing a new graphical configuration method, demonstrating that the interaction framework could support continued feature expansion.",
+    content: "The redesign established reusable patterns for analysis setup, scheduling, graphical configuration, and event presentation. When cross-line analysis was added later, it reused the existing structure while introducing a new image-based configuration method, showing that the interaction framework could accommodate additional analysis types without rebuilding the workflow.",
   },
 }
 
@@ -79,6 +79,7 @@ export const videoAnalysisZh = {
   title: "影像分析系統設計優化",
   subtitle: "重新整理分析設定、排程與監看資訊，降低操作人員理解演算法參數與完成配置的門檻。",
   back: "返回",
+  metaLabels: { period: "期間", role: "角色", company: "公司", platforms: "平台" },
   sections: {
     problem: "問題與重整方法",
     analysisSettings: "分析設定流程",
@@ -86,7 +87,7 @@ export const videoAnalysisZh = {
     uiKit: "互動規範",
     outcome: "成果",
   },
-  hero: videoAnalysisHero,
+  hero: { ...videoAnalysisHeroBase, role: "UI / UX" },
   projectOverview: {
     title: "專案概覽",
     overviewLabel: "專案目標",
@@ -115,7 +116,7 @@ export const videoAnalysisZh = {
     title: "分析設定流程",
     content: "釐清每種分析背後的設定依賴後，我將工程結構轉譯成三個使用者步驟：選擇分析、決定執行時間，再定義影像應如何被判讀。",
     progressiveTitle: "只顯示當前分析需要的設定",
-    content2: "介面設計上採用「分段式漸進引導」。使用者選定「入侵偵測」時，介面自動隱藏「人流計數」的參數，僅呈現該場景必要的設定項。",
+    content2: "介面採用漸進揭露。使用者選定「入侵偵測」時，系統會隱藏「人流計數」參數，只呈現該場景必要的設定項。",
     flowHint: "點擊流程圖放大，查看每個設定步驟。",
   },
   scheduleSettings: {
@@ -139,6 +140,6 @@ export const videoAnalysisZh = {
   },
   outcome: {
     title: "成果",
-    content: "新流程將分散的演算法參數整理成分段式設定，讓操作人員只看見當前分析相關的項目，並在套用前確認排程衝突。後續新增的跨線分析沿用相同結構，再加入新的圖像化設定方式，也驗證這套互動架構能支援功能持續擴充。",
+    content: "這次設計建立了可沿用的分析設定、排程、圖像化配置與事件呈現模式。後續新增跨線分析時，既有架構能直接承接新的圖像設定方式，不必重建操作流程，也驗證這套互動架構能容納更多分析類型。",
   },
 }

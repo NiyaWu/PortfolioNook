@@ -1,12 +1,12 @@
-const idoCmsHero = {
+const idoCmsHeroBase = {
   duration: "2021 - 2025",
-  role: "Product Designer",
   company: "Impossible Finance",
 }
 
 export const idoCmsEn = {
   title: "IDO Launch & Participation Redesign",
   back: "Back",
+  metaLabels: { period: "Period", role: "Role", company: "Company" },
   sections: {
     background: "Users & Problem",
     solution: "Design Goal",
@@ -14,7 +14,7 @@ export const idoCmsEn = {
     userResearch: "Validation & Iteration",
     outcome: "Impact",
   },
-  hero: idoCmsHero,
+  hero: { ...idoCmsHeroBase, role: "Product Designer" },
   impactStatement: "I redesigned both sides of token launches: consolidating a fragmented, developer-dependent setup process into a CMS that internal operators could use independently—and that could later support project-team self-service—while reorganizing the IDO frontend around projects so customers could understand offerings, compare sale conditions, and participate with greater clarity.",
   projectOverview: {
     title: "Project Overview",
@@ -63,11 +63,11 @@ export const idoCmsEn = {
         {
           label: "IDO frontend",
           audience: "Customers",
-          steps: ["Explore and compare\nprojects", "Stake\nVest Tokens", "Purchase as required\nSale Tokens", "Withdraw after the period\nVest Tokens", "Check allocation & claim\nSale Tokens"],
+          steps: ["Explore and compare\nprojects", "Stake\nvesting tokens", "Purchase\nsale tokens", "Withdraw\nvesting tokens", "Claim allocation\nsale tokens"],
         },
       ],
     },
-    challengeIntro: "Across these two experiences, the journey broke down in three places:",
+    challengeIntro: "Across these two experiences, the journey broke down in five places:",
     challenges: [
       {
         title: "Information was fragmented",
@@ -104,6 +104,13 @@ export const idoCmsEn = {
   design: {
     title: "Key Design Decisions",
     content: "Each decision connects a specific user obstacle to a design response and a change in what the user could do.",
+    comparison: {
+      before: "V1 · Sale-first",
+      after: "V2 · Project-first",
+      beforeAlt: "Sale-first page layout",
+      afterAlt: "Project-first page containing multiple sale pools",
+      ariaLabel: "Compare the sale-first and project-first layouts",
+    },
     labels: {
       problem: "User obstacle",
       decision: "Design decision",
@@ -180,6 +187,7 @@ export const idoCmsEn = {
 export const idoCmsZh = {
   title: "IDO 發行與參與體驗重構",
   back: "返回",
+  metaLabels: { period: "期間", role: "角色", company: "公司" },
   sections: {
     background: "使用者與問題",
     solution: "設計目標",
@@ -187,7 +195,7 @@ export const idoCmsZh = {
     userResearch: "驗證與迭代",
     outcome: "影響與成果",
   },
-  hero: idoCmsHero,
+  hero: { ...idoCmsHeroBase, role: "產品設計師" },
   impactStatement: "我重新設計代幣發行的兩端體驗：將原本分散、仰賴工程師的設定流程整合成 CMS，讓內部營運人員能獨立完成上架，也為未來專案方自行管理發行建立基礎；前台則改以 Project 組織不同 Sale，幫助一般客戶更清楚地理解項目、比較條件並完成參與。",
   projectOverview: {
     title: "專案概覽",
@@ -240,7 +248,7 @@ export const idoCmsZh = {
         },
       ],
     },
-    challengeIntro: "兩條體驗中共有三個主要斷點：",
+    challengeIntro: "兩條體驗中共有五個主要斷點：",
     challenges: [
       {
         title: "資訊分散",
@@ -277,6 +285,13 @@ export const idoCmsZh = {
   design: {
     title: "關鍵設計決策",
     content: "每項決策都從具體的使用者阻礙出發，說明設計回應，以及使用者因此能做到什麼。",
+    comparison: {
+      before: "V1 · 以 Sale 為主",
+      after: "V2 · 以項目為主",
+      beforeAlt: "以 Sale 為主的舊版頁面",
+      afterAlt: "整合多個 Sale 的項目頁面",
+      ariaLabel: "比較以 Sale 與以項目為主的兩種版面",
+    },
     labels: {
       problem: "使用者阻礙",
       decision: "設計決策",

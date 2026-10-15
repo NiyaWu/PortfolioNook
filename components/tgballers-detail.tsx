@@ -76,19 +76,19 @@ export function TgballersDetail() {
 
           <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 md:gap-x-8 md:gap-y-1 text-xs md:text-sm text-muted-foreground leading-tight mb-6 md:mb-10">
             <div>
-              <span className="font-medium">Year: </span>
+              <span className="font-medium">{t.tgballers.metaLabels.year}: </span>
               {t.tgballers.hero.duration}
             </div>
             <div>
-              <span className="font-medium">Role: </span>
+              <span className="font-medium">{t.tgballers.metaLabels.role}: </span>
               {t.tgballers.hero.role}
             </div>
             <div>
-              <span className="font-medium">Company: </span>
+              <span className="font-medium">{t.tgballers.metaLabels.company}: </span>
               {t.tgballers.hero.company}
             </div>
             <div>
-              <span className="font-medium">Platforms: </span>
+              <span className="font-medium">{t.tgballers.metaLabels.platforms}: </span>
               {t.tgballers.hero.platforms}
             </div>
           </div>

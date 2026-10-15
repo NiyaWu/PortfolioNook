@@ -84,19 +84,19 @@ export function VideoAnalysisDetail() {
 
           <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 md:gap-x-8 md:gap-y-1 text-xs md:text-sm text-muted-foreground leading-tight">
             <div>
-              <span className="font-medium">Year: </span>
+              <span className="font-medium">{t.videoAnalysis.metaLabels.period}: </span>
               {t.videoAnalysis.hero.duration}
             </div>
             <div>
-              <span className="font-medium">Role: </span>
+              <span className="font-medium">{t.videoAnalysis.metaLabels.role}: </span>
               {t.videoAnalysis.hero.role}
             </div>
             <div>
-              <span className="font-medium">Company: </span>
+              <span className="font-medium">{t.videoAnalysis.metaLabels.company}: </span>
               {t.videoAnalysis.hero.company}
             </div>
             <div>
-              <span className="font-medium">Platforms: </span>
+              <span className="font-medium">{t.videoAnalysis.metaLabels.platforms}: </span>
               {t.videoAnalysis.hero.platforms}
             </div>
           </div>

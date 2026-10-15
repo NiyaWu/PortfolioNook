@@ -2,7 +2,7 @@
 export const projectsData = [
   {
     id: "ido-cms",
-    title: "IDO Platform & CMS Infrastructure",
+    title: "IDO Launch & Participation Redesign",
     category: "Web3 Launchpad · Product Design · Management System",
     company: "Impossible Finance",
     year: "2022",
@@ -105,23 +105,23 @@ export const projectsData = [
 // Project descriptions (need translation)
 const projectDescriptionsEn: Record<string, string> = {
   "ido-cms": "Connected a guided CMS for launch teams with a clearer IDO experience for customers, reducing internal setup from days to hours across 20+ launches.",
-  "tgballers": "A Telegram interactive game developed for TOKEN2049 Singapore. In just 72 hours, I synchronized cross-departmental requirements to finalize specifications, leveraging AI to integrate technology and design for high-quality delivery under a tight deadline.",
+  "tgballers": "A Telegram interactive game developed for TOKEN2049 Singapore. I aligned fragmented requirements within the first three days, used AI to accelerate visual production, and completed most UI implementation within 72 hours for the one-week launch.",
   "ivar-redesign": "Consolidated fragmented management workflows and optimized the information architecture to deliver a more intuitive, seamless device monitoring experience.",
   "face-library": "Designed an integrated face recognition and library management interface, bridging access control with video analytics to enable real-time identity verification.",
   "data-visualization": "Architected a flexible data visualization framework with standardized chart configurations, enabling rapid dashboard deployment across diverse client scenarios.",
   "video-analysis": "Optimized complex video analysis workflows by reorganizing deep technical parameters into intuitive flows, enabling general users to quickly complete high-precision configurations.",
-  "vod-channel": "Bridged external partners and internal teams, using research-driven validation to resolve design challenges and drive the myVideo experience redesign initiative.",
+  "vod-channel": "Connected user evidence, internal prototype validation, and partner coordination to align teams and move the myVideo experience redesign toward delivery.",
   "chromecast": "Designed the Chromecast streaming feature for myVideo's OTT service, translating complex cross-device interactions into clear visual flows to help secure a strategic Google partnership.",
 }
 
 const projectDescriptionsZh: Record<string, string> = {
   "ido-cms": "串連發行端的引導式 CMS 與一般客戶的 IDO 前台體驗，並將內部上架從數天縮短至數小時，累計支援 20+ 次發行。",
-  "tgballers": "為 TOKEN2049 Singapore 打造的 Telegram 互動遊戲。在 72 小時內橫向收斂各部門需求並確立規格，運用 AI 深度整合技術與設計，確保在極短時程內達成高品質交付。",
+  "tgballers": "為 TOKEN2049 Singapore 打造的 Telegram 互動遊戲。前三天完成需求與規格對齊，運用 AI 加速視覺產出，並在 72 小時內完成主要 UI，推進一週內上架。",
   "ivar-redesign": "整合碎片化的管理流程，透過優化資訊架構，提供更直觀、無縫的設備監控體驗。",
   "face-library": "人臉辨識與資料庫管理介面設計",
   "data-visualization": "即時數據視覺化和監控儀表板",
   "video-analysis": "優化複雜的影像分析流程，將深層技術參數重新整合並建立直覺動線，使一般使用者也能快速完成高精度的設定。",
-  "vod-channel": "串聯外部合作夥伴與內部團隊，透過研究驗證化解設計質疑，推動 myVideo 體驗重塑計畫。",
+  "vod-channel": "串連使用者證據、內部原型驗證與外部夥伴協作，協助團隊對齊方向並推動 myVideo 體驗改版落地。",
   "chromecast": "OTT 服務的 Chromecast 串流功能流程設計",
 }
 

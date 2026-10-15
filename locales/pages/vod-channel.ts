@@ -1,7 +1,6 @@
 // Shared hero data (no translation needed)
-const vodChannelHero = {
+const vodChannelHeroBase = {
   duration: "June 2016",
-  role: "UX / Contact Person",
   company: "Taiwan Mobile",
   platforms: "Phone, Pad, PC web",
   deliverables: "User Research Result",
@@ -12,19 +11,19 @@ export const vodChannelEn = {
   subtitle: "Through user research and internal prototype validation, we reworked content discovery, device registration, payment, and live-viewing flows while moving the redesign toward delivery.",
   zoomHint: "Select the image to inspect the details.",
   back: "Back",
+  metaLabels: { date: "Date", role: "Role", company: "Company", platforms: "Platforms" },
   sections: {
     discovery: "Context & Evidence",
     usabilityTesting: "Research & Alignment",
     decisions: "Design Decisions",
-    mockup: "Final Experience",
     delivery: "Collaboration & Delivery",
   },
-  hero: vodChannelHero,
+  hero: { ...vodChannelHeroBase, role: "UX Research / Project Liaison" },
   projectOverview: {
     title: "Project Overview",
     overview: { title: "Project Goal", content: "Redesign the myVideo experience so users could explore content more easily, understand device and payment rules, and receive a consistent viewing experience across phone, tablet, and web." },
-    timeline: { title: "Core Challenge", content: "Product managers were often skeptical of UX proposals, creating communication barriers. The external partner was originally responsible for the full delivery, but delays later required the schedule and responsibilities to be renegotiated, with part of the work supported by the internal team." },
-    challenge: { title: "My Role", content: "I primarily consolidated research evidence, collaborated on the prototype used in the research, and conducted validation. When external delivery was delayed, I also joined progress negotiations and coordinated support from the internal team." },
+    timeline: { title: "Core Challenge", content: "Turn user evidence into design decisions that product managers could align on, while adapting the plan when the external delivery schedule slipped." },
+    challenge: { title: "My Role", content: "I primarily consolidated research evidence, collaborated on the research prototype, and conducted internal validation. During delivery, I also helped coordinate the schedule, responsibilities, and acceptance review." },
     outcome: { title: "Outcome", content: "We clarified key flows across content discovery, device registration, categories, payment, and live viewing. Prototype validation also helped PMs align on the design direction, while review and acceptance criteria supported delivery quality." },
   },
   discovery: {
@@ -39,30 +38,19 @@ export const vodChannelEn = {
   researchGoals: {
     title: "Validation Focus",
     items: [
-      "Evaluate the new login flow.",
-      "Compare homepage and search layouts.",
-      "Check whether users understand buy and rent options.",
-      "Identify essential features for the live video page.",
+      "Review the proposed login flow against the research evidence.",
+      "Compare homepage and search directions.",
+      "Clarify how buy and rent options should be distinguished.",
+      "Prioritize essential features for the live-video page.",
     ],
   },
   usabilityTesting: {
     title: "Research & Alignment",
     content: "App reviews, GA patterns, and the vendor's research provided user evidence. Nine internal PMs then compared prototype directions, surfaced cross-team concerns, and aligned on the redesign.",
-    wireframes: "WIREFRAMES",
   },
   participants: {
     title: "Internal Validation Group",
     content: "Nine myVideo PMs from content, marketing, and product reviewed the prototypes, raised concerns from their teams, and confirmed the redesign direction together.",
-  },
-  testObjectives: {
-    title: "Test Objectives",
-    items: [
-      "Assess how easily users comprehend the post-login popup and its interface elements.",
-      "Gauge user reactions to the preference setup feature and identify the optimal moment to trigger it.",
-      "Observe how users navigate search and complete payment flows.",
-      "Evaluate the usability of video information pages within the app's navigation structure.",
-      "Identify frustrations or obstacles that impede users' ability to complete key tasks.",
-    ],
   },
   abTesting: {
     title: "Make Content Categories Easier to Explore",
@@ -80,7 +68,7 @@ export const vodChannelEn = {
   },
   result2: {
     title: "Register Only Before Playback",
-    content: "Users felt confused by the registration prompt right after login — they hadn't consumed any content yet, but the app was already asking them to complete another task. We persuaded product managers to defer the flow, recommending it appear only when users attempt to watch a video. Additionally, if a device slot is available, registration would happen automatically.",
+    content: "The research evidence showed that a registration prompt immediately after login introduced another task before viewing had begun. We persuaded product managers to defer the flow until playback; if a device slot was available, registration would happen automatically.",
   },
   videoTypeTest: {
     title: "Make the Two-level Category Logic Visible",
@@ -114,18 +102,14 @@ export const vodChannelEn = {
       "In full-screen mode, users expected a minimal UI — only the \"Send Heart\" button and message count should remain visible.",
     ],
   },
-  mockup: {
-    title: "Final Experience",
-    content: "The final direction brought discovery, playback, membership, and transaction flows into one consistent cross-device experience.",
-  },
   decisionSection: {
     title: "Design Decisions",
-    intro: "Based on prototype feedback, we made it easier for users to explore content, understand device and category rules, choose a payment method, and use live-viewing features.",
+    intro: "Combining user evidence with internal prototype feedback, we refined how people explore content, understand device and category rules, choose a payment method, and use live-viewing features.",
     decisionLabel: "Design decision",
   },
   delivery: {
     title: "Collaboration & Delivery",
-    content: "My primary focus was research and validation, and I collaborated with the external partner on the research prototype. When the work they were originally expected to deliver in full was delayed, I joined the renegotiation of the schedule and responsibilities and coordinated internal support for part of the work and final acceptance.",
+    content: "My primary focus was research and validation. I also connected the external partner, product managers, and internal support team so decisions from the prototype could move into delivery and acceptance.",
     items: [
       { title: "Stakeholder alignment", content: "First, I used prototype validation results to discuss the design direction and help the product team build agreement." },
       { title: "Partner coordination", content: "I collaborated with the external partner during the research-prototype stage. When the delivery they originally owned in full was delayed, I joined negotiations to reset the schedule and responsibilities." },
@@ -143,19 +127,19 @@ export const vodChannelZh = {
   subtitle: "透過使用者研究與內部原型驗證，重新整理內容探索、裝置註冊、付款與直播觀看流程，並推動改版落地。",
   zoomHint: "點擊放大看細節",
   back: "返回",
+  metaLabels: { date: "日期", role: "角色", company: "公司", platforms: "平台" },
   sections: {
     discovery: "情境與證據",
     usabilityTesting: "研究與共識",
     decisions: "設計決策",
-    mockup: "最終體驗",
     delivery: "協作與交付",
   },
-  hero: vodChannelHero,
+  hero: { ...vodChannelHeroBase, role: "UX 研究／專案窗口" },
   projectOverview: {
     title: "專案概覽",
     overview: { title: "專案目標", content: "重塑 myVideo 使用體驗，讓使用者更容易探索內容、理解裝置與付款規則，並在手機、平板與網頁上獲得一致的觀看體驗。" },
-    timeline: { title: "核心挑戰", content: "產品經理過去對 UX 方案常有疑慮，溝通不易；外部夥伴原定負責完整交付，但因進度延遲，後續需要重新協商時程與分工，部分工作改由內部團隊支援。" },
-    challenge: { title: "我的角色", content: "主要負責整理研究資料、協作研究原型並進行原型驗證；外部交付延遲時，也參與進度協商並協調內部團隊支援。" },
+    timeline: { title: "核心挑戰", content: "將使用者證據轉化為產品經理能共同確認的設計決策，並在外部交付時程延後時調整推進方式。" },
+    challenge: { title: "我的角色", content: "主要負責整理研究資料、協作研究原型並進行內部驗證；進入交付階段後，也協助協調時程、分工與驗收。" },
     outcome: { title: "成果", content: "完成內容探索、裝置註冊、影片分類、付款與直播觀看等關鍵流程的調整，讓資訊與操作方式更清楚；同時透過原型驗證協助 PM 對齊設計方向，並依驗收標準控管交付品質。" },
   },
   discovery: {
@@ -170,30 +154,19 @@ export const vodChannelZh = {
   researchGoals: {
     title: "驗證焦點",
     items: [
-      "驗證新登入流程。",
-      "比較首頁與搜尋版面。",
-      "確認使用者是否理解購買與租借選項。",
-      "釐清直播頁面需要的功能。",
+      "依研究證據檢視新的登入流程。",
+      "比較首頁與搜尋的設計方向。",
+      "釐清購買與租借選項應如何區分。",
+      "確認直播頁面必要功能的優先順序。",
     ],
   },
   usabilityTesting: {
     title: "研究與共識",
     content: "商店評論、GA 行為資料與廠商研究提供使用者證據；9 位內部 PM 再透過原型驗證比較方案、釐清各部門考量，並建立改版共識。",
-    wireframes: "線框圖",
   },
   participants: {
     title: "內部驗證成員",
     content: "9 位 myVideo PM 來自內容、行銷與產品團隊，透過原型操作提出各部門考量，並共同確認改版方向。",
-  },
-  testObjectives: {
-    title: "測試目標",
-    items: [
-      "確定使用者登入後彈出資訊的介面易理解程度。",
-      "詢問使用者對偏好設定功能的感受。什麼時機彈出設定是好的？",
-      "觀察使用者如何搜尋和付款。",
-      "測試影片資訊頁面在 APP 導覽中的易用性。",
-      "觀察使用者可能遇到的任何挫折或障礙，這些可能會影響他們完成任務的能力。",
-    ],
   },
   abTesting: {
     title: "讓首頁內容分類更容易探索",
@@ -211,7 +184,7 @@ export const vodChannelZh = {
   },
   result2: {
     title: "只在播放影片前完成裝置註冊",
-    content: "使用者完成登入後，還沒開始觀看內容就被要求處理裝置註冊，容易感到困惑。因此，我們建議將這個步驟移到播放影片前；若帳號仍有可用名額，則自動完成裝置註冊。",
+    content: "研究證據顯示，登入後立即出現裝置註冊，會讓使用者在尚未開始觀看前就多出一項任務。因此，我們建議將這個步驟移到播放影片前；若帳號仍有可用名額，則自動完成裝置註冊。",
   },
   videoTypeTest: {
     title: "讓兩層影片分類邏輯可以被理解",
@@ -245,18 +218,14 @@ export const vodChannelZh = {
       "使用者進入全螢幕觀看時，只保留「送愛心」與「訊息數量」兩項功能。",
     ],
   },
-  mockup: {
-    title: "最終體驗",
-    content: "最終方向將內容探索、播放、會員與交易流程整合為一致的跨裝置體驗。",
-  },
   decisionSection: {
     title: "設計決策",
-    intro: "我們根據原型回饋，讓使用者更容易探索內容、理解裝置與分類規則、選擇付款方式，以及使用直播功能。",
+    intro: "我們結合使用者證據與內部原型回饋，重新整理內容探索、裝置與分類規則、付款方式及直播功能。",
     decisionLabel: "設計決策",
   },
   delivery: {
     title: "協作與交付",
-    content: "我的主要工作集中在研究與驗證，研究原型則與外部夥伴協作。原定由對方完整交付的工作出現延遲後，我參與重新協商時程與分工，並協調內部團隊支援部分工作與後續驗收。",
+    content: "我的主要工作集中在研究與驗證，並串聯外部夥伴、產品經理與內部支援團隊，讓原型階段形成的決策能繼續推進到交付與驗收。",
     items: [
       { title: "利害關係人對齊", content: "先以原型驗證結果討論設計方向，協助產品團隊建立共識。" },
       { title: "外部夥伴協調", content: "研究原型階段與外部夥伴協作；當原定由對方完整負責的交付延遲時，我參與重新協商時程與分工。" },

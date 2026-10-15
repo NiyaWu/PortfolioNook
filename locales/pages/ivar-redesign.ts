@@ -1,7 +1,6 @@
 // Shared hero data (no translation needed)
-const ivarRedesignHero = {
+const ivarRedesignHeroBase = {
   duration: "2020",
-  role: "UI / UX / Tool Research",
   company: "Gorilla Technology",
   platforms: "Web",
   deliverables: "Design and Interaction",
@@ -11,14 +10,15 @@ export const ivarRedesignEn = {
   title: "Surveillance Camera Management",
   subtitle: "I unified two overlapping surveillance products into a role-based web platform, helping guards stay focused on monitoring while administrators could understand device and system status from one place.",
   back: "Back",
+  metaLabels: { year: "Year", role: "Role", company: "Company", platforms: "Platform" },
   sections: {
     discovery: "Users & Problem",
-    siteMap: "Site Map",
+    siteMap: "Information Architecture",
     systemStatus: "System Status",
     designSystem: "Design System",
     collaboration: "Collaboration & Delivery",
   },
-  hero: ivarRedesignHero,
+  hero: { ...ivarRedesignHeroBase, role: "UI / UX / Tool Research" },
   projectOverview: {
     title: "Project Overview",
     overview: {
@@ -84,7 +84,7 @@ export const ivarRedesignEn = {
           },
         ],
         roleMappingTitle: "From the Feature Inventory to Role-based Workspaces",
-        roleMappingIntro: "After inventorying the functions across IVAR and IVARM, we regrouped them around the core tasks of guards, system administrators, and operations staff. The table below shows each role's primary scenario and the pages that support it in the unified product.",
+        roleMappingIntro: "The table maps each role's core scenario to its primary workspace in the unified product.",
         roleScreensTitle: "Primary workspace by role",
         roleScreensIntro: "Switch roles to see the main screen each person uses to complete their core task.",
         roleScreens: [
@@ -188,6 +188,7 @@ export const ivarRedesignZh = {
   title: "監控攝影機管理系統",
   subtitle: "將功能重疊的 IVAR 與 IVARM 整合為角色導向的 Web 管理平台，讓警衛專注監看，管理員也能從單一入口掌握設備與系統狀態。",
   back: "返回",
+  metaLabels: { year: "年份", role: "角色", company: "公司", platforms: "平台" },
   sections: {
     discovery: "使用者與問題",
     siteMap: "架構重構",
@@ -195,7 +196,7 @@ export const ivarRedesignZh = {
     designSystem: "設計系統",
     collaboration: "協作與交付",
   },
-  hero: ivarRedesignHero,
+  hero: { ...ivarRedesignHeroBase, role: "UI / UX／工具研究" },
   projectOverview: {
     title: "專案概覽",
     overview: {
@@ -261,7 +262,7 @@ export const ivarRedesignZh = {
           },
         ],
         roleMappingTitle: "從功能架構到角色工作區",
-        roleMappingIntro: "先盤點 IVAR 與 IVARM 的全部功能，再依警衛、系統管理員與維運人員的核心任務重新分組。下表呈現每個角色最常使用的情境，以及整合後對應的主要頁面。",
+        roleMappingIntro: "下表將每個角色的核心情境對應到整合後的主要工作頁面。",
         roleScreensTitle: "不同角色的主要工作畫面",
         roleScreensIntro: "切換角色，查看每位使用者完成核心任務時使用的主要畫面。",
         roleScreens: [

@@ -160,19 +160,19 @@ export function IvarRedesignDetail() {
 
           <div className="mb-6 grid grid-cols-2 gap-x-4 gap-y-2 text-left text-xs leading-tight text-muted-foreground md:mb-10 md:flex md:flex-wrap md:justify-center md:gap-x-8 md:gap-y-1 md:text-sm">
             <div>
-              <span className="font-medium">Year: </span>
+              <span className="font-medium">{t.ivarRedesign.metaLabels.year}: </span>
               {t.ivarRedesign.hero.duration}
             </div>
             <div>
-              <span className="font-medium">Role: </span>
+              <span className="font-medium">{t.ivarRedesign.metaLabels.role}: </span>
               {t.ivarRedesign.hero.role}
             </div>
             <div>
-              <span className="font-medium">Company: </span>
+              <span className="font-medium">{t.ivarRedesign.metaLabels.company}: </span>
               {t.ivarRedesign.hero.company}
             </div>
             <div>
-              <span className="font-medium">Platforms: </span>
+              <span className="font-medium">{t.ivarRedesign.metaLabels.platforms}: </span>
               {t.ivarRedesign.hero.platforms}
             </div>
           </div>
