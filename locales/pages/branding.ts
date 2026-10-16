@@ -115,7 +115,7 @@ export const brandingEn = {
     solana: {
       tag: "Live event · Print and social · 12 pieces",
       title: "Solana Consumer Day",
-      desc: "The full visual set for an offline event, from stage backdrops and a standee through to the registration cover and social banner. Five backdrop variants shift tone within one identity so the room does not show the same image all day, and the same set has to survive both large-format print and a social thumbnail.",
+      desc: "Built around the theme of Solana Consumer Day, the visual direction pairs collage-inspired illustrations with a paper-textured background, bringing a more tactile and experimental quality to a digital technology event. Solana's brand colors are combined with Impossible Finance's penguin mascot, then extended across five stage backdrops, a standee, the registration page, and social assets while keeping the identity recognizable at both large-format and thumbnail scale.",
       subBackdrops: "Backdrops · 5 variants",
       subPrint: "Standee · Registration · Social",
       subOnsite: "On site",
@@ -184,7 +184,7 @@ export const brandingZh = {
     solana: {
       tag: "實體活動 · 印刷與社群 · 12 件",
       title: "Solana Consumer Day",
-      desc: "線下活動的整組視覺，從舞台背板、立牌到報名頁與社群主視覺。五版背板在同一套識別下做出不同調性，讓現場不會從頭到尾都是同一張畫面；同一組設計也要同時撐得住大尺寸輸出和社群縮圖。",
+      desc: "以 Solana Consumer Day 的活動主題為核心，透過剪貼插畫與紙張質感，讓數位科技活動帶有更具觸感與實驗性的視覺氛圍。設計結合 Solana 的品牌色彩與 Impossible Finance 的企鵝吉祥物，再延伸至五版舞台背板、立牌、報名頁與社群素材，讓同一套識別在大尺寸輸出與社群縮圖中都能保持辨識度。",
       subBackdrops: "背板 · 5 版",
       subPrint: "立牌 · 報名頁 · 社群",
       subOnsite: "現場",
