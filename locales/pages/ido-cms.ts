@@ -90,7 +90,7 @@ export const idoCmsEn = {
         content: "Staking, purchase, withdrawal, and claim status and timing were not clearly organized in the existing frontend. Customers struggled to tell what stage they were in, when to return, and what to do next.",
       },
     ],
-    goal: "The CMS and frontend serve different users but rely on the same project and sale data. Launch teams enter the information once in the CMS, and the frontend reorganizes that data so customers can understand the project, compare sale options, and participate.",
+    goal: "The CMS and frontend serve different users but rely on the same project and sale data. Launch teams use the CMS to create a project, define its participation rules, and publish the sale. The frontend reorganizes the same information so customers can first understand the project, then compare sale options and participate. Both experiences share the underlying data, but use a different information hierarchy and flow for each audience's task.",
   },
   solution: {
     title: "Design Goal",
@@ -271,7 +271,7 @@ export const idoCmsZh = {
         content: "現有前台未清楚整理投入、購買、取回與 Claim 的狀態和時間。客戶不容易判斷目前階段、何時需要回來，以及下一步該做什麼。",
       },
     ],
-    goal: "CMS 與前台面對不同使用者，卻必須共用同一套項目與 Sale 資訊。營運人員或專案方只需在 CMS 完成一次設定，前台便能將相同資料整理成一般客戶容易理解、比較與參與的內容。",
+    goal: "CMS 與前台面對不同使用者，但兩端都建立在同一套項目與 Sale 資訊上。營運人員或專案方在 CMS 建立項目、設定參與規則並發布。前台則重新安排相同資訊的呈現順序，讓一般客戶先認識項目，再比較 Sale 條件並完成參與。兩端共用資料，卻依各自任務採用不同的資訊層級與操作流程。",
   },
   solution: {
     title: "設計目標",
