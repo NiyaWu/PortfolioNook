@@ -159,10 +159,10 @@ export const commonEn = {
   about: {
     title: "About Me",
     emoji: "👋",
-    intro: "Hello! I'm Niya.",
+    intro: "Hi, I'm Niya, a product designer focused on making complex systems clear and usable.",
     description: [
-      "As a Product Designer, I thrive on breaking down complex systems and redefining how people interact with them. My design journey spans the fast-moving world of Web3 and the rigorous demands of enterprise SaaS platforms.",
-      "Driven by user research and iterative refinement, I craft intuitive, engaging product experiences. I actively adopt emerging technologies and tools to optimize design workflows and strengthen cross-functional collaboration.",
+      "Over the past decade, I have designed products across Web3, enterprise video analytics, and multi-platform streaming. My work spans user research, information architecture, interaction design, design systems, and front-end collaboration.",
+      "I work best on products with dense information and complicated workflows. More recently, I have also been using AI tools to turn early product ideas into working prototypes and MVPs, while staying responsible for the product decisions behind them.",
     ],
     experienceTitle: "Experience",
     experiences: [
@@ -288,10 +288,10 @@ export const commonZh = {
   about: {
     title: "關於我",
     emoji: "👋",
-    intro: "你好！我是 Niya 。",
+    intro: "你好，我是 Niya，一名專注於把複雜系統變得清楚、好用的產品設計師。",
     description: [
-      "身為一名 UI/UX ，我喜歡拆解複雜的系統，並重新定義它們的互動方式。我的設計旅程跨越了瞬息萬變的 Web3 世界與嚴謹的 SaaS 平台。",
-      "熱衷於用戶研究與介面打磨，致力於打造直覺且具黏著度的產品體驗。擅長導入新技術與工具優化工作流，提升團隊跨職能協作的效率與溝通品質。",
+      "十多年來，我參與過 Web3、企業影像分析與跨平台串流產品，工作涵蓋使用者研究、資訊架構、互動設計、設計系統與前端協作。",
+      "我特別擅長處理資訊密集、流程複雜的產品。近期也持續運用 AI 工具，把早期產品構想推進成可操作的原型與 MVP，同時負責其中的產品判斷與設計決策。",
     ],
     experienceTitle: "工作經歷",
     experiences: [
