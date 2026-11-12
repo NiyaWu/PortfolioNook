@@ -68,5 +68,7 @@ public/CMS-Prototype.mov
 
 # 本機存檔，不進 repo、不對外提供
 archive-local/
+/sites/bim-workbench/
+/resume/士芃科技-BIM作業筆記.md
 *.zip
 .aider*
